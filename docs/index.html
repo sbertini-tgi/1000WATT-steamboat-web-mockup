@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Group — Steamboat Springs, CO</title>
+  <meta name="description" content="Real buyers, actively searching this valley. The Group — Steamboat Springs real estate." />
+  <!-- ============================================================
+       FONTS
+       • Acumin Pro — the real licensed brand font, self-hosted from
+         The Group's files (see assets/fonts/ + @font-face in styles.css).
+       • IvyMode — brand display serif, not available yet. Currently
+         substituted by Marcellus (Google) → Times New Roman, matching
+         color / weight / spacing. When you get IvyMode, add it via
+         @font-face (family "IvyMode") or an Adobe kit and it takes over.
+       Google Fonts below provide Marcellus (serif sub) + Inter (sans fallback).
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================ HERO ============================ -->
+  <header class="hero" id="hero">
+    <img class="hero__bg" src="assets/img/hero.png" alt="Paddleboarders and kayakers on an alpine lake below the Steamboat mountains in summer" />
+    <div class="hero__scrim"></div>
+
+    <nav class="nav">
+      <div class="nav__brand">
+        <img class="nav__logo" src="assets/svg/logo.svg" alt="The Group" />
+        <span class="nav__loc">Steamboat Springs, CO</span>
+      </div>
+      <div class="nav__links">
+        <a href="#agents">The People</a>
+        <a href="#buyers">Buyers Now</a>
+        <a href="#life">Lifestyle</a>
+        <a href="#guides">How We Work</a>
+        <a href="#ready">Search</a>
+      </div>
+    </nav>
+
+    <div class="hero__inner">
+      <h1 class="h1 hero__title">May you measure your life <br class="brk" />by seasons lived.</h1>
+      <p class="lede">We're The Group. We will help you spend each of them in the right home.</p>
+    </div>
+  </header>
+
+  <!-- ============================ BUYERS ============================ -->
+  <section class="section buyers" id="buyers">
+    <div class="container">
+      <div class="buyers__head">
+        <div>
+          <p class="eyebrow">Who's Looking Right Now</p>
+          <h2 class="h2">Real buyers, actively <br class="brk" />searching this valley.</h2>
+        </div>
+        <div class="arrows">
+          <button class="arrow-btn" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="arrow-btn" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <!-- 01 -->
+        <article class="card">
+          <p class="card__no">No. 01</p>
+          <h3 class="h3 card__title">From San Francisco. Downsizing.</h3>
+          <p class="card__desc">A couple leaving the Bay Area for good. They want mountain views, room to breathe, and a place a little off the beaten track. They have waited a long time for this.</p>
+          <div class="card__foot">
+            <div class="card__row">
+              <span class="card__price">$1.0M – $1.3M</span>
+              <a class="link-gold" href="#">Read the brief <span>→</span></a>
+            </div>
+            <div class="card__rule"></div>
+            <p class="card__rep">Represented by <b>Shawn Bertini</b></p>
+          </div>
+        </article>
+        <!-- 02 -->
+        <article class="card">
+          <p class="card__no">No. 02</p>
+          <h3 class="h3 card__title">From Dallas. First place in the valley.</h3>
+          <p class="card__desc">Empty nesters trading Texas heat for a long runway of winters. They want ski-in access and a guest room for the kids. Somewhere walkable to town, maybe a little more for the right setup.</p>
+          <div class="card__foot">
+            <div class="card__row">
+              <span class="card__price">$1.8M – $2.3M</span>
+              <a class="link-gold" href="#">Read the brief <span>→</span></a>
+            </div>
+            <div class="card__rule"></div>
+            <p class="card__rep">Represented by <b>Dean Laird</b></p>
+          </div>
+        </article>
+        <!-- 03 -->
+        <article class="card">
+          <p class="card__no">No. 03</p>
+          <h3 class="h3 card__title">From Chicago. A second home that feels first.</h3>
+          <p class="card__desc">A young family buying before they have to. They want acreage, a creek if they can find it, and a house that can hold a crowd on a Sunday. They are in no rush.</p>
+          <div class="card__foot">
+            <div class="card__row">
+              <span class="card__price">$1.8M – $2.5M</span>
+              <a class="link-gold" href="#">Read the brief <span>→</span></a>
+            </div>
+            <div class="card__rule"></div>
+            <p class="card__rep">Represented by <b>Marci Valicenti</b></p>
+          </div>
+        </article>
+        <!-- 04 -->
+        <article class="card">
+          <p class="card__no">No. 04</p>
+          <h3 class="h3 card__title">From Denver. Local, but not out.</h3>
+          <p class="card__desc">Local already, and telling themselves it is time. They want the main room to hold everyone, a mudroom that earns its keep, and a place that works from first snow to the last aspen turn.</p>
+          <div class="card__foot">
+            <div class="card__row">
+              <span class="card__price">$1.4M – $1.8M</span>
+              <a class="link-gold" href="#">Read the brief <span>→</span></a>
+            </div>
+            <div class="card__rule"></div>
+            <p class="card__rep">Represented by <b>Charlie Dresen</b></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ INQUIRY FORM ============================ -->
+  <section class="section inquire" id="inquire">
+    <div class="container">
+      <div class="inquire__grid">
+        <div class="inquire__intro">
+          <p class="eyebrow">Read Your Brief</p>
+          <h2 class="h2">Have a property for <br class="brk" />one of these buyers?</h2>
+          <p class="lede">Agents and owners alike: tell us what you have and why it suits. The Group reviews every inquiry and connects the right matches.</p>
+        </div>
+
+        <form class="form" onsubmit="return false">
+          <div class="field">
+            <label for="f-name">Your name *</label>
+            <input id="f-name" type="text" placeholder="Jane Agent" />
+          </div>
+          <div class="field">
+            <label for="f-brok">Brokerage</label>
+            <input id="f-brok" type="text" placeholder="Independent / Sotheby's / etc." />
+          </div>
+          <div class="field">
+            <label for="f-email">Email *</label>
+            <input id="f-email" type="email" placeholder="you@brokerage.com" />
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" type="tel" placeholder="Optional" />
+          </div>
+          <div class="field field--full">
+            <label for="f-link">Property link</label>
+            <input id="f-link" type="url" placeholder="A listing URL, if you have one" />
+          </div>
+          <div class="field field--full">
+            <label for="f-fits">What you have that fits *</label>
+            <textarea id="f-fits" placeholder="Tell us about the property and why it suits this buyer."></textarea>
+          </div>
+          <div class="form__submit">
+            <button class="pill-btn" type="submit">Submit inquiry <span>→</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ AGENTS ============================ -->
+  <section class="section agents" id="agents">
+    <div class="container">
+      <p class="eyebrow eyebrow--bright">Us</p>
+      <h2 class="h2">The people who know <br class="brk" />this valley by heart.</h2>
+      <p class="lede">Every one of them lives here, and every one of them owns a piece of this company. Browse the way you'd browse listings, and discover a person you'd want to know.</p>
+
+      <div class="agents__controls">
+        <div class="name-search">
+          <span class="mini-label">Find by name</span>
+          <input type="text" id="agent-search" placeholder="Type a name…" autocomplete="off" />
+        </div>
+        <div>
+          <span class="mini-label">Or filter by season</span>
+          <div class="seasons" id="seasons">
+            <button class="season is-active" data-season="all">All Seasons</button>
+            <button class="season" data-season="deep-winter">Deep Winter</button>
+            <button class="season" data-season="first-snow">First Snow</button>
+            <button class="season" data-season="late-winter">Late Winter</button>
+            <button class="season" data-season="shoulder-seasons">Shoulder Seasons</button>
+            <button class="season" data-season="aspen-turn">Aspen Turn</button>
+            <button class="season" data-season="summer">Summer</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-grid" id="agent-grid">
+        <article class="agent" data-name="Dean Laird" data-seasons="deep-winter late-winter"><div class="agent__photo"><img src="assets/agents/dean-laird.jpg" alt="Dean Laird" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Dean Laird</span><span class="agent__num">01</span></div></article>
+        <article class="agent" data-name="Martin Dragnev" data-seasons="first-snow summer"><div class="agent__photo"><img src="assets/agents/martin-dragnev.jpg" alt="Martin Dragnev" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Martin Dragnev</span><span class="agent__num">02</span></div></article>
+        <article class="agent" data-name="Jon Kowalsky" data-seasons="aspen-turn shoulder-seasons"><div class="agent__photo"><img src="assets/agents/jon-kowalsky.jpg" alt="Jon Kowalsky" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Jon Kowalsky</span><span class="agent__num">03</span></div></article>
+        <article class="agent" data-name="Marci Valicenti" data-seasons="summer shoulder-seasons"><div class="agent__photo"><img src="assets/agents/marci-valicenti.jpg" alt="Marci Valicenti" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Marci Valicenti</span><span class="agent__num">04</span></div></article>
+        <article class="agent" data-name="Favia Giordano" data-seasons="deep-winter aspen-turn"><div class="agent__photo"><img src="assets/agents/favia-giordano.jpg" alt="Favia Giordano" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Favia Giordano</span><span class="agent__num">05</span></div></article>
+        <article class="agent" data-name="Charlie Dresen" data-seasons="first-snow late-winter"><div class="agent__photo"><img src="assets/agents/charlie-dresen.jpg" alt="Charlie Dresen" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Charlie Dresen</span><span class="agent__num">06</span></div></article>
+        <article class="agent" data-name="Sarah Madsen" data-seasons="summer aspen-turn"><div class="agent__photo"><img src="assets/agents/sarah-madsen.jpg" alt="Sarah Madsen" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Sarah Madsen</span><span class="agent__num">07</span></div></article>
+        <article class="agent" data-name="Tomas Reyes" data-seasons="deep-winter shoulder-seasons"><div class="agent__photo"><img src="assets/agents/tomas-reyes.jpg" alt="Tomas Reyes" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Tomas Reyes</span><span class="agent__num">08</span></div></article>
+        <article class="agent" data-name="Bonnie Werner" data-seasons="late-winter first-snow"><div class="agent__photo"><img src="assets/agents/bonnie-werner.jpg" alt="Bonnie Werner" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Bonnie Werner</span><span class="agent__num">09</span></div></article>
+        <article class="agent" data-name="Eli Kaplan" data-seasons="aspen-turn summer"><div class="agent__photo"><img src="assets/agents/eli-kaplan.jpg" alt="Eli Kaplan" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Eli Kaplan</span><span class="agent__num">10</span></div></article>
+        <article class="agent" data-name="Nora Pelletier" data-seasons="shoulder-seasons deep-winter"><div class="agent__photo"><img src="assets/agents/nora-pelletier.jpg" alt="Nora Pelletier" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Nora Pelletier</span><span class="agent__num">11</span></div></article>
+        <article class="agent" data-name="Devon Scales" data-seasons="late-winter summer"><div class="agent__photo"><img src="assets/agents/devon-scales.jpg" alt="Devon Scales" loading="lazy" onerror="this.remove()" /></div><div class="agent__meta"><span class="agent__name">Devon Scales</span><span class="agent__num">12</span></div></article>
+      </div>
+      <p class="agents__empty" id="agents-empty" hidden>No one matches that search — try another name or season.</p>
+    </div>
+  </section>
+
+  <!-- ============================ LIFESTYLE ============================ -->
+  <section class="section life" id="life">
+    <div class="container">
+      <p class="eyebrow life__eyebrow">The Life We Live</p>
+      <div class="life__rows">
+        <div class="life-row row-ski">
+          <div class="life-img"><img src="assets/img/life-ski.png" alt="Fresh ski tracks carving down an untouched powder slope above the valley" /></div>
+          <span class="life-word">Ski.</span>
+        </div>
+        <div class="life-row row-ride">
+          <div class="life-img"><img src="assets/img/life-ride.png" alt="A rider on horseback on a trail lined with golden autumn aspens" /></div>
+          <span class="life-word">Ride.</span>
+        </div>
+        <div class="life-row row-rest">
+          <div class="life-img"><img src="assets/img/life-rest.png" alt="Rocking chairs on a warmly lit cabin porch at dusk" /></div>
+          <span class="life-word">Rest.</span>
+        </div>
+        <div class="life-row row-see">
+          <div class="life-img"><img src="assets/img/life-see.png" alt="A hazy blue-hour view over ridgelines and the valley below" /></div>
+          <span class="life-word">See.</span>
+        </div>
+        <div class="life-row row-stay">
+          <div class="life-img"><img src="assets/img/life-stay.png" alt="A glowing mountain home nestled in snow-covered aspens at night" /></div>
+          <span class="life-word">Stay.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STORIES ============================ -->
+  <section class="section stories" id="stories">
+    <div class="container">
+      <div class="stories__grid">
+        <div class="stories__lead">
+          <p class="eyebrow">Editor's Note</p>
+          <h2 class="h2">Time Is Priceless. How <br class="brk" />will you spend yours?</h2>
+          <p class="lede">People spend a fortune to visit this valley for a weekend. Some choose to make it their home.</p>
+        </div>
+        <div>
+          <p class="eyebrow">A Few Ideas From The Field</p>
+          <div class="story-list">
+            <a class="story" href="#">
+              <div>
+                <p class="story__cat">Seasonal Guide</p>
+                <span class="story__title">Steamboat Summer Bucket List 2026: 25 Must-Do Experiences</span>
+              </div>
+              <svg class="story__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="story" href="#">
+              <div>
+                <p class="story__cat">Local Events</p>
+                <span class="story__title">August Events in Steamboat</span>
+              </div>
+              <svg class="story__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="story" href="#">
+              <div>
+                <p class="story__cat">Mountain Living</p>
+                <span class="story__title">Guide to Living in Steamboat Year-Round: What Surprises new Residents</span>
+              </div>
+              <svg class="story__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <button class="pill-btn">View all stories <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GUIDES ============================ -->
+  <section class="section guides" id="guides">
+    <div class="container">
+      <div class="guides__grid">
+        <div class="guides__lead">
+          <p class="eyebrow">How We Work</p>
+          <h2 class="h2">Two sides of the <br class="brk" />same valley.</h2>
+        </div>
+        <div class="guide-cards">
+          <article class="guide">
+            <p class="guide__cat">Buying</p>
+            <h3 class="guide__title">Precision</h3>
+            <p class="guide__body">We tailor the search to the person in front of us. We know the ground, we know which homes are coming before they list, and we counsel you hardest where it matters — in the offer.</p>
+            <a class="link-gold" href="#">Buyer guide <span>→</span></a>
+          </article>
+          <article class="guide">
+            <p class="guide__cat">Selling</p>
+            <h3 class="guide__title">Fluency</h3>
+            <p class="guide__body">A sale is not the same as a sale done right. In a market this nuanced, the difference is measured in tens of thousands, and in the quiet confidence that nothing was left on the table.</p>
+            <a class="link-gold" href="#">Seller guide <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA — GroupGives ============================ -->
+  <section class="cta" id="groupgives">
+    <img class="cta__bg" src="assets/img/cta-town.png" alt="The lights of a mountain town glowing in the valley at dusk" />
+    <div class="cta__scrim"></div>
+    <div class="container">
+      <p class="eyebrow eyebrow--bright">Home</p>
+      <h2 class="h2">In 2013 we established <br class="brk" />GroupGives, giving back to <br class="brk" />the communities we serve.</h2>
+      <p class="lede">We believe the work we do here is bigger than any single transaction.</p>
+      <p class="cta__tag">The Group · Part of Steamboat</p>
+    </div>
+  </section>
+
+  <!-- ============================ READY ============================ -->
+  <section class="section ready" id="ready">
+    <div class="container">
+      <p class="eyebrow">When You're Ready To Look</p>
+      <h2 class="h2">The right home is somewhere <br class="brk" />in this valley. Let's find it.</h2>
+
+      <div class="toggles">
+        <button class="toggle is-active">I'm Buying</button>
+        <button class="toggle">I'm Selling</button>
+        <button class="toggle">I'm Exploring</button>
+      </div>
+
+      <div class="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="A neighborhood, a view, a kind of light…" />
+        <a class="link-gold search__begin" href="#">Begin <span>→</span></a>
+      </div>
+      <p class="ready__note">Browse homes represented by The Group in Steamboat Springs.</p>
+    </div>
+  </section>
+
+  <!-- ============================ AWARDS ============================ -->
+  <section class="section awards" id="awards">
+    <div class="container">
+      <h2 class="awards__title">Practiced. Proven. Yours.</h2>
+      <div class="awards__list">
+        <span class="awards__group">The Group</span>
+        <span class="awards__item">Luxury Portfolio International</span>
+        <span class="awards__item">Leading Real Estate Companies of the World</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+      <span class="footer__mark">© 2026 The Group</span>
+    </div>
+  </footer>
+
+  <script src="js/agents.js" defer></script>
+</body>
+</html>

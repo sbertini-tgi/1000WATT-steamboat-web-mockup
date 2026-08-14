@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Group — Content Mapping Framework (Production → New Site)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#fef7e9; --dark:#2f2f2f; --white:#f8f8f6;
+    --gold:#90773c; --gold-bright:#bd9d54; --ink:#2f2f2f;
+    --body:#4f4f4f; --muted:#8a8578; --line:#ddd6c6;
+    --serif:"Marcellus","Times New Roman",Georgia,serif;
+    --sans:"Inter",Arial,system-ui,sans-serif;
+    --track:0.24em;
+    --maxw:1160px;
+    --direct:#3f6f4e; --direct-bg:#eaf1ea;
+    --deeper:#2f5d78; --deeper-bg:#e7f0f5;
+    --transform:#8a6a1e; --transform-bg:#f6eed8;
+    --orphan:#9a3b2f; --orphan-bg:#f6e4df;
+    --net:#5b3f78; --net-bg:#efe8f5;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding:0 clamp(20px,5vw,56px);}
+
+  /* ---- header ---- */
+  header.masthead{background:var(--dark);color:var(--white);padding:clamp(48px,7vw,86px) 0 clamp(40px,6vw,64px);}
+  .eyebrow{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--gold-bright);margin:0 0 18px;font-weight:500;}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.08;margin:0 0 20px;letter-spacing:.01em;}
+  .masthead p.sub{max-width:60ch;color:#d7d3ca;font-size:clamp(15px,1.6vw,18px);margin:0;font-weight:300;}
+  .masthead .meta{margin-top:30px;font-size:12.5px;color:#9d988c;letter-spacing:.02em;}
+
+  /* ---- section scaffolding ---- */
+  section{padding:clamp(46px,6vw,80px) 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:0;}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.12;margin:0 0 8px;}
+  h2 .n{color:var(--gold);font-size:.62em;vertical-align:top;margin-right:.5em;font-family:var(--sans);font-weight:600;letter-spacing:.04em;}
+  h3{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,24px);margin:34px 0 12px;}
+  .lede{max-width:72ch;color:var(--body);font-size:16.5px;margin:0 0 6px;}
+  p{margin:0 0 14px;}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(144,119,60,.35);}
+  a:hover{border-color:var(--gold);}
+  strong{font-weight:600;}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:#efe7d3;padding:2px 6px;border-radius:4px;color:#5a4a1e;}
+
+  /* ---- TOC ---- */
+  nav.toc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:34px 0 0;}
+  nav.toc p.k{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:600;}
+  nav.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:40px;}
+  nav.toc li{margin:0 0 9px;font-size:14.5px;break-inside:avoid;}
+  nav.toc a{border:0;color:var(--ink);}
+  nav.toc a:hover{color:var(--gold);}
+  nav.toc a .num{color:var(--gold);font-weight:600;margin-right:8px;}
+
+  /* ---- legend / disposition chips ---- */
+  .chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap;line-height:1.5;}
+  .c-direct{background:var(--direct-bg);color:var(--direct);}
+  .c-deeper{background:var(--deeper-bg);color:var(--deeper);}
+  .c-transform{background:var(--transform-bg);color:var(--transform);}
+  .c-orphan{background:var(--orphan-bg);color:var(--orphan);}
+  .c-net{background:var(--net-bg);color:var(--net);}
+
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px;}
+  .legend .card{background:var(--white);border:1px solid var(--line);border-left-width:4px;border-radius:8px;padding:16px 18px;}
+  .legend .card.d1{border-left-color:var(--direct);}
+  .legend .card.d2{border-left-color:var(--deeper);}
+  .legend .card.d3{border-left-color:var(--transform);}
+  .legend .card.d4{border-left-color:var(--orphan);}
+  .legend .card.d5{border-left-color:var(--net);}
+  .legend .card p{margin:10px 0 0;font-size:13.5px;color:var(--body);line-height:1.5;}
+
+  /* ---- crosswalk two-column ---- */
+  .cross{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:24px;}
+  .cross .col{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px 24px;}
+  .cross .col h4{margin:0 0 14px;font-family:var(--sans);font-size:12px;letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .cross ul{margin:0;padding:0;list-style:none;}
+  .cross li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px;}
+  .cross li:last-child{border-bottom:0;}
+  .cross li .t{color:var(--muted);font-size:12px;}
+
+  /* ---- tables ---- */
+  .tablewrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:10px;}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--white);min-width:720px;}
+  thead th{background:#f3ecd9;text-align:left;padding:12px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6a5a2e;font-weight:600;border-bottom:1px solid var(--line);}
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body);}
+  tbody tr:last-child td{border-bottom:0;}
+  tbody td:first-child{color:var(--ink);font-weight:500;width:24%;}
+  tbody td .sec{color:var(--ink);font-weight:500;}
+  .grouprow td{background:var(--cream);font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:.01em;padding:12px 14px;}
+
+  /* ---- orphan cards ---- */
+  .orphans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px;}
+  .orphan{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--orphan);border-radius:8px;padding:18px 20px;}
+  .orphan h4{margin:0 0 4px;font-family:var(--serif);font-weight:400;font-size:19px;}
+  .orphan .why{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px;}
+  .orphan p{font-size:13.5px;color:var(--body);margin:0 0 10px;}
+  .orphan .rec{font-size:13px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;}
+  .orphan .rec b{color:var(--gold);}
+
+  /* ---- net-new ---- */
+  .callout{background:var(--net-bg);border:1px solid #d9cbe8;border-radius:10px;padding:22px 26px;margin-top:24px;}
+  .callout h3{margin-top:0;color:var(--net);}
+  .callout ul{margin:0;padding-left:20px;}
+  .callout li{margin:0 0 9px;color:#4a3a5e;font-size:14.5px;}
+
+  /* ---- steps ---- */
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:24px 0 0;}
+  ol.steps li{position:relative;padding:0 0 22px 52px;}
+  ol.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;background:var(--dark);color:var(--gold-bright);font-family:var(--serif);font-size:17px;display:flex;align-items:center;justify-content:center;}
+  ol.steps li h4{margin:2px 0 6px;font-family:var(--sans);font-size:16px;font-weight:600;}
+  ol.steps li p{font-size:14px;color:var(--body);margin:0;}
+
+  footer.foot{background:var(--dark);color:#9d988c;padding:28px 0;font-size:12.5px;}
+  footer.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:720px){
+    .cross{grid-template-columns:1fr;}
+    nav.toc ol{columns:1;}
+  }
+  @media print{
+    body{background:#fff;}
+    header.masthead,footer.foot{background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .masthead p.sub,.masthead .meta{color:#333;}
+    .eyebrow,h2 .n{color:#7a6320;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">The Group · Steamboat Springs · Web Rebrand</p>
+    <h1>Content Mapping Framework</h1>
+    <p class="sub">A repeatable method for deciding what happens to every piece of the current production site (<a href="https://thegrouprealestatess.com" target="group_prod_site"><code>thegrouprealestatess.com</code></a>) as its content moves into the new 1000WATT look &amp; feel — and a clear list of what has nowhere to go yet.</p>
+    <div class="meta">Sources: production site nav &amp; homepage · new mockup <a target="group_mock_site" href="index.html"><code>1000WATT-steamboat-web/index.html</code></a> &nbsp;·&nbsp; Prepared Aug 14, 2026</div>
+    <nav class="toc">
+      <p class="k">What's inside</p>
+      <ol>
+        <li><a href="#how"><span class="num">1</span>How to read this</a></li>
+        <li><a href="#rubric"><span class="num">2</span>The five-disposition rubric</a></li>
+        <li><a href="#crosswalk"><span class="num">3</span>IA crosswalk: old nav → new home</a></li>
+        <li><a href="#matrix"><span class="num">4</span>Full content mapping matrix</a></li>
+        <li><a href="#orphans"><span class="num">5</span>Orphan report (no home yet)</a></li>
+        <li><a href="#netnew"><span class="num">6</span>Net-new content the design needs</a></li>
+        <li><a href="#deeper"><span class="num">7</span>Deeper-page scaffold</a></li>
+        <li><a href="#next"><span class="num">8</span>Recommended next steps</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<section id="how">
+  <div class="wrap">
+    <h2><span class="n">01</span>How to read this</h2>
+    <p class="lede">The new mockup is a single, editorial homepage — a magazine-style narrative (<a target="group_mock_site" href="index.html#hero">Hero</a> → <a target="group_mock_site" href="index.html#buyers">Buyers Now</a> → <a target="group_mock_site" href="index.html#agents">Agents</a> → <a target="group_mock_site" href="index.html#life">Lifestyle</a> → <a target="group_mock_site" href="index.html#stories">Stories</a> → <a target="group_mock_site" href="index.html#guides">How We Work</a> → <a target="group_mock_site" href="index.html#groupgives">GroupGives</a> → <a target="group_mock_site" href="index.html#ready">Search</a>) rather than the utility-portal structure of the current site. The current site is a TRIBUS/IDX platform organized around <em>menus of tasks</em> (Buy, Sell, Resources, Blog); the new one is organized around <em>a feeling and a short set of moves</em>.</p>
+    <p class="lede">That mismatch is the whole job. This framework does three things: it gives every current content bucket a single <strong>disposition</strong> (what happens to it), it names the <strong>orphans</strong> (content the new design has no slot for), and it names the <strong>net-new</strong> content the new design invents and will need written from scratch. Use the rubric in §2 to classify any page not yet listed — it's meant to outlive this first pass.</p>
+    <p class="lede"><strong>One scope note:</strong> this inventory works at the content-bucket / navigation level (the site's information architecture), not every individual blog post or listing. Listings and posts flow through the buckets — settle the buckets first.</p>
+  </div>
+</section>
+
+<section id="rubric">
+  <div class="wrap">
+    <h2><span class="n">02</span>The five-disposition rubric</h2>
+    <p class="lede">Every piece of production content gets exactly one of these. When you find a page this document didn't list, run it through the same five questions and it lands cleanly.</p>
+    <div class="legend">
+      <div class="card d1">
+        <span class="chip c-direct">Direct</span>
+        <p>There is a section on the new homepage that this content <em>is</em>. It moves in with light copy edits. Ask: "Does a homepage section already exist for this?"</p>
+      </div>
+      <div class="card d2">
+        <span class="chip c-deeper">Deeper</span>
+        <p>Belongs on a sub-page reached from the nav; the homepage only teases or links to it. Ask: "Is this a whole page the header should point to, not a homepage block?"</p>
+      </div>
+      <div class="card d3">
+        <span class="chip c-transform">Transform</span>
+        <p>The information survives but must be rewritten into the new editorial voice (seasons, buyer briefs, "the valley") before it fits. Ask: "Does this need a new frame, not just a new coat of paint?"</p>
+      </div>
+      <div class="card d4">
+        <span class="chip c-orphan">Orphan</span>
+        <p>No slot in the current design. Requires a decision: retire it, or build a page for it. Ask: "If we shipped the mockup today, where would this literally go? Nowhere?"</p>
+      </div>
+      <div class="card d5">
+        <span class="chip c-net">Net-new</span>
+        <p>The <em>reverse</em> case — the new design invents this and production has nothing to fill it. It needs original content created. Ask: "Is this block empty until someone writes it?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="crosswalk">
+  <div class="wrap">
+    <h2><span class="n">03</span>IA crosswalk: old nav → new home</h2>
+    <p class="lede">The current site's seven top-level menus versus the new homepage's sections and its five header links (<em><a target="group_mock_site" href="index.html#agents">The People</a> · <a target="group_mock_site" href="index.html#buyers">Buyers Now</a> · <a target="group_mock_site" href="index.html#life">Lifestyle</a> · <a target="group_mock_site" href="index.html#guides">How We Work</a> · <a target="group_mock_site" href="index.html#ready">Search</a></em>). Side by side, the gaps are visible at a glance.</p>
+    <div class="cross">
+      <div class="col">
+        <h4>Production navigation (current)</h4>
+        <ul>
+          <li><a href="https://thegrouprealestatess.com/sell-with-the-group/" target="group_prod_site">Sell</a> <span class="t">— Sell with The Group</span></li>
+          <li>Buy <span class="t">— <a href="https://thegrouprealestatess.com/properties/?archive_view=grid" target="group_prod_site">Search</a>, <a href="https://thegrouprealestatess.com/buy-with-the-group/" target="group_prod_site">Buy with</a>, <a href="https://thegrouprealestatess.com/tips-for-second-home-buyers/" target="group_prod_site">2nd-home tips</a>, <a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Sale" target="group_prod_site">Commercial Sale</a>/<a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Lease" target="group_prod_site">Lease</a>, <a href="https://thegrouprealestatess.com/properties/?county_or_parish=Routt%2CMoffat%2CJackson&amp;mls_status=Active&amp;open_house_end_time_within=14&amp;open_house_type=Public&amp;archive_view=grid" target="group_prod_site">Open Houses</a>, <a href="https://thegrouprealestatess.com/properties?mls_status=Closed&amp;property_type=Residential,Attached%20Dwelling" target="group_prod_site">Sold Homes</a>, <a href="https://thegrouprealestatess.com/mortgage/" target="group_prod_site">Mortgage</a></span></li>
+          <li><a href="https://thegrouprealestatess.com/our-brokers/" target="group_prod_site">Our Brokers</a></li>
+          <li>Resources <span class="t">— <a href="https://thegrouprealestatess.com/why-steamboat-springs/" target="group_prod_site">Why Steamboat</a>, <a href="https://thegrouprealestatess.com/our-communities/" target="group_prod_site">Communities</a>, <a href="https://thegrouprealestatess.com/monthly-market-reports/" target="group_prod_site">Market Report</a>, <a href="https://thegrouprealestatess.com/the-real-estate-insider/" target="group_prod_site">Real Estate Insider</a>, <a href="https://thegrouprealestatess.com/annual-real-estate-report/" target="group_prod_site">Annual Report</a>, <a href="https://thegrouprealestatess.com/property-management-and-vacation-rentals/" target="group_prod_site">Property Mgmt/Rentals</a>, <a href="https://thegrouprealestatess.com/forecast/" target="group_prod_site">Forecast</a></span></li>
+          <li>About <span class="t">— <a href="https://thegrouprealestatess.com/about/" target="group_prod_site">About Us</a>, <a href="https://thegrouprealestatess.com/lpi/" target="group_prod_site">Luxury Portfolio Intl</a>, <a href="https://thegrouprealestatess.com/affiliated-partners/" target="group_prod_site">Affiliated Partners</a>, <a href="https://thegrouprealestatess.com/our-offices/" target="group_prod_site">Offices</a>, <a href="https://thegrouprealestatess.com/our-leadership-team/" target="group_prod_site">Leadership</a>, <a href="https://thegrouprealestatess.com/group-gives-yampa-valley/" target="group_prod_site">GroupGives</a></span></li>
+          <li><a href="https://thegrouprealestatess.com/contact/" target="group_prod_site">Contact</a></li>
+          <li><a href="https://thegrouprealestatess.com/blog/" target="group_prod_site">Blog</a> <span class="t">— 8 categories</span></li>
+          <li>Account <span class="t">— Login / Signup / saved search</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>New homepage (mockup)</h4>
+        <ul>
+          <li><a target="group_mock_site" href="index.html#hero">Hero</a> <span class="t">— brand statement</span></li>
+          <li><a target="group_mock_site" href="index.html#buyers">Buyers Now</a> <span class="t">— live buyer briefs (new)</span></li>
+          <li><a target="group_mock_site" href="index.html#inquire">Inquiry form</a> <span class="t">— "have a property for these buyers?"</span></li>
+          <li><a target="group_mock_site" href="index.html#agents">The People</a> <span class="t">— agent grid, search + season filter</span></li>
+          <li><a target="group_mock_site" href="index.html#life">Lifestyle</a> <span class="t">— Ski · Ride · Rest · See · Stay</span></li>
+          <li><a target="group_mock_site" href="index.html#stories">Stories</a> <span class="t">— editorial / guides</span></li>
+          <li><a target="group_mock_site" href="index.html#guides">How We Work</a> <span class="t">— Buying (Precision) / Selling (Fluency)</span></li>
+          <li><a target="group_mock_site" href="index.html#groupgives">GroupGives CTA</a> · <a target="group_mock_site" href="index.html#awards">Awards</a> · <a target="group_mock_site" href="index.html#ready">Search</a> · <a target="group_mock_site" href="index.html#footer">Footer</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px;color:var(--body);font-size:14.5px;">The header links reduce a ~30-item menu to five moves. Everything that used to be a menu item still has to live <em>somewhere</em> — the matrix below assigns each one.</p>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <h2><span class="n">04</span>Full content mapping matrix</h2>
+    <p class="lede">Every production content bucket, its disposition, where it lands in the new site, and the working note. Chips use the §2 rubric.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Production content</th><th>Disposition</th><th>New destination</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grouprow"><td colspan="4">Buy &amp; Sell</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/buy-with-the-group/" target="group_prod_site">Buy with The Group</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#guides">How We Work → Buying "Precision"</a></span></td><td>Homepage card already exists; links to a fuller buyer guide.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/sell-with-the-group/" target="group_prod_site">Sell with The Group</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#guides">How We Work → Selling "Fluency"</a></span></td><td>Card exists; links to seller guide.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/properties/?archive_view=grid" target="group_prod_site">Search Properties (IDX)</a></td><td><span class="chip c-deeper">Deeper</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#ready">Search section → results page</a></span></td><td>Homepage has the search entry (Buying/Selling/Exploring); actual IDX results live on a deeper page or platform.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/tips-for-second-home-buyers/" target="group_prod_site">Tips for Second-Home Buyers</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#stories">Stories</a></span> or Buyer guide</td><td>Reframe as an editorial piece in the new voice rather than a tips list.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/properties/?county_or_parish=Routt%2CMoffat%2CJackson&amp;mls_status=Active&amp;open_house_end_time_within=14&amp;open_house_type=Public&amp;archive_view=grid" target="group_prod_site">Open Houses</a></td><td><span class="chip c-deeper">Deeper</span></td><td><a target="group_mock_site" href="index.html#ready">Search</a> / listings utility page</td><td>Functional listing view; no homepage block. Link from Search.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/properties?mls_status=Closed&amp;property_type=Residential,Attached%20Dwelling" target="group_prod_site">Sold Homes</a></td><td><span class="chip c-deeper">Deeper</span></td><td><a target="group_mock_site" href="index.html#ready">Search</a> / listings utility page</td><td>Proof-of-work listing view; deeper page.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Sale" target="group_prod_site">Commercial Sale</a> &amp; <a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Lease" target="group_prod_site">Commercial Lease</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>New site is residential/lifestyle in tone. No slot. See §5.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/mortgage/" target="group_prod_site">Mortgage</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Utility/finance content clashes with editorial tone. See §5.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">People</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/our-brokers/" target="group_prod_site">Our Brokers</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#agents">The People (agent grid)</a></span></td><td>Maps cleanly; new grid adds name-search + season filter. Agent detail pages are Deeper.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/our-leadership-team/" target="group_prod_site">Our Leadership Team</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#agents">The People</a></span> (deeper "About") </td><td>New grid is flat/egalitarian ("every one owns a piece"). Leadership becomes a facet of an About page, not a hierarchy block.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Place &amp; Lifestyle</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/why-steamboat-springs/" target="group_prod_site">Why Steamboat Springs?</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#life">Lifestyle</a></span> + <a target="group_mock_site" href="index.html#stories">Stories</a></td><td>Becomes the Ski/Ride/Rest/See/Stay narrative rather than a sales pitch page.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/our-communities/" target="group_prod_site">Our Communities (neighborhoods)</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>No neighborhood/community structure in the mockup. High-value SEO + buyer content. See §5.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/property-management-and-vacation-rentals/" target="group_prod_site">Property Mgmt &amp; Vacation Rentals</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>A distinct service line with no home in the new design. See §5.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Market data &amp; resources</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/monthly-market-reports/" target="group_prod_site">Monthly Market Report</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#stories">Stories</a></span> (deeper reports hub)</td><td>Editorialize as recurring "from the field" pieces; archive lives deeper.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/annual-real-estate-report/" target="group_prod_site">Annual Real Estate Report</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="group_mock_site" href="index.html#stories">Stories</a> / Reports hub</td><td>Same treatment; flagship data piece.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/the-real-estate-insider/" target="group_prod_site">The Real Estate Insider</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="group_mock_site" href="index.html#stories">Stories</a></td><td>Folds into the editorial stream.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/forecast/" target="group_prod_site">Forecast</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Data tool with no editorial or utility home yet. See §5.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Editorial</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/blog/" target="group_prod_site">Blog (8 categories)</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#stories">Stories</a></span> + "View all stories"</td><td>New "Stories" teases 3; full blog/index is Deeper. Categories collapse into the new voice; Mortgage/Commercial categories may retire with their sections.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">About &amp; affiliations</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/about/" target="group_prod_site">About Us</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Only brand fragments live in <a target="group_mock_site" href="index.html#hero">Hero</a>/<a target="group_mock_site" href="index.html#groupgives">GroupGives</a>; no dedicated About. See §5.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/lpi/" target="group_prod_site">Luxury Portfolio International</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#awards">Awards / affiliations strip</a></span></td><td>Named in the Awards row; detail page is Deeper.</td></tr>
+          <tr><td>Leading RE Companies of the World</td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#awards">Awards / affiliations strip</a></span></td><td>Named in Awards row.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/affiliated-partners/" target="group_prod_site">Affiliated Partners</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="group_mock_site" href="index.html#awards">Awards</a> (deeper page)</td><td>Homepage names marquee affiliations; full partner list is Deeper.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/our-offices/" target="group_prod_site">Our Offices</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="group_mock_site" href="index.html#footer">Footer</a> + Contact page</td><td>Address/phone move to footer &amp; a Contact page; no homepage "offices" block.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/group-gives-yampa-valley/" target="group_prod_site">GroupGives Yampa Valley</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#groupgives">GroupGives CTA</a></span></td><td>Full-bleed CTA already built; links to a Deeper GroupGives page.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Utility &amp; system</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com/contact/" target="group_prod_site">Contact</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#footer">Footer link</a></span> → Contact page</td><td>Footer has a Contact link; a real contact page is Deeper.</td></tr>
+          <tr><td>Account: Login / Signup / Saved search</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>No account UI in the mockup. Tied to the IDX platform decision. See §5.</td></tr>
+          <tr><td><a href="https://thegrouprealestatess.com" target="group_prod_site">Featured Properties carousel (home)</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>New homepage shows <em>buyers</em>, not <em>listings</em>. Deliberate inversion — confirm this is intended. See §5.</td></tr>
+          <tr><td>Privacy / Terms / Accessibility / MLS &amp; EHO disclaimers</td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="group_mock_site" href="index.html#footer">Footer</a></span></td><td>Footer has Privacy/Terms; add Accessibility + required MLS/EHO/REALTOR® disclaimers (compliance — non-optional).</td></tr>
+          <tr><td>TRIBUS / IDX platform &amp; MLS feed</td><td><span class="chip c-deeper">Deeper</span></td><td><a target="group_mock_site" href="index.html#ready">Search</a> &amp; listings back-end</td><td>Not "content" but the engine behind Search/Open Houses/Sold/account. Its fate drives several rows above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="orphans">
+  <div class="wrap">
+    <h2><span class="n">05</span>Orphan report — content with no home yet</h2>
+    <p class="lede">These are the decisions the mockup forces. Each is real production content (or a real function) that the new single-page design simply has no slot for. For each: a recommendation, but the call is yours.</p>
+    <div class="orphans">
+      <div class="orphan">
+        <h4>Property search &amp; live listings</h4>
+        <p class="why"><a href="https://thegrouprealestatess.com" target="group_prod_site">Featured Properties</a> · <a href="https://thegrouprealestatess.com/properties/?archive_view=grid" target="group_prod_site">IDX</a> · <a href="https://thegrouprealestatess.com/properties/?county_or_parish=Routt%2CMoffat%2CJackson&amp;mls_status=Active&amp;open_house_end_time_within=14&amp;open_house_type=Public&amp;archive_view=grid" target="group_prod_site">Open Houses</a> · <a href="https://thegrouprealestatess.com/properties?mls_status=Closed&amp;property_type=Residential,Attached%20Dwelling" target="group_prod_site">Sold</a> · Account</p>
+        <p>The current homepage leads with 20 listings; the new one leads with <em>buyers</em> and never shows a listing. The search box is an entry point, not a results grid.</p>
+        <p class="rec"><b>Recommend:</b> keep the IDX (TRIBUS or successor) as a deeper "Search / Listings" experience linked from the <a target="group_mock_site" href="index.html#ready">Search section</a>; decide whether login/saved-search survives. Confirm the buyers-not-listings inversion is intended before building.</p>
+      </div>
+      <div class="orphan">
+        <h4>Commercial real estate</h4>
+        <p class="why"><a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Sale" target="group_prod_site">Commercial Sale</a> · <a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Lease" target="group_prod_site">Commercial Lease</a></p>
+        <p>An entire service line. The new site's voice is residential and lifestyle-led; commercial has no tone-appropriate slot.</p>
+        <p class="rec"><b>Recommend:</b> spin off to its own deeper page (or micro-site) linked from footer/Services — don't force it into the editorial narrative.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegrouprealestatess.com/our-communities/" target="group_prod_site">Our Communities</a></h4>
+        <p class="why">Neighborhood / area guides</p>
+        <p>Community pages are major buyer-intent and SEO assets. Lifestyle (Ski/Ride/Rest…) is thematic, not geographic, so it doesn't replace them.</p>
+        <p class="rec"><b>Recommend:</b> build a deeper "Communities" section; consider linking to it from <a target="group_mock_site" href="index.html#life">Lifestyle</a> or <a target="group_mock_site" href="index.html#ready">Search</a>. High priority to retain.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegrouprealestatess.com/property-management-and-vacation-rentals/" target="group_prod_site">Property management &amp; vacation rentals</a></h4>
+        <p class="why">Service line</p>
+        <p>A distinct revenue/service offering with its own audience. Nothing in the mockup addresses it.</p>
+        <p class="rec"><b>Recommend:</b> deeper service page; decide whether it's promoted in nav/footer or treated as a separate brand.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegrouprealestatess.com/mortgage/" target="group_prod_site">Mortgage</a> &amp; <a href="https://thegrouprealestatess.com/forecast/" target="group_prod_site">Forecast</a></h4>
+        <p class="why">Finance utilities</p>
+        <p>Mortgage info and the market Forecast tool are utility content that clashes with the editorial tone and has no block.</p>
+        <p class="rec"><b>Recommend:</b> fold Mortgage into the buyer guide (Deeper); make Forecast part of a market-reports hub, or retire if low-traffic.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegrouprealestatess.com/about/" target="group_prod_site">About Us</a></h4>
+        <p class="why">Company story</p>
+        <p>The brand's story survives only as fragments (<a target="group_mock_site" href="index.html#hero">Hero line</a>, <a target="group_mock_site" href="index.html#groupgives">GroupGives</a>). There's no place that tells who The Group is.</p>
+        <p class="rec"><b>Recommend:</b> build a deeper About page that gathers the brand statement, ownership model ("everyone owns a piece"), leadership, offices, and affiliations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="netnew">
+  <div class="wrap">
+    <h2><span class="n">06</span>Net-new content the design needs</h2>
+    <p class="lede">The reverse gap: sections the mockup invents that production has <em>nothing</em> to fill. These aren't migrations — they're content that has to be written or produced before the new site can ship honestly.</p>
+    <div class="callout">
+      <h3>Content that must be created</h3>
+      <ul>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Buyers Now — live buyer briefs.</strong> The signature idea: real, anonymized buyers with budget, story, and a representing agent. Reverse-prospecting content that has no production source. Needs a sourcing + writing + approval workflow (and the "Read the brief" / inquiry-form pipeline behind it).</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Season taxonomy for agents.</strong> The agent grid filters by Deep Winter / First Snow / Late Winter / Shoulder / Aspen Turn / Summer. Every broker needs season tags assigned — a new data field that doesn't exist today.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Editorial voice pass.</strong> Hero line, eyebrows, "the valley" language, buyer-brief copy. The migrated content (market reports, tips, why-Steamboat) must be rewritten to match — budget for a copy/editorial pass, not just a paste.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Lifestyle photography.</strong> Ski / Ride / Rest / See / Stay each need a hero-grade image. The mockup uses placeholders; production imagery likely won't match this art direction.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Buyer &amp; Seller guides.</strong> "Precision" and "Fluency" cards link to guides that don't exist as such yet — the current Buy/Sell pages are the raw material but need rewriting.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="deeper">
+  <div class="wrap">
+    <h2><span class="n">07</span>Deeper-page scaffold</h2>
+    <p class="lede">The mockup's own comment says it: "assume there are deeper pages behind the home page." Here's the implied sitemap — each homepage entry point and the pages that hang off it, with the production content that feeds each.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Homepage entry point</th><th>Deeper page(s) implied</th><th>Fed by (production)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a target="group_mock_site" href="index.html#agents">The People</a></td><td>Agent index · individual agent profiles</td><td><a href="https://thegrouprealestatess.com/our-brokers/" target="group_prod_site">Our Brokers</a> · <a href="https://thegrouprealestatess.com/our-leadership-team/" target="group_prod_site">Leadership</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#buyers">Buyers Now</a></td><td>Individual buyer-brief pages · "submit a property" thank-you</td><td>Net-new (§6)</td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#ready">Search</a></td><td>IDX results · map search · Open Houses · Sold Homes · saved search/account</td><td><a href="https://thegrouprealestatess.com/properties/?archive_view=grid" target="group_prod_site">Search Properties</a> · <a href="https://thegrouprealestatess.com/properties/?county_or_parish=Routt%2CMoffat%2CJackson&amp;mls_status=Active&amp;open_house_end_time_within=14&amp;open_house_type=Public&amp;archive_view=grid" target="group_prod_site">Open Houses</a> · <a href="https://thegrouprealestatess.com/properties?mls_status=Closed&amp;property_type=Residential,Attached%20Dwelling" target="group_prod_site">Sold Homes</a> · TRIBUS/IDX</td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#guides">How We Work</a></td><td>Buyer guide · Seller guide</td><td><a href="https://thegrouprealestatess.com/buy-with-the-group/" target="group_prod_site">Buy with</a> · <a href="https://thegrouprealestatess.com/sell-with-the-group/" target="group_prod_site">Sell with</a> · <a href="https://thegrouprealestatess.com/tips-for-second-home-buyers/" target="group_prod_site">2nd-home tips</a> · <a href="https://thegrouprealestatess.com/mortgage/" target="group_prod_site">Mortgage</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#life">Lifestyle</a></td><td>Communities / neighborhood guides · area experiences</td><td><a href="https://thegrouprealestatess.com/why-steamboat-springs/" target="group_prod_site">Why Steamboat</a> · <a href="https://thegrouprealestatess.com/our-communities/" target="group_prod_site">Our Communities</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#stories">Stories</a></td><td>Blog index · category pages · market-reports hub</td><td><a href="https://thegrouprealestatess.com/blog/" target="group_prod_site">Blog</a> · <a href="https://thegrouprealestatess.com/monthly-market-reports/" target="group_prod_site">Market</a>/<a href="https://thegrouprealestatess.com/annual-real-estate-report/" target="group_prod_site">Annual reports</a> · <a href="https://thegrouprealestatess.com/the-real-estate-insider/" target="group_prod_site">Real Estate Insider</a> · <a href="https://thegrouprealestatess.com/forecast/" target="group_prod_site">Forecast</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#groupgives">GroupGives CTA</a></td><td>GroupGives Yampa Valley page</td><td><a href="https://thegrouprealestatess.com/group-gives-yampa-valley/" target="group_prod_site">GroupGives</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#awards">Awards</a></td><td>Affiliations detail (Luxury Portfolio, LeadingRE, partners)</td><td><a href="https://thegrouprealestatess.com/lpi/" target="group_prod_site">Luxury Portfolio Intl</a> · <a href="https://thegrouprealestatess.com/affiliated-partners/" target="group_prod_site">Affiliated Partners</a></td></tr>
+          <tr><td><a target="group_mock_site" href="index.html#footer">Footer</a></td><td>About · Contact · Offices · Privacy · Terms · Accessibility · Commercial · Property Mgmt</td><td><a href="https://thegrouprealestatess.com/about/" target="group_prod_site">About Us</a> · <a href="https://thegrouprealestatess.com/contact/" target="group_prod_site">Contact</a> · <a href="https://thegrouprealestatess.com/our-offices/" target="group_prod_site">Our Offices</a> · legal · <a href="https://thegrouprealestatess.com/properties?property_type=Commercial%20Sale" target="group_prod_site">Commercial</a> · <a href="https://thegrouprealestatess.com/property-management-and-vacation-rentals/" target="group_prod_site">Property Mgmt</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+    <h2><span class="n">08</span>Recommended next steps</h2>
+    <ol class="steps">
+      <li>
+        <h4>Confirm the three big inversions</h4>
+        <p>Buyers-not-listings on the homepage, flat agent grid (no leadership hierarchy), and editorial-over-utility tone. These drive every orphan decision — lock them before building deeper pages.</p>
+      </li>
+      <li>
+        <h4>Rule on each orphan in §5</h4>
+        <p>For Commercial, Communities, Property Mgmt, Mortgage/Forecast, About, and the IDX/account stack: decide <em>retire</em> vs <em>build a deeper page</em>. That turns this framework into a real sitemap.</p>
+      </li>
+      <li>
+        <h4>Stand up the deeper-page skeleton (§7)</h4>
+        <p>Create routes/stubs for the implied pages so nav links resolve and migration has a destination.</p>
+      </li>
+      <li>
+        <h4>Commission the net-new content (§6)</h4>
+        <p>Buyer briefs, agent season-tags, lifestyle photography, and the buyer/seller guides gate launch — start them in parallel with the migration.</p>
+      </li>
+      <li>
+        <h4>Migrate bucket by bucket, voice-editing as you go</h4>
+        <p>Work the matrix top to bottom. Every "Transform" row is a copy task, not a copy-paste. Keep compliance disclaimers (MLS/EHO/REALTOR®/accessibility) non-negotiable in the footer.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>The Group · Steamboat Springs — Content Mapping Framework</span>
+    <span>Production → 1000WATT rebrand · working document</span>
+  </div>
+</footer>
+
+</body>
+</html>

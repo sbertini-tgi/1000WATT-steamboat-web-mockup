@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Local tooling
+.claude/
+
+# Internal collateral — do NOT publish to a public GitHub Pages site.
+# Remove this line if you intend the brand guidelines to be public.
+specs/

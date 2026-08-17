@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Group — Content Mapping Framework (Fort Collins Tribus → New Site)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#fef7e9; --dark:#2f2f2f; --white:#f8f8f6;
+    --gold:#90773c; --gold-bright:#bd9d54; --ink:#2f2f2f;
+    --body:#4f4f4f; --muted:#8a8578; --line:#ddd6c6;
+    --serif:"Marcellus","Times New Roman",Georgia,serif;
+    --sans:"Inter",Arial,system-ui,sans-serif;
+    --track:0.24em;
+    --maxw:1160px;
+    --direct:#3f6f4e; --direct-bg:#eaf1ea;
+    --deeper:#2f5d78; --deeper-bg:#e7f0f5;
+    --transform:#8a6a1e; --transform-bg:#f6eed8;
+    --orphan:#9a3b2f; --orphan-bg:#f6e4df;
+    --net:#5b3f78; --net-bg:#efe8f5;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding:0 clamp(20px,5vw,56px);}
+
+  /* ---- header ---- */
+  header.masthead{background:var(--dark);color:var(--white);padding:clamp(48px,7vw,86px) 0 clamp(40px,6vw,64px);}
+  .eyebrow{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--gold-bright);margin:0 0 18px;font-weight:500;}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.08;margin:0 0 20px;letter-spacing:.01em;}
+  .masthead p.sub{max-width:60ch;color:#d7d3ca;font-size:clamp(15px,1.6vw,18px);margin:0;font-weight:300;}
+  .masthead .meta{margin-top:30px;font-size:12.5px;color:#9d988c;letter-spacing:.02em;}
+
+  /* ---- section scaffolding ---- */
+  section{padding:clamp(46px,6vw,80px) 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:0;}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.12;margin:0 0 8px;}
+  h2 .n{color:var(--gold);font-size:.62em;vertical-align:top;margin-right:.5em;font-family:var(--sans);font-weight:600;letter-spacing:.04em;}
+  h3{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,24px);margin:34px 0 12px;}
+  .lede{max-width:72ch;color:var(--body);font-size:16.5px;margin:0 0 6px;}
+  p{margin:0 0 14px;}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(144,119,60,.35);}
+  a:hover{border-color:var(--gold);}
+  strong{font-weight:600;}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:#efe7d3;padding:2px 6px;border-radius:4px;color:#5a4a1e;}
+
+  /* ---- TOC ---- */
+  nav.toc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:34px 0 0;}
+  nav.toc p.k{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:600;}
+  nav.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:40px;}
+  nav.toc li{margin:0 0 9px;font-size:14.5px;break-inside:avoid;}
+  nav.toc a{border:0;color:var(--ink);}
+  nav.toc a:hover{color:var(--gold);}
+  nav.toc a .num{color:var(--gold);font-weight:600;margin-right:8px;}
+
+  /* ---- legend / disposition chips ---- */
+  .chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap;line-height:1.5;}
+  .c-direct{background:var(--direct-bg);color:var(--direct);}
+  .c-deeper{background:var(--deeper-bg);color:var(--deeper);}
+  .c-transform{background:var(--transform-bg);color:var(--transform);}
+  .c-orphan{background:var(--orphan-bg);color:var(--orphan);}
+  .c-net{background:var(--net-bg);color:var(--net);}
+
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px;}
+  .legend .card{background:var(--white);border:1px solid var(--line);border-left-width:4px;border-radius:8px;padding:16px 18px;}
+  .legend .card.d1{border-left-color:var(--direct);}
+  .legend .card.d2{border-left-color:var(--deeper);}
+  .legend .card.d3{border-left-color:var(--transform);}
+  .legend .card.d4{border-left-color:var(--orphan);}
+  .legend .card.d5{border-left-color:var(--net);}
+  .legend .card p{margin:10px 0 0;font-size:13.5px;color:var(--body);line-height:1.5;}
+
+  /* ---- crosswalk two-column ---- */
+  .cross{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:24px;}
+  .cross .col{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px 24px;}
+  .cross .col h4{margin:0 0 14px;font-family:var(--sans);font-size:12px;letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .cross ul{margin:0;padding:0;list-style:none;}
+  .cross li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px;}
+  .cross li:last-child{border-bottom:0;}
+  .cross li .t{color:var(--muted);font-size:12px;}
+
+  /* ---- tables ---- */
+  .tablewrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:10px;}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--white);min-width:720px;}
+  thead th{background:#f3ecd9;text-align:left;padding:12px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6a5a2e;font-weight:600;border-bottom:1px solid var(--line);}
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body);}
+  tbody tr:last-child td{border-bottom:0;}
+  tbody td:first-child{color:var(--ink);font-weight:500;width:24%;}
+  tbody td .sec{color:var(--ink);font-weight:500;}
+  .grouprow td{background:var(--cream);font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:.01em;padding:12px 14px;}
+
+  /* ---- orphan cards ---- */
+  .orphans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px;}
+  .orphan{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--orphan);border-radius:8px;padding:18px 20px;}
+  .orphan h4{margin:0 0 4px;font-family:var(--serif);font-weight:400;font-size:19px;}
+  .orphan .why{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px;}
+  .orphan p{font-size:13.5px;color:var(--body);margin:0 0 10px;}
+  .orphan .rec{font-size:13px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;}
+  .orphan .rec b{color:var(--gold);}
+
+  /* ---- net-new ---- */
+  .callout{background:var(--net-bg);border:1px solid #d9cbe8;border-radius:10px;padding:22px 26px;margin-top:24px;}
+  .callout h3{margin-top:0;color:var(--net);}
+  .callout ul{margin:0;padding-left:20px;}
+  .callout li{margin:0 0 9px;color:#4a3a5e;font-size:14.5px;}
+
+  /* ---- steps ---- */
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:24px 0 0;}
+  ol.steps li{position:relative;padding:0 0 22px 52px;}
+  ol.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;background:var(--dark);color:var(--gold-bright);font-family:var(--serif);font-size:17px;display:flex;align-items:center;justify-content:center;}
+  ol.steps li h4{margin:2px 0 6px;font-family:var(--sans);font-size:16px;font-weight:600;}
+  ol.steps li p{font-size:14px;color:var(--body);margin:0;}
+
+  footer.foot{background:var(--dark);color:#9d988c;padding:28px 0;font-size:12.5px;}
+  footer.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:720px){
+    .cross{grid-template-columns:1fr;}
+    nav.toc ol{columns:1;}
+  }
+  @media print{
+    body{background:#fff;}
+    header.masthead,footer.foot{background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .masthead p.sub,.masthead .meta{color:#333;}
+    .eyebrow,h2 .n{color:#7a6320;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">The Group · Fort Collins · Web Rebrand</p>
+    <h1>Content Mapping Framework</h1>
+    <p class="sub">The companion to the Steamboat framework — same method, same target design, a different source site. It decides what happens to every piece of the Fort Collins brokerage site (<a href="https://thegroup-fortcollins-cms.mytribus.com" target="fc_site"><code>thegroup-fortcollins-cms.mytribus.com</code></a>, a TRIBUS port) as its content moves into the new 1000WATT look &amp; feel — the same layout slated for Steamboat — and names what has nowhere to go yet.</p>
+    <div class="meta">Sources: Fort Collins Tribus site nav &amp; pages (30 destinations crawled) · new mockup <a target="mock_site" href="index.html"><code>index.html</code></a> &nbsp;·&nbsp; Prepared Aug 17, 2026 · Read alongside <a href="steamboat-to-1000watt-mapping.html">steamboat-to-1000watt-mapping.html</a></div>
+    <nav class="toc">
+      <p class="k">What's inside</p>
+      <ol>
+        <li><a href="#how"><span class="num">1</span>How to read this</a></li>
+        <li><a href="#rubric"><span class="num">2</span>The five-disposition rubric</a></li>
+        <li><a href="#crosswalk"><span class="num">3</span>IA crosswalk: old nav → new home</a></li>
+        <li><a href="#matrix"><span class="num">4</span>Full content mapping matrix</a></li>
+        <li><a href="#orphans"><span class="num">5</span>Orphan report (no home yet)</a></li>
+        <li><a href="#netnew"><span class="num">6</span>Net-new content the design needs</a></li>
+        <li><a href="#deeper"><span class="num">7</span>Deeper-page scaffold</a></li>
+        <li><a href="#next"><span class="num">8</span>Recommended next steps</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<section id="how">
+  <div class="wrap">
+    <h2><span class="n">01</span>How to read this</h2>
+    <p class="lede">The new mockup is a single, editorial homepage — a magazine-style narrative (<a target="mock_site" href="index.html#hero">Hero</a> → <a target="mock_site" href="index.html#buyers">Buyers Now</a> → <a target="mock_site" href="index.html#agents">The People</a> → <a target="mock_site" href="index.html#life">Lifestyle</a> → <a target="mock_site" href="index.html#stories">Stories</a> → <a target="mock_site" href="index.html#guides">How We Work</a> → <a target="mock_site" href="index.html#groupgives">GroupGives</a> → <a target="mock_site" href="index.html#ready">Search</a>) rather than the utility-portal structure of the current site. The Fort Collins site is a TRIBUS/IDX platform organized around <em>menus of tasks</em> (Search, Buy, Sell, Market Data, About); the new one is organized around <em>a feeling and a short set of moves</em>.</p>
+    <p class="lede">That mismatch is the whole job. This framework does three things: it gives every current content bucket a single <strong>disposition</strong> (what happens to it), it names the <strong>orphans</strong> (content the new design has no slot for), and it names the <strong>net-new</strong> content the new design invents and will need written from scratch. Use the rubric in §2 to classify any page not yet listed — it's meant to outlive this first pass.</p>
+    <p class="lede"><strong>Comparison note:</strong> this is the Fort Collins counterpart to the Steamboat framework, and the target design is deliberately <em>the same</em>. The differences are mostly <em>data, not structure</em> — Fort Collins / Greeley / Loveland communities in place of the Yampa Valley, a <a href="https://thegroup-fortcollins-cms.mytribus.com/our-realtors" target="fc_site">277-broker</a> roster, six offices (including Greeley and, already, Steamboat), and a far deeper <a href="https://thegroup-fortcollins-cms.mytribus.com/market-data" target="fc_site">Market Data</a> library than the Steamboat production site carries. Where a row diverges from the Steamboat mapping, the note says so.</p>
+    <p class="lede"><strong>One scope note:</strong> this inventory works at the content-bucket / navigation level (the site's information architecture), not every individual blog post, report, or listing. Listings, issues, and posts flow through the buckets — settle the buckets first.</p>
+  </div>
+</section>
+
+<section id="rubric">
+  <div class="wrap">
+    <h2><span class="n">02</span>The five-disposition rubric</h2>
+    <p class="lede">Every piece of Fort Collins content gets exactly one of these. When you find a page this document didn't list, run it through the same five questions and it lands cleanly. Identical rubric to the Steamboat framework, so the two read the same way.</p>
+    <div class="legend">
+      <div class="card d1">
+        <span class="chip c-direct">Direct</span>
+        <p>There is a section on the new homepage that this content <em>is</em>. It moves in with light copy edits. Ask: "Does a homepage section already exist for this?"</p>
+      </div>
+      <div class="card d2">
+        <span class="chip c-deeper">Deeper</span>
+        <p>Belongs on a sub-page reached from the nav; the homepage only teases or links to it. Ask: "Is this a whole page the header should point to, not a homepage block?"</p>
+      </div>
+      <div class="card d3">
+        <span class="chip c-transform">Transform</span>
+        <p>The information survives but must be rewritten into the new editorial voice before it fits. Ask: "Does this need a new frame, not just a new coat of paint?"</p>
+      </div>
+      <div class="card d4">
+        <span class="chip c-orphan">Orphan</span>
+        <p>No slot in the current design. Requires a decision: retire it, or build a page for it. Ask: "If we shipped the mockup today, where would this literally go? Nowhere?"</p>
+      </div>
+      <div class="card d5">
+        <span class="chip c-net">Net-new</span>
+        <p>The <em>reverse</em> case — the new design invents this and Fort Collins has nothing to fill it. It needs original content created. Ask: "Is this block empty until someone writes it?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="crosswalk">
+  <div class="wrap">
+    <h2><span class="n">03</span>IA crosswalk: old nav → new home</h2>
+    <p class="lede">The Fort Collins site's eight top-level menus versus the new homepage's sections and its five header links (<em><a target="mock_site" href="index.html#agents">The People</a> · <a target="mock_site" href="index.html#buyers">Buyers Now</a> · <a target="mock_site" href="index.html#life">Lifestyle</a> · <a target="mock_site" href="index.html#guides">How We Work</a> · <a target="mock_site" href="index.html#ready">Search</a></em>). Side by side, the gaps are visible at a glance.</p>
+    <div class="cross">
+      <div class="col">
+        <h4>Fort Collins navigation (current)</h4>
+        <ul>
+          <li>Search <span class="t">— <a href="https://thegroup-fortcollins-cms.mytribus.com/properties" target="fc_site">Search Homes</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/properties?open_house_end_time_after=now" target="fc_site">Open Houses</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/commercial-real-estate" target="fc_site">Commercial</a></span></li>
+          <li>Sell <span class="t">— <a href="https://thegroup-fortcollins-cms.mytribus.com/why-sell-with-us" target="fc_site">Why Sell</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/how-we-market-your-home" target="fc_site">How We Market</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/our-global-reach" target="fc_site">Global Reach</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/sellers-concession-reports" target="fc_site">Concession Reports</a></span></li>
+          <li>Buy <span class="t">— <a href="https://thegroup-fortcollins-cms.mytribus.com/buy-with-the-group" target="fc_site">Why Buy</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/first-time-home-buyers" target="fc_site">First-Time Buyers</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/mortgage" target="fc_site">Mortgage</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/new-construction" target="fc_site">New Construction</a></span></li>
+          <li><a href="https://thegroup-fortcollins-cms.mytribus.com/communities" target="fc_site">Communities</a> <span class="t">— 14 NoCo towns</span></li>
+          <li>Market Data <span class="t">— <a href="https://thegroup-fortcollins-cms.mytribus.com/market-reports" target="fc_site">Market Reports</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/quarterly-statistics" target="fc_site">Quarterly Stats</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/annual-report" target="fc_site">Annual Report</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/the-insider" target="fc_site">Insider</a>, Concession Reports</span></li>
+          <li><a href="https://thegroup-fortcollins-cms.mytribus.com/our-realtors" target="fc_site">Find An Agent</a> <span class="t">— 277 brokers</span></li>
+          <li>About <span class="t">— <a href="https://thegroup-fortcollins-cms.mytribus.com/about-the-group" target="fc_site">About</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/join-us" target="fc_site">Join Our Team</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/group-gives" target="fc_site">GroupGives</a>, <a href="https://thegroup-fortcollins-cms.mytribus.com/blog" target="fc_site">Blog</a>, Offices, Leadership</span></li>
+          <li>Log In <span class="t">— client account / saved search</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>New homepage (mockup)</h4>
+        <ul>
+          <li><a target="mock_site" href="index.html#hero">Hero</a> <span class="t">— brand statement</span></li>
+          <li><a target="mock_site" href="index.html#buyers">Buyers Now</a> <span class="t">— live buyer briefs (new)</span></li>
+          <li><a target="mock_site" href="index.html#inquire">Inquiry form</a> <span class="t">— "have a property for these buyers?"</span></li>
+          <li><a target="mock_site" href="index.html#agents">The People</a> <span class="t">— agent grid, search + season filter</span></li>
+          <li><a target="mock_site" href="index.html#life">Lifestyle</a> <span class="t">— Ski · Ride · Rest · See · Stay</span></li>
+          <li><a target="mock_site" href="index.html#stories">Stories</a> <span class="t">— editorial / guides</span></li>
+          <li><a target="mock_site" href="index.html#guides">How We Work</a> <span class="t">— Buying (Precision) / Selling (Fluency)</span></li>
+          <li><a target="mock_site" href="index.html#groupgives">GroupGives CTA</a> · <a target="mock_site" href="index.html#awards">Awards</a> · <a target="mock_site" href="index.html#ready">Search</a> · <a target="mock_site" href="index.html#footer">Footer</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px;color:var(--body);font-size:14.5px;">The header links reduce a ~30-item menu to five moves. Two things Fort Collins brings that Steamboat's menu didn't: a whole <strong>Market Data</strong> top-level section and a <strong>Join Our Team</strong> recruiting track. Everything that used to be a menu item still has to live <em>somewhere</em> — the matrix below assigns each one.</p>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <h2><span class="n">04</span>Full content mapping matrix</h2>
+    <p class="lede">Every Fort Collins content bucket, its disposition, where it lands in the new site, and the working note. Chips use the §2 rubric. Group headings match the Steamboat matrix so the two can be read row-for-row.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Fort Collins content</th><th>Disposition</th><th>New destination</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grouprow"><td colspan="4">Buy &amp; Sell</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/buy-with-the-group" target="fc_site">Why Buy with Us</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#guides">How We Work → Buying "Precision"</a></span></td><td>Value props + 5-step buyer process map straight onto the card; links to a fuller buyer guide.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/why-sell-with-us" target="fc_site">Why Sell with Us</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#guides">How We Work → Selling "Fluency"</a></span></td><td>Card exists; links to seller guide.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/how-we-market-your-home" target="fc_site">How We Market Your Home</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#guides">Selling guide</a> (deeper)</td><td>Rich seller-marketing detail; rewrite into the seller guide rather than a standalone page.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/our-global-reach" target="fc_site">Our Global Reach (LPI)</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#awards">Awards strip</a></span> + seller guide</td><td>LPI named in Awards; the syndication/LuxeAnalytics detail is Deeper inside the seller guide.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/properties" target="fc_site">Search Homes (IDX)</a></td><td><span class="chip c-deeper">Deeper</span></td><td><span class="sec"><a target="mock_site" href="index.html#ready">Search section → results page</a></span></td><td>Homepage has the search entry; actual IDX results live on a deeper page or platform.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/first-time-home-buyers" target="fc_site">First-Time Home Buyers</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="mock_site" href="index.html#stories">Stories</a></span> or Buyer guide</td><td>Long-form guide; reframe as an editorial piece / section of the buyer guide.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/new-construction" target="fc_site">New Construction</a> (8 builders)</td><td><span class="chip c-deeper">Deeper</span></td><td><a target="mock_site" href="index.html#ready">Search</a> / buyer guide (deeper)</td><td>Builder directory (Argenta, Baessler, Sage, Savant, Stonefield, Thrive, TruMark…) needs a deeper page or filtered search.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/properties?open_house_end_time_after=now" target="fc_site">Open Houses</a></td><td><span class="chip c-deeper">Deeper</span></td><td><a target="mock_site" href="index.html#ready">Search</a> / listings utility page</td><td>Functional listing view; no homepage block. Link from Search.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/commercial-real-estate" target="fc_site">Commercial Real Estate</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Own sale + lease listings. New site is residential/lifestyle in tone; no slot. See §5.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/mortgage" target="fc_site">Mortgage</a> (Group Mortgage, 5 LOs)</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Finance utility + loan-officer roster; clashes with editorial tone. See §5.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">People</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/our-realtors" target="fc_site">Find an Agent</a> (277)</td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#agents">The People (agent grid)</a></span></td><td>Maps cleanly; agent detail pages are Deeper. Filters differ — live filters by Designation + Language, the mock by season (see §6).</td></tr>
+          <tr><td>Leadership Team <span class="t">(via About)</span></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="mock_site" href="index.html#agents">The People</a></span> (deeper "About")</td><td>New grid is flat/egalitarian ("every one owns a piece"). Leadership becomes a facet of an About page, not a hierarchy block.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Place &amp; Lifestyle</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/communities" target="fc_site">Communities</a> (14 NoCo towns)</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>No geographic community structure in the mockup. High-value SEO + buyer content. Ault → Windsor differ entirely from the Yampa Valley set. See §5.</td></tr>
+          <tr><td>Area / lifestyle narrative</td><td><span class="chip c-net">Net-new</span></td><td><a target="mock_site" href="index.html#life">Lifestyle</a></td><td>The mock's Ski/Ride/Rest/See/Stay is Steamboat's. Fort Collins needs its own NoCo lifestyle frame (Old Town, foothills, trails, CSU, breweries). See §6.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Market data &amp; resources</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/market-data" target="fc_site">Market Data hub</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a> (deeper reports hub)</td><td>An entire top-level section Steamboat's site doesn't have. Becomes an editorial reports hub behind Stories. Heaviest Transform load on the site.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/market-reports" target="fc_site">Monthly Market Reports</a> ('24–'26 archive)</td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a> / reports hub</td><td>Editorialize as recurring "from the field" pieces; archive lives deeper.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/quarterly-statistics" target="fc_site">Quarterly Statistics</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a> / reports hub</td><td>Data set; folds into the reports hub.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/annual-report" target="fc_site">Annual Report</a> (long-form + slides)</td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a> / reports hub</td><td>Flagship data piece; same treatment.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/the-insider" target="fc_site">The Real Estate Insider</a> (archive)</td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a></td><td>50-year newsletter; folds into the editorial stream, issue archive Deeper.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/sellers-concession-reports" target="fc_site">Seller Concession Reports</a></td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#stories">Stories</a> / reports hub</td><td>Also cross-links from the seller guide; a genuine differentiator worth surfacing.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Editorial</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/blog" target="fc_site">Blog</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="mock_site" href="index.html#stories">Stories</a></span> + "View all stories"</td><td>New "Stories" teases 3; full blog/index is Deeper. Currently the blog links out to thegroupinc.com/blog — consolidate onto the new site.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">About &amp; affiliations</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/about-the-group" target="fc_site">About The Group</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Only brand fragments live in <a target="mock_site" href="index.html#hero">Hero</a>/<a target="mock_site" href="index.html#groupgives">GroupGives</a>; no dedicated About. Also parents Leadership, Offices, 50-yr history, GFP Companies. See §5.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/group-gives" target="fc_site">GroupGives</a></td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#groupgives">GroupGives CTA</a></span></td><td>Full-bleed CTA already built; links to a Deeper page carrying the mission, grant cycles, and 501(c)(3) application.</td></tr>
+          <tr><td>Luxury Portfolio International · Leading RE</td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#awards">Awards / affiliations strip</a></span></td><td>Both carried in the live footer; name them in the Awards row, detail Deeper.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/our-offices" target="fc_site">Our Offices</a> (6)</td><td><span class="chip c-transform">Transform</span></td><td><a target="mock_site" href="index.html#footer">Footer</a> + Contact page</td><td>Harmony, Mulberry, Centerra, Greeley, Timnath, <strong>Steamboat</strong>. Address/phone move to footer &amp; Contact; confirm office list per market.</td></tr>
+          <tr><td>GFP Companies / Additional Services</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Linked off About; no home. Footer resource or retire. See §5.</td></tr>
+
+          <tr class="grouprow"><td colspan="4">Recruiting &amp; utility</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/join-us" target="fc_site">Join Our Team</a></td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>Full recruiting narrative ("300+ owners"). No slot in the mockup and no counterpart in the Steamboat map. Strategic — see §5.</td></tr>
+          <tr><td><a href="https://thegroup-fortcollins-cms.mytribus.com/contact" target="fc_site">Contact</a></td><td><span class="chip c-transform">Transform</span></td><td><span class="sec"><a target="mock_site" href="index.html#footer">Footer link</a></span> → Contact page</td><td>Footer has a Contact link; a real contact page (form + offices + brokers) is Deeper.</td></tr>
+          <tr><td>Log In / saved search / account</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>No account UI in the mockup. Tied to the IDX platform decision. See §5.</td></tr>
+          <tr><td>Featured Properties (home, 6 listings)</td><td><span class="chip c-orphan">Orphan</span></td><td>— decision needed —</td><td>New homepage shows <em>buyers</em>, not <em>listings</em>. Deliberate inversion — confirm it's intended. See §5.</td></tr>
+          <tr><td>Privacy / Accessibility / MLS &amp; IRES disclaimers</td><td><span class="chip c-direct">Direct</span></td><td><span class="sec"><a target="mock_site" href="index.html#footer">Footer</a></span></td><td>Add Privacy, Accessibility, and required MLS/IRES/REALTOR® disclaimers (compliance — non-optional).</td></tr>
+          <tr><td>TRIBUS / IDX platform &amp; MLS feed</td><td><span class="chip c-deeper">Deeper</span></td><td><a target="mock_site" href="index.html#ready">Search</a> &amp; listings back-end</td><td>Not "content" but the engine behind Search/Open Houses/Commercial/account. Its fate drives several rows above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="orphans">
+  <div class="wrap">
+    <h2><span class="n">05</span>Orphan report — content with no home yet</h2>
+    <p class="lede">These are the decisions the mockup forces. Each is real Fort Collins content (or a real function) the new single-page design has no slot for. For each: a recommendation, but the call is yours.</p>
+    <div class="orphans">
+      <div class="orphan">
+        <h4>The Market Data library</h4>
+        <p class="why"><a href="https://thegroup-fortcollins-cms.mytribus.com/market-reports" target="fc_site">Market Reports</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/quarterly-statistics" target="fc_site">Quarterly Stats</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/annual-report" target="fc_site">Annual Report</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/sellers-concession-reports" target="fc_site">Concession Reports</a></p>
+        <p>A whole top-level section — years of monthly reports, quarterly data, the annual report, and concession data. The mock has only a "Stories" teaser. This is the biggest single gap and the sharpest difference from Steamboat's thinner resources set.</p>
+        <p class="rec"><b>Recommend:</b> build a deeper <strong>reports/insights hub</strong> behind Stories with a collection + article template. High priority to retain — it's a real SEO and credibility asset.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegroup-fortcollins-cms.mytribus.com/communities" target="fc_site">Communities</a></h4>
+        <p class="why">14 NoCo neighborhood / town guides</p>
+        <p>Community pages are major buyer-intent and SEO assets. The thematic Lifestyle section doesn't replace geographic town pages — and the FC set (Ault → Windsor) is entirely different from Steamboat's.</p>
+        <p class="rec"><b>Recommend:</b> build a deeper "Communities" section; link from <a target="mock_site" href="index.html#life">Lifestyle</a> or <a target="mock_site" href="index.html#ready">Search</a>. Build the template once, populate per market. High priority.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegroup-fortcollins-cms.mytribus.com/join-us" target="fc_site">Join Our Team</a></h4>
+        <p class="why">Recruiting — FC-specific</p>
+        <p>A full recruiting narrative around the ownership model. No home in the mockup, and no counterpart in the Steamboat framework — this one is unique to the Fort Collins nav.</p>
+        <p class="rec"><b>Recommend:</b> a deeper Careers page (brand story + culture + apply). Agent recruiting is a core driver; worth a real destination, not a footer link.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegroup-fortcollins-cms.mytribus.com/commercial-real-estate" target="fc_site">Commercial real estate</a></h4>
+        <p class="why">Service line — sale &amp; lease listings</p>
+        <p>An entire service line with its own listings. The new voice is residential and lifestyle-led; commercial has no tone-appropriate slot.</p>
+        <p class="rec"><b>Recommend:</b> spin off to its own deeper page (or micro-site) linked from footer/Services — don't force it into the editorial narrative.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegroup-fortcollins-cms.mytribus.com/about-the-group" target="fc_site">About The Group</a></h4>
+        <p class="why">Company story · Leadership · GFP Companies</p>
+        <p>The brand story survives only as fragments (<a target="mock_site" href="index.html#hero">Hero</a>, <a target="mock_site" href="index.html#groupgives">GroupGives</a>). There's no place that tells who The Group is, and About also parents Leadership, the 50-year history, and GFP Companies / Additional Services.</p>
+        <p class="rec"><b>Recommend:</b> build a deeper About page gathering the brand statement, ownership model, leadership, offices, and affiliated companies.</p>
+      </div>
+      <div class="orphan">
+        <h4><a href="https://thegroup-fortcollins-cms.mytribus.com/mortgage" target="fc_site">Mortgage</a> &amp; property search stack</h4>
+        <p class="why">Group Mortgage · IDX · Log In · Featured listings</p>
+        <p>Group Mortgage (utility + loan officers) has no editorial home. And the homepage inversion — leading with <em>buyers</em>, never showing a listing — leaves Featured Properties, saved search, and Log In without a slot.</p>
+        <p class="rec"><b>Recommend:</b> fold Mortgage into the buyer guide (Deeper); keep the IDX/account as a deeper "Search / Listings" experience; confirm the buyers-not-listings inversion before building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="netnew">
+  <div class="wrap">
+    <h2><span class="n">06</span>Net-new content the design needs</h2>
+    <p class="lede">The reverse gap: sections the mockup invents that Fort Collins has <em>nothing</em> to fill. These aren't migrations — they're content that has to be written or produced before the new site can ship honestly. Same list as Steamboat, retuned for NoCo.</p>
+    <div class="callout">
+      <h3>Content that must be created</h3>
+      <ul>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Buyers Now — live buyer briefs.</strong> The signature idea: real, anonymized buyers with budget, story, and a representing agent. Reverse-prospecting content with no source on the Tribus site. Needs a sourcing + writing + approval workflow (and the "Read the brief" / inquiry-form pipeline behind it).</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>NoCo lifestyle taxonomy + photography.</strong> The mock's Ski/Ride/Rest/See/Stay and its imagery are Steamboat's. Fort Collins needs its own frame (e.g. Old Town, foothills &amp; trails, CSU, breweries, family neighborhoods) and hero-grade local photography to match the art direction.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Agent filter facet.</strong> The People grid filters agents by <em>season</em> (Deep Winter → Aspen Turn) — a Steamboat concept. FC brokers have no season tags; decide the FC facet (specialty, community, language) and populate a new data field for all 277.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Editorial voice pass.</strong> Hero line, eyebrows, buyer-brief copy, and the migrated market/first-time/why-Steamboat-equivalent content must be rewritten to the new voice — budget a copy/editorial pass, not just a paste.</li>
+        <li><span class="chip c-net">Net-new</span> &nbsp;<strong>Buyer &amp; Seller guides.</strong> "Precision" and "Fluency" cards link to guides that don't exist as such yet — Why Buy / Why Sell / How We Market are the raw material but need rewriting into single guides.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="deeper">
+  <div class="wrap">
+    <h2><span class="n">07</span>Deeper-page scaffold</h2>
+    <p class="lede">The mockup assumes there are deeper pages behind the home page. Here's the implied sitemap — each homepage entry point and the pages that hang off it, with the Fort Collins content that feeds each.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Homepage entry point</th><th>Deeper page(s) implied</th><th>Fed by (Fort Collins)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a target="mock_site" href="index.html#agents">The People</a></td><td>Agent index · individual agent profiles</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/our-realtors" target="fc_site">Find an Agent</a> (277) · Leadership</td></tr>
+          <tr><td><a target="mock_site" href="index.html#buyers">Buyers Now</a></td><td>Individual buyer-brief pages · "submit a property" thank-you</td><td>Net-new (§6)</td></tr>
+          <tr><td><a target="mock_site" href="index.html#ready">Search</a></td><td>IDX results · map search · Open Houses · Commercial · saved search/account</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/properties" target="fc_site">Search Homes</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/properties?open_house_end_time_after=now" target="fc_site">Open Houses</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/commercial-real-estate" target="fc_site">Commercial</a> · TRIBUS/IDX</td></tr>
+          <tr><td><a target="mock_site" href="index.html#guides">How We Work</a></td><td>Buyer guide · Seller guide</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/buy-with-the-group" target="fc_site">Why Buy</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/why-sell-with-us" target="fc_site">Why Sell</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/how-we-market-your-home" target="fc_site">How We Market</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/first-time-home-buyers" target="fc_site">First-Time</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/mortgage" target="fc_site">Mortgage</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/our-global-reach" target="fc_site">Global Reach</a></td></tr>
+          <tr><td><a target="mock_site" href="index.html#life">Lifestyle</a></td><td>Communities / neighborhood guides · area experiences</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/communities" target="fc_site">Communities</a> (14 towns) · Net-new NoCo lifestyle (§6)</td></tr>
+          <tr><td><a target="mock_site" href="index.html#stories">Stories</a></td><td>Blog index · reports/insights hub</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/blog" target="fc_site">Blog</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/market-reports" target="fc_site">Market</a>/<a href="https://thegroup-fortcollins-cms.mytribus.com/quarterly-statistics" target="fc_site">Quarterly</a>/<a href="https://thegroup-fortcollins-cms.mytribus.com/annual-report" target="fc_site">Annual</a> reports · <a href="https://thegroup-fortcollins-cms.mytribus.com/the-insider" target="fc_site">Insider</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/sellers-concession-reports" target="fc_site">Concession Reports</a></td></tr>
+          <tr><td><a target="mock_site" href="index.html#groupgives">GroupGives CTA</a></td><td>GroupGives page (mission · grant cycles · apply)</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/group-gives" target="fc_site">GroupGives</a></td></tr>
+          <tr><td><a target="mock_site" href="index.html#awards">Awards</a></td><td>Affiliations detail (Luxury Portfolio, LeadingRE)</td><td>LPI · LeadingRE (live footer badges) · <a href="https://thegroup-fortcollins-cms.mytribus.com/our-global-reach" target="fc_site">Global Reach</a></td></tr>
+          <tr><td><a target="mock_site" href="index.html#footer">Footer</a></td><td>About · Contact · Offices · Careers · Privacy · Accessibility · Commercial</td><td><a href="https://thegroup-fortcollins-cms.mytribus.com/about-the-group" target="fc_site">About</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/contact" target="fc_site">Contact</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/our-offices" target="fc_site">Offices</a> · <a href="https://thegroup-fortcollins-cms.mytribus.com/join-us" target="fc_site">Join Our Team</a> · legal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+    <h2><span class="n">08</span>Recommended next steps</h2>
+    <ol class="steps">
+      <li>
+        <h4>Confirm the three big inversions</h4>
+        <p>Buyers-not-listings on the homepage, flat agent grid (no leadership hierarchy), and editorial-over-utility tone. These drive every orphan decision — lock them once, for both markets, before building deeper pages.</p>
+      </li>
+      <li>
+        <h4>Rule on each orphan in §5</h4>
+        <p>For the Market Data library, Communities, Join Our Team, Commercial, Mortgage, About, and the IDX/account stack: decide <em>retire</em> vs <em>build a deeper page</em>. That turns this framework into a real sitemap.</p>
+      </li>
+      <li>
+        <h4>Settle the shared-vs-market data model</h4>
+        <p>Offices (6 incl. Greeley &amp; Steamboat), the 14 NoCo communities, the 277-broker roster with a new filter facet, phone numbers, and affiliation badges are all data that differs from Steamboat. Decide what's shared and what's per-market before templating.</p>
+      </li>
+      <li>
+        <h4>Commission the net-new content (§6)</h4>
+        <p>Buyer briefs, a NoCo lifestyle frame + photography, the agent filter facet, and the buyer/seller guides gate launch — start them in parallel with the migration.</p>
+      </li>
+      <li>
+        <h4>Migrate bucket by bucket, voice-editing as you go</h4>
+        <p>Work the matrix top to bottom. Every "Transform" row is a copy task, not a copy-paste — and Fort Collins carries the heaviest Transform load in Market Data. Keep compliance disclaimers (MLS/IRES/REALTOR®/accessibility) non-negotiable in the footer.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>The Group · Fort Collins — Content Mapping Framework</span>
+    <span>Fort Collins Tribus → 1000WATT rebrand · working document</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Group — Content Mapping Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#fef7e9; --dark:#2f2f2f; --white:#f8f8f6;
+    --gold:#90773c; --gold-bright:#bd9d54; --ink:#2f2f2f;
+    --body:#4f4f4f; --muted:#8a8578; --line:#ddd6c6;
+    --serif:"Marcellus","Times New Roman",Georgia,serif;
+    --sans:"Inter",Arial,system-ui,sans-serif;
+    --track:0.24em;
+    --maxw:1160px;
+    --direct:#3f6f4e; --direct-bg:#eaf1ea;
+    --deeper:#2f5d78; --deeper-bg:#e7f0f5;
+    --transform:#8a6a1e; --transform-bg:#f6eed8;
+    --orphan:#9a3b2f; --orphan-bg:#f6e4df;
+    --net:#5b3f78; --net-bg:#efe8f5;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding:0 clamp(20px,5vw,56px);}
+
+  /* ---- header ---- */
+  header.masthead{background:var(--dark);color:var(--white);padding:clamp(48px,7vw,86px) 0 clamp(40px,6vw,64px);}
+  .eyebrow{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--gold-bright);margin:0 0 18px;font-weight:500;}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.08;margin:0 0 20px;letter-spacing:.01em;}
+  .masthead p.sub{max-width:64ch;color:#d7d3ca;font-size:clamp(15px,1.6vw,18px);margin:0;font-weight:300;}
+  .masthead .meta{margin-top:30px;font-size:12.5px;color:#9d988c;letter-spacing:.02em;}
+
+  /* ---- section scaffolding ---- */
+  section{padding:clamp(46px,6vw,80px) 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:0;}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.12;margin:0 0 8px;}
+  h2 .n{color:var(--gold);font-size:.62em;vertical-align:top;margin-right:.5em;font-family:var(--sans);font-weight:600;letter-spacing:.04em;}
+  .lede{max-width:74ch;color:var(--body);font-size:16.5px;margin:0 0 6px;}
+  p{margin:0 0 14px;}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(144,119,60,.35);}
+  a:hover{border-color:var(--gold);}
+  strong{font-weight:600;}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:#efe7d3;padding:2px 6px;border-radius:4px;color:#5a4a1e;}
+
+  /* ---- chips ---- */
+  .chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap;line-height:1.5;}
+  .c-direct{background:var(--direct-bg);color:var(--direct);}
+  .c-deeper{background:var(--deeper-bg);color:var(--deeper);}
+  .c-net{background:var(--net-bg);color:var(--net);}
+
+  /* ---- mapping cards ---- */
+  .maps{display:grid;grid-template-columns:1fr;gap:22px;margin-top:30px;}
+  .map{background:var(--white);border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:24px 28px;}
+  .map.m1{border-left-color:var(--deeper);}
+  .map.m2{border-left-color:var(--transform);}
+  .map.m3{border-left-color:var(--gold);}
+  .map .kicker{font-size:11px;letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 8px;}
+  .map h3{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.4vw,26px);margin:0 0 4px;line-height:1.15;}
+  .map h3 a{border:0;}
+  .map .file{font-size:12.5px;color:var(--muted);margin:0 0 14px;}
+  .map .file a{color:var(--muted);border-bottom-color:rgba(138,133,120,.4);}
+  .map .summary{font-size:14.5px;color:var(--body);margin:0 0 16px;max-width:70ch;}
+  .map .orph-h{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6a5a2e;font-weight:600;margin:0 0 8px;padding-top:14px;border-top:1px solid var(--line);}
+  .map ul{margin:0;padding-left:20px;}
+  .map li{font-size:13.5px;color:var(--body);margin:0 0 7px;}
+  .map li b{color:var(--ink);font-weight:600;}
+  .map .cta{margin-top:16px;font-size:13.5px;font-weight:600;}
+
+  /* ---- how row ---- */
+  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px;}
+  .how .card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:16px 18px;}
+  .how .card h4{margin:0 0 6px;font-family:var(--sans);font-size:13px;font-weight:600;}
+  .how .card p{margin:0;font-size:13px;color:var(--body);}
+
+  footer.foot{background:var(--dark);color:#9d988c;padding:28px 0;font-size:12.5px;}
+  footer.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media print{
+    body{background:#fff;}
+    header.masthead,footer.foot{background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .masthead p.sub,.masthead .meta{color:#333;}
+    .eyebrow,h2 .n{color:#7a6320;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">The Group · Web Rebrand · Working Documents</p>
+    <h1>Content Mapping Guide</h1>
+    <p class="sub">Three companion documents that plan The Group's move to the new 1000WATT design across two markets. Two of them map a current site onto the new mockup; the third compares the two current sites to each other. Start here, then open whichever you need.</p>
+    <div class="meta">Covers the Steamboat site (<a href="https://thegrouprealestatess.com/" target="ss_site"><code>thegrouprealestatess.com</code></a>) and the Fort Collins / NoCo site (<a href="https://thegroup-fortcollins-cms.mytribus.com" target="fc_site"><code>thegroup-fortcollins-cms.mytribus.com</code></a>) · new mockup <a target="group_mock_site" href="index.html"><code>index.html</code></a> · Prepared Aug 17, 2026</div>
+  </div>
+</header>
+
+<section id="maps">
+  <div class="wrap">
+    <h2><span class="n">01</span>The three mappings</h2>
+    <p class="lede">Each card links to a full report and lists its <strong>orphans</strong> — the content the report flags as having no home in the target design. Orphans are where the decisions live, so they're pulled to the surface here.</p>
+
+    <div class="maps">
+
+      <!-- 1 -->
+      <div class="map m1">
+        <p class="kicker">Source site → new design</p>
+        <h3><a href="steamboat-to-1000watt-mapping.html">Steamboat → 1000WATT</a></h3>
+        <p class="file"><a href="steamboat-to-1000watt-mapping.html"><code>steamboat-to-1000watt-mapping.html</code></a></p>
+        <p class="summary">Maps every bucket of the current Steamboat production site (<a href="https://thegrouprealestatess.com/" target="ss_site">thegrouprealestatess.com</a>) onto the new editorial homepage — what moves in directly, what becomes a deeper page, what must be rewritten into the new voice, and what has nowhere to go. The original framework the other two are modeled on.</p>
+        <p class="orph-h">Orphaned items — no slot in the mockup</p>
+        <ul>
+          <li><b>Property search &amp; live listings</b> — IDX, Open Houses, Sold Homes, saved-search/Account (homepage leads with buyers, not listings)</li>
+          <li><b>Featured Properties carousel</b> — the buyers-not-listings inversion to confirm</li>
+          <li><b>Commercial Sale &amp; Lease</b> — no tone-appropriate slot</li>
+          <li><b>Our Communities</b> — Yampa Valley neighborhood guides (SEO/buyer-intent)</li>
+          <li><b>Property Management &amp; Vacation Rentals</b> — resort service line</li>
+          <li><b>Mortgage &amp; Forecast</b> — finance/utility content</li>
+          <li><b>About Us</b> — no dedicated About page in the design</li>
+        </ul>
+        <p class="cta"><a href="steamboat-to-1000watt-mapping.html">Open the Steamboat mapping →</a></p>
+      </div>
+
+      <!-- 2 -->
+      <div class="map m2">
+        <p class="kicker">Source site → new design</p>
+        <h3><a href="noco-to-1000watt-mapping.html">Fort Collins Tribus → 1000WATT</a></h3>
+        <p class="file"><a href="noco-to-1000watt-mapping.html"><code>noco-to-1000watt-mapping.html</code></a></p>
+        <p class="summary">The Fort Collins counterpart — same method, same target design, the larger source site (<a href="https://thegroup-fortcollins-cms.mytribus.com" target="fc_site">mytribus.com</a>). Maps the NoCo brokerage's 30-odd destinations onto the mockup, noting where it diverges from Steamboat: a 277-broker roster, a whole Market Data library, and a recruiting track.</p>
+        <p class="orph-h">Orphaned items — no slot in the mockup</p>
+        <ul>
+          <li><b>The Market Data library</b> — Market Reports, Quarterly Stats, Annual Report, Concession Reports (biggest gap)</li>
+          <li><b>Communities</b> — 14 NoCo town guides (Ault → Windsor)</li>
+          <li><b>Join Our Team</b> — full recruiting narrative, unique to the FC nav</li>
+          <li><b>Commercial Real Estate</b> — sale &amp; lease listings</li>
+          <li><b>About The Group</b> — company story, Leadership, GFP Companies</li>
+          <li><b>Mortgage &amp; property-search stack</b> — Group Mortgage, IDX, Log In, Featured listings</li>
+        </ul>
+        <p class="cta"><a href="noco-to-1000watt-mapping.html">Open the Fort Collins mapping →</a></p>
+      </div>
+
+      <!-- 3 -->
+      <div class="map m3">
+        <p class="kicker">Site ↔ site comparison</p>
+        <h3><a href="steamboat-to-noco-mapping.html">Steamboat ↔ Fort Collins Tribus</a></h3>
+        <p class="file"><a href="steamboat-to-noco-mapping.html"><code>steamboat-to-noco-mapping.html</code></a></p>
+        <p class="summary">Sets the two current sites against each other instead of against the mockup — where they already agree, where Fort Collins is richer, and what exists on only one side. The input to deciding how much of the new build can be one shared template versus two. Here "orphans" are the one-sided content: present on one site, missing on the other.</p>
+        <p class="orph-h">Orphaned items — content on only one site</p>
+        <ul>
+          <li><span class="chip c-net">Steamboat-only</span> &nbsp;<b>Property Mgmt &amp; Vacation Rentals</b>, <b>Forecast</b> tool, second-home buyer focus, dedicated Sold Homes view</li>
+          <li><span class="chip c-net">Fort Collins-only</span> &nbsp;<b>Market Data library</b> (Quarterly Stats, Concession Reports), <b>Join Our Team</b>, <b>New Construction</b>, How We Market, Global Reach, 277-agent scale &amp; 6 offices, GFP Companies</li>
+        </ul>
+        <p class="cta"><a href="steamboat-to-noco-mapping.html">Open the site comparison →</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2><span class="n">02</span>How the three fit together</h2>
+    <p class="lede">Read them in whatever order suits the question, but this is the logic that connects them.</p>
+    <div class="how">
+      <div class="card">
+        <h4>Two "→ 1000WATT" maps</h4>
+        <p>One per market. Each answers: what happens to this site's content in the new design, and what's orphaned by it.</p>
+      </div>
+      <div class="card">
+        <h4>One "↔" comparison</h4>
+        <p>Steamboat against Fort Collins. Answers: how much is shared, so how much of the rebuild can be a single template.</p>
+      </div>
+      <div class="card">
+        <h4>Same rubric, same shape</h4>
+        <p>All three use the same five-chip color system and matching section order, so rows line up across documents.</p>
+      </div>
+      <div class="card">
+        <h4>Orphans are the agenda</h4>
+        <p>Every orphan above is a decision — retire, build a deeper page, or keep per-market. That list is the real backlog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>The Group · Content Mapping Guide</span>
+    <span>Steamboat &amp; Fort Collins → 1000WATT rebrand · working documents</span>
+  </div>
+</footer>
+
+</body>
+</html>

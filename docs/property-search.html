@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Search — The Group, Steamboat Springs</title>
+  <meta name="description" content="Search homes for sale across Steamboat Springs and the Yampa Valley — every active listing, represented by The Group." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/guide-page.css" />
+</head>
+<body>
+
+  <!-- ============================ PAGE HEAD ============================ -->
+  <div class="pagehead">
+    <nav class="nav">
+      <div class="nav__brand">
+        <a href="index.html"><img class="nav__logo" src="assets/svg/logo.svg" alt="The Group" /></a>
+        <span class="nav__loc">Steamboat Springs, CO</span>
+      </div>
+      <div class="nav__links">
+        <a href="index.html#agents">The People</a>
+        <a href="index.html#buyers">Buyers Now</a>
+        <a href="index.html#life">Lifestyle</a>
+        <a href="index.html#guides">How We Work</a>
+        <a href="index.html#ready">Search</a>
+      </div>
+    </nav>
+    <div class="pagehead__inner">
+      <a class="crumb" href="index.html"><span>←</span> The Group</a>
+      <p class="eyebrow eyebrow--bright">Property Search</p>
+      <h2 class="h2">Homes for sale across the Yampa Valley.</h2>
+      <p class="lede">Every active listing in Routt County and beyond — searchable, and represented by people who live here.</p>
+    </div>
+  </div>
+
+  <!-- ============================ SEARCH + RESULTS ============================ -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="searchbar">
+        <div class="searchbar__input">
+          <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" placeholder="City, neighborhood, or MLS #…" aria-label="Search location or MLS number" />
+        </div>
+        <button class="filter" type="button">Price <span>▾</span></button>
+        <button class="filter" type="button">Beds <span>▾</span></button>
+        <button class="filter" type="button">Baths <span>▾</span></button>
+        <button class="filter" type="button">Type <span>▾</span></button>
+        <button class="pill-btn" type="button">Search <span>→</span></button>
+      </div>
+      <p class="mls-note"><b>Placeholder view.</b> Live MLS / IDX results (IRES &amp; Summit MLS) connect here in production. The cards below are samples showing the results layout — not active listings.</p>
+
+      <div class="listings">
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$1,295,000</span><span class="listing__specs">3 Bd · 2 Ba · 1,840 SF</span><span class="listing__addr">Fish Creek Falls Area, Steamboat Springs</span><span class="listing__rep">Represented by Charlie Dresen</span></div></article>
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$2,150,000</span><span class="listing__specs">4 Bd · 3 Ba · 2,600 SF</span><span class="listing__addr">Mountain Area — ski access</span><span class="listing__rep">Represented by Dean Laird</span></div></article>
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$875,000</span><span class="listing__specs">2 Bd · 2 Ba · 1,120 SF</span><span class="listing__addr">Downtown / Old Town condo</span><span class="listing__rep">Represented by Marci Valicenti</span></div></article>
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$3,400,000</span><span class="listing__specs">5 Bd · 4 Ba · 3,900 SF</span><span class="listing__addr">Strawberry Park</span><span class="listing__rep">Represented by Sarah Madsen</span></div></article>
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$645,000</span><span class="listing__specs">3 Bd · 2 Ba · 1,500 SF</span><span class="listing__addr">Stagecoach</span><span class="listing__rep">Represented by Tomas Reyes</span></div></article>
+        <article class="listing"><div class="listing__img ph" data-label="Listing photo"></div><div class="listing__body"><span class="listing__price">$1,750,000</span><span class="listing__specs">4 Bd · 3 Ba · 2,300 SF</span><span class="listing__addr">South Valley acreage</span><span class="listing__rep">Represented by Nora Pelletier</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="index.html">Home</a>
+      <a href="communities">Communities</a>
+      <a href="how-we-work-with-buyers">Buying with The Group</a>
+      <a href="index.html#agents">Contact a broker</a>
+      <span class="footer__mark">© 2026 The Group</span>
+    </div>
+    <div class="footer__legal">
+      <p>The Group Real Estate LLC · 509 Lincoln Ave, Steamboat Springs, CO 80477 · 970.870.8800. Equal Housing Opportunity. REALTOR®. Information deemed reliable but not guaranteed. Data in part from Information and Real Estate Services, LLC (IRES) for consumers' personal, non-commercial use.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

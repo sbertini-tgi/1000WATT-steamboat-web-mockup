@@ -454,27 +454,31 @@ br.brk { display: inline; }
    ========================================================= */
 .ready { background: var(--white); }
 .ready .h2 { max-width: none; margin-bottom: 42px; }
-.toggles { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
-.toggle {
+
+/* Finder: option pills + a display line that mirrors the hovered/active option */
+.finder__opts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 34px; }
+.finder-opt {
   border: 1px solid var(--line); border-radius: 999px;
   padding: 10px 22px; font-size: 11px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--body);
   transition: border-color .2s, color .2s;
 }
-.toggle:hover { border-color: var(--gold); }
-.toggle.is-active { color: var(--gold); border-color: var(--gold); }
-.search {
+.finder-opt:hover { border-color: var(--gold); color: var(--gold); }
+.finder-opt.is-active { color: var(--gold); border-color: var(--gold); }
+.finder__display {
   display: flex; align-items: center; gap: 16px;
   border-bottom: 1px solid var(--line); padding-bottom: 16px;
+  color: var(--ink); transition: border-color .2s;
 }
-.search__icon { width: 18px; height: 18px; color: var(--muted); flex-shrink: 0; }
-.search input {
-  flex: 1; border: 0; background: transparent; font-size: 17px; color: var(--ink);
-  font-family: var(--sans);
+.finder__display:hover { border-color: var(--gold); }
+.search__icon { width: 18px; height: 18px; color: var(--muted); flex-shrink: 0; transition: color .2s; }
+.finder__display:hover .search__icon { color: var(--gold); }
+.finder__text { flex: 1; font-size: 17px; color: var(--ink); font-family: var(--sans); transition: color .2s; }
+.finder__display:hover .finder__text { color: var(--gold); }
+.finder__go {
+  flex-shrink: 0; font-size: 11px; letter-spacing: var(--track);
+  text-transform: uppercase; color: var(--gold);
 }
-.search input::placeholder { color: #a9a9a9; }
-.search input:focus { outline: none; }
-.search__begin { flex-shrink: 0; }
 .ready__note { font-size: 13px; color: var(--muted); margin-top: 22px; }
 
 /* =========================================================

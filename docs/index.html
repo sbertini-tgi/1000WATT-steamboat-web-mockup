@@ -216,29 +216,21 @@
   <!-- ============================ LIFESTYLE ============================ -->
   <section class="section life" id="life">
     <div class="container">
-      <p class="eyebrow life__eyebrow">The Life We Live</p>
-      <div class="life__rows">
-        <div class="life-row row-ski">
-          <div class="life-img"><img src="assets/img/life-ski.png" alt="Fresh ski tracks carving down an untouched powder slope above the valley" /></div>
-          <span class="life-word">Ski.</span>
-        </div>
-        <div class="life-row row-ride">
-          <div class="life-img"><img src="assets/img/life-ride.png" alt="A rider on horseback on a trail lined with golden autumn aspens" /></div>
-          <span class="life-word">Ride.</span>
-        </div>
-        <div class="life-row row-rest">
-          <div class="life-img"><img src="assets/img/life-rest.png" alt="Rocking chairs on a warmly lit cabin porch at dusk" /></div>
-          <span class="life-word">Rest.</span>
-        </div>
-        <div class="life-row row-see">
-          <div class="life-img"><img src="assets/img/life-see.png" alt="A hazy blue-hour view over ridgelines and the valley below" /></div>
-          <span class="life-word">See.</span>
-        </div>
-        <div class="life-row row-stay">
-          <div class="life-img"><img src="assets/img/life-stay.png" alt="A glowing mountain home nestled in snow-covered aspens at night" /></div>
-          <span class="life-word">Stay.</span>
-        </div>
+      <div class="life__head">
+        <p class="eyebrow life__eyebrow">The Life We Live</p>
+        <p class="life__meta" id="lifeMeta">No. 01 · Steamboat Springs, CO</p>
       </div>
+      <div class="life__stage">
+        <h2 class="life-words">Ski<span class="life-dot">.</span> Ride<span class="life-dot">.</span> Rest<span class="life-dot">.</span><br class="brk" />See<span class="life-dot">.</span> <em class="life-stay">Stay<span class="life-dot">.</span></em></h2>
+        <div class="life__vlabel"><span id="lifeVlabel">Mid-Mountain</span></div>
+      </div>
+    </div>
+    <div class="life__strip" id="lifeStrip">
+      <div class="life-tile" data-no="01" data-place="Steamboat Springs, CO" data-label="Mid-Mountain"><span class="life-tile__no">01</span><img src="assets/img/life-ski.png" alt="Fresh ski tracks carving down an untouched powder slope above the valley" /></div>
+      <div class="life-tile" data-no="02" data-place="Elk River" data-label="Golden Aspens"><span class="life-tile__no">02</span><img src="assets/img/life-ride.png" alt="A rider on horseback on a trail lined with golden autumn aspens" /></div>
+      <div class="life-tile" data-no="03" data-place="The Cabin Porch" data-label="Valley Dusk"><span class="life-tile__no">03</span><img src="assets/img/life-rest.png" alt="Rocking chairs on a warmly lit cabin porch at dusk" /></div>
+      <div class="life-tile" data-no="04" data-place="Yampa Valley" data-label="Blue Hour"><span class="life-tile__no">04</span><img src="assets/img/life-see.png" alt="A hazy blue-hour view over ridgelines and the valley below" /></div>
+      <div class="life-tile" data-no="05" data-place="Home" data-label="The Aspens"><span class="life-tile__no">05</span><img src="assets/img/life-stay.png" alt="A glowing mountain home nestled in snow-covered aspens at night" /></div>
     </div>
   </section>
 
@@ -369,5 +361,6 @@
 
   <script src="js/agents.js" defer></script>
   <script src="js/finder.js" defer></script>
+  <script src="js/lifestyle.js" defer></script>
 </body>
 </html>

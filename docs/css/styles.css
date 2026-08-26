@@ -495,7 +495,8 @@ br.brk { display: inline; }
 }
 .awards__list { display: flex; flex-direction: column; gap: 20px; align-items: center; }
 .awards__group { font-size: 12px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold-bright); }
-.awards__item { font-size: 12px; letter-spacing: var(--track); text-transform: uppercase; color: rgba(248,248,246,.5); }
+.awards__item { font-size: 12px; letter-spacing: var(--track); text-transform: uppercase; color: rgba(248,248,246,.5); transition: color .2s; }
+a.awards__item:hover { color: var(--gold-bright); }
 
 .footer {
   background: var(--dark); color: rgba(248,248,246,.5);

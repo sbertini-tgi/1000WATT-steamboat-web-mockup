@@ -209,6 +209,21 @@
 .comm__name { font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 22px; color: var(--ink); margin: 0 0 10px; }
 .comm__blurb { font-size: 14px; line-height: 1.6; color: var(--body); margin: 0; }
 
+/* =========================================================
+   PUBLICATION ARCHIVE LIST (market report / insider)
+   ========================================================= */
+.archive { list-style: none; margin: clamp(30px,4vw,46px) 0 0; padding: 0; border-top: 1px solid var(--line); }
+.archive__item {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 20px 6px; border-bottom: 1px solid var(--line);
+  color: var(--ink); transition: padding-left .2s;
+}
+.archive__item:hover { padding-left: 14px; }
+.archive__name { font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 19px; color: var(--ink); }
+.archive__item:hover .archive__name { color: var(--gold); }
+.archive__meta { font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); display: inline-flex; align-items: center; gap: 12px; }
+.archive__arrow { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+
 @media (max-width: 1000px) {
   .listings, .commgrid { grid-template-columns: repeat(2, 1fr); }
 }

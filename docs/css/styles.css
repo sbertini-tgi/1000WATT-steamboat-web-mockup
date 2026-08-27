@@ -419,6 +419,26 @@ br.brk { display: inline; }
 .story:hover .story__title { color: var(--gold); }
 .stories .pill-btn { margin-top: 34px; }
 
+/* Publications row — three category cards below the blog grid */
+.pubs { margin-top: clamp(52px, 6vw, 84px); border-top: 1px solid var(--line); padding-top: clamp(40px, 5vw, 60px); }
+.pubs__eyebrow { margin: 0 0 28px; }
+.pubs__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.pub {
+  border: 1px solid var(--line); background: rgba(255,255,255,.28);
+  padding: 32px 32px 28px; display: flex; flex-direction: column;
+  transition: border-color .2s, background .2s;
+}
+.pub:hover { border-color: var(--gold); background: rgba(255,255,255,.5); }
+.pub__k { font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); margin: 0 0 24px; }
+.pub__title { font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 25px; line-height: 1.22; color: var(--ink); margin: 0 0 14px; }
+.pub__desc { font-size: 14px; line-height: 1.62; color: var(--body); margin: 0 0 28px; }
+.pub__more {
+  margin-top: auto; font-size: 11px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--gold); display: inline-flex; align-items: center; gap: 8px;
+}
+.pub:hover .pub__more { color: var(--ink); }
+@media (max-width: 900px) { .pubs__grid { grid-template-columns: 1fr; } }
+
 /* =========================================================
    GUIDES  (cream)
    ========================================================= */

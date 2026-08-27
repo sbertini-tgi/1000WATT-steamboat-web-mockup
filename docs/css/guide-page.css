@@ -241,6 +241,16 @@
 .cpoint__v--lg { font-family: var(--serif); font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.05; color: var(--ink); }
 a.cpoint__v--lg { display: inline-block; }
 a.cpoint__v--lg:hover { color: var(--gold); }
+.cpoint__v + .cpoint__v { margin-top: 6px; }
+.cpoint__v a { color: var(--ink); }
+.cpoint__v a:hover { color: var(--gold); }
+.office__dir {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px;
+  font-size: 11px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.office__dir:hover { border-color: var(--gold); background: var(--gold); color: var(--cream); }
 
 .contact__map { margin-top: clamp(32px, 4vw, 46px); }
 .contact__map .cpoint__k { margin-bottom: 14px; }

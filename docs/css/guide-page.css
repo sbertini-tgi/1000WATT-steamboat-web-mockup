@@ -227,29 +227,38 @@
 /* =========================================================
    CONTACT PAGE
    ========================================================= */
-.contact__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(40px, 6vw, 84px); align-items: start; }
-.cblock { border-top: 1px solid var(--line); padding-top: 22px; margin-top: 22px; }
-.cblock:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
-.cblock__k { font-size: 11px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
-.cblock__big { font-family: var(--serif); font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.05; color: var(--ink); display: inline-block; }
-a.cblock__big:hover { color: var(--gold); }
-.cblock__txt { font-size: 16px; line-height: 1.62; color: var(--body); margin: 0; }
-.cblock__txt a { color: var(--gold); }
+.contact__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px, 5vw, 72px); align-items: start; }
 
-.map { aspect-ratio: 16 / 10; border: 1px solid var(--line); overflow: hidden; margin-top: 6px; background: #e7e0cf; }
+/* Left column: points of contact, clearly delineated */
+.contact__info > .eyebrow { margin-bottom: 6px; }
+.cpoints { list-style: none; margin: clamp(24px,3vw,34px) 0 0; padding: 0; }
+.cpoint { display: grid; grid-template-columns: 24px 1fr; gap: 20px; align-items: start; padding: 24px 0; border-top: 1px solid var(--line); }
+.cpoint:first-child { border-top: 0; padding-top: 0; }
+.cpoint__ic { width: 22px; height: 22px; color: var(--gold); margin-top: 5px; }
+.cpoint__ic svg { width: 100%; height: 100%; display: block; }
+.cpoint__k { font-size: 11px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.cpoint__v { font-size: 16px; line-height: 1.55; color: var(--body); margin: 0; }
+.cpoint__v--lg { font-family: var(--serif); font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.05; color: var(--ink); }
+a.cpoint__v--lg { display: inline-block; }
+a.cpoint__v--lg:hover { color: var(--gold); }
+
+.contact__map { margin-top: clamp(32px, 4vw, 46px); }
+.contact__map .cpoint__k { margin-bottom: 14px; }
+.map { aspect-ratio: 16 / 10; border: 1px solid var(--line); overflow: hidden; background: #e7e0cf; }
 .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 .map-actions { margin-top: 16px; }
 
-/* Contained contact form card (right column — never full width) */
-.form-card { border: 1px solid var(--line); background: rgba(255,255,255,.45); padding: clamp(26px, 3.5vw, 40px); position: sticky; top: 24px; }
-.form-card .eyebrow { margin-bottom: 4px; }
-.form-card h2 { margin-bottom: 8px; }
-.contact-form { display: flex; flex-direction: column; gap: 22px; margin-top: 26px; }
+/* Right column: the form as its own clearly separate panel */
+.form-card { border: 1px solid var(--line); background: var(--white); padding: clamp(30px, 3.4vw, 46px); position: sticky; top: 24px; }
+.form-card .eyebrow { margin-bottom: 6px; }
+.form-card .h2 { margin-bottom: 4px; }
+.form-card__note { font-size: 14px; line-height: 1.55; color: var(--body); margin: 12px 0 0; }
+.contact-form { display: flex; flex-direction: column; gap: 22px; margin-top: 28px; }
 .contact-form .field { display: flex; flex-direction: column; }
-.contact-form .pill-btn { align-self: flex-start; margin-top: 4px; }
+.contact-form .pill-btn { align-self: flex-start; margin-top: 6px; }
 
 @media (max-width: 900px) {
-  .contact__grid { grid-template-columns: 1fr; }
+  .contact__grid { grid-template-columns: 1fr; gap: 44px; }
   .form-card { position: static; }
 }
 

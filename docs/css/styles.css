@@ -545,6 +545,12 @@ a.awards__item:hover { color: var(--gold-bright); }
 .footer a:hover { color: var(--white); }
 .footer__mark { font-size: 12px; letter-spacing: .04em; }
 
+/* Fine print: copyright + MLS disclaimer, below the footer links */
+.footer__fine { border-top: 1px solid var(--line-dark); }
+.footer__fine-inner { max-width: var(--maxw); margin-inline: auto; padding: 26px var(--pad) 34px; }
+.footer__copy { font-size: 12px; letter-spacing: .04em; color: rgba(248,248,246,.62); margin: 0 0 14px; }
+.footer__disc { font-size: 11px; line-height: 1.75; color: rgba(248,248,246,.32); margin: 0; }
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */

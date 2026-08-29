@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find an Agent | The Group Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,350;9..144,400;9..144,500&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="light-chrome">
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="https://thegroupinc.com/wp-content/uploads/2026/04/TheGroup_Logo_Horizontal-Full-Color-INC.png" alt="The Group Real Estate"
+           onerror="this.outerHTML='&lt;span class=&quot;brand-word&quot;&gt;The&lt;b&gt;Group&lt;/b&gt;&lt;/span&gt;'">
+    </a>
+    <nav class="main-nav">
+      <button class="nav-close" aria-label="Close menu">Close</button>
+      <a href="sell.html">Sell</a>
+      <a href="buy.html">Buy</a>
+      <a href="communities.html">Communities</a>
+      <a href="agents.html" aria-current="page">Find an Agent</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-cta">
+      <a class="tel" href="tel:9702290700">970.229.0700</a>
+      <a class="btn" href="buy.html">Search Homes</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<!-- light editorial header instead of photo hero -->
+<section class="section" style="padding-top:clamp(160px,18vh,220px)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label label--muted">Find an agent</span>
+      <h1 class="headline" style="margin-top:16px;font-size:clamp(2.4rem,4.6vw,3.8rem)">People who could work anywhere,<br>but refuse to work anywhere else.</h1>
+      <p class="lede muted" style="margin-top:22px">More than 250 full-time professionals — every
+        one of them an owner of the company. Find the one who fits how you move.</p>
+    </div>
+    <form class="filter-bar" data-mock-form data-reveal>
+      <input type="text" placeholder="Search by name or specialty">
+      <select aria-label="Office"><option>All offices</option><option>Harmony</option><option>Mulberry</option><option>Centerra</option><option>Loveland</option><option>Timnath</option></select>
+      <select aria-label="Specialty"><option>All specialties</option><option>Luxury</option><option>New construction</option><option>Land &amp; acreage</option><option>Commercial</option><option>First-time buyers</option></select>
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- agent grid -->
+<section class="section" style="padding-top:clamp(36px,4vw,56px)">
+  <div class="wrap">
+    <div class="agent-grid" data-reveal-stagger>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--1">JS<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Jane Smith</div>
+        <div class="agent-role">Broker Associate / Partner</div>
+        <div class="agent-office">Harmony Office · 970.729.9571</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--2">MR<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Miguel Reyes</div>
+        <div class="agent-role">Broker Associate / Partner</div>
+        <div class="agent-office">Mulberry Office · 970.221.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--3">AT<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Avery Thompson</div>
+        <div class="agent-role">Luxury Specialist / Partner</div>
+        <div class="agent-office">Centerra Office · 970.613.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--4">DK<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Daniel Kim</div>
+        <div class="agent-role">Broker Associate / Partner</div>
+        <div class="agent-office">Timnath Office · 970.840.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--2">LM<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Laura Martinez</div>
+        <div class="agent-role">Broker Associate / Partner</div>
+        <div class="agent-office">Loveland Office · 970.663.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--4">CW<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Chris Walker</div>
+        <div class="agent-role">New Construction / Partner</div>
+        <div class="agent-office">Harmony Office · 970.229.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--1">SB<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Sarah Bennett</div>
+        <div class="agent-role">Land &amp; Acreage / Partner</div>
+        <div class="agent-office">Mulberry Office · 970.221.0700</div>
+      </a>
+      <a class="agent-card" href="#">
+        <div class="agent-photo agent-photo--3">TN<span class="ph-note">Portrait placeholder</span></div>
+        <div class="agent-name">Tom Nguyen</div>
+        <div class="agent-role">Commercial / Partner</div>
+        <div class="agent-office">Centerra Office · 970.613.0700</div>
+      </a>
+    </div>
+    <p style="margin-top:48px;text-align:center" data-reveal><a class="btn btn--outline" href="#">Load more agents</a></p>
+  </div>
+</section>
+
+<!-- ownership band -->
+<section class="section section--deep">
+  <div class="wrap quote-band" data-reveal>
+    <span class="label label--gold">Why it matters</span>
+    <blockquote>Owned by the people who show up for you.</blockquote>
+    <cite style="color:rgba(255,255,255,.65)">Every agent is full-time. Every agent is an owner.
+      That changes how we operate — and who we attract.</cite>
+  </div>
+</section>
+
+<!-- match cta -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal>
+        <span class="label label--muted">Not sure where to start?</span>
+        <h2 class="headline" style="margin:18px 0 20px">We'll make the match.</h2>
+        <p class="muted measure">Tell us what you're looking for and where, and we'll connect you
+          with the Group agent whose experience fits your move — no obligation, no pressure.</p>
+      </div>
+      <form class="contact-form" data-mock-form data-reveal>
+        <input type="text" placeholder="First name" required>
+        <input type="text" placeholder="Last name" required>
+        <input class="full" type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="What are you looking for?"></textarea>
+        <div class="full"><button class="btn" type="submit">Request a match</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <svg class="ridge ridge--deep" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--paper);display:block">
+    <path d="M0,70 L0,52 L120,38 L260,55 L420,18 L560,44 L720,8 L880,40 L1020,22 L1180,48 L1320,30 L1440,46 L1440,70 Z" style="fill:var(--deep-2)"></path>
+  </svg>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="https://thegroupinc.com/wp-content/uploads/2026/04/TheGroup_Logo_Horizontal-Full-Color-INC.png" alt="The Group Real Estate"
+               onerror="this.outerHTML='&lt;span class=&quot;brand-word&quot;&gt;The&lt;b&gt;Group&lt;/b&gt;&lt;/span&gt;'">
+        </a>
+        <p class="footer-tagline">Practiced. Proven.&nbsp;Yours.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="sell.html">Sell with us</a>
+        <a href="buy.html">Buy with us</a>
+        <a href="communities.html">Communities</a>
+        <a href="agents.html">Find an agent</a>
+        <a href="about.html">About The Group</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Market reports</a>
+        <a href="#">Seller concession reports</a>
+        <a href="#">The Real Estate Insider</a>
+        <a href="about.html#groupgives">GroupGives</a>
+        <a href="#">Join our team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Offices</h4>
+        <div class="footer-office"><strong>Harmony</strong> — 2803 E. Harmony Rd, Fort Collins · (970) 229-0700</div>
+        <div class="footer-office"><strong>Mulberry</strong> — 401 W. Mulberry St, Fort Collins · (970) 221-0700</div>
+        <div class="footer-office"><strong>Centerra</strong> — 5401 Stone Creek Cir, Loveland · (970) 613-0700</div>
+        <div class="footer-office"><strong>Loveland</strong> — 1401 W. 29th St, Loveland · (970) 663-0700</div>
+        <div class="footer-office"><strong>Timnath</strong> — 4650 Signal Tree Dr, Timnath · (970) 840-0700</div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <div class="legal-row">
+        <span>© 2026 The Group, Inc. All rights reserved.</span>
+        <a href="#">Site map</a><a href="#">Privacy policy</a><a href="#">Accessibility</a>
+      </div>
+      <p>Information deemed reliable but not guaranteed by the MLS. — <em>Design mock for internal
+        review; agent names shown are placeholders.</em></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

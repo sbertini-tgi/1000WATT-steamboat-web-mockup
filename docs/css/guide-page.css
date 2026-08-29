@@ -252,6 +252,15 @@ a.cpoint__v--lg:hover { color: var(--gold); }
 }
 .office__dir:hover { border-color: var(--gold); background: var(--gold); color: var(--cream); }
 
+/* =========================================================
+   README / SITE GUIDE
+   ========================================================= */
+.readme-group { margin-top: clamp(46px, 6vw, 74px); }
+.readme-group:first-of-type { margin-top: 0; }
+.readme-group > .eyebrow { margin-bottom: 24px; }
+.readme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 26px; }
+.readme__file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: var(--muted); margin: 2px 0 14px; word-break: break-all; }
+
 .contact__map { margin-top: clamp(32px, 4vw, 46px); }
 .contact__map .cpoint__k { margin-bottom: 14px; }
 .map { aspect-ratio: 16 / 10; border: 1px solid var(--line); overflow: hidden; background: #e7e0cf; }

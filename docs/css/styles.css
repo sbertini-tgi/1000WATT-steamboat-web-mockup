@@ -314,8 +314,11 @@ br.brk { display: inline; }
 
 .agent-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 44px 34px;
+  gap: 44px 34px; align-items: start;
 }
+.agent { display: block; color: inherit; }
+.agent--static { cursor: default; }
+.agent:focus-visible { outline: 1px solid var(--gold-bright); outline-offset: 8px; }
 .agent__photo {
   aspect-ratio: 427 / 537;
   background:
@@ -326,9 +329,14 @@ br.brk { display: inline; }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover; display: block;
-  transition: transform .6s ease;
+  transition: transform 1.2s cubic-bezier(.16,1,.3,1);
 }
-.agent:hover .agent__photo img { transform: scale(1.03); }
+/* Scrim that washes up from the base of the portrait on hover */
+.agent__veil {
+  position: absolute; inset: 0; display: block;
+  background: linear-gradient(to top, rgba(30,30,30,.62) 0%, rgba(30,30,30,0) 56%);
+  opacity: 0; transition: opacity .7s ease;
+}
 .agent[hidden] { display: none !important; }
 .agents__empty {
   margin-top: 8px;
@@ -337,10 +345,64 @@ br.brk { display: inline; }
 }
 .agent__meta {
   display: flex; align-items: baseline; justify-content: space-between;
-  gap: 12px; margin-top: 18px;
+  gap: 12px; margin-top: 18px; padding-top: 16px;
+  border-top: 1px solid var(--line-dark);
 }
-.agent__name { font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 20px; color: var(--white); }
+.agent__id { display: block; }
+.agent__name {
+  display: block;
+  font-family: var(--serif); font-variation-settings: var(--serif-clean);
+  font-size: 20px; color: var(--white);
+  transition: color .3s ease;
+}
+.agent__role {
+  display: block; margin-top: 7px;
+  font-size: 10px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--gold-bright);
+  opacity: 0; transition: opacity .5s ease;
+}
 .agent__num { font-size: 10px; letter-spacing: .12em; color: var(--gold-bright); }
+
+/* ---- Hover drawer: the detail panel that drops out of each tile ---- */
+.agent__drop {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 13px 24px;
+  margin-top: 0; max-height: 0; opacity: 0; overflow: hidden;
+  transition: max-height .5s ease-out, opacity .5s ease-out, margin-top .5s ease-out;
+}
+.agent__k {
+  display: block;
+  font-size: 10px; letter-spacing: var(--track); text-transform: uppercase;
+  color: rgba(248,248,246,.4);
+}
+.agent__v { display: block; margin-top: 5px; font-size: 13.5px; line-height: 1.45; color: rgba(248,248,246,.8); }
+.agent__v--gold { color: var(--gold-bright); }
+.agent__go {
+  grid-column: 1 / -1; margin-top: 2px;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 10px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+@media (hover: hover) {
+  .agent:hover .agent__photo img,
+  .agent:focus-visible .agent__photo img { transform: scale(1.04); }
+  .agent:hover .agent__veil,
+  .agent:focus-visible .agent__veil { opacity: 1; }
+  .agent:hover .agent__role,
+  .agent:focus-visible .agent__role { opacity: 1; }
+  .agent:hover .agent__drop,
+  .agent:focus-visible .agent__drop { max-height: 400px; opacity: 1; margin-top: 18px; }
+  a.agent:hover .agent__name { color: var(--gold-bright); }
+}
+/* Touch devices get no hover — keep the detail open so it is still reachable */
+@media (hover: none) {
+  .agent__role { opacity: 1; }
+  .agent__drop { max-height: none; opacity: 1; margin-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .agent__photo img, .agent__veil, .agent__role, .agent__drop { transition-duration: .01ms; }
+}
 
 /* =========================================================
    LIFESTYLE  (light)

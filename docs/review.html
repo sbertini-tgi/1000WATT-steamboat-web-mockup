@@ -34,7 +34,7 @@
       <a class="crumb" href="readme.html"><span>&larr;</span> Site Guide</a>
       <p class="eyebrow eyebrow--bright">Review</p>
       <h1 class="h2">Every section, and where it stands.</h1>
-      <p class="lede">Walk the site section by section, mark each one approved or needs work, and send the whole lot in one email. Nothing here is published &mdash; your marks stay in this browser until you send them.</p>
+      <p class="lede" data-rv-lede>Walk the site section by section, mark each one approved or needs work, and send the whole lot in one email.</p>
     </div>
   </div>
 
@@ -66,14 +66,10 @@
         <button class="rv-btn rv-btn--go" type="button" data-rv="mail">Email my review</button>
         <button class="rv-btn" type="button" data-rv="copy">Copy all</button>
         <button class="rv-btn" type="button" data-rv="clear">Clear my review</button>
+        <button class="rv-btn" type="button" data-rv="refresh" hidden>Refresh team review</button>
       </div>
 
-      <p class="rv-hint">
-        <b>How this works.</b> Open any page with <code>?review=1</code> on the end of the address &mdash; or press
-        &ldquo;Start reviewing&rdquo; above. A tag appears on every section; click one to approve it or leave a note.
-        Your marks are saved in <b>this browser only</b>, so they are not shared until you press
-        &ldquo;Email my review&rdquo;. Reviewing on a second computer starts a fresh set.
-      </p>
+      <p class="rv-hint" data-rv-hint></p>
 
       <div data-rv-groups></div>
 
@@ -129,6 +125,51 @@
     }
 
     var VLABEL = { ok: 'Approved', fix: 'Needs work' };
+    var team = null;          // rows from the shared sheet, once loaded
+
+    function initials(name) {
+      return String(name || '?').trim().split(/\s+/).slice(0, 2)
+        .map(function (w) { return w.charAt(0).toUpperCase(); }).join('') || '?';
+    }
+
+    /* Everyone else's marks for one section. */
+    function teamFor(file, id) {
+      if (!team) return null;
+      var mine = (R.load().reviewer || '').trim().toLowerCase();
+      return team.filter(function (r) {
+        return r.page === file && r.id === id &&
+               (r.v || (r.n || '').trim()) &&
+               String(r.reviewer).trim().toLowerCase() !== mine;
+      });
+    }
+
+    function teamMarkup(rows) {
+      if (!rows || !rows.length) return '';
+      var chips = rows.map(function (r) {
+        return '<span class="rv-chip" data-v="' + esc(r.v) + '" title="' +
+               esc(r.reviewer + ' — ' + (VLABEL[r.v] || 'Comment')) + '">' +
+               esc(initials(r.reviewer)) + '</span>';
+      }).join('');
+      var notes = rows.filter(function (r) { return (r.n || '').trim(); }).map(function (r) {
+        return '<span class="rv-row__other"><b>' + esc(r.reviewer) + '</b> &middot; ' +
+               esc(VLABEL[r.v] || 'Comment') +
+               (r.status ? ' <em>(' + esc(r.status) + ')</em>' : '') +
+               '<br />' + esc(r.n) + '</span>';
+      }).join('');
+      return '<span class="rv-chips">' + chips + '</span>' + notes;
+    }
+
+    function loadTeam() {
+      if (!R.sync.enabled()) { render(); return; }
+      var btn = document.querySelector('[data-rv="refresh"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Loading\u2026'; }
+      R.sync.pull(function (err, rows) {
+        if (btn) { btn.disabled = false; btn.textContent = 'Refresh team review'; }
+        if (err) { team = null; say('Could not reach the team sheet — showing your marks only.'); }
+        else { team = rows; }
+        render();
+      });
+    }
 
     function render() {
       var d = R.load();
@@ -143,9 +184,22 @@
       });
       var done = ok + fix;
 
-      headingEl.textContent = done
-        ? done + ' of ' + total + ' sections reviewed.'
-        : total + ' sections, none reviewed yet.';
+      var tally = '';
+      if (team) {
+        var covered = {}, people = {};
+        team.forEach(function (r) {
+          if (!r.v && !(r.n || '').trim()) return;
+          covered[r.page + '#' + r.id] = 1;
+          people[r.reviewer] = 1;
+        });
+        var nPeople = Object.keys(people).length;
+        tally = '  ' + Object.keys(covered).length + ' of ' + total +
+                ' covered by the team (' + nPeople +
+                (nPeople === 1 ? ' reviewer).' : ' reviewers).');
+      }
+      headingEl.textContent = (done
+        ? done + ' of ' + total + ' reviewed by you.'
+        : total + ' sections, none reviewed by you yet.') + tally;
       barOk.style.width  = (ok / total * 100) + '%';
       barFix.style.width = (fix / total * 100) + '%';
       barFix.style.left  = (ok / total * 100) + '%';
@@ -171,20 +225,26 @@
             if (!it) return;
             if (it.v === 'ok') pOk++; else if (it.v === 'fix') pFix++;
           });
+          var pTeam = team ? p.blocks.filter(function (b) {
+            var o = teamFor(p.file, b.id); return o && o.length;
+          }).length : 0;
           out += '<div class="rv-pagecard">' +
                    '<div class="rv-pagecard__head">' +
                      '<div><h3 class="rv-pagecard__title">' + esc(p.title) + '</h3>' +
                      '<p class="rv-pagecard__file">' + esc(p.file) + '</p></div>' +
-                     '<span class="rv-pagecard__count">' + (pOk + pFix) + ' / ' + p.blocks.length + ' reviewed</span>' +
+                     '<span class="rv-pagecard__count">' + (pOk + pFix) + ' / ' + p.blocks.length + ' reviewed by you' +
+                       (pTeam ? ' &middot; ' + pTeam + ' by the team' : '') + '</span>' +
                    '</div><ul class="rv-rows">';
           p.blocks.forEach(function (b, i) {
             var it = d.items[p.file + '#' + b.id] || {};
             var note = (it.n || '').trim();
+            var others = teamFor(p.file, b.id);
             out += '<li class="rv-row" data-v="' + esc(it.v || '') + '">' +
                      '<a href="' + esc(p.file) + '?review=1#' + esc(b.id) + '">' +
                        '<span class="rv-row__dot"></span>' +
                        '<span><span class="rv-row__label">&sect;' + (i + 1) + ' &nbsp;' + esc(b.label) + '</span>' +
-                       (note ? '<span class="rv-row__note">' + esc(note) + '</span>' : '') + '</span>' +
+                       (note ? '<span class="rv-row__note">' + esc(note) + '</span>' : '') +
+                       teamMarkup(others) + '</span>' +
                        '<span class="rv-row__v">' + (VLABEL[it.v] || '') + '</span>' +
                      '</a></li>';
           });
@@ -195,6 +255,30 @@
       groupsEl.innerHTML = out;
     }
 
+    /* The story changes completely once the shared sheet is live, so say
+       the true thing rather than a hedge that covers both. */
+    (function copy_() {
+      var on = R.sync.enabled();
+      document.querySelector('[data-rv-lede]').innerHTML = on
+        ? 'Walk the site section by section and mark each one approved or needs work. '
+          + 'Everything you mark saves straight to the team\u2019s shared sheet, so the '
+          + 'whole group sees it \u2014 and you can see theirs.'
+        : 'Walk the site section by section, mark each one approved or needs work, and send '
+          + 'the whole lot in one email. Nothing here is published \u2014 your marks stay in '
+          + 'this browser until you send them.';
+      document.querySelector('[data-rv-hint]').innerHTML = on
+        ? '<b>How this works.</b> Open any page with <code>?review=1</code> on the end of the '
+          + 'address \u2014 or press \u201cStart reviewing\u201d above. A tag appears on every '
+          + 'section; click one to approve it or leave a note. Put your name in the box above, '
+          + 'or nothing will sync. Marks save to the shared sheet within a few seconds and are '
+          + 'kept in your browser too, so a dropped connection never loses a note.'
+        : '<b>How this works.</b> Open any page with <code>?review=1</code> on the end of the '
+          + 'address \u2014 or press \u201cStart reviewing\u201d above. A tag appears on every '
+          + 'section; click one to approve it or leave a note. Your marks are saved in '
+          + '<b>this browser only</b>, so they are not shared until you press \u201cEmail my '
+          + 'review\u201d. Reviewing on a second computer starts a fresh set.';
+    })();
+
     whoEl.addEventListener('input', function () {
       var d = R.load(); d.reviewer = whoEl.value; R.save(d);
     });
@@ -203,7 +287,8 @@
       var t = e.target.closest('[data-rv]');
       if (!t) return;
       var a = t.getAttribute('data-rv');
-      if (a === 'mail') { R.mail(say); setTimeout(render, 400); }
+      if (a === 'refresh') { loadTeam(); }
+      else if (a === 'mail') { R.mail(say); setTimeout(render, 400); }
       else if (a === 'copy') {
         R.copy(R.digest()).then(function () { R.markSent(); render(); say('Full review copied to your clipboard.'); })
           ['catch'](function () { say('Could not copy — try "Email my review".'); });
@@ -219,7 +304,14 @@
     groupsEl.addEventListener('click', function (e) { if (e.target.closest('a')) R.setOn(true); });
 
     window.addEventListener('storage', render);
-    render();
+    R.sync.onChange(render);
+
+    if (R.sync.enabled()) {
+      document.querySelector('[data-rv="refresh"]').hidden = false;
+      loadTeam();
+    } else {
+      render();
+    }
   })();
   </script>
 

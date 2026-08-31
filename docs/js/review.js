@@ -18,12 +18,19 @@
           picks their own recipient. -------------------------------- */
   var MAIL_TO = 'sbertini@thegroupinc.com';
 
+  /* ---- Shared Google Sheet.  Paste the Apps Script web-app /exec URL
+          here (see tools/review-endpoint.gs). While it is blank the
+          overlay works exactly as before: notes stay in the browser and
+          go out by email. Once it is set, every mark also syncs to the
+          team sheet and the dashboard can show everyone's review. ---- */
+  var ENDPOINT = '';
+
   var KEY = 'tg-review:v1';
   var MANIFEST = window.REVIEW_MANIFEST || { pages: [] };
 
   /* ---------- storage ---------- */
   function load() {
-    var d = { on: false, reviewer: '', items: {}, sent: 0 };
+    var d = { on: false, reviewer: '', items: {}, sent: 0, out: {} };
     try {
       var raw = localStorage.getItem(KEY);
       if (raw) {
@@ -31,6 +38,7 @@
         if (p && typeof p === 'object') {
           d.on = !!p.on; d.reviewer = p.reviewer || '';
           d.items = p.items || {}; d.sent = p.sent || 0;
+          d.out = p.out || {};
         }
       }
     } catch (e) { /* private window, blocked storage — carry on empty */ }
@@ -183,10 +191,164 @@
     });
   }
 
+  /* =========================================================
+     Sync to the shared Google Sheet.
+
+     Apps Script cannot answer a CORS preflight, so this writes
+     fire-and-forget (no-cors POST, which the browser sends without a
+     preflight) and then reads the sheet back over JSONP to confirm the
+     row actually landed. Anything unconfirmed stays in the outbox and
+     is retried, so a dropped connection or a closed laptop does not
+     lose a note. localStorage remains the source of truth locally.
+     ========================================================= */
+  var sync = (function () {
+    var inFlight = false, timer = null, poll = null;
+    var last = { at: 0, ok: null };
+
+    function enabled() { return !!ENDPOINT; }
+
+    /* JSONP: a <script> tag is not subject to CORS, unlike fetch. */
+    function jsonp(params, cb) {
+      var name = 'rvcb' + Math.random().toString(36).slice(2);
+      var s = document.createElement('script');
+      var done = false, timeout;
+      function cleanup() {
+        clearTimeout(timeout);
+        try { delete window[name]; } catch (e) { window[name] = undefined; }
+        if (s.parentNode) s.parentNode.removeChild(s);
+      }
+      window[name] = function (data) { done = true; cleanup(); cb(null, data); };
+      s.onerror = function () { if (!done) { cleanup(); cb(new Error('network')); } };
+      timeout = setTimeout(function () { if (!done) { cleanup(); cb(new Error('timeout')); } }, 15000);
+      var q = ['callback=' + name];
+      Object.keys(params || {}).forEach(function (k) {
+        q.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k]));
+      });
+      s.src = ENDPOINT + (ENDPOINT.indexOf('?') > -1 ? '&' : '?') + q.join('&');
+      document.head.appendChild(s);
+    }
+
+    function pending(d) { return Object.keys((d || load()).out || {}).length; }
+
+    /* An unnamed reviewer would land in the sheet as "Anonymous" and be
+       impossible to follow up with, so hold the outbox until they say
+       who they are. */
+    function blocked(d) { return !(d || load()).reviewer.trim(); }
+
+    function payloadFor(d, keys) {
+      var root = siteRoot();
+      return keys.map(function (k) {
+        var cut = k.indexOf('#'), page = k.slice(0, cut), id = k.slice(cut + 1);
+        var it = d.items[k] || { v: '', n: '', t: Date.now() };
+        return {
+          page: page, id: id, label: labelFor(page, id),
+          v: it.v || '', n: it.n || '', t: it.t || Date.now(),
+          url: root + page + '#' + id
+        };
+      });
+    }
+
+    function flush(cb) {
+      var d = load();
+      if (!enabled() || inFlight || blocked(d)) { cb && cb(null, 0); return; }
+      var keys = Object.keys(d.out || {});
+      if (!keys.length) { cb && cb(null, 0); return; }
+      if (navigator.onLine === false) { cb && cb(new Error('offline'), 0); return; }
+
+      inFlight = true;
+      var body = JSON.stringify({ reviewer: d.reviewer, items: payloadFor(d, keys) });
+
+      fetch(ENDPOINT, {
+        method: 'POST', mode: 'no-cors', cache: 'no-store',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: body
+      }).then(function () {
+        /* The response is opaque, so confirm by reading the sheet. */
+        setTimeout(function () { confirm_(keys, cb); }, 1400);
+      })['catch'](function (err) {
+        inFlight = false; last = { at: Date.now(), ok: false };
+        emit(); cb && cb(err, 0);
+      });
+    }
+
+    function confirm_(keys, cb) {
+      var d = load();
+      jsonp({ reviewer: d.reviewer }, function (err, res) {
+        inFlight = false;
+        if (err || !res || !res.ok) {
+          last = { at: Date.now(), ok: false }; emit(); cb && cb(err || new Error('bad reply'), 0);
+          return;
+        }
+        var seen = {};
+        (res.rows || []).forEach(function (r) { seen[r.page + '#' + r.id] = r; });
+
+        var now = load(), cleared = 0;
+        keys.forEach(function (k) {
+          var mine = now.items[k], theirs = seen[k];
+          if (!theirs) return;
+          var want = mine ? (mine.t || 0) : 0;
+          /* Sheets round-trips the timestamp through a Date; allow a
+             second of slack rather than demanding an exact match. */
+          if (!mine || theirs.t >= want - 1000) { delete now.out[k]; cleared++; }
+        });
+        save(now);
+        last = { at: Date.now(), ok: true };
+        emit(); cb && cb(null, cleared);
+      });
+    }
+
+    /** Everyone's rows, for the dashboard. */
+    function pull(cb) {
+      if (!enabled()) { cb(new Error('no endpoint')); return; }
+      jsonp({}, function (err, res) {
+        if (err) return cb(err);
+        if (!res || !res.ok) return cb(new Error(res && res.error || 'bad reply'));
+        cb(null, res.rows || []);
+      });
+    }
+
+    function queue(key) {
+      var d = load();
+      d.out = d.out || {};
+      d.out[key] = 1;
+      save(d);
+      emit();
+      clearTimeout(timer);
+      timer = setTimeout(function () { flush(); }, 1500);
+    }
+
+    var listeners = [];
+    function emit() { listeners.forEach(function (f) { try { f(status()); } catch (e) {} }); }
+    function onChange(f) { listeners.push(f); }
+
+    function status() {
+      var d = load();
+      return {
+        enabled: enabled(), pending: pending(d), blocked: blocked(d),
+        busy: inFlight, ok: last.ok, at: last.at
+      };
+    }
+
+    function start() {
+      if (!enabled()) return;
+      flush();
+      clearInterval(poll);
+      poll = setInterval(function () { if (pending()) flush(); }, 30000);
+      window.addEventListener('online', function () { flush(); });
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && pending()) flush();
+      });
+    }
+
+    return { enabled: enabled, flush: flush, pull: pull, queue: queue,
+             pending: pending, status: status, onChange: onChange, start: start };
+  })();
+
   var API = {
     load: load, save: save, digest: digest, counts: counts, unsentCount: unsentCount,
     copy: copy, mail: mail, markSent: markSent, pageKey: pageKey, siteRoot: siteRoot,
-    manifest: MANIFEST, MAIL_TO: MAIL_TO,
+    manifest: MANIFEST, MAIL_TO: MAIL_TO, endpoint: ENDPOINT, sync: sync,
+    labelFor: labelFor, titleFor: titleFor,
     set: function (file, id, patch) {
       var d = load(), k = file + '#' + id;
       var it = d.items[k] || { v: '', n: '' };
@@ -194,12 +356,24 @@
       if ('n' in patch) it.n = patch.n;
       it.t = Date.now();
       if (!it.v && !(it.n || '').trim()) delete d.items[k]; else d.items[k] = it;
-      save(d); return d;
+      save(d);
+      sync.queue(k);
+      return d;
     },
-    clearAll: function () { var d = load(); d.items = {}; d.sent = 0; save(d); return d; },
+    clearAll: function () {
+      var d = load(), keys = Object.keys(d.items);
+      d.items = {}; d.sent = 0; d.out = {};
+      /* If the sheet is live, push the clears too — otherwise the
+         reviewer wipes their browser and their old rows live on. */
+      if (sync.enabled()) keys.forEach(function (k) { d.out[k] = 1; });
+      save(d);
+      if (sync.enabled()) sync.flush();
+      return d;
+    },
     setOn: function (on) { var d = load(); d.on = !!on; save(d); return d; }
   };
   window.TGReview = API;
+  sync.start();
 
   /* =========================================================
      Overlay — only mounts on pages that have reviewable blocks.
@@ -320,15 +494,29 @@
       toastTimer = setTimeout(function () { toast.classList.remove('is-open'); }, 4200);
     }
 
+    function syncBit() {
+      var s = sync.status();
+      if (!s.enabled) return '';
+      if (s.blocked)  return ' &middot; <b>add your name to sync</b>';
+      if (s.busy)     return ' &middot; <span class="rv-sync">saving&hellip;</span>';
+      if (s.pending)  return ' &middot; <b>' + s.pending + ' waiting to sync</b>';
+      if (s.ok === false) return ' &middot; <b>sync failed &mdash; will retry</b>';
+      if (s.ok) return ' &middot; <span class="rv-sync is-ok">saved to the team sheet</span>';
+      return '';
+    }
+
     function refresh() {
       var d = load();
       var c = counts(d, FILE);
       var todo = blocks.length - c.ok - c.fix;
-      var unsent = unsentCount(d);
+      /* With the sheet live the email is a courtesy, not the delivery
+         mechanism, so the "unsent" nudge only applies without it. */
+      var unsent = sync.enabled() ? 0 : unsentCount(d);
       $('[data-rv-stat]', bar).innerHTML =
         '<i>' + c.ok + ' approved</i> &middot; <u>' + c.fix + ' need work</u> &middot; ' +
         '<b>' + todo + '</b> to go on this page' +
-        (unsent ? ' &middot; <b>' + unsent + ' unsent</b>' : '');
+        (unsent ? ' &middot; <b>' + unsent + ' unsent</b>' : '') +
+        syncBit();
       $('[data-rv="mail"]', bar).classList.toggle('is-nudge', unsent > 0);
       blocks.forEach(function (b, i) {
         var it = d.items[FILE + '#' + b.id] || {};
@@ -430,6 +618,8 @@
         setTimeout(refresh, 400);
       }
     });
+
+    sync.onChange(function () { refresh(); });
 
     scrim.addEventListener('click', close);
     document.addEventListener('keydown', function (e) {

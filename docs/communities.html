@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="ihero">
+  <header class="ihero" id="s-hero" data-review="Hero">
     <img class="ihero__bg" src="assets/img/topo-1.svg" alt="Topographic contour placeholder" />
     <div class="ihero__scrim"></div>
 
@@ -40,7 +41,7 @@
   </header>
 
   <!-- ============================ INTRO ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-communities" data-review="Communities">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -56,7 +57,7 @@
   </section>
 
   <!-- ============================ GRID ============================ -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="s-neighborhoods" data-review="Neighborhoods">
     <div class="container">
       <div class="commgrid">
         <article class="comm"><div class="comm__img"><img src="assets/img/cta-town.png" alt="The lights of downtown Steamboat in the valley at dusk" loading="lazy" /></div><div class="comm__body"><h3 class="comm__name">Downtown</h3><p class="comm__blurb">Historic Lincoln Avenue and Old Town — walkable, warm, and steps from the Yampa River and the hot springs. In-town living at its most classic.</p></div></article>
@@ -85,7 +86,7 @@
   </section>
 
   <!-- ============================ CTA ============================ -->
-  <section class="band">
+  <section class="band" id="s-find-your-corner" data-review="Find Your Corner">
     <img class="band__bg" src="assets/img/topo-5.svg" alt="Topographic contour placeholder" />
     <div class="band__scrim"></div>
     <div class="container">
@@ -100,7 +101,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -116,6 +117,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

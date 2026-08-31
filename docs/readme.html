@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="ihero">
+  <header class="ihero" id="s-hero" data-review="Hero">
     <img class="ihero__bg" src="assets/img/topo-5.svg" alt="Topographic contour placeholder" />
     <div class="ihero__scrim"></div>
 
@@ -40,8 +41,28 @@
   </header>
 
   <!-- ============================ GUIDE ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-guide-index" data-review="Guide index">
     <div class="container">
+
+      <div class="readme-group">
+        <p class="eyebrow">Team Review</p>
+        <div class="readme-grid">
+          <a class="pub" href="review.html">
+            <p class="pub__k">Review &middot; Start here</p>
+            <h3 class="pub__title">Review Dashboard</h3>
+            <p class="readme__file">review.html</p>
+            <p class="pub__desc">Every section of every page in one list, with your approve / needs-work marks and comments. Send the whole review in one email when you are done.</p>
+            <span class="pub__more">Open <span>&rarr;</span></span>
+          </a>
+          <a class="pub" href="index.html?review=1">
+            <p class="pub__k">Review &middot; Switch it on</p>
+            <h3 class="pub__title">Turn On Review Mode</h3>
+            <p class="readme__file">any-page.html<b>?review=1</b></p>
+            <p class="pub__desc">Adds a tag to all 119 sections across the site. Click a tag to approve the section or leave a note. It stays on as you browse, and your marks are private to your browser until you send them.</p>
+            <span class="pub__more">Start reviewing <span>&rarr;</span></span>
+          </a>
+        </div>
+      </div>
 
       <div class="readme-group">
         <p class="eyebrow">Mockups</p>
@@ -189,7 +210,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -205,6 +226,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

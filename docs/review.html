@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Dashboard — The Group, Steamboat Springs Mockup</title>
+  <meta name="description" content="Section-by-section review status for The Group's Steamboat mockup." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
+</head>
+<body>
+
+  <!-- ============================ HEAD ============================ -->
+  <div class="pagehead">
+    <nav class="nav">
+      <div class="nav__brand">
+        <a href="index.html"><img class="nav__logo" src="assets/svg/logo.svg" alt="The Group" /></a>
+        <span class="nav__loc">Steamboat Springs, CO</span>
+      </div>
+      <div class="nav__links">
+        <a href="index.html#agents">The People</a>
+        <a href="index.html#buyers">Buyers Now</a>
+        <a href="index.html#life">Lifestyle</a>
+        <a href="index.html#guides">How We Work</a>
+        <a href="property-search.html">Search</a>
+      </div>
+    </nav>
+    <div class="pagehead__inner">
+      <a class="crumb" href="readme.html"><span>&larr;</span> Site Guide</a>
+      <p class="eyebrow eyebrow--bright">Review</p>
+      <h1 class="h2">Every section, and where it stands.</h1>
+      <p class="lede">Walk the site section by section, mark each one approved or needs work, and send the whole lot in one email. Nothing here is published &mdash; your marks stay in this browser until you send them.</p>
+    </div>
+  </div>
+
+  <!-- ============================ DASHBOARD ============================ -->
+  <section class="section bg-cream">
+    <div class="container">
+
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Your progress</p>
+          <h2 class="h2" data-rv-heading>Loading&hellip;</h2>
+        </div>
+        <div class="field" style="min-width:200px">
+          <label for="rv-who">Your name</label>
+          <input id="rv-who" type="text" placeholder="Jane Marketing" autocomplete="name" />
+        </div>
+      </div>
+
+      <div class="rv-progress">
+        <div class="rv-progress__track">
+          <span class="rv-progress__ok" data-rv-bar-ok style="width:0"></span>
+          <span class="rv-progress__fix" data-rv-bar-fix style="width:0;left:0"></span>
+        </div>
+        <div class="rv-progress__legend" data-rv-legend></div>
+      </div>
+
+      <div class="rv-actions">
+        <a class="rv-btn rv-btn--go" href="index.html?review=1" data-rv-start>Start reviewing &rarr;</a>
+        <button class="rv-btn rv-btn--go" type="button" data-rv="mail">Email my review</button>
+        <button class="rv-btn" type="button" data-rv="copy">Copy all</button>
+        <button class="rv-btn" type="button" data-rv="clear">Clear my review</button>
+      </div>
+
+      <p class="rv-hint">
+        <b>How this works.</b> Open any page with <code>?review=1</code> on the end of the address &mdash; or press
+        &ldquo;Start reviewing&rdquo; above. A tag appears on every section; click one to approve it or leave a note.
+        Your marks are saved in <b>this browser only</b>, so they are not shared until you press
+        &ldquo;Email my review&rdquo;. Reviewing on a second computer starts a fresh set.
+      </p>
+
+      <div data-rv-groups></div>
+
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer footer--home" id="footer">
+    <div class="footer__box">
+      <hr class="footer__rule" />
+      <div class="footer__inner">
+      <a href="about-the-group-steamboat.html">About Us</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+      <a href="readme.html">Readme</a>
+      </div>
+      <hr class="footer__rule" />
+      <div class="footer__fine">
+        <p class="footer__copy">&copy; 2026 The Group Real Estate LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="rv-toast" data-rv-toast style="display:block"></div>
+
+  <script src="js/review-manifest.js"></script>
+  <script src="js/review.js"></script>
+  <script>
+  /* Review dashboard — reads the same localStorage the overlay writes. */
+  (function () {
+    var R = window.TGReview, M = window.REVIEW_MANIFEST;
+    if (!R || !M) return;
+
+    var groupsEl  = document.querySelector('[data-rv-groups]');
+    var headingEl = document.querySelector('[data-rv-heading]');
+    var legendEl  = document.querySelector('[data-rv-legend]');
+    var barOk     = document.querySelector('[data-rv-bar-ok]');
+    var barFix    = document.querySelector('[data-rv-bar-fix]');
+    var whoEl     = document.getElementById('rv-who');
+    var toastEl   = document.querySelector('[data-rv-toast]');
+    var toastT    = null;
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function say(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add('is-open');
+      clearTimeout(toastT);
+      toastT = setTimeout(function () { toastEl.classList.remove('is-open'); }, 4200);
+    }
+
+    var VLABEL = { ok: 'Approved', fix: 'Needs work' };
+
+    function render() {
+      var d = R.load();
+      whoEl.value = d.reviewer || '';
+
+      var total = M.blocks, ok = 0, fix = 0, notes = 0;
+      Object.keys(d.items).forEach(function (k) {
+        var it = d.items[k];
+        if (!it) return;
+        if (it.v === 'ok') ok++; else if (it.v === 'fix') fix++;
+        if ((it.n || '').trim()) notes++;
+      });
+      var done = ok + fix;
+
+      headingEl.textContent = done
+        ? done + ' of ' + total + ' sections reviewed.'
+        : total + ' sections, none reviewed yet.';
+      barOk.style.width  = (ok / total * 100) + '%';
+      barFix.style.width = (fix / total * 100) + '%';
+      barFix.style.left  = (ok / total * 100) + '%';
+      legendEl.innerHTML =
+        '<span><b>' + ok + '</b> approved</span>' +
+        '<span><b>' + fix + '</b> need work</span>' +
+        '<span><b>' + (total - done) + '</b> untouched</span>' +
+        '<span><b>' + notes + '</b> with comments</span>';
+
+      var groups = [], seen = {};
+      M.pages.forEach(function (p) {
+        if (!seen[p.group]) { seen[p.group] = []; groups.push(p.group); }
+        seen[p.group].push(p);
+      });
+
+      var out = '';
+      groups.forEach(function (g) {
+        out += '<div class="readme-group"><p class="eyebrow">' + esc(g) + '</p>';
+        seen[g].forEach(function (p) {
+          var pOk = 0, pFix = 0;
+          p.blocks.forEach(function (b) {
+            var it = d.items[p.file + '#' + b.id];
+            if (!it) return;
+            if (it.v === 'ok') pOk++; else if (it.v === 'fix') pFix++;
+          });
+          out += '<div class="rv-pagecard">' +
+                   '<div class="rv-pagecard__head">' +
+                     '<div><h3 class="rv-pagecard__title">' + esc(p.title) + '</h3>' +
+                     '<p class="rv-pagecard__file">' + esc(p.file) + '</p></div>' +
+                     '<span class="rv-pagecard__count">' + (pOk + pFix) + ' / ' + p.blocks.length + ' reviewed</span>' +
+                   '</div><ul class="rv-rows">';
+          p.blocks.forEach(function (b, i) {
+            var it = d.items[p.file + '#' + b.id] || {};
+            var note = (it.n || '').trim();
+            out += '<li class="rv-row" data-v="' + esc(it.v || '') + '">' +
+                     '<a href="' + esc(p.file) + '?review=1#' + esc(b.id) + '">' +
+                       '<span class="rv-row__dot"></span>' +
+                       '<span><span class="rv-row__label">&sect;' + (i + 1) + ' &nbsp;' + esc(b.label) + '</span>' +
+                       (note ? '<span class="rv-row__note">' + esc(note) + '</span>' : '') + '</span>' +
+                       '<span class="rv-row__v">' + (VLABEL[it.v] || '') + '</span>' +
+                     '</a></li>';
+          });
+          out += '</ul></div>';
+        });
+        out += '</div>';
+      });
+      groupsEl.innerHTML = out;
+    }
+
+    whoEl.addEventListener('input', function () {
+      var d = R.load(); d.reviewer = whoEl.value; R.save(d);
+    });
+
+    document.querySelector('.rv-actions').addEventListener('click', function (e) {
+      var t = e.target.closest('[data-rv]');
+      if (!t) return;
+      var a = t.getAttribute('data-rv');
+      if (a === 'mail') { R.mail(say); setTimeout(render, 400); }
+      else if (a === 'copy') {
+        R.copy(R.digest()).then(function () { R.markSent(); render(); say('Full review copied to your clipboard.'); })
+          ['catch'](function () { say('Could not copy — try "Email my review".'); });
+      } else if (a === 'clear') {
+        if (window.confirm('Delete every mark and comment you have made in this browser?')) {
+          R.clearAll(); render(); say('Your review has been cleared.');
+        }
+      }
+    });
+
+    /* Keep review mode on when jumping in from here. */
+    document.querySelector('[data-rv-start]').addEventListener('click', function () { R.setOn(true); });
+    groupsEl.addEventListener('click', function (e) { if (e.target.closest('a')) R.setOn(true); });
+
+    window.addEventListener('storage', render);
+    render();
+  })();
+  </script>
+
+</body>
+</html>

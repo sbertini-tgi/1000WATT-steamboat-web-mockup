@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="ihero">
+  <header class="ihero" id="s-hero" data-review="Hero">
     <img class="ihero__bg" src="assets/img/hero-sellers.svg" alt="A topographic contour drawing of the valley centered on a home" />
     <div class="ihero__scrim"></div>
 
@@ -40,7 +41,7 @@
   </header>
 
   <!-- ============================ INTRO ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-selling-group" data-review="Selling With The Group">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -56,7 +57,7 @@
   </section>
 
   <!-- ============================ PRICING SPLIT ============================ -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="s-first-decision" data-review="The First Decision">
     <div class="container">
       <div class="split split--rev">
         <div class="split__img ph" data-label="Comparative market analysis"></div>
@@ -73,7 +74,7 @@
   </section>
 
   <!-- ============================ MARKETING ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-how-we-present" data-review="How We Present It">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -92,7 +93,7 @@
   </section>
 
   <!-- ============================ GLOBAL REACH ============================ -->
-  <section class="section bg-dark">
+  <section class="section bg-dark" id="s-global-reach" data-review="Global Reach">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -113,7 +114,7 @@
   </section>
 
   <!-- ============================ WHAT WE HANDLE ============================ -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="s-what-we-handle" data-review="What We Handle">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -139,7 +140,7 @@
   </section>
 
   <!-- ============================ CTA ============================ -->
-  <section class="band">
+  <section class="band" id="s-when-youre-ready" data-review="When You&#x27;re Ready To Sell">
     <img class="band__bg" src="assets/img/topo-4.svg" alt="Topographic contour placeholder" />
     <div class="band__scrim"></div>
     <div class="container">
@@ -155,7 +156,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -171,6 +172,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

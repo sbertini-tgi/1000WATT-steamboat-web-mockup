@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="ihero">
+  <header class="ihero" id="s-hero" data-review="Hero">
     <img class="ihero__bg" src="assets/img/hero-buyers.svg" alt="A topographic contour drawing of the valley converging on a survey mark" />
     <div class="ihero__scrim"></div>
 
@@ -40,7 +41,7 @@
   </header>
 
   <!-- ============================ WHY ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-why-group" data-review="Why The Group">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -56,7 +57,7 @@
   </section>
 
   <!-- ============================ PROCESS ============================ -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="s-process" data-review="The Process">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -80,7 +81,7 @@
   </section>
 
   <!-- ============================ SPLIT — before it lists ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-ground-truth" data-review="Ground Truth">
     <div class="container">
       <div class="split">
         <div class="split__img"><img src="assets/img/life-rest.png" alt="Rocking chairs on a warmly lit cabin porch at dusk" /></div>
@@ -97,7 +98,7 @@
   </section>
 
   <!-- ============================ EXPECT ============================ -->
-  <section class="section bg-dark">
+  <section class="section bg-dark" id="s-what-you-can" data-review="What You Can Expect">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -123,7 +124,7 @@
   </section>
 
   <!-- ============================ CTA ============================ -->
-  <section class="band">
+  <section class="band" id="s-when-youre-ready" data-review="When You&#x27;re Ready To Look">
     <img class="band__bg" src="assets/img/topo-3.svg" alt="Topographic contour placeholder" />
     <div class="band__scrim"></div>
     <div class="container">
@@ -138,7 +139,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -154,6 +155,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

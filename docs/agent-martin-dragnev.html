@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ AGENT HEAD ============================ -->
-  <div class="pagehead">
+  <div class="pagehead" id="s-page-header" data-review="Page header">
     <nav class="nav">
       <div class="nav__brand">
         <a href="index.html"><img class="nav__logo" src="assets/svg/logo.svg" alt="The Group" /></a>
@@ -52,7 +53,7 @@
   </div>
 
   <!-- ============================ ABOUT ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-about" data-review="About">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -71,7 +72,7 @@
   </section>
 
   <!-- ============================ MY LISTINGS ============================ -->
-  <section class="section bg-white" id="listings">
+  <section class="section bg-white" id="listings" data-review="My Listings">
     <div class="container">
       <div class="sec-head">
         <div>
@@ -117,7 +118,7 @@
   </section>
 
   <!-- ============================ MY SOLDS ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-my-solds" data-review="My Solds">
     <div class="container">
       <p class="eyebrow">My Solds</p>
       <h2 class="h2">Recently closed.</h2>
@@ -157,7 +158,7 @@
   </section>
 
   <!-- ============================ CREDENTIALS ============================ -->
-  <section class="section bg-dark">
+  <section class="section bg-dark" id="s-designations-recognition" data-review="Designations &amp; Recognition">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -180,7 +181,7 @@
   </section>
 
   <!-- ============================ ASK ============================ -->
-  <section class="section inquire" id="ask">
+  <section class="section inquire" id="ask" data-review="Get In Touch">
     <div class="container">
       <div class="inquire__grid">
         <div class="inquire__intro">
@@ -200,7 +201,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -216,6 +217,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

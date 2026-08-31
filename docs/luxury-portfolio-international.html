@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="ihero">
+  <header class="ihero" id="s-hero" data-review="Hero">
     <img class="ihero__bg" src="assets/img/topo-3.svg" alt="Topographic contour placeholder" />
     <div class="ihero__scrim"></div>
 
@@ -40,7 +41,7 @@
   </header>
 
   <!-- ============================ WHAT IT IS ============================ -->
-  <section class="section bg-cream">
+  <section class="section bg-cream" id="s-luxury-portfolio-international" data-review="Luxury Portfolio International">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -61,7 +62,7 @@
   </section>
 
   <!-- ============================ WHAT IT MEANS ============================ -->
-  <section class="section bg-dark">
+  <section class="section bg-dark" id="s-what-it-means" data-review="What It Means For You">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -83,7 +84,7 @@
   </section>
 
   <!-- ============================ CTA ============================ -->
-  <section class="band">
+  <section class="band" id="s-home-worth-reach" data-review="A Home Worth The Reach">
     <img class="band__bg" src="assets/img/topo-1.svg" alt="Topographic contour placeholder" />
     <div class="band__scrim"></div>
     <div class="container">
@@ -98,7 +99,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -114,6 +115,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

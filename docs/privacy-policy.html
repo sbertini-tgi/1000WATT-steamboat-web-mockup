@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/guide-page.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ PAGE HEAD ============================ -->
-  <div class="pagehead">
+  <div class="pagehead" id="s-page-header" data-review="Page header">
     <nav class="nav">
       <div class="nav__brand">
         <a href="index.html"><img class="nav__logo" src="assets/svg/logo.svg" alt="The Group" /></a>
@@ -37,7 +38,7 @@
   </div>
 
   <!-- ============================ POLICY ============================ -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="s-privacy-policy" data-review="Privacy Policy">
     <div class="container">
       <div class="lead-grid">
         <div class="lead-head">
@@ -83,7 +84,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -99,6 +100,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
 
 </body>
 </html>

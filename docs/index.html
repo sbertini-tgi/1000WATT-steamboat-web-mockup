@@ -19,11 +19,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/review.css" />
 </head>
 <body>
 
   <!-- ============================ HERO ============================ -->
-  <header class="hero" id="hero">
+  <header class="hero" id="hero" data-review="Hero">
     <img class="hero__bg" src="assets/img/hero.png" alt="Paddleboarders and kayakers on an alpine lake below the Steamboat mountains in summer" />
     <div class="hero__scrim"></div>
 
@@ -48,7 +49,7 @@
   </header>
 
   <!-- ============================ BUYERS ============================ -->
-  <section class="section buyers" id="buyers">
+  <section class="section buyers" id="buyers" data-review="Who&#x27;s Looking Right Now">
     <div class="container">
       <div class="buyers__head">
         <div>
@@ -127,7 +128,7 @@
   </section>
 
   <!-- ============================ INQUIRY FORM ============================ -->
-  <section class="section inquire" id="inquire">
+  <section class="section inquire" id="inquire" data-review="Read Your Brief">
     <div class="container">
       <div class="inquire__grid">
         <div class="inquire__intro">
@@ -170,7 +171,7 @@
   </section>
 
   <!-- ============================ AGENTS ============================ -->
-  <section class="section agents" id="agents">
+  <section class="section agents" id="agents" data-review="The People">
     <div class="container">
       <p class="eyebrow eyebrow--bright">Us</p>
       <h2 class="h2">The people who know <br class="brk" />this valley by heart.</h2>
@@ -424,7 +425,7 @@
   </section>
 
   <!-- ============================ LIFESTYLE ============================ -->
-  <section class="section life" id="life">
+  <section class="section life" id="life" data-review="The Life We Live">
     <div class="container">
       <div class="life__head">
         <p class="eyebrow life__eyebrow">The Life We Live</p>
@@ -445,7 +446,7 @@
   </section>
 
   <!-- ============================ STORIES ============================ -->
-  <section class="section stories" id="stories">
+  <section class="section stories" id="stories" data-review="Editor&#x27;s Note">
     <div class="container">
       <div class="stories__grid">
         <div class="stories__lead">
@@ -509,7 +510,7 @@
   </section>
 
   <!-- ============================ GUIDES ============================ -->
-  <section class="section guides" id="guides">
+  <section class="section guides" id="guides" data-review="How We Work">
     <div class="container">
       <div class="guides__grid">
         <div class="guides__lead">
@@ -535,7 +536,7 @@
   </section>
 
   <!-- ============================ CTA — GroupGives ============================ -->
-  <section class="cta" id="groupgives">
+  <section class="cta" id="groupgives" data-review="GroupGives">
     <img class="cta__bg" src="assets/img/cta-town.png" alt="The lights of a mountain town glowing in the valley at dusk" />
     <div class="cta__scrim"></div>
     <div class="container">
@@ -547,7 +548,7 @@
   </section>
 
   <!-- ============================ READY ============================ -->
-  <section class="section ready" id="ready">
+  <section class="section ready" id="ready" data-review="When You&#x27;re Ready To Look">
     <div class="container">
       <p class="eyebrow">When You're Ready To Look</p>
       <h2 class="h2">The right home is somewhere <br class="brk" />in this valley. Let's find it.</h2>
@@ -571,7 +572,7 @@
   </section>
 
   <!-- ============================ AWARDS ============================ -->
-  <section class="section awards" id="awards">
+  <section class="section awards" id="awards" data-review="Awards">
     <div class="container">
       <h2 class="awards__title">Practiced. Proven. Yours.</h2>
       <div class="awards__list">
@@ -583,7 +584,7 @@
   </section>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="footer footer--home" id="footer">
+  <footer class="footer footer--home" id="footer" data-review="Footer">
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
@@ -603,5 +604,9 @@
   <script src="js/agents.js" defer></script>
   <script src="js/finder.js" defer></script>
   <script src="js/lifestyle.js" defer></script>
+  <!-- Review overlay: add ?review=1 to any page to switch it on -->
+  <script src="js/review-manifest.js" defer></script>
+  <script src="js/review.js" defer></script>
+
 </body>
 </html>

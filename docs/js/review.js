@@ -23,7 +23,7 @@
           overlay works exactly as before: notes stay in the browser and
           go out by email. Once it is set, every mark also syncs to the
           team sheet and the dashboard can show everyone's review. ---- */
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzOPmBTqeBCVv-Li_vuivta0fhwQ2z8ExSjRsfZlIbAlzPI9wXvVS79_4Wa_G4zaAKi/exec';
 
   var KEY = 'tg-review:v1';
   var MANIFEST = window.REVIEW_MANIFEST || { pages: [] };
@@ -219,7 +219,7 @@
       }
       window[name] = function (data) { done = true; cleanup(); cb(null, data); };
       s.onerror = function () { if (!done) { cleanup(); cb(new Error('network')); } };
-      timeout = setTimeout(function () { if (!done) { cleanup(); cb(new Error('timeout')); } }, 15000);
+      timeout = setTimeout(function () { if (!done) { cleanup(); cb(new Error('timeout')); } }, 25000);
       var q = ['callback=' + name];
       Object.keys(params || {}).forEach(function (k) {
         q.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k]));
@@ -256,6 +256,7 @@
       if (navigator.onLine === false) { cb && cb(new Error('offline'), 0); return; }
 
       inFlight = true;
+      emit();
       var body = JSON.stringify({ reviewer: d.reviewer, items: payloadFor(d, keys) });
 
       fetch(ENDPOINT, {
@@ -264,7 +265,7 @@
         body: body
       }).then(function () {
         /* The response is opaque, so confirm by reading the sheet. */
-        setTimeout(function () { confirm_(keys, cb); }, 1400);
+        setTimeout(function () { confirm_(keys, cb); }, 700);
       })['catch'](function (err) {
         inFlight = false; last = { at: Date.now(), ok: false };
         emit(); cb && cb(err, 0);

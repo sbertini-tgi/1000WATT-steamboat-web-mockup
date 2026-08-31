@@ -110,6 +110,22 @@ function setup() {
 }
 
 
+/**
+ * Wipe every review row, keeping the header, formatting and dropdowns.
+ * Run it by hand from the editor when a revision goes out and you want
+ * the team to review from a clean slate. Reviewers' browsers keep their
+ * own copy, so anyone still marked up will re-sync on their next visit —
+ * tell them to press "Clear my review" on the dashboard first.
+ */
+function resetSheet() {
+  var sh = tab_();
+  var last = sh.getLastRow();
+  if (last > 1) sh.deleteRows(2, last - 1);
+  SpreadsheetApp.flush();
+  return 'Cleared ' + Math.max(last - 1, 0) + ' row(s).';
+}
+
+
 /* ---------------------------------------------------------------
    Write: the overlay POSTs here
    --------------------------------------------------------------- */

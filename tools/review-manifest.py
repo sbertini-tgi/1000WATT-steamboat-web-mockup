@@ -73,6 +73,44 @@ def reviewable(tag, attrs):
     if tag == "div" and "pagehead" in cl: return True
     return False
 
+ROBOTS = '<meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />'
+NOINDEX = "  %s\n" % ROBOTS
+VIEWPORT_RE = re.compile(r'^\s*<meta name="viewport"[^>]*>\n', re.M)
+ROBOTS_RE = re.compile(r'<meta name="robots"[^>]*>')
+
+def stamp_noindex():
+    """Keep every page in docs/ out of the search index.
+
+    This is a public repo published to GitHub Pages, and the mockup carries real
+    agents' names, photographs and phone numbers. A robots.txt cannot do the job
+    here: crawlers only read it from the host root (sbertini-tgi.github.io/
+    robots.txt), which a project-pages repo does not control. The per-page meta
+    is therefore the only mechanism that actually applies, so it is enforced
+    here rather than left to whoever adds the next page.
+
+    Normalises rather than merely adds: a weaker directive already on a page (a
+    bare noindex, say) is replaced, and duplicates are collapsed. Covers every
+    .html under docs/, including the pages the review overlay skips and the
+    pre-1000watt reference mockup. Writes only on a real change, so it is
+    idempotent and safe to run on every invocation.
+    """
+    n = 0
+    for path in sorted(glob.glob(os.path.join(DOCS, "**", "*.html"), recursive=True)):
+        src = open(path, encoding="utf-8").read()
+        # Strip every existing robots meta, taking its whole line with it.
+        out = re.sub(r'^[ \t]*<meta name="robots"[^>]*>[ \t]*\n', "", src, flags=re.M)
+        out = ROBOTS_RE.sub("", out)          # any left inline, mid-line
+        m = VIEWPORT_RE.search(out)
+        if not m:
+            print("  ! no <meta viewport> to anchor to:", os.path.relpath(path, DOCS))
+            continue
+        out = out[:m.end()] + NOINDEX + out[m.end():]
+        if out != src:
+            open(path, "w", encoding="utf-8").write(out)
+            n += 1
+    return n
+
+
 def pages():
     fs = sorted(glob.glob(os.path.join(DOCS, "*.html")))
     fs += sorted(glob.glob(os.path.join(DOCS, "search", "*.html")))
@@ -193,6 +231,8 @@ GROUP = {  # dashboard grouping
 def attr(s):
     return html.escape(str(s), quote=True)
 
+stamped = stamp_noindex()
+
 manifest, stats = [], {"pages": 0, "blocks": 0, "new_ids": 0}
 
 for name, path in pages():
@@ -253,3 +293,4 @@ out.write(";\n")
 open(os.path.join(DOCS, "js", "review-manifest.js"), "w", encoding="utf-8").write(out.getvalue())
 
 print("pages wired: %(pages)d   blocks: %(blocks)d   new ids: %(new_ids)d" % stats)
+print("noindex meta stamped on %d page(s)" % stamped)

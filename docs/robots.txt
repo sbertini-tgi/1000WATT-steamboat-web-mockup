@@ -1,0 +1,13 @@
+# This mockup should not be indexed. It is published from a public repo and
+# carries real agents' names, photographs and phone numbers.
+#
+# NOTE: on a GitHub Pages *project* site this file is served at
+#   /1000WATT-steamboat-web-mockup/robots.txt
+# and crawlers ignore it — robots.txt is only honoured at the host root
+# (sbertini-tgi.github.io/robots.txt), which this repo does not control.
+# The per-page <meta name="robots" content="noindex, ..."> tags are what
+# actually apply. This file is here so the rule is already correct if a custom
+# domain is ever attached, and as a statement of intent.
+
+User-agent: *
+Disallow: /

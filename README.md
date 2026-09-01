@@ -43,6 +43,29 @@ row) are declared once and referenced as `{"type": "$band"}`, and copy can inter
 `{{agent.first}}` so one string works for any agent. The second port needed one new block
 type and the third needed none; §4 of the catalogue has the record.
 
+## Keeping it out of search results
+
+Every page under `docs/` carries:
+
+```html
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />
+```
+
+This is enforced, not left to whoever adds the next page:
+`tools/build-agent-site.py` emits it, and `tools/review-manifest.py` normalises it
+across all 63 pages on every run (replacing weaker directives, collapsing
+duplicates, writing only on a real change).
+
+**`docs/robots.txt` is present but inert at the current URL.** Crawlers only read
+robots.txt from the host root — `sbertini-tgi.github.io/robots.txt` — which a
+*project* Pages repo does not control. The per-page meta tags are what actually
+apply. The file is there so the rule is already right if a custom domain is ever
+attached.
+
+Note that `noindex` asks well-behaved crawlers not to index; it does not make the
+site private. Anything genuinely sensitive should stay out of `docs/` (as
+`specs/` already does, via `.gitignore`).
+
 ## Serving it as a website (GitHub Pages)
 
 This is a public repo, configured to publish from the **`docs/` folder**:

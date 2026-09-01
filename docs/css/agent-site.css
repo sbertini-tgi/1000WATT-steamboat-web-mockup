@@ -1,0 +1,399 @@
+/* =========================================================
+   AGENT SITE — section blocks specific to an individual
+   agent's site (docs/lauren-bloom/ and any sibling folder).
+
+   Loaded after css/styles.css + css/guide-page.css, which
+   already carry the tokens and most section components.
+   Only genuinely new blocks live here; everything that an
+   existing brokerage page already solves is reused as-is.
+
+   Catalogue of blocks: /agent-site-sections.md
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   NAV — agent lockup beside The Group mark
+   --------------------------------------------------------- */
+.nav__agent {
+  font-family: var(--serif);
+  font-variation-settings: var(--serif-clean);
+  font-size: 17px;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  color: inherit;
+}
+.nav__rule {
+  width: 1px; height: 18px;
+  background: rgba(255,255,255,.28);
+  flex-shrink: 0;
+}
+.pagehead .nav__rule { background: rgba(255,255,255,.28); }
+.nav__tel {
+  margin-left: 28px;
+  font-size: 11px; letter-spacing: var(--track); text-transform: uppercase;
+  white-space: nowrap;
+  /* Gold on the dark .pagehead, where it has contrast to spare. Over a hero
+     photograph it measured ~2:1 against a pale sky, so there it goes white
+     like the rest of the nav (~5.4:1) and keeps the gold only on hover. */
+  color: var(--gold-bright);
+}
+.hero .nav__tel { color: rgba(255,255,255,.92); }
+.hero .nav__tel:hover { color: var(--gold-bright); }
+.pagehead .nav__tel:hover { color: #fff; }
+@media (max-width: 900px) { .nav__agent { display: none; } .nav__rule { display: none; } }
+@media (max-width: 720px) { .nav__tel { margin-left: auto; } }
+
+/* ---------------------------------------------------------
+   HERO — agent name lockup, actions, search entry
+   --------------------------------------------------------- */
+.hero__actions {
+  display: flex; flex-wrap: wrap; gap: 14px 22px;
+  align-items: center; margin-top: 38px;
+}
+.hero__actions .pill-btn { color: #fff; border-color: rgba(255,255,255,.6); }
+.hero__actions .pill-btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.hero__actions .pill-btn--gold { color: var(--gold-bright); border-color: var(--gold-bright); }
+.hero__actions .pill-btn--gold:hover { background: var(--gold-bright); color: var(--dark); border-color: var(--gold-bright); }
+
+.hero__search {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 42px; max-width: 560px;
+  border-bottom: 1px solid rgba(255,255,255,.4);
+  padding-bottom: 14px;
+  transition: border-color .25s;
+}
+.hero__search:hover { border-color: var(--gold-bright); }
+.hero__search svg { width: 18px; height: 18px; color: rgba(255,255,255,.7); flex-shrink: 0; }
+.hero__search span { flex: 1; font-size: 16px; color: rgba(255,255,255,.86); }
+.hero__search em {
+  font-style: normal; flex-shrink: 0;
+  font-size: 11px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+/* ---------------------------------------------------------
+   AGENT INTRO — portrait beside copy, on a light ground.
+   (The dark variant is .agenthead in guide-page.css.)
+   --------------------------------------------------------- */
+.aintro {
+  display: grid; grid-template-columns: minmax(0,0.78fr) minmax(0,1.22fr);
+  gap: clamp(32px, 5vw, 78px); align-items: center;
+}
+.aintro--rev .aintro__copy { order: -1; }
+.aintro__photo { aspect-ratio: 4 / 5; overflow: hidden; background: #e7e0cf; }
+.aintro__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aintro__role {
+  font-size: 11px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--muted); margin: 18px 0 0;
+}
+.aintro__copy .h2 { margin-bottom: 22px; }
+.aintro__actions { display: flex; flex-wrap: wrap; gap: 16px 26px; align-items: center; margin-top: 32px; }
+@media (max-width: 900px) {
+  .aintro { grid-template-columns: 1fr; gap: 34px; }
+  .aintro--rev .aintro__copy { order: 0; }
+}
+
+/* Contact-facts list on a light ground (dark twin: .agentfacts) */
+.afacts {
+  list-style: none; margin: clamp(26px,3vw,34px) 0 0; padding: 26px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 24px 30px;
+}
+.afacts__k { display: block; font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); }
+.afacts__v { display: block; margin-top: 9px; font-size: 15px; line-height: 1.45; color: var(--ink); overflow-wrap: anywhere; }
+.afacts__v a:hover { color: var(--gold); }
+
+/* ---------------------------------------------------------
+   TESTIMONIALS — same data, two layouts
+   --------------------------------------------------------- */
+.quotes { margin-top: clamp(34px, 4vw, 52px); }
+
+/* slider: a horizontal rail of three-ish cards */
+.quotes--slider {
+  display: flex; gap: 26px; overflow-x: auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none;
+  margin-inline: calc(var(--pad) * -1); padding-inline: var(--pad); padding-bottom: 8px;
+}
+.quotes--slider::-webkit-scrollbar { display: none; }
+.quotes--slider .quote { scroll-snap-align: start; flex: 0 0 clamp(288px, 30vw, 400px); }
+
+/* wall: every review, two up */
+.quotes--wall { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+@media (max-width: 820px) { .quotes--wall { grid-template-columns: 1fr; } }
+
+.quote {
+  border: 1px solid var(--line); background: rgba(255,255,255,.28);
+  padding: 32px 30px 28px; display: flex; flex-direction: column;
+}
+.quote__mark {
+  font-family: var(--serif); font-variation-settings: var(--serif-clean);
+  font-size: 42px; line-height: .6; color: var(--gold); margin-bottom: 22px;
+}
+.quote__body { font-size: 15px; line-height: 1.68; color: var(--body); margin: 0 0 26px; }
+.quote__by { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); }
+.quote__name { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+.quote__place { display: block; margin-top: 7px; font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold); }
+
+.bg-dark .quote { border-color: var(--line-dark); background: rgba(255,255,255,.03); }
+.bg-dark .quote__mark { color: var(--gold-bright); }
+.bg-dark .quote__body { color: rgba(248,248,246,.72); }
+.bg-dark .quote__by { border-color: var(--line-dark); }
+.bg-dark .quote__name { color: #fff; }
+.bg-dark .quote__place { color: var(--gold-bright); }
+
+/* ---------------------------------------------------------
+   TABS — status sets over one listing grid (For Sale / Sold)
+   --------------------------------------------------------- */
+.tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(26px,3vw,38px); }
+.tab {
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 22px;
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--body);
+  transition: border-color .2s, color .2s;
+}
+.tab:hover { border-color: var(--gold); color: var(--gold); }
+.tab.is-active { color: var(--gold); border-color: var(--gold); }
+.tab__n { color: var(--muted); font-size: 9.5px; margin-left: 8px; }
+.tabpanel[hidden] { display: none; }
+.bg-dark .tab { border-color: var(--line-dark); color: rgba(248,248,246,.66); }
+.bg-dark .tab:hover, .bg-dark .tab.is-active { color: var(--gold-bright); border-color: var(--gold-bright); }
+
+/* ---------------------------------------------------------
+   DIRECTORY — grouped preferred contacts / vendors
+   --------------------------------------------------------- */
+.dir { margin-top: clamp(34px, 4vw, 52px); display: grid; gap: clamp(38px, 4vw, 56px); }
+.dir__group { border-top: 1px solid var(--line); padding-top: 26px; }
+.dir__head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.dir__name {
+  font-family: var(--serif); font-variation-settings: var(--serif-clean);
+  font-size: 25px; color: var(--ink); margin: 0;
+}
+.dir__count { font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); }
+.dir__list {
+  list-style: none; margin: 22px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2px 26px;
+}
+.dir__list li { border-bottom: 1px solid var(--line); }
+.dir__link {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+  padding: 15px 0; transition: color .2s;
+}
+.dir__link:hover { color: var(--gold); }
+.dir__co { font-size: 15px; color: var(--ink); }
+.dir__link:hover .dir__co { color: var(--gold); }
+.dir__go { font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
+.dir__link:hover .dir__go { color: var(--gold); }
+
+/* ---------------------------------------------------------
+   VIDEOS
+   --------------------------------------------------------- */
+.vids { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: clamp(32px,4vw,46px); }
+.vid { border: 1px solid var(--line); background: rgba(255,255,255,.28); display: flex; flex-direction: column; color: inherit; }
+.vid:hover { border-color: var(--gold); }
+.vid__frame { aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #e0d9c7; display: grid; place-items: center; }
+.vid__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vid__play {
+  position: relative; z-index: 1;
+  width: 54px; height: 54px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.8); background: rgba(30,30,30,.34);
+  display: grid; place-items: center; color: #fff;
+  transition: background .25s, border-color .25s;
+}
+.vid:hover .vid__play { background: var(--gold); border-color: var(--gold); }
+.vid__play svg { width: 14px; height: 14px; margin-left: 3px; }
+.vid__body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; }
+.vid__meta { font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold); }
+.vid__title { font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 20px; line-height: 1.28; color: var(--ink); }
+@media (max-width: 1000px) { .vids { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .vids { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------
+   LOCAL LINKS — the agent's curated area knowledge
+   --------------------------------------------------------- */
+.locals { list-style: none; margin: clamp(30px,4vw,44px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1px 30px; }
+.locals li { border-top: 1px solid var(--line); padding: 18px 0; }
+.locals__k { display: block; font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold); }
+.locals__v { display: block; margin-top: 9px; font-size: 15px; line-height: 1.5; color: var(--ink); }
+.bg-dark .locals li { border-color: var(--line-dark); }
+.bg-dark .locals__k { color: var(--gold-bright); }
+.bg-dark .locals__v { color: rgba(248,248,246,.82); }
+
+/* ---------------------------------------------------------
+   MORTGAGE CALCULATOR
+   --------------------------------------------------------- */
+.calc {
+  display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+  gap: clamp(34px, 5vw, 72px); align-items: start;
+  margin-top: clamp(32px,4vw,46px);
+}
+.calc__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; }
+.calc__out { border: 1px solid var(--line); background: rgba(255,255,255,.4); padding: clamp(26px,3vw,38px); }
+.calc__k { font-size: 11px; letter-spacing: var(--track); text-transform: uppercase; color: var(--muted); }
+.calc__pay {
+  font-family: var(--serif); font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 0;
+  font-size: clamp(40px, 5vw, 62px); line-height: 1; color: var(--ink); margin: 14px 0 0;
+}
+.calc__rows { list-style: none; margin: 30px 0 0; padding: 26px 0 0; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.calc__rows li { display: flex; justify-content: space-between; gap: 18px; font-size: 14px; color: var(--body); }
+.calc__rows b { font-weight: 500; color: var(--ink); }
+@media (max-width: 900px) { .calc { grid-template-columns: 1fr; } .calc__fields { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------
+   FORM ADDITIONS — select + consent line
+   --------------------------------------------------------- */
+.field select {
+  font-family: var(--sans); font-size: 15px; color: var(--ink);
+  background: transparent; border: 0; border-bottom: 1px solid var(--line);
+  padding: 6px 0 12px; width: 100%; border-radius: 0;
+  -webkit-appearance: none; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: right 6px top 14px, right 1px top 14px;
+  background-size: 6px 6px, 6px 6px; background-repeat: no-repeat;
+}
+.field select:focus { outline: none; border-color: var(--gold); }
+.form__consent {
+  grid-column: 1 / -1;
+  font-size: 11px; line-height: 1.7; color: var(--muted); margin: 4px 0 0;
+}
+.form__consent a { color: var(--gold); }
+
+/* ---------------------------------------------------------
+   VALUATION promo — three benefits + CTA on dark
+   --------------------------------------------------------- */
+.val__grid { display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: clamp(36px,5vw,90px); align-items: center; }
+@media (max-width: 900px) { .val__grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* ---------------------------------------------------------
+   FOOTER — agent contact block above the link row
+   --------------------------------------------------------- */
+.footer__agent {
+  display: flex; flex-wrap: wrap; gap: 26px 60px;
+  padding: clamp(40px,5vw,64px) 0 34px;
+}
+.footer__lock { flex: 1 1 220px; }
+.footer__name {
+  font-family: var(--serif); font-variation-settings: var(--serif-clean);
+  font-size: 26px; color: var(--white); margin: 0 0 10px;
+}
+.footer__role { font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold-bright); }
+.footer__col { flex: 0 1 auto; }
+.footer__col .afacts__k { color: rgba(248,248,246,.4); }
+.footer__col .afacts__v { color: rgba(248,248,246,.8); }
+.footer__col .afacts__v a:hover { color: var(--gold-bright); }
+.footer__col .afacts { border-top: 0; margin: 0; padding: 0; display: grid; gap: 18px; grid-template-columns: 1fr; }
+.footer__social { display: flex; gap: 22px; align-items: center; }
+.footer__social a { font-size: 10px; letter-spacing: var(--track); text-transform: uppercase; color: rgba(248,248,246,.5); }
+.footer__social a:hover { color: var(--gold-bright); }
+
+/* ---------------------------------------------------------
+   HERO SCRIM — agent heroes are portraits and bright snow
+   scenes far more often than the brokerage's dusk shots, so
+   they need a heavier wash to hold white type at the base.
+   --------------------------------------------------------- */
+.hero .hero__scrim {
+  background:
+    /* nav band */
+    linear-gradient(180deg, rgba(16,18,17,.66) 0%, rgba(16,18,17,.30) 14%, rgba(16,18,17,0) 34%),
+    /* copy block rising from the base */
+    linear-gradient(0deg,   rgba(16,18,17,.86) 0%, rgba(16,18,17,.60) 26%, rgba(16,18,17,.16) 52%, rgba(16,18,17,0) 70%),
+    /* left column, so gold eyebrows hold over snow */
+    linear-gradient(90deg,  rgba(16,18,17,.62) 0%, rgba(16,18,17,.24) 38%, rgba(16,18,17,0) 66%);
+}
+
+/* ---------------------------------------------------------
+   STAT ROWS — the brokerage row is always three. Agent rows
+   run two to four, and a range value ("$10K–$3.5M") needs
+   the smaller size to stay on one line so the labels align.
+   --------------------------------------------------------- */
+.stats--2 { grid-template-columns: repeat(2, 1fr); }
+.stats--4 { grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.stats--4 .stat__n { font-size: clamp(30px, 3.1vw, 44px); }
+@media (max-width: 900px) {
+  .stats, .stats--4 { grid-template-columns: repeat(2, 1fr); gap: 34px 26px; }
+}
+@media (max-width: 460px) {
+  .stats, .stats--2, .stats--4 { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------
+   BAND SCRIM — agent bands run to bright, high-key lifestyle
+   photography (dust, snow, aspens), so the left column needs
+   more wash than the brokerage's dusk imagery does.
+   --------------------------------------------------------- */
+.band .band__scrim {
+  background:
+    linear-gradient(90deg, rgba(16,18,20,.86) 0%, rgba(16,18,20,.66) 34%, rgba(16,18,20,.20) 66%, rgba(16,18,20,.04) 100%),
+    linear-gradient(0deg,  rgba(16,18,20,.34) 0%, rgba(16,18,20,0) 55%);
+}
+
+/* ---------------------------------------------------------
+   QUICKLINK ROWS — two up on the brokerage guides page, but
+   agent pages use three (buyers / search / sellers). Column
+   counts are classes rather than inline styles so the
+   existing responsive rules can still collapse them.
+   --------------------------------------------------------- */
+.guide-cards--3 { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.guide-cards--3 .guide { padding: 28px 26px 26px; }
+.guide-cards--3 .guide__title { font-size: 23px; }
+@media (max-width: 1000px) {
+  .guide-cards--3 { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ---------------------------------------------------------
+   HERO TYPE LEGIBILITY — agent hero photography is whatever
+   the agent has, and small gold/white type over bright snow
+   or a pale sky loses contrast in a way the scrim alone
+   cannot fix (the scrim would have to be heavy enough to
+   flatten the photograph). A very soft shadow holds the
+   small type without reading as a shadow.
+   --------------------------------------------------------- */
+.hero .nav__links a,
+.hero .nav__loc,
+.hero .nav__tel,
+.hero .nav__agent,
+.hero .eyebrow,
+.hero .lede,
+.hero__search span,
+.hero__search em {
+  text-shadow: 0 1px 14px rgba(12, 14, 13, .55), 0 1px 3px rgba(12, 14, 13, .4);
+}
+.hero__title { text-shadow: 0 2px 26px rgba(12, 14, 13, .38); }
+
+/* ---------------------------------------------------------
+   HERO COPY BLOCK — a scrim sized to the text rather than to
+   the viewport. Gradient geometry tuned to one photograph
+   breaks on the next agent's, because the copy block sits at
+   a different height depending on how long the lede runs.
+   This wash travels with the content, so gold eyebrows and
+   white ledes hold over dusk snow and bright snow alike.
+   --------------------------------------------------------- */
+.hero__inner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  /* Generous top runway so the mask can finish fading well above the
+     eyebrow, which is the highest and smallest type in the block. */
+  inset: -132px 0 -24px calc(var(--pad) * -1);
+  background: linear-gradient(
+    90deg,
+    rgba(14,16,15,.74) 0%,
+    rgba(14,16,15,.60) 34%,
+    rgba(14,16,15,.24) 62%,
+    rgba(14,16,15,0) 84%
+  );
+  /* Masked vertically so the top of the wash dissolves into the photograph
+     instead of drawing a hard rule across the hero. */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 100%);
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   CUT-OUT HEADSHOTS — the Tribus/brokerage agents supply a
+   studio headshot on a plain white ground rather than an
+   environmental portrait. object-fit: cover crops those to
+   a chin, so `fit: "contain"` letterboxes against a matching
+   studio colour and the frame reads as intentional.
+   --------------------------------------------------------- */
+.aintro__photo--contain { background: #fff; }
+.aintro__photo--contain img { object-fit: contain; object-position: center bottom; }
+.agenthead__photo--contain { background: #f2f0ea; }
+.agenthead__photo--contain img { object-fit: contain; object-position: center bottom; }

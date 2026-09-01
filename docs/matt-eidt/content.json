@@ -1,0 +1,591 @@
+{
+  "_": [
+    "Matt Eidt — agent site content, organised by section block.",
+    "Build with: python3 tools/build-agent-site.py docs/matt-eidt/content.json",
+    "Block types and what each one is for: /agent-site-sections.md",
+    "Third port, and the first from Family B (Tribus). His source site is far",
+    "thinner than the Luxury Presence two: no neighbourhoods, no blog, no",
+    "valuation page, no stats. So this site is seven pages, not ten, and leans",
+    "on the brokerage pages the way the catalogue recommends. Two data-shape",
+    "differences absorbed by the builder rather than by hand: listing `specs` is",
+    "optional (his cards publish price + address + listing broker, no beds), and",
+    "`fit: contain` handles a cut-out studio headshot."
+  ],
+
+  "agent": {
+    "name": "Matt Eidt",
+    "first": "Matt",
+    "role": "Broker Associate &amp; Partner",
+    "phone": "970.819.0827",
+    "tel": "+19708190827",
+    "email": "meidt@thegroupinc.com",
+    "license": "FA100031884",
+    "office": "509 Lincoln Ave, Steamboat Springs, CO 80477",
+    "officePhone": "970.870.8800",
+    "officeTel": "+19708708800"
+  },
+
+  "home": "../index.html",
+
+  "nav": [
+    { "label": "About",      "href": "about.html" },
+    { "label": "Portfolio",  "href": "properties.html" },
+    { "label": "Commercial", "href": "commercial.html" },
+    { "label": "Reviews",    "href": "testimonials.html" },
+    { "label": "Contact",    "href": "contact.html" }
+  ],
+
+  "footer": {
+    "columns": [
+      { "facts": [
+        { "label": "Direct", "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+        { "label": "Email",  "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" }
+      ] },
+      { "facts": [
+        { "label": "Office",  "value": "509 Lincoln Ave<br />Steamboat Springs, CO 80477" },
+        { "label": "Mailing", "value": "PO Box 775430<br />Steamboat Springs, CO 80477" }
+      ] }
+    ],
+    "links": [
+      { "label": "About {{agent.first}}",        "href": "about.html" },
+      { "label": "Portfolio",                    "href": "properties.html" },
+      { "label": "Commercial &amp; investment",  "href": "commercial.html" },
+      { "label": "Reviews",                      "href": "testimonials.html" },
+      { "label": "Contact",                      "href": "contact.html" },
+      { "label": "The Group &middot; Steamboat", "href": "../index.html" },
+      { "label": "Privacy",                      "href": "../privacy-policy.html" }
+    ],
+    "copyright": "&copy; 2026 The Group Real Estate LLC. {{agent.name}}, {{agent.role}}. All rights reserved.",
+    "disclaimer": "Information deemed reliable but not guaranteed by the MLS. The data relating to real estate for sale on this web site comes in part from Information and Real Estate Services, LLC under Summit MLS Rules, and is provided for limited non-commercial use. Information is provided exclusively for consumers' personal use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Real estate listings held by other brokerage firms are included in this site and detailed information about them includes the name of the listing brokers. Listing broker has attempted to offer accurate data, but buyers are advised to confirm all items. Before purchasing investment property be sure to consult with your legal and tax advisor. The Group Real Estate LLC cannot make any guarantees about return on investment. Equal Housing Opportunity."
+  },
+
+  "shared": {
+    "band": {
+      "type": "band",
+      "label": "Work With {{agent.first}}",
+      "id": "s-work-with",
+      "image": "assets/hero.jpg",
+      "eyebrow": "Work with {{agent.first}}",
+      "title": "Honest, effective, personal.",
+      "lede": "Whether you are buying a first mountain home or selling a luxury property, you will not find a more direct approach. Fourteen years of it, on one market.",
+      "actions": [
+        { "label": "Contact {{agent.first}}", "href": "contact.html" },
+        { "label": "Call {{agent.phone}}",    "href": "tel:{{agent.tel}}" }
+      ]
+    },
+
+    "form": {
+      "type": "form",
+      "label": "Contact Me",
+      "id": "ask",
+      "eyebrow": "Contact me",
+      "title": "Send {{agent.first}} a note.",
+      "lede": "Residential, commercial or investment &mdash; and no obligation to be ready to transact. Several of his clients spent years looking before they bought.",
+      "facts": [
+        { "label": "Direct",  "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+        { "label": "Email",   "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" },
+        { "label": "Office",  "value": "509 Lincoln Ave, Steamboat Springs" },
+        { "label": "Since",   "value": "Licensed 2012 &middot; local since 2007" }
+      ],
+      "fields": [
+        { "kind": "text",     "label": "Full name", "required": true, "placeholder": "Jane Buyer" },
+        { "kind": "tel",      "label": "Phone",     "placeholder": "Optional" },
+        { "kind": "email",    "label": "Email",     "required": true, "full": true, "placeholder": "you@email.com" },
+        { "kind": "select",   "label": "What are you interested in", "required": true, "full": true,
+          "placeholder": "Choose one",
+          "options": ["Buying residential", "Selling residential", "Commercial", "Investment &amp; rental", "Just watching the market"] },
+        { "kind": "textarea", "label": "Message", "required": true, "full": true,
+          "placeholder": "Tell {{agent.first}} what you are working on." }
+      ],
+      "submit": "Send to {{agent.first}}",
+      "disclosure": "By submitting, you agree to be contacted by {{agent.name}} and The Group Real Estate by call, email and text about real estate services. Reply STOP to opt out at any time. Message and data rates may apply. Consent is not a condition of purchase. <a href=\"../privacy-policy.html\">Privacy policy</a>."
+    },
+
+    "quicklinks": {
+      "type": "quicklinks",
+      "label": "From The Brokerage",
+      "eyebrow": "From the brokerage",
+      "title": "The rest lives with The Group.",
+      "lede": "{{agent.first}}'s site is deliberately short. Market data, community guides and editorial are maintained once, at brokerage level, and kept current there.",
+      "items": [
+        { "k": "Data",      "title": "Monthly market report", "href": "../market-report.html",
+          "desc": "Routt County closings, inventory and days on market, updated monthly.", "cta": "See the numbers" },
+        { "k": "Editorial", "title": "The Real Estate Insider", "href": "../real-estate-insider.html",
+          "desc": "The Group's long-running analysis of the Steamboat and Northern Colorado markets.", "cta": "Read the Insider" },
+        { "k": "Places",    "title": "Community guides", "href": "../communities.html",
+          "desc": "Every neighbourhood in the valley, with schools, amenities and price history.", "cta": "Browse communities" }
+      ]
+    }
+  },
+
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "Matt Eidt &mdash; Steamboat Springs Residential, Commercial &amp; Investment Real Estate",
+      "desc": "Matt Eidt, Broker Associate & Partner with The Group Real Estate. Realtor since 2012, Steamboat local since 2007, nine-time Best of the Boat Best Real Estate Agent.",
+      "blocks": [
+        {
+          "type": "hero",
+          "label": "Hero",
+          "id": "hero",
+          "image": "assets/hero.jpg",
+          "alt": "Steamboat Springs and the Yampa Valley",
+          "eyebrow": "Steamboat Springs &middot; Since 2007",
+          "title": "Matt Eidt",
+          "lede": "Residential, commercial and investment property in Steamboat Springs. Nine-time &ldquo;Best of the Boat&rdquo; Best Real Estate Agent, and the youngest owner in the history of the firm.",
+          "actions": [
+            { "label": "Contact {{agent.first}}", "href": "contact.html" },
+            { "label": "See the portfolio",       "href": "properties.html" }
+          ],
+          "search": {
+            "placeholder": "Search every listing in Routt County",
+            "label": "Search",
+            "href": "../property-search.html"
+          }
+        },
+        {
+          "type": "agent-intro",
+          "label": "About Me",
+          "id": "s-about-me",
+          "bg": "cream",
+          "image": "assets/matt-eidt.jpg",
+          "alt": "Matt Eidt",
+          "fit": "contain",
+          "role": "{{agent.role}} &middot; The Group Real Estate",
+          "eyebrow": "About me",
+          "title": "Fairness, integrity, legendary service.",
+          "paragraphs": [
+            "A Steamboat local since 2007 and a Realtor&reg; since 2012, {{agent.first}} lives downtown with his wife, daughter and son. He was the <strong>youngest owner in the history of Colorado Group Realty</strong>, now The Group Real Estate.",
+            "A business degree, a background in sales, and years as a <strong>professional photographer</strong> &mdash; which is a more useful combination in this market than it sounds. He shoots and directs the marketing on his own listings."
+          ],
+          "actions": [
+            { "label": "Read his story",   "href": "about.html" },
+            { "label": "See the reviews",  "href": "testimonials.html" }
+          ]
+        },
+        {
+          "type": "listings",
+          "label": "Active Listings",
+          "id": "listings",
+          "bg": "white",
+          "eyebrow": "Active listings",
+          "title": "Currently on the market.",
+          "more": { "label": "See the full portfolio", "href": "properties.html" },
+          "note": "<b>Placeholder view.</b> Live MLS / IDX results (IRES &amp; Summit MLS) connect here in production. Prices, addresses and photography below are {{agent.first}}'s real inventory as of August 2026.",
+          "items": [
+            { "status": "Active", "price": "$375,000", "specs": "Condominium &middot; Oak Creek", "address": "23800 County Road 16, #508, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-cr16-508.jpg" }
+          ]
+        },
+        {
+          "type": "creds",
+          "label": "Recognition &amp; Service",
+          "bg": "dark",
+          "eyebrow": "Recognition &amp; service",
+          "title": "Nine years running, voted by the town he lives in.",
+          "lede": "The awards are useful mostly as evidence of the thing that is hard to put in a bio: he has been here long enough, and behaved well enough, that the community keeps voting for him.",
+          "items": [
+            { "year": "9&times;",  "text": "&ldquo;Best of the Boat, Best Real Estate Agent&rdquo; &mdash; voted by the Steamboat community, nine years." },
+            { "year": "Twenty",    "text": "Recipient of the Twenty-Under-40 award." },
+            { "year": "Youngest",  "text": "Youngest owner in the history of Colorado Group Realty, now The Group Real Estate." },
+            { "year": "Board",     "text": "Steamboat Creates &mdash; the valley's arts and creative-industries council." },
+            { "year": "Board",     "text": "Group Gives Charitable Foundation, the brokerage's giving arm." },
+            { "year": "Board",     "text": "Yampa Valley Gives." },
+            { "year": "Board",     "text": "Steamboat Springs Lions Club, and the Young Professionals Network." },
+            { "year": "2012",      "text": "Licensed in Colorado; a Steamboat resident since 2007." }
+          ]
+        },
+        {
+          "type": "testimonials",
+          "label": "Reviews",
+          "bg": "cream",
+          "layout": "slider",
+          "eyebrow": "Reviews",
+          "title": "Not pushy. That is the recurring word.",
+          "more": { "label": "Read all the reviews", "href": "testimonials.html" },
+          "items": [
+            {
+              "quote": "We first met with him to talk about buying in Steamboat four years ago and he's been working with us ready to help ever since. He's knowledgeable and professional but not pushy or aggressive. It's clear he just wants us to find the right place to call home &mdash; whether or not it happens immediately.",
+              "name": "Bryan Swintek"
+            },
+            {
+              "quote": "{{agent.name}} turned out to be the best realtor I have ever had by far. He was punctual, very easy to communicate with and seemed to think of everything. I used his services to purchase a condo in Steamboat some years back and again contracted with him to sell it recently.",
+              "name": "William B."
+            },
+            {
+              "quote": "{{agent.first}} did a wonderful job and continued to give us sound advice during the whole process. As first-time home sellers, things can get confusing and markets can move slow. But {{agent.first}} kept our spirits up and we knew we had the right guy.",
+              "name": "Cory A."
+            },
+            {
+              "quote": "They took great care in advising us on the local landscape, different areas to consider, rental potential, and important items to consider when finding a second home. True Steamboat market experts.",
+              "name": "Jenna &amp; Quinn"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "Residential, Commercial, Investment",
+          "bg": "white",
+          "eyebrow": "Three kinds of work",
+          "title": "Residential, commercial, investment.",
+          "lede": "Most Steamboat agents do one of these. Doing all three is why {{agent.first}} gets called about the odd ones.",
+          "paragraphs": [
+            "Steamboat's commercial and mixed-use inventory is small, rarely marketed widely, and priced on assumptions that are hard to check from outside. A downtown retail bay, a Copper Ridge industrial unit, a short-term-rental condominium underwritten on real occupancy rather than projected &mdash; these need someone who has actually closed them.",
+            "The residential half is the volume: first mountain homes, move-ups, second homes and luxury. Roughly half of {{agent.first}}'s recent closings were on the buy side, working against other brokerages' listings, which is worth knowing if you are the one buying."
+          ],
+          "checks": [
+            "Downtown and Lincoln Avenue retail and office",
+            "Short-term-rental underwriting on real occupancy",
+            "First mountain homes and move-up buyers",
+            "Luxury and second-home sellers",
+            "Commercial and mixed-use, including Copper Ridge",
+            "Buy-side representation against other brokerages"
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "about.html",
+      "title": "About Matt Eidt &mdash; The Group, Steamboat Springs",
+      "desc": "Matt Eidt, Broker Associate & Partner with The Group Real Estate. Steamboat local since 2007, Realtor since 2012, youngest owner in the firm's history, nine-time Best of the Boat.",
+      "blocks": [
+        {
+          "type": "agent-header",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Eidt", "href": "index.html" },
+          "image": "assets/matt-eidt.jpg",
+          "alt": "Matt Eidt",
+          "fit": "contain",
+          "eyebrow": "{{agent.role}} &middot; Steamboat Springs",
+          "title": "Matt Eidt",
+          "lede": "Residential, commercial and investment property. A business degree, a photographer's eye, and eighteen years of living in the town he sells.",
+          "facts": [
+            { "label": "Direct",  "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+            { "label": "Email",   "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" },
+            { "label": "Office",  "value": "509 Lincoln Ave, Steamboat Springs" },
+            { "label": "Website", "value": "<a href=\"https://owntheboat.com\" target=\"_blank\" rel=\"noopener\">owntheboat.com</a>" }
+          ],
+          "actions": [
+            { "label": "Ask {{agent.first}} a question", "href": "#ask" },
+            { "label": "See the portfolio", "href": "properties.html" }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "About Me",
+          "bg": "cream",
+          "eyebrow": "About me",
+          "title": "Built on fairness and legendary service.",
+          "lede": "His words, and after fourteen years the town appears to agree with them.",
+          "paragraphs": [
+            "Since becoming a Realtor&reg; in 2012, {{agent.first}} has built his business on fairness, integrity, and a commitment to providing legendary service. A Steamboat local since 2007, he has a deep-rooted connection to the community, and lives in downtown Steamboat Springs with his wife, young daughter and son.",
+            "His dedication to real estate has earned significant recognition: <strong>the youngest owner in the history of Colorado Group Realty</strong> (now The Group Real Estate), the prestigious Twenty-Under-40 award, and <strong>&ldquo;Best of the Boat, Best Real Estate Agent&rdquo; for nine years</strong>.",
+            "Beyond real estate, {{agent.first}} is actively involved in the community, having served on the boards of Steamboat Creates, Group Gives Charitable Foundation, Yampa Valley Gives, and the Steamboat Springs Lions Club and Young Professionals Network.",
+            "With a business degree and a background in sales and <strong>professional photography</strong>, he brings an unusual blend of creativity and market expertise to every transaction. His understanding of Steamboat's complex market makes him a resource for buyers and sellers alike, whether residential, commercial or investment.",
+            "Whether you are purchasing your first mountain home or selling a luxury property, you won't find a more honest, effective and personalised approach."
+          ]
+        },
+        {
+          "type": "creds",
+          "label": "Recognition &amp; Service",
+          "bg": "dark",
+          "eyebrow": "Recognition &amp; service",
+          "title": "A record kept by the town.",
+          "items": [
+            { "year": "9&times;",  "text": "&ldquo;Best of the Boat, Best Real Estate Agent&rdquo; &mdash; voted by the Steamboat community, nine years." },
+            { "year": "Twenty",    "text": "Recipient of the Twenty-Under-40 award." },
+            { "year": "Youngest",  "text": "Youngest owner in the history of Colorado Group Realty, now The Group Real Estate." },
+            { "year": "Board",     "text": "Steamboat Creates &mdash; the valley's arts and creative-industries council." },
+            { "year": "Board",     "text": "Group Gives Charitable Foundation, the brokerage's giving arm." },
+            { "year": "Board",     "text": "Yampa Valley Gives." },
+            { "year": "Board",     "text": "Steamboat Springs Lions Club, and the Young Professionals Network." },
+            { "year": "2012",      "text": "Licensed in Colorado; a Steamboat resident since 2007." }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "The Photography",
+          "bg": "white",
+          "eyebrow": "The photography",
+          "title": "He shoots his own listings.",
+          "lede": "A background most agents outsource, and the reason his marketing goes out faster.",
+          "paragraphs": [
+            "Before real estate {{agent.first}} worked as a professional photographer. On his own listings that means the shot list is set by someone who knows both what sells a Steamboat property and how the light behaves in these rooms in February &mdash; and that a re-shoot does not cost a week of calendar.",
+            "It also shapes how he reads other people's marketing. A listing photographed to hide something is legible to him in a way it is not to most buyers, which is worth having on your side of the table."
+          ]
+        },
+        {
+          "type": "testimonials",
+          "label": "Reviews",
+          "bg": "cream",
+          "layout": "slider",
+          "eyebrow": "Reviews",
+          "title": "In their words.",
+          "more": { "label": "Read all the reviews", "href": "testimonials.html" },
+          "items": [
+            { "quote": "Very professional and easy to work with.", "name": "Nick" },
+            { "quote": "{{agent.first}} did a great job listening to our needs and locating multiple properties to look at. We settled on a two-bed, two-bath condo in the green zone at The Rockies.", "name": "Paula Halsted" },
+            { "quote": "Awesome group. Very pro and they work together as a true team. They were prompt in responding and knew exactly how to handle every situation, because let's face it, every transaction will encounter bumps in the road and these guys know how to navigate them all.", "name": "Ben" }
+          ]
+        },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "properties.html",
+      "title": "Portfolio &mdash; Matt Eidt, The Group Steamboat Springs",
+      "desc": "Matt Eidt's active listings and past transactions in Steamboat Springs, Oak Creek and Hayden — listing side and buy side.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Eidt", "href": "index.html" },
+          "eyebrow": "Portfolio",
+          "title": "Active listings &amp; my solds.",
+          "lede": "Sorted by which side of the table he was on, because it is the more useful cut. Roughly half of these were buy-side, working against another brokerage's listing."
+        },
+        {
+          "type": "search",
+          "label": "Search",
+          "bg": "cream",
+          "eyebrow": "Search",
+          "title": "Or search the whole valley.",
+          "lede": "{{agent.first}}'s own inventory is below. Everything else in Routt County is one field away.",
+          "placeholder": "Town, subdivision, MLS number or address",
+          "submit": "Search",
+          "filters": [
+            { "label": "Downtown",        "href": "../property-search.html" },
+            { "label": "Commercial",      "href": "../search/commercial.html" },
+            { "label": "Short-term rental","href": "../property-search.html" },
+            { "label": "Under $600K",     "href": "../property-search.html" }
+          ],
+          "note": "Search runs against the full IRES and Summit MLS feed in production."
+        },
+        {
+          "type": "listings",
+          "label": "The Portfolio",
+          "id": "s-portfolio",
+          "bg": "white",
+          "eyebrow": "The portfolio",
+          "title": "By side of the table.",
+          "note": "<b>Placeholder view.</b> Live MLS / IDX results connect here in production. Prices, addresses, photography and the representing broker below are {{agent.first}}'s real record as of August 2026.",
+          "groups": [
+            {
+              "label": "Active",
+              "items": [
+                { "status": "Active", "price": "$375,000", "specs": "Condominium &middot; Oak Creek", "address": "23800 County Road 16, #508, Oak Creek", "rep": "Listing side &middot; {{agent.name}}, The Group", "image": "assets/l-cr16-508.jpg" }
+              ]
+            },
+            {
+              "label": "Sold &mdash; listing side",
+              "items": [
+                { "status": "Sold", "price": "$2,329,060", "address": "2315 Storm Meadows Drive, #3, Steamboat Springs", "rep": "Listed &amp; sold by {{agent.name}}, The Group", "image": "assets/s-storm-meadows.jpg" },
+                { "status": "Sold", "price": "$1,440,000", "address": "35 Butcherknife Alley, Steamboat Springs", "rep": "Listed &amp; sold by {{agent.name}}, The Group", "image": "assets/s-butcherknife.jpg" },
+                { "status": "Sold", "price": "$949,000",   "address": "537 Mountain Vista Circle, #14, Steamboat Springs", "rep": "Listed &amp; sold by {{agent.name}}, The Group", "image": "assets/s-mountain-vista.jpg" },
+                { "status": "Sold", "price": "$879,000",   "address": "532 Tamarack Drive, #603, Steamboat Springs", "rep": "Listed &amp; sold by {{agent.name}}, The Group", "image": "assets/s-tamarack-603.jpg" },
+                { "status": "Sold", "price": "$673,400",   "address": "306 Harvest Drive, Hayden", "rep": "Listed &amp; sold by {{agent.name}}, The Group", "image": "assets/s-harvest.jpg" }
+              ]
+            },
+            {
+              "label": "Sold &mdash; buy side",
+              "items": [
+                { "status": "Sold", "price": "$3,050,000", "address": "2020 Bear Drive, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Dean Laird, The Group", "image": "assets/s-bear-drive.jpg" },
+                { "status": "Sold", "price": "$2,575,000", "address": "1221 Urban Way, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Steamboat Real Estate Professionals", "image": "assets/s-urban-way.jpg" },
+                { "status": "Sold", "price": "$1,600,000", "address": "3235 Emerson Trail, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Steamboat Real Estate Professionals", "image": "assets/s-emerson.jpg" },
+                { "status": "Sold", "price": "$1,401,000", "address": "27390 Brandon Circle, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Steamboat Sotheby's", "image": "assets/s-brandon.jpg" },
+                { "status": "Sold", "price": "$1,275,000", "address": "40557 Steamboat Drive, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Steamboat Sotheby's", "image": "assets/s-steamboat-dr.jpg" },
+                { "status": "Sold", "price": "$845,000",   "address": "2350 Ski Trail Lane, #332, Steamboat Springs", "rep": "Buyer represented by {{agent.name}} &middot; listed by Steamboat Sotheby's", "image": "assets/s-ski-trail-332.jpg" }
+              ]
+            }
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "commercial.html",
+      "title": "Commercial &amp; Investment Property &mdash; Matt Eidt, Steamboat Springs",
+      "desc": "Commercial, mixed-use and investment property in Steamboat Springs with Matt Eidt, The Group Real Estate — retail, office, industrial and short-term-rental underwriting.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Eidt", "href": "index.html" },
+          "eyebrow": "Commercial &amp; investment",
+          "title": "The half of the market nobody markets.",
+          "lede": "Steamboat's commercial and mixed-use inventory is small, traded quietly, and priced on assumptions that are hard to check from outside the valley."
+        },
+        {
+          "type": "prose",
+          "label": "How It Trades",
+          "bg": "cream",
+          "eyebrow": "How it trades",
+          "title": "Small inventory, thin comparables.",
+          "paragraphs": [
+            "There are only so many retail bays on Lincoln Avenue, only so many industrial units at Copper Ridge, and in a given year only a handful of either changes hands. That means the comparable set for any commercial property here is small enough that a single unusual sale distorts it &mdash; and small enough that the people who closed those sales are the only reliable source on why the numbers looked the way they did.",
+            "The same is true of the investment side. A short-term-rental condominium is priced off projected income, and projections are where the optimism lives. {{agent.first}} underwrites on actual occupancy and actual expenses: management split, HOA reserves, cleaning, the shoulder seasons nobody models, and whether the licence transfers at all."
+          ],
+          "checks": [
+            "Downtown retail, office and mixed-use",
+            "Copper Ridge and light industrial",
+            "Short-term-rental underwriting on real occupancy",
+            "Licence transferability and HOA rental caps",
+            "1031 exchange timing and coordination",
+            "Owner-user versus investor analysis"
+          ]
+        },
+        {
+          "type": "search",
+          "label": "Commercial Search",
+          "bg": "white",
+          "eyebrow": "Commercial search",
+          "title": "What is on the market now.",
+          "lede": "The brokerage keeps a dedicated commercial search. Everything currently listed in Routt County is in it.",
+          "placeholder": "Retail, office, industrial, mixed use",
+          "submit": "Search commercial",
+          "filters": [
+            { "label": "Retail",     "href": "../search/commercial.html" },
+            { "label": "Office",     "href": "../search/commercial.html" },
+            { "label": "Industrial", "href": "../search/commercial.html" },
+            { "label": "Mixed use",  "href": "../search/commercial.html" }
+          ],
+          "note": "Opens The Group's commercial search. Live MLS results connect in production."
+        },
+        {
+          "type": "valuation",
+          "label": "Investment Review",
+          "bg": "dark",
+          "eyebrow": "Investment review",
+          "title": "Bring him a pro forma to argue with.",
+          "lede": "If you are looking at something and the numbers seem good, the useful next step is somebody local trying to break them.",
+          "points": [
+            "Actual occupancy against the projected figure",
+            "Full expense load, including the shoulder seasons",
+            "Whether the rental licence transfers",
+            "HOA rental caps and reserve health",
+            "Comparable sales, and why the odd one was odd",
+            "An honest answer if the deal does not work"
+          ],
+          "actions": [
+            { "label": "Send it over", "href": "#ask" },
+            { "label": "Call {{agent.phone}}", "href": "tel:{{agent.tel}}" }
+          ]
+        },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "testimonials.html",
+      "title": "Client Reviews &mdash; Matt Eidt, The Group Steamboat Springs",
+      "desc": "Twenty-five client reviews for Matt Eidt, Broker Associate & Partner with The Group Real Estate in Steamboat Springs.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Eidt", "href": "index.html" },
+          "eyebrow": "Reviews",
+          "title": "Twenty-five reviews.",
+          "lede": "Read them for what is missing: nobody praises his marketing or his hustle. They praise his patience, and several of them took years to buy."
+        },
+        {
+          "type": "testimonials",
+          "label": "All Reviews",
+          "id": "s-all-reviews",
+          "bg": "cream",
+          "layout": "wall",
+          "eyebrow": "Every review",
+          "title": "In their words.",
+          "items": [
+            { "quote": "Working with {{agent.first}} has been an amazing experience. We first met with him to talk about buying in Steamboat 4 years ago and he's been working with us ready to help ever since. He's knowledgeable and professional but not pushy or aggressive. It's clear he just wants us to find the right place to call home and be happy with the decision we've made &mdash; whether or not it happens immediately. He made the process smooth and stress free and I would happily recommend working with {{agent.first}} and The Group to anyone!", "name": "Bryan Swintek" },
+            { "quote": "{{agent.name}} turned out to be the best realtor I have ever had by far. He was punctual, very easy to communicate with and seemed to think of everything. Anytime I had a question he was quick to respond with a thorough answer and resources to back it up. I used his services to purchase a condo in Steamboat some years back and again contracted with him to sell it recently. Couldn't recommend him enough as a realtor.", "name": "William B." },
+            { "quote": "{{agent.first}} did a wonderful job and continued to give us sound advice during the whole process. As first time home sellers, things can get confusing and markets can dry out and move slow. But {{agent.first}} kept our spirits up and we knew we had the right guy!", "name": "Cory A." },
+            { "quote": "{{agent.first}} and Geoff did a great job of finding and securing a perfect property for our needs in a very challenging market. They took great care in advising us on the local landscape, different areas to consider, rental potential, and important items to consider when finding a second home. True Steamboat market experts.", "name": "Jenna &amp; Quinn" },
+            { "quote": "{{agent.first}} did a great job listening to our needs and locating multiple properties to look at. We settled on a 2 bed 2 bath condo in the green zone at The Rockies.", "name": "Paula Halsted" },
+            { "quote": "Both {{agent.first}} and Geoff were on top of everything and really worked hard to make sure this was an easy process. Their strategies and knowledge helped me obtain far more for my home than I expected. I would highly recommend either of these individuals with your real estate needs. Realtors DO make a difference.", "name": "Josh" },
+            { "quote": "Awesome group. Very pro and they work together as a true team. They were prompt in responding and knew exactly how to handle every situation, because let's face it, every transaction will encounter bumps in the road and these guys know how to navigate them all.", "name": "Ben" },
+            { "quote": "{{agent.first}} and Geoff went out of their way to help us in every aspect of finding a home. They communicated well and bounced ideas off each other to find solutions or give advice that us newbies had not noticed or thought about. They kept the whole process real. We will use them for future house buying and selling.", "name": "Gwendolyn Romines &amp; Steve" },
+            { "quote": "{{agent.first}} and Geoff are outstanding realtors. They were always available when we had a question or concern. They went above and beyond helping us with selling, staging and moving out of our home. Furthermore, we appreciated working directly with them. The whole experience was exceptional.", "name": "Jen &amp; Mario" },
+            { "quote": "{{agent.first}} and Geoff were great communicators and they paid close attention to details. We really felt like we received preferential treatment. They were never too busy to chat and they were so patient with us. We could not have had better realtors.", "name": "Bill &amp; Carol Overmyer" },
+            { "quote": "Geoff and {{agent.first}} work hard, and provide educated guidance. They are also very resourceful, and good at communicating. I would highly recommend this team!", "name": "Reese &amp; Chris" },
+            { "quote": "{{agent.first}} and Geoff were very responsive, the team was supportive. They helped us negotiate with our seller and were great about keeping us informed and up to date. We definitely trusted their expertise and felt confident about their advice.", "name": "Garret &amp; Jen" },
+            { "quote": "{{agent.first}} understood what we were looking for along with budget and came up with a great property for us. We are recommending both {{agent.first}} and Geoff to one of my business partners to see if they can help.", "name": "Michael &amp; Elizabeth" },
+            { "quote": "{{agent.first}} understood what type of property we were interested in and worked hard to find us a place that met our requirements. I will recommend {{agent.first}} to our friends in need of a realtor in the Steamboat market.", "name": "Michael &amp; Elizabeth McAffrey" },
+            { "quote": "{{agent.first}} and Geoff were a great team, answered all of our questions and kept everything flowing smoothly. It was a pleasure working with both of them.", "name": "Dickson" },
+            { "quote": "Geoff and {{agent.first}} have always been very professional and helpful! I wish all my business interactions were as pleasant as this one!", "name": "Mark" },
+            { "quote": "{{agent.first}} and Geoff are our trusted advisors!", "name": "Rob &amp; Trish" },
+            { "quote": "{{agent.first}} and Geoff were great to work with &mdash; knowledgeable, friendly, and responsive!", "name": "Justin &amp; Annie" },
+            { "quote": "Provided key advice through the buying and selling process.", "name": "Chris &amp; Reese" },
+            { "quote": "Great communication. Very knowledgeable. Excellent listeners.", "name": "Bill &amp; Carol Overmyer" },
+            { "quote": "Very professional and easy to work with.", "name": "Nick" },
+            { "quote": "Did a great job for us.", "name": "Ray &amp; June" },
+            { "quote": "A+", "name": "Jeremy &amp; Holli" },
+            { "quote": "{{agent.first}} and Geoff are an amazing team!", "name": "Marc &amp; Laura" },
+            { "quote": "Congrats team.", "name": "Bill, Jule &amp; Ben &mdash; Oak Creek and Denver" }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "About These Reviews",
+          "bg": "white",
+          "eyebrow": "About these reviews",
+          "title": "Two notes on the set.",
+          "paragraphs": [
+            "These come across from Testimonial Tree as written. Two things are worth naming rather than designing around.",
+            "First, more than half mention <strong>Geoff</strong> alongside {{agent.first}}. If that partnership is current, the site should say so plainly &mdash; a two-person team is a selling point, and reviews that name someone the site never introduces read as an oversight. If it is historic, the reviews are still true and the copy should place them in time.",
+            "Second, none carry a submarket or a transaction side. &ldquo;Bryan Swintek &middot; Mountain Area Buyer&rdquo; would prove geographic range at the same time as it proves service, at the cost of one permission request."
+          ],
+          "checks": [
+            "Decide whether the Geoff partnership is current, and say so",
+            "Add submarket and buy/sell side to each review",
+            "Date the older ones so the set reads as a fourteen-year record",
+            "Keep the short ones &mdash; &ldquo;A+&rdquo; is credible precisely because it is unpolished"
+          ]
+        },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "contact.html",
+      "title": "Contact Matt Eidt &mdash; The Group, Steamboat Springs",
+      "desc": "Reach Matt Eidt directly at 970.819.0827 or meidt@thegroupinc.com. Office at 509 Lincoln Ave, Steamboat Springs, CO 80477.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Eidt", "href": "index.html" },
+          "eyebrow": "Contact me",
+          "title": "No hurry required.",
+          "lede": "One of his reviews describes four years of conversations before a purchase. That is a normal timeline here, and it is fine."
+        },
+        { "type": "$form" },
+        {
+          "type": "prose",
+          "label": "The Office",
+          "bg": "white",
+          "eyebrow": "The office",
+          "title": "509 Lincoln Avenue.",
+          "lede": "Downtown Steamboat, on the main street he also sells.",
+          "paragraphs": [
+            "The Group's Steamboat office is at <strong>509 Lincoln Ave, Steamboat Springs, CO 80477</strong>; mailing address PO Box 775430. Office line <a href=\"tel:{{agent.officeTel}}\">{{agent.officePhone}}</a>.",
+            "{{agent.first}} lives downtown, a few blocks from the desk, which is the practical reason he can meet you at a property on short notice. For commercial or investment questions, send the numbers ahead of the meeting &mdash; he would rather have read them first."
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" }
+      ]
+    }
+  ]
+}

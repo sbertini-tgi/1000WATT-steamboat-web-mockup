@@ -1,0 +1,857 @@
+{
+  "_": [
+    "Ashley Walcher — agent site content, organised by section block.",
+    "Build with: python3 tools/build-agent-site.py docs/ashley-walcher/content.json",
+    "Block types and what each one is for: /agent-site-sections.md",
+    "Second port. Nothing in the builder or the CSS changed for her except one",
+    "genuinely new block (`posts`, for her blog) and making testimonial `place`",
+    "optional — her reviews carry a role but no submarket. Everything else is data."
+  ],
+
+  "agent": {
+    "name": "Ashley Walcher",
+    "first": "Ashley",
+    "role": "Broker Associate",
+    "phone": "303.668.4689",
+    "tel": "+13036684689",
+    "email": "awalcher@thegroupinc.com",
+    "license": "FA100070477",
+    "office": "509 Lincoln Ave, Steamboat Springs, CO 80477",
+    "officePhone": "970.870.8800",
+    "officeTel": "+19708708800"
+  },
+
+  "home": "../index.html",
+
+  "nav": [
+    { "label": "About",         "href": "about.html" },
+    { "label": "Portfolio",     "href": "properties.html" },
+    { "label": "Neighborhoods", "href": "neighborhoods.html" },
+    { "label": "Journal",       "href": "journal.html" },
+    { "label": "Reviews",       "href": "testimonials.html" },
+    { "label": "Contact",       "href": "contact.html" }
+  ],
+
+  "footer": {
+    "columns": [
+      { "facts": [
+        { "label": "Direct", "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+        { "label": "Email",  "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" }
+      ] },
+      { "facts": [
+        { "label": "Office",  "value": "509 Lincoln Ave<br />Steamboat Springs, CO 80477" },
+        { "label": "License", "value": "#{{agent.license}}" }
+      ] }
+    ],
+    "social": [
+      { "label": "Instagram", "href": "https://www.instagram.com/realtorashley" },
+      { "label": "Facebook",  "href": "https://www.facebook.com/realtorashleyCGR/" },
+      { "label": "YouTube",   "href": "https://www.youtube.com/@RealtorAshleySteamboat" },
+      { "label": "LinkedIn",  "href": "https://www.linkedin.com/in/ashley-walcher-0910a796/" },
+      { "label": "Zillow",    "href": "https://www.zillow.com/profile/AshleyWalcher" }
+    ],
+    "links": [
+      { "label": "About {{agent.first}}",        "href": "about.html" },
+      { "label": "Portfolio",                    "href": "properties.html" },
+      { "label": "Neighborhoods",                "href": "neighborhoods.html" },
+      { "label": "Journal",                      "href": "journal.html" },
+      { "label": "Reviews",                      "href": "testimonials.html" },
+      { "label": "Contact",                      "href": "contact.html" },
+      { "label": "The Group &middot; Steamboat", "href": "../index.html" },
+      { "label": "Privacy",                      "href": "../privacy-policy.html" }
+    ],
+    "copyright": "&copy; 2026 The Group Real Estate LLC. {{agent.name}}, {{agent.role}}. All rights reserved.",
+    "disclaimer": "Information deemed reliable but not guaranteed by the MLS. The data relating to real estate for sale on this web site comes in part from Information and Real Estate Services, LLC under Summit MLS Rules, and is provided for limited non-commercial use. Information is provided exclusively for consumers' personal use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Real estate listings held by other brokerage firms are included in this site and detailed information about them includes the name of the listing brokers. Before purchasing investment property be sure to consult with your legal and tax advisor. Equal Housing Opportunity."
+  },
+
+  "shared": {
+    "band": {
+      "type": "band",
+      "label": "Work With {{agent.first}}",
+      "id": "s-work-with",
+      "image": "assets/nb-north-routt.jpg",
+      "eyebrow": "Work with {{agent.first}}",
+      "title": "Let's find your dream home.",
+      "lede": "Ready to start? Buying, selling or investing &mdash; {{agent.first}} is here to guide you every step of the way. Reach out today and let's make your Steamboat Springs dream home a reality.",
+      "actions": [
+        { "label": "Let's connect", "href": "contact.html" },
+        { "label": "Call {{agent.phone}}", "href": "tel:{{agent.tel}}" }
+      ]
+    },
+
+    "form": {
+      "type": "form",
+      "label": "Get In Touch",
+      "id": "ask",
+      "eyebrow": "Let's connect",
+      "title": "Start with a conversation.",
+      "lede": "{{agent.first}} opens most engagements with a straight thirty-minute call &mdash; what you want, how you will use it, what it will really cost. Clients say it is the reason the rest goes smoothly.",
+      "facts": [
+        { "label": "Direct",  "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+        { "label": "Email",   "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" },
+        { "label": "Office",  "value": "509 Lincoln Ave, Steamboat Springs" },
+        { "label": "License", "value": "#{{agent.license}}" }
+      ],
+      "fields": [
+        { "kind": "text",     "label": "Full name", "required": true, "placeholder": "Jane Buyer" },
+        { "kind": "tel",      "label": "Phone",     "placeholder": "Optional" },
+        { "kind": "email",    "label": "Email",     "required": true, "full": true, "placeholder": "you@email.com" },
+        { "kind": "select",   "label": "What are you interested in", "required": true, "full": true,
+          "placeholder": "Choose one",
+          "options": ["Buying a primary home", "A mountain retreat", "Investment property", "Selling", "Area information"] },
+        { "kind": "textarea", "label": "Message", "required": true, "full": true,
+          "placeholder": "Tell {{agent.first}} what you are hoping to find." }
+      ],
+      "submit": "Send to {{agent.first}}",
+      "disclosure": "By submitting, you agree to be contacted by {{agent.name}} and The Group Real Estate by call, email and text about real estate services. Reply STOP to opt out at any time. Message and data rates may apply. Consent is not a condition of purchase. <a href=\"../privacy-policy.html\">Privacy policy</a>."
+    },
+
+    "quicklinks": {
+      "type": "quicklinks",
+      "label": "Where To Next",
+      "eyebrow": "Where to next",
+      "title": "Three ways in.",
+      "lede": "Start with whichever question is actually yours.",
+      "items": [
+        { "k": "For buyers",  "title": "How we work with buyers",  "href": "../how-we-work-with-buyers.html",
+          "desc": "The Group's buyer process, start to keys &mdash; what happens when, and who does it.", "cta": "Read the process" },
+        { "k": "For sellers", "title": "How we work with sellers", "href": "../how-we-work-with-sellers.html",
+          "desc": "Pricing, preparation and the first three weeks on market, which decide most of the outcome.", "cta": "Read the process" },
+        { "k": "Search",      "title": "Every listing in the valley", "href": "../property-search.html",
+          "desc": "The full IRES and Summit MLS inventory, not a curated slice of it.", "cta": "Start searching" }
+      ]
+    },
+
+    "stats": {
+      "type": "stats",
+      "label": "By The Numbers",
+      "eyebrow": "By the numbers",
+      "title": "Proven results.",
+      "items": [
+        { "n": "160",   "label": "Closed transactions" },
+        { "n": "$120M", "label": "Total sales volume" },
+        { "n": "$15M+", "label": "Annual volume, five years running" },
+        { "n": "10",    "label": "Years in the valley" }
+      ]
+    }
+  },
+
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "Ashley Walcher &mdash; Steamboat Springs &amp; Routt County Real Estate",
+      "desc": "Ashley Walcher, Broker Associate with The Group Real Estate. 160 closings and $120M sold across Steamboat Springs and Routt County. Mountain heart, market smarts.",
+      "blocks": [
+        {
+          "type": "hero",
+          "label": "Hero",
+          "id": "hero",
+          "image": "assets/hero.jpg",
+          "alt": "Steamboat Resort and the Yampa Valley under snow",
+          "eyebrow": "Steamboat Springs &middot; Routt County",
+          "title": "Ashley Walcher",
+          "lede": "Your trusted guide to buying and selling homes in Steamboat and Routt County &mdash; eleven submarkets, one honest read on each of them.",
+          "actions": [
+            { "label": "Let's connect",     "href": "contact.html" },
+            { "label": "See the portfolio", "href": "properties.html" }
+          ],
+          "search": {
+            "placeholder": "Search every listing in Routt County",
+            "label": "Search",
+            "href": "../property-search.html"
+          }
+        },
+        {
+          "type": "agent-intro",
+          "label": "Meet {{agent.first}}",
+          "id": "s-meet",
+          "bg": "cream",
+          "image": "assets/ashley-walcher.jpg",
+          "alt": "Ashley Walcher and her family in Steamboat Springs",
+          "role": "{{agent.role}} &middot; The Group Real Estate",
+          "eyebrow": "Meet {{agent.first}}",
+          "title": "Mountain heart. Market smarts.",
+          "paragraphs": [
+            "{{agent.first}} thrives on helping people find the life she and her family already live here &mdash; snowboarding with her kids, hiking the trails above town, raising children in a valley she does not take for granted.",
+            "Real estate is the family trade. Her father spent twenty years as a respected Denver broker and her mother ranked among the top mortgage brokers in the country, so <strong>she grew up inside the industry</strong> rather than arriving at it. It shows in the negotiation."
+          ],
+          "actions": [
+            { "label": "Read her story",  "href": "about.html" },
+            { "label": "See the reviews", "href": "testimonials.html" }
+          ]
+        },
+        { "type": "$stats", "bg": "white" },
+        {
+          "type": "testimonials",
+          "label": "What Clients Are Saying",
+          "bg": "cream",
+          "layout": "slider",
+          "eyebrow": "Trusted by Steamboat buyers &amp; sellers",
+          "title": "What clients are saying.",
+          "more": { "label": "Read all the reviews", "href": "testimonials.html" },
+          "items": [
+            {
+              "quote": "{{agent.first}} is proactive and practical. She began our engagement with a straightforward thirty-minute conversation to understand our expectations &mdash; what we were looking for, planned usage, costs. Thanks to her approach we quickly found exactly what we needed. The closing was seamless because she took full ownership of the conversations with the seller's agent.",
+              "name": "Buyer", "place": "Verified review"
+            },
+            {
+              "quote": "From our first conversation about thinking about looking for a new home, until after we closed, {{agent.first}} was more than amazing. She never missed a detail and never let us down. We knew she never wanted us to settle for anything less than what we dreamed of finding.",
+              "name": "Buyer", "place": "Verified review"
+            },
+            {
+              "quote": "{{agent.first}} was very knowledgeable about the different areas within as well as surrounding Steamboat Springs. She looked at each prospective home as if she were looking through my own eyes. I truly loved working with {{agent.first}}.",
+              "name": "Buyer", "place": "Verified review"
+            },
+            {
+              "quote": "{{agent.name}} is a top professional realtor who takes notice of all details and has excellent communication skills with all parties involved. She walked us through all the necessary steps to result in the successful sale of our townhome. I will recommend her services to anyone in Routt County.",
+              "name": "Seller", "place": "Verified review"
+            }
+          ]
+        },
+        {
+          "type": "listings",
+          "label": "Featured Listings",
+          "id": "listings",
+          "bg": "white",
+          "eyebrow": "Featured listings",
+          "title": "Discover homes in Steamboat Springs.",
+          "more": { "label": "See the full portfolio", "href": "properties.html" },
+          "note": "<b>Placeholder view.</b> Live MLS / IDX results (IRES &amp; Summit MLS) connect here in production. Prices, specifications and photography below are {{agent.first}}'s real inventory as of August 2026.",
+          "items": [
+            { "status": "Active",  "price": "$2,675,000", "specs": "4 Bd &middot; 4 Ba &middot; 1,934 SF", "address": "1750 Medicine Springs Drive, #6303, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-medicine-springs.jpg" },
+            { "status": "Pending", "price": "$1,890,000", "specs": "3 Bd &middot; 2 Ba &middot; 36+ Acres", "address": "31575 Kestrel Lane, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-kestrel.jpg" },
+            { "status": "Active",  "price": "$1,400,000", "specs": "4 Bd &middot; 3 Ba &middot; 3,018 SF", "address": "30650 Reinsman Court, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-reinsman.jpg" }
+          ]
+        },
+        {
+          "type": "valuation",
+          "label": "Home Valuation",
+          "bg": "dark",
+          "eyebrow": "Home valuation",
+          "title": "How much is your Steamboat home worth?",
+          "lede": "The portals will give you a number in thirty seconds. What they cannot do is tell you which three sales a buyer's agent will actually argue with, or what your submarket did last quarter while the county-wide median moved the other way.",
+          "points": [
+            "An instant estimate to anchor the conversation",
+            "Comparables read by someone who has walked them",
+            "A prep list ranked by what actually returns money",
+            "An honest answer if now is the wrong time to sell"
+          ],
+          "actions": [
+            { "label": "Get a free valuation", "href": "home-valuation.html" }
+          ]
+        },
+        {
+          "type": "neighborhoods",
+          "label": "Find The Perfect Community",
+          "bg": "cream",
+          "eyebrow": "Find the perfect community",
+          "title": "Steamboat Springs &amp; Routt County.",
+          "more": { "label": "All eleven neighborhoods", "href": "neighborhoods.html" },
+          "items": [
+            { "name": "Mountain Area", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-mountain-area.jpg",
+              "blurb": "Ski-in condominiums and lodges at the base of Mount Werner. The most rentable inventory in the valley, and the most sensitive to what the resort does next." },
+            { "name": "Downtown", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-downtown.jpg",
+              "blurb": "Old Town grid, Lincoln Avenue, the Yampa River. Walkable, tightly held, and the one part of Steamboat where a lot still trades on its address alone." },
+            { "name": "Fish Creek", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-fish-creek.jpg",
+              "blurb": "Not one market but three price points on one road &mdash; a two-bedroom condo and a fourteen-acre estate share the same neighbourhood boundary." },
+            { "name": "West Steamboat &amp; Elk River", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-west-steamboat.jpg",
+              "blurb": "Where the median dollar buys the most square footage and the shortest walk to a public school. Every out-of-market buyer knows that part already." },
+            { "name": "Strawberry Park", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-strawberry-park.jpg",
+              "blurb": "Up the valley behind town: bigger parcels, the hot springs road, and school-district addresses without a subdivision feel." },
+            { "name": "South Valley", "href": "neighborhoods.html#s-the-eleven", "image": "assets/nb-south-valley.jpg",
+              "blurb": "Elbow room and mountain views eleven miles out. Buying acreage here is not buying a house in town &mdash; land, access, utilities and zoning shape it as much as the building does." }
+          ]
+        },
+        {
+          "type": "posts",
+          "label": "The Journal",
+          "bg": "white",
+          "eyebrow": "The journal",
+          "title": "Written from inside the submarkets.",
+          "lede": "{{agent.first}} publishes her own market reporting &mdash; not county-wide medians, but what is actually happening on one road, in one town, this month.",
+          "more": { "label": "All posts", "href": "journal.html" },
+          "items": [
+            { "cat": "Market", "date": "August 27, 2026",
+              "title": "Fish Creek isn't one market. It's a road with three price points.",
+              "href": "https://ashleywalcher.com/blog/fish-creek-isnt-one-market-its-a-road-with-three-price-points",
+              "excerpt": "Pull active listing data for the Fish Creek area in August 2026 and you find a two-bedroom condo asking $595,000 inside the same neighbourhood boundary as a fourteen-acre estate." },
+            { "cat": "North Routt", "date": "August 20, 2026",
+              "title": "North Routt lost its fireworks this summer. Nobody missed a beat.",
+              "href": "https://ashleywalcher.com/blog/north-routt-lost-its-fireworks-this-summer-nobody-missed-a-beat",
+              "excerpt": "Every Fourth of July for as long as most people in Clark can remember, a barge went out to the island in Steamboat Lake. This year, for the first time, that didn't happen." },
+            { "cat": "Market", "date": "August 6, 2026",
+              "title": "What the median price misses about West Steamboat in 2026",
+              "href": "https://ashleywalcher.com/blog/what-the-median-price-misses-about-west-steamboat-in-2026",
+              "excerpt": "The portals will tell you the west side is where the median dollar buys the most square footage. That is true. It is also the part every out-of-market buyer already knows." }
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" },
+        {
+          "type": "newsletter",
+          "label": "Get Steamboat Real Estate Insights",
+          "bg": "dark",
+          "eyebrow": "Insights",
+          "title": "Get Steamboat real estate insights.",
+          "lede": "The journal, plus what {{agent.first}} is seeing in the submarkets before it shows up in a quarterly report.",
+          "submit": "Subscribe",
+          "disclosure": "By subscribing, you agree to be contacted by {{agent.name}} and The Group Real Estate by call, email and text about real estate services. Reply STOP to opt out at any time, or use the unsubscribe link in any email. Message and data rates may apply. <a href=\"../privacy-policy.html\">Privacy policy</a>."
+        },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "about.html",
+      "title": "About Ashley Walcher &mdash; The Group, Steamboat Springs",
+      "desc": "Ashley Walcher, Broker Associate with The Group Real Estate. 160 transactions and $120M sold since 2016, top 40 producing agent in Routt County, elected to The Group's Steamboat Advisory Board.",
+      "blocks": [
+        {
+          "type": "agent-header",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "image": "assets/ashley-walcher.jpg",
+          "alt": "Ashley Walcher and her family in Steamboat Springs",
+          "eyebrow": "{{agent.role}} &middot; Steamboat Springs",
+          "title": "Ashley Walcher",
+          "lede": "A second-generation broker raising her kids in the valley she sells &mdash; primary homes, mountain retreats and investment property across all eleven Routt County submarkets.",
+          "facts": [
+            { "label": "Direct",  "value": "<a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>" },
+            { "label": "Email",   "value": "<a href=\"mailto:{{agent.email}}\">{{agent.email}}</a>" },
+            { "label": "Office",  "value": "509 Lincoln Ave, Steamboat Springs" },
+            { "label": "License", "value": "#{{agent.license}}" }
+          ],
+          "actions": [
+            { "label": "Ask {{agent.first}} a question", "href": "#ask" },
+            { "label": "See the portfolio", "href": "properties.html" }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "About {{agent.first}}",
+          "bg": "cream",
+          "eyebrow": "About {{agent.first}}",
+          "title": "She grew up inside this business.",
+          "lede": "Most agents learn negotiation on the job. {{agent.first}} learned it at the dinner table.",
+          "paragraphs": [
+            "{{agent.first}} thrives on helping others discover the lifestyle she and her family love in Steamboat Springs. An outdoor enthusiast at heart, she takes what the Yampa Valley offers &mdash; snowboarding with her kids, hiking the trails, living in a working mountain community. Grateful to raise her children here, she understands how particular a place it is to call home.",
+            "Real estate is more than a career &mdash; it is a family legacy. With her father a respected Denver broker of more than twenty years, and her mother recognised among the top mortgage brokers in the nation, {{agent.first}} grew up immersed in the industry. That background shaped her instincts, her negotiation and her commitment to clients.",
+            "Since 2016 she has closed <strong>over 160 transactions representing $120 million in sales volume</strong>. Selling more than $15 million annually for the past five years, she ranks among the <strong>top 40 producing agents in Routt County</strong>. Her colleagues also elected her to serve on the Advisory Board at The Group Real Estate in Steamboat.",
+            "Clients describe her as approachable, professional and deeply invested in their success. Whether the search is for a primary home, a mountain retreat or an investment property, she brings the outdoor life, the family expertise and an outgoing, level temperament to every step of it."
+          ]
+        },
+        { "type": "$stats", "bg": "white", "title": "Ten years, a hundred and sixty closings." },
+        {
+          "type": "prose",
+          "label": "Specialties",
+          "bg": "cream",
+          "eyebrow": "Specialties",
+          "title": "What she gets hired for.",
+          "lede": "Roughly in order of how often the phone rings about it.",
+          "paragraphs": [
+            "Routt County is eleven submarkets pretending to be one. A buyer who reads the county median and shops on it will end up in the wrong place at the right price &mdash; or the right place two years too late. Most of {{agent.first}}'s work is spent on the question that comes before the house: which of the eleven is actually yours.",
+            "The rest is the part her clients name in reviews. She opens with a straight thirty-minute conversation about use, budget and expectations, then owns the conversations with the other side so her clients do not have to."
+          ],
+          "checks": [
+            "First homes and move-up buyers in and around town",
+            "Mountain retreats and second homes at the base area",
+            "Short-term-rental underwriting in the Mountain Area",
+            "Acreage and equestrian property in the South Valley",
+            "Oak Creek, Stagecoach and Hayden value buyers",
+            "Out-of-state buyers who need the submarket picked first"
+          ]
+        },
+        {
+          "type": "creds",
+          "label": "Record &amp; Recognition",
+          "bg": "dark",
+          "eyebrow": "Record &amp; recognition",
+          "title": "A record kept by the numbers.",
+          "items": [
+            { "year": "2026",       "text": "Elected by colleagues to the Advisory Board, The Group Real Estate, Steamboat Springs." },
+            { "year": "2022&ndash;26", "text": "More than $15 million in annual sales volume, five consecutive years." },
+            { "year": "2026",       "text": "Ranked among the top 40 producing agents in Routt County." },
+            { "year": "2016",       "text": "Licensed in Colorado; 160+ transactions and $120M closed since." },
+            { "year": "Ongoing",    "text": "Publishes original submarket market reporting &mdash; six pages of it and counting." },
+            { "year": "Family",     "text": "Second-generation broker: father a Denver broker of 20+ years, mother among the nation's top mortgage brokers." }
+          ]
+        },
+        {
+          "type": "testimonials",
+          "label": "What Clients Are Saying",
+          "bg": "white",
+          "layout": "slider",
+          "eyebrow": "What clients are saying",
+          "title": "In their words.",
+          "more": { "label": "Read all the reviews", "href": "testimonials.html" },
+          "items": [
+            { "quote": "My wife and I have bought many houses over the years and have dealt with many different Realtors. She is in our top two. Friendly, professional, very responsive to our questions, and knowledgeable.", "name": "Buyer", "place": "Verified review" },
+            { "quote": "{{agent.first}} was terrific from the very beginning of our sales process. She kept us well informed every step of the way, especially since the buyers had requested an abbreviated timeframe to complete the transfer. Could not have asked for a better realtor.", "name": "Seller", "place": "Verified review" },
+            { "quote": "Love her! {{agent.first}} is wonderful. She answers her phone and responds quickly. She is honest and was looking out for my needs as a buyer.", "name": "Buyer", "place": "Verified review" }
+          ]
+        },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "properties.html",
+      "title": "Portfolio &mdash; Ashley Walcher, The Group Steamboat Springs",
+      "desc": "Ashley Walcher's active listings, pending contracts and past transactions across Steamboat Springs, Oak Creek, Stagecoach, Hayden and Clark.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "Portfolio",
+          "title": "Listings &amp; past transactions.",
+          "lede": "A hundred and sixty closings, from a $58,000 Hayden lot to a $9,075,000 seven-bedroom on Ski Trail Lane. A representative slice below."
+        },
+        {
+          "type": "search",
+          "label": "Search",
+          "bg": "cream",
+          "eyebrow": "Search",
+          "title": "Or search the whole valley.",
+          "lede": "{{agent.first}}'s own inventory is below. Everything else in Routt County is one field away.",
+          "placeholder": "Town, subdivision, MLS number or address",
+          "submit": "Search",
+          "filters": [
+            { "label": "Mountain area", "href": "../property-search.html" },
+            { "label": "Downtown",      "href": "../property-search.html" },
+            { "label": "Acreage",       "href": "../property-search.html" },
+            { "label": "Under $800K",   "href": "../property-search.html" }
+          ],
+          "note": "Search runs against the full IRES and Summit MLS feed in production."
+        },
+        {
+          "type": "listings",
+          "label": "The Portfolio",
+          "id": "s-portfolio",
+          "bg": "white",
+          "eyebrow": "The portfolio",
+          "title": "By status.",
+          "note": "<b>Placeholder view.</b> Live MLS / IDX results connect here in production. Prices, specifications, addresses and photography below are {{agent.first}}'s real inventory and closings as of August 2026.",
+          "groups": [
+            {
+              "label": "For sale",
+              "items": [
+                { "status": "Active", "price": "$2,675,000", "specs": "4 Bd &middot; 4 Ba &middot; 1,934 SF", "address": "1750 Medicine Springs Drive, #6303, Steamboat Springs", "rep": "Bear Lodge penthouse &middot; Trappeurs Crossing", "image": "assets/l-medicine-springs.jpg" },
+                { "status": "Active", "price": "$1,400,000", "specs": "4 Bd &middot; 3 Ba &middot; 3,018 SF", "address": "30650 Reinsman Court, Oak Creek", "rep": "Neighborhoods at Young's Peak &middot; Stagecoach", "image": "assets/l-reinsman.jpg" },
+                { "status": "Active", "price": "$770,000",   "specs": "4 Bd &middot; 3 Ba &middot; 2,198 SF", "address": "30351 County Road 16, #505, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-cr16-505.jpg" },
+                { "status": "Active", "price": "$615,000",   "specs": "1 Bd &middot; 1 Ba &middot; 590 SF",   "address": "2235 Storm Meadows Drive, #332, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-storm-meadows.jpg" },
+                { "status": "Active", "price": "$100,000",   "specs": "Land &middot; Hayden",                 "address": "TBD Dry Creek South Road, Hayden", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-dry-creek.jpg" }
+              ]
+            },
+            {
+              "label": "Pending",
+              "items": [
+                { "status": "Pending", "price": "$1,890,000", "specs": "3 Bd &middot; 2 Ba &middot; 36+ Acres", "address": "31575 Kestrel Lane, Steamboat Springs", "rep": "Equestrian &middot; South Valley, 11 miles from town", "image": "assets/l-kestrel.jpg" },
+                { "status": "Pending", "price": "$680,000",   "specs": "2 Bd &middot; 1 Ba &middot; 960 SF",   "address": "494 Tamarack Drive, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-tamarack.jpg" },
+                { "status": "Pending", "price": "$525,000",   "specs": "1 Bd &middot; 1 Ba &middot; 791 SF",   "address": "3370 Columbine Drive, #101, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/l-columbine-101.jpg" }
+              ]
+            },
+            {
+              "label": "Sold",
+              "items": [
+                { "status": "Sold", "price": "$9,075,000", "specs": "7 Bd &middot; 7 Ba &middot; 4,838 SF", "address": "2410 Ski Trail Lane, #2301 &amp; 2302, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-ski-trail.jpg" },
+                { "status": "Sold", "price": "$2,770,000", "specs": "3 Bd &middot; 4 Ba &middot; 3,618 SF", "address": "43750 Diamondback Way, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-diamondback.jpg" },
+                { "status": "Sold", "price": "$2,535,000", "specs": "4 Bd &middot; 4 Ba &middot; 1,934 SF", "address": "1750 Medicine Springs Drive, #6303, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-medicine-springs.jpg" },
+                { "status": "Sold", "price": "$2,395,000", "specs": "4 Bd &middot; 4 Ba &middot; 1,921 SF", "address": "2525 Village Drive, #2E, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-village-2e.jpg" },
+                { "status": "Sold", "price": "$2,025,000", "specs": "Mixed use &middot; 4,170 SF",           "address": "434 Oak Street, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-oak-street.jpg" },
+                { "status": "Sold", "price": "$1,800,000", "specs": "6 Bd &middot; 5 Ba &middot; 3,392 SF", "address": "2000 Montview Lane, Steamboat Springs", "rep": "Closed &middot; {{agent.name}}, The Group", "image": "assets/s-montview.jpg" }
+              ]
+            }
+          ]
+        },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "neighborhoods.html",
+      "title": "Neighborhoods &mdash; Ashley Walcher, Steamboat Springs &amp; Routt County",
+      "desc": "All eleven Routt County submarkets — Mountain Area, Downtown, Fish Creek, West Steamboat, Strawberry Park, South Valley, Stagecoach, Oak Creek, Hayden, North Routt and South Routt.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "Neighborhoods",
+          "title": "Eleven submarkets pretending to be one.",
+          "lede": "The county-wide median is an average of places that behave nothing alike. Choosing the right one of these eleven matters more than anything you will do afterwards."
+        },
+        {
+          "type": "neighborhoods",
+          "label": "The Eleven",
+          "id": "s-the-eleven",
+          "bg": "cream",
+          "eyebrow": "The eleven",
+          "title": "Where {{agent.first}} works.",
+          "items": [
+            { "name": "Mountain Area", "href": "../communities.html", "image": "assets/nb-mountain-area.jpg",
+              "blurb": "Ski-in condominiums and lodges at the base of Mount Werner. The most rentable inventory in the valley, and the most sensitive to what the resort does next." },
+            { "name": "Downtown", "href": "../communities.html", "image": "assets/nb-downtown.jpg",
+              "blurb": "Old Town grid, Lincoln Avenue, the Yampa River. Walkable, tightly held, and the one part of Steamboat where a lot still trades on its address alone." },
+            { "name": "Fish Creek", "href": "../communities.html", "image": "assets/nb-fish-creek.jpg",
+              "blurb": "Three price points on one road. A two-bedroom condo asking $595,000 sits inside the same neighbourhood boundary as a fourteen-acre estate &mdash; so the &ldquo;Fish Creek average&rdquo; describes nothing." },
+            { "name": "West Steamboat &amp; Elk River", "href": "../communities.html", "image": "assets/nb-west-steamboat.jpg",
+              "blurb": "Where the median dollar buys the most square footage, the biggest yard and the shortest walk to a public school. True, and the part every out-of-market buyer already knows." },
+            { "name": "Strawberry Park", "href": "../communities.html", "image": "assets/nb-strawberry-park.jpg",
+              "blurb": "Up the valley behind town: larger parcels, the hot springs road, and in-district school addresses without a subdivision feel." },
+            { "name": "South Valley", "href": "../communities.html", "image": "assets/nb-south-valley.jpg",
+              "blurb": "Elbow room and views eleven miles out, in the Steamboat school district. Buying acreage here is not buying a house in town &mdash; land, access, utilities and zoning shape it as much as the building." },
+            { "name": "Stagecoach", "href": "../communities.html", "image": "assets/nb-stagecoach.jpg",
+              "blurb": "Twenty minutes south past the reservoir. Newer builds at Young's Peak, lots you can still buy outright, and covenants worth reading before you commit." },
+            { "name": "Oak Creek", "href": "../communities.html", "image": "assets/nb-oak-creek.jpg",
+              "blurb": "A real town with a real main street, and the value end of the county that still has inventory. Where a good share of {{agent.first}}'s closings happen." },
+            { "name": "Hayden", "href": "../communities.html", "image": "assets/nb-hayden.jpg",
+              "blurb": "The airport, new subdivisions, and the best commute-to-price ratio in the valley. The growth story most Steamboat buyers discover second." },
+            { "name": "North Routt", "href": "../communities.html", "image": "assets/nb-north-routt.jpg",
+              "blurb": "Clark, Steamboat Lake and Hahn's Peak. Trades on privacy rather than proximity; winter access is the first question, not the last." },
+            { "name": "South Routt", "href": "../communities.html", "image": "assets/nb-south-routt.jpg",
+              "blurb": "Yampa and Phippsburg &mdash; ranching country, older houses on generous lots, and a summer that now runs in a loop between the two towns." }
+          ]
+        },
+        {
+          "type": "posts",
+          "label": "Reporting From The Submarkets",
+          "bg": "white",
+          "eyebrow": "Reporting from the submarkets",
+          "title": "Not the county median.",
+          "lede": "{{agent.first}}'s own writing on the places above &mdash; where the numbers and the ground disagree.",
+          "more": { "label": "All posts", "href": "journal.html" },
+          "items": [
+            { "cat": "Fish Creek", "date": "August 27, 2026",
+              "title": "Fish Creek isn't one market. It's a road with three price points.",
+              "href": "https://ashleywalcher.com/blog/fish-creek-isnt-one-market-its-a-road-with-three-price-points",
+              "excerpt": "Ask what a home in Fish Creek costs and the honest answer depends entirely on where the question gets asked." },
+            { "cat": "South Valley", "date": "June 18, 2026",
+              "title": "Buying acreage in Steamboat's South Valley",
+              "href": "https://ashleywalcher.com/blog/buying-acreage-in-steamboats-south-valley",
+              "excerpt": "Buying acreage here is not the same as buying a house in town, because the land, access, utilities and zoning can shape your experience just as much as the house does." },
+            { "cat": "South Routt", "date": "August 13, 2026",
+              "title": "South Routt's summer runs in a loop now: Yampa by day, Oak Creek by night",
+              "href": "https://ashleywalcher.com/blog/south-routts-summer-runs-in-a-loop-now-yampa-by-day-oak-creek-by-night",
+              "excerpt": "&ldquo;We recognised a need in this community, especially in Yampa, for not just another food option, but for a place for people to gather.&rdquo;" }
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "journal.html",
+      "title": "The Journal &mdash; Ashley Walcher, Steamboat Springs Real Estate",
+      "desc": "Ashley Walcher's original market reporting on the Routt County submarkets — Fish Creek, West Steamboat, North Routt, South Valley, South Routt and downtown Steamboat.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "The journal",
+          "title": "Written from inside the submarkets.",
+          "lede": "Six pages of original reporting and counting &mdash; one road, one town, one month at a time. The rarest thing on an agent site, and the reason {{agent.first}}'s is worth reading."
+        },
+        {
+          "type": "posts",
+          "label": "Recent Posts",
+          "id": "s-recent-posts",
+          "bg": "cream",
+          "eyebrow": "Recent posts",
+          "title": "Six from this summer.",
+          "more": { "label": "The full archive", "href": "https://ashleywalcher.com/blog" },
+          "items": [
+            { "cat": "Market", "date": "August 27, 2026",
+              "title": "Fish Creek isn't one market. It's a road with three price points.",
+              "href": "https://ashleywalcher.com/blog/fish-creek-isnt-one-market-its-a-road-with-three-price-points",
+              "excerpt": "Pull active listing data for the Fish Creek area in August 2026 and you find a two-bedroom condo asking $595,000 sitting in the same neighbourhood boundary as a fourteen-acre estate." },
+            { "cat": "North Routt", "date": "August 20, 2026",
+              "title": "North Routt lost its fireworks this summer. Nobody missed a beat.",
+              "href": "https://ashleywalcher.com/blog/north-routt-lost-its-fireworks-this-summer-nobody-missed-a-beat",
+              "excerpt": "Every Fourth of July for as long as most people in Clark can remember, a barge went out to the island in Steamboat Lake. This year, for the first time, that didn't happen." },
+            { "cat": "South Routt", "date": "August 13, 2026",
+              "title": "South Routt's summer runs in a loop now: Yampa by day, Oak Creek by night",
+              "href": "https://ashleywalcher.com/blog/south-routts-summer-runs-in-a-loop-now-yampa-by-day-oak-creek-by-night",
+              "excerpt": "&ldquo;We recognised a need in this community, especially in Yampa, for not just another food option, but for a place for people to gather.&rdquo;" },
+            { "cat": "Downtown", "date": "August 13, 2026",
+              "title": "The West Lincoln lot that sat empty for five years just broke ground",
+              "href": "https://ashleywalcher.com/blog/the-west-lincoln-lot-that-sat-empty-for-five-years-just-broke-ground",
+              "excerpt": "Drive west on Lincoln Avenue and you have probably clocked the dirt lot without really registering it. For a long stretch it was Windemere Landscape and Garden Center." },
+            { "cat": "Market", "date": "August 6, 2026",
+              "title": "What the median price misses about West Steamboat in 2026",
+              "href": "https://ashleywalcher.com/blog/what-the-median-price-misses-about-west-steamboat-in-2026",
+              "excerpt": "The portals will tell you the west side is where the median dollar buys the most square footage, the biggest yard and the shortest walk to a public school. That is not the part that decides anything." },
+            { "cat": "South Valley", "date": "June 18, 2026",
+              "title": "Buying acreage in Steamboat's South Valley",
+              "href": "https://ashleywalcher.com/blog/buying-acreage-in-steamboats-south-valley",
+              "excerpt": "If you are dreaming about elbow room, mountain views and a little more privacy near Steamboat Springs, South Valley likely has your attention. But the land, access, utilities and zoning shape it as much as the house." }
+          ]
+        },
+        {
+          "type": "newsletter",
+          "label": "Get Steamboat Real Estate Insights",
+          "bg": "dark",
+          "eyebrow": "Insights",
+          "title": "Get it in your inbox.",
+          "lede": "New posts, plus what {{agent.first}} is seeing in the submarkets before it shows up in a quarterly report.",
+          "submit": "Subscribe",
+          "disclosure": "By subscribing, you agree to be contacted by {{agent.name}} and The Group Real Estate by call, email and text about real estate services. Reply STOP to opt out at any time, or use the unsubscribe link in any email. Message and data rates may apply. <a href=\"../privacy-policy.html\">Privacy policy</a>."
+        },
+        {
+          "type": "quicklinks",
+          "label": "From The Brokerage",
+          "bg": "white",
+          "eyebrow": "From the brokerage",
+          "title": "The county-wide view.",
+          "lede": "{{agent.first}} writes the submarkets. The brokerage keeps the aggregate current.",
+          "items": [
+            { "k": "Data",      "title": "Monthly market report", "href": "../market-report.html",
+              "desc": "Routt County closings, inventory and days on market, updated monthly.", "cta": "See the numbers" },
+            { "k": "Editorial", "title": "The Real Estate Insider", "href": "../real-estate-insider.html",
+              "desc": "The Group's long-running analysis of the Steamboat and Northern Colorado markets.", "cta": "Read the Insider" },
+            { "k": "Stories",   "title": "The Group blog", "href": "../blog.html",
+              "desc": "Mountain living, local events and community writing from across the brokerage.", "cta": "Browse stories" }
+          ]
+        },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "testimonials.html",
+      "title": "Client Reviews &mdash; Ashley Walcher, The Group Steamboat Springs",
+      "desc": "Ten client reviews for Ashley Walcher, Broker Associate with The Group Real Estate in Steamboat Springs — buyers and sellers.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "Reviews",
+          "title": "Trusted by Steamboat buyers &amp; sellers.",
+          "lede": "Ten reviews. The word that recurs is not &ldquo;nice&rdquo; &mdash; it is &ldquo;responsive.&rdquo; She answers her own phone."
+        },
+        {
+          "type": "testimonials",
+          "label": "All Reviews",
+          "id": "s-all-reviews",
+          "bg": "cream",
+          "layout": "wall",
+          "eyebrow": "Every review",
+          "title": "In their words.",
+          "items": [
+            { "quote": "{{agent.first}} is proactive and practical. She began our engagement with a straightforward 30-minute conversation to understand our expectations, including what we were looking for, planned usage, costs, and more. Thanks to her approach, we quickly found exactly what we needed. The closing process was seamless because {{agent.first}} equipped us with valuable knowledge and took full ownership of all the necessary conversations with the seller's agent. She truly advocated for us extraordinarily well.", "name": "Buyer", "place": "Verified review" },
+            { "quote": "From our first conversation about thinking about looking for a new home, until after we closed, {{agent.first}} was more than amazing! She never missed a detail and never let us down. We knew she never wanted us to settle for anything less than what we dreamed of finding. We learned so much from her in the process. We would absolutely use her again!", "name": "Buyer", "place": "Verified review" },
+            { "quote": "{{agent.name}} is a top professional realtor who takes notice of all details and has excellent communication skills with all parties involved. She assisted us as the seller and walked us through all the necessary steps to result in the successful sale of our townhome. I will recommend her services to anyone in Routt County.", "name": "Seller", "place": "Verified review" },
+            { "quote": "{{agent.first}} was very knowledgeable about the different areas within as well as surrounding Steamboat Springs. She was very helpful in finding the perfect home for my family and looked at each prospective home as if she were looking through my own eyes. I truly loved working with {{agent.first}}!", "name": "Buyer", "place": "Verified review" },
+            { "quote": "{{agent.first}} was terrific from the very beginning of our sales process. She kept us well informed every step of the way and especially since the buyers had requested an abbreviated timeframe to complete the transfer of our property. Could not have asked for a better realtor.", "name": "Seller", "place": "Verified review" },
+            { "quote": "My wife and I have bought many houses over the years and have dealt with many different Realtors. She is in our top 2. She is friendly, professional, very responsive to our questions, and knowledgeable.", "name": "Buyer", "place": "Verified review" },
+            { "quote": "Love her! {{agent.first}} is wonderful! She answers her phone and responds quickly. {{agent.first}} is honest and was looking out for my needs as a buyer! Thank you, {{agent.first}}. I appreciate you!", "name": "Buyer", "place": "Verified review" },
+            { "quote": "She was extremely helpful from beginning to end. Her expertise helped us navigate a very unique real estate transaction.", "name": "Buyer", "place": "Verified review" },
+            { "quote": "Great to work with. {{agent.first}} was patient with the tech issues I encountered trying to sign documents remotely and helped find a workaround. Very responsive to messages.", "name": "Seller", "place": "Verified review" },
+            { "quote": "Easy to work with.", "name": "Buyer", "place": "Verified review" }
+          ]
+        },
+        {
+          "type": "prose",
+          "label": "About These Reviews",
+          "bg": "white",
+          "eyebrow": "About these reviews",
+          "title": "One note on attribution.",
+          "paragraphs": [
+            "These reviews come across from {{agent.first}}'s current site as written, and they arrive labelled only <strong>Buyer</strong> or <strong>Seller</strong> &mdash; no first name, no submarket. That is worth changing at the source rather than in the design.",
+            "A line like &ldquo;Maggie M. &middot; Stagecoach Buyer&rdquo; proves geographic range at the same time as it proves service, and it costs nothing but a permission request. Until then the wall reads honestly as anonymous verified feedback. {{agent.first}}'s Google and Zillow profiles carry the named versions."
+          ],
+          "checks": [
+            "Ask past clients for permission to use a first name and initial",
+            "Add the submarket &mdash; it is the half that does the selling",
+            "Note whether they were buying or selling, which is already here",
+            "Link the Google and Zillow profiles for independent verification"
+          ]
+        },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "buyers.html",
+      "title": "Buying in Routt County &mdash; Ashley Walcher's Buyer Guide",
+      "desc": "How Ashley Walcher works with buyers in Steamboat Springs and Routt County: four steps, starting with which of eleven submarkets is actually yours.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "For buyers",
+          "title": "Buying here, in four steps.",
+          "lede": "Most buyer guides run to ten steps because they are describing paperwork. This one describes the four decisions that actually change the outcome."
+        },
+        {
+          "type": "steps",
+          "label": "The Four Steps",
+          "id": "s-four-steps",
+          "bg": "white",
+          "eyebrow": "The process",
+          "title": "Four decisions, in order.",
+          "lede": "The Group's full buyer process sits behind this &mdash; escrow, inspection, appraisal, closing. These are the parts where you and {{agent.first}} do the thinking.",
+          "steps": [
+            { "title": "Take the thirty-minute call first",
+              "body": "Before any showings: what you are looking for, how you will actually use it, what it will cost to hold, and what you are willing to trade. Clients name this call in their reviews more than anything else {{agent.first}} does, because everything downstream gets faster once it has happened." },
+            { "title": "Pick the submarket, then the house",
+              "body": "Mountain Area, Downtown, Fish Creek, West Steamboat, Strawberry Park, South Valley, Stagecoach, Oak Creek, Hayden, North Routt, South Routt. Eleven different trades between price, commute, rentability and school district. Shopping across all of them at once is the most common way buyers lose a season." },
+            { "title": "Decide your number, not your approval",
+              "body": "A lender will pre-approve you for more than you want to spend. Set the monthly payment you are comfortable with, then get pre-qualified against it &mdash; and budget the things a Front Range buyer forgets: plowing, propane, HOA dues that in some complexes carry the water tap, and a rental licence that may or may not transfer." },
+            { "title": "Write an offer the seller believes will close",
+              "body": "Price is one term of several. Inspection window, financing contingency, closing date, post-closing occupancy, what stays with the house. {{agent.first}} owns the conversations with the other agent so you are not negotiating against your own listing agent's read of you." }
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "sellers.html",
+      "title": "Selling in Routt County &mdash; Ashley Walcher's Seller Guide",
+      "desc": "How Ashley Walcher prices, prepares and markets a Steamboat Springs or Routt County property, and what the first three weeks on market decide.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "For sellers",
+          "title": "Selling here, in four steps.",
+          "lede": "One of {{agent.first}}'s sellers had buyers demand an abbreviated transfer timeline and still closed clean. That is what the preparation is for."
+        },
+        {
+          "type": "steps",
+          "label": "The Four Steps",
+          "id": "s-four-steps",
+          "bg": "white",
+          "eyebrow": "The process",
+          "title": "Four decisions, in order.",
+          "steps": [
+            { "title": "Be honest about why you are selling",
+              "body": "Speed and price are different goals needing different strategies. A seller who has to be out by October is priced differently from one who wants a number. Tell {{agent.first}} which one you actually care about &mdash; pretending otherwise costs both." },
+            { "title": "Price against your submarket, not the county",
+              "body": "The Routt County median is an average of eleven places that behave nothing alike, and the portals price off the aggregate. {{agent.first}} will show you the comparable closings inside your own submarket, and be direct if the number you want is not in them." },
+            { "title": "Prepare only what returns money",
+              "body": "Declutter, depersonalise, fix the small broken things, deep clean. Beyond that the list is short and specific to your property &mdash; and for a rental unit it includes the occupancy history and licence paperwork a buyer's lender will ask for anyway." },
+            { "title": "Spend the marketing in the first three weeks",
+              "body": "Photography, video, the MLS write-up, agent-to-agent outreach, targeted social, and the short list of buyers already looking for exactly this. Front-load it. A listing still getting first impressions in month three has usually already lost." }
+          ]
+        },
+        {
+          "type": "valuation",
+          "label": "Home Valuation",
+          "bg": "dark",
+          "eyebrow": "Start here",
+          "title": "Start with a number you can trust.",
+          "lede": "Before any of the four steps you need a realistic value. An automated estimate is fine as an anchor and useless as a strategy.",
+          "points": [
+            "An instant estimate to anchor the conversation",
+            "Comparables from inside your own submarket",
+            "A prep list ranked by what actually returns money",
+            "An honest answer if now is the wrong time to sell"
+          ],
+          "actions": [
+            { "label": "Get a free valuation", "href": "home-valuation.html" }
+          ]
+        },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "home-valuation.html",
+      "title": "What Is My Steamboat Home Worth? &mdash; Ashley Walcher",
+      "desc": "Free home valuation for Steamboat Springs and Routt County property from Ashley Walcher, The Group Real Estate.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "Home valuation",
+          "title": "How much is your home worth?",
+          "lede": "You can have the automated number in thirty seconds. It is worth what it costs, which is why {{agent.first}} sends a second one behind it."
+        },
+        {
+          "type": "prose",
+          "label": "How I Price",
+          "bg": "cream",
+          "eyebrow": "How I price",
+          "title": "The median is not your price.",
+          "lede": "Everything {{agent.first}} writes in the journal is really about this one problem.",
+          "paragraphs": [
+            "Automated valuation models are built on volume and they price off aggregates. Routt County does not cooperate. Fish Creek alone holds a $595,000 condo and a fourteen-acre estate inside one boundary; West Steamboat leads the county on dollars-per-square-foot while trailing it on appreciation. An algorithm reading &ldquo;Steamboat Springs, CO 80487&rdquo; cannot see any of that.",
+            "What moves a real number here: which three sales a buyer's agent will actually use as comparables, whether a short-term rental licence transfers and what the occupancy history shows, whether the addition was permitted, what the HOA dues include, and &mdash; on acreage &mdash; access, water and buildable envelope.",
+            "So the estimate arrives first, and then a conversation. If the honest answer is that this is a bad year to sell your particular property, you will hear that too."
+          ]
+        },
+        {
+          "type": "valuation",
+          "label": "What You Get",
+          "bg": "dark",
+          "eyebrow": "What you get",
+          "title": "Two numbers and a plan.",
+          "points": [
+            "An instant automated estimate, in your inbox",
+            "A comparable-sales read from inside your submarket",
+            "A prep list ranked by return, not by effort",
+            "Short-term-rental income modelling where it applies",
+            "A recommended list price and a floor",
+            "No obligation and no listing presentation unless you ask"
+          ],
+          "actions": [
+            { "label": "Request the valuation", "href": "#ask" },
+            { "label": "Call {{agent.phone}}", "href": "tel:{{agent.tel}}" }
+          ]
+        },
+        { "type": "$form" },
+        { "type": "$band" }
+      ]
+    },
+
+    {
+      "file": "contact.html",
+      "title": "Contact Ashley Walcher &mdash; The Group, Steamboat Springs",
+      "desc": "Reach Ashley Walcher directly at 303.668.4689 or awalcher@thegroupinc.com. Office at 509 Lincoln Ave, Steamboat Springs, CO 80477.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "crumb": { "label": "{{agent.first}} Walcher", "href": "index.html" },
+          "eyebrow": "Let's connect",
+          "title": "She answers her own phone.",
+          "lede": "It is the single most common sentence in her reviews, so it seems worth putting at the top of the contact page."
+        },
+        { "type": "$form" },
+        {
+          "type": "prose",
+          "label": "The Office",
+          "bg": "white",
+          "eyebrow": "The office",
+          "title": "509 Lincoln Avenue.",
+          "lede": "Downtown Steamboat, on the main street.",
+          "paragraphs": [
+            "The Group's Steamboat office is at <strong>509 Lincoln Ave, Steamboat Springs, CO 80477</strong>. Office line <a href=\"tel:{{agent.officeTel}}\">{{agent.officePhone}}</a>. {{agent.first}} is on the Advisory Board here, and in the building most weekdays between showings.",
+            "If you are coming from out of state, say so in the message. She will usually suggest starting with the thirty-minute call rather than a tour schedule &mdash; picking the right one of eleven submarkets before you book flights saves a trip."
+          ]
+        },
+        { "type": "$quicklinks", "bg": "cream" }
+      ]
+    }
+  ]
+}

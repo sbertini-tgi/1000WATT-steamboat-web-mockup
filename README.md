@@ -37,6 +37,17 @@ python3 tools/build-agent-site.py docs/lauren-bloom/content.json
 python3 tools/review-manifest.py          # discovers agent folders; relists them in review.html
 ```
 
+The three brokerage-side profile pages for those agents
+(`docs/agent-lauren-bloom.html` and siblings) come from a second generator, because
+they carry an extra "Solo site" section linking into the agent's folder:
+
+```
+python3 tools/build-agent-profiles.py
+```
+
+Dean, Martin and Jon stay hand-written. A listing card on any of these pages gains an
+`href` to become a link into a property detail page.
+
 Porting another agent means copying the JSON, swapping the copy, and running the builder
 — no HTML and no CSS. Shared blocks (the closing band, the contact form, the quicklinks
 row) are declared once and referenced as `{"type": "$band"}`, and copy can interpolate

@@ -202,6 +202,90 @@ def b_pagehead(b, site):
     )
 
 
+@block("gallery", bg=None)
+def b_gallery(b, site):
+    """Property photography: one lead image and a stack beside it."""
+    side = "".join(
+        f'<div class="g-item"><img src="{x["src"]}" alt="{x["alt"]}" loading="lazy" /></div>'
+        for x in b.get("side", [])
+    )
+    count = f'<span class="g-count">{b["count"]}</span>' if b.get("count") else ""
+    return (
+        f'<div class="gallery">'
+        f'<div class="gallery__main"><div class="g-item">'
+        f'<img src="{b["main"]["src"]}" alt="{b["main"]["alt"]}" />{count}'
+        f"</div></div>"
+        f'<div class="gallery__side">{side}</div>'
+        f"</div>"
+    )
+
+
+@block("listing-detail", bg="cream")
+def b_listing_detail(b, site):
+    """A single property: price head, spec strip, copy, MLS table, agent card."""
+    specs = "".join(
+        f'<div class="spec"><div class="spec__v">{x["v"]}</div>'
+        f'<div class="spec__k">{x["k"]}</div></div>'
+        for x in b["specs"]
+    )
+    rows = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in b["details"])
+    hist = "".join(
+        f'<li>{h["price"]} <span>{h["date"]}</span></li>' for h in b.get("history", [])
+    )
+    hist_block = (
+        f'<div style="margin-top:clamp(40px,5vw,64px)">'
+        f'<p class="eyebrow">Price history</p>'
+        f'<ul class="pricehist">{hist}</ul></div>'
+        if hist else ""
+    )
+    map_block = (
+        f'<div style="margin-top:clamp(40px,5vw,64px)">'
+        f'<p class="eyebrow">Location</p>'
+        f'<div class="ph map-ph" data-label="{b["map"]}"></div></div>'
+        if b.get("map") else ""
+    )
+    note = f'<p class="mls-note">{b["note"]}</p>' if b.get("note") else ""
+    a = b["agent"]
+    fields = "".join(
+        f'<div class="field"><label for="{f["id"]}">{f["label"]}</label>'
+        + (f'<textarea id="{f["id"]}" placeholder="{f.get("placeholder","")}"></textarea>'
+           if f["kind"] == "textarea" else
+           f'<input id="{f["id"]}" type="{f["kind"]}" placeholder="{f.get("placeholder","")}" />')
+        + "</div>"
+        for f in a["fields"]
+    )
+    return (
+        f'<div class="phead"><div>'
+        f'<p class="phead__status">{b["status"]}</p>'
+        f'<h1 class="h2">{b["title"]}</h1>'
+        f'<p class="phead__city">{b["city"]}</p></div>'
+        f'<div class="phead__right">'
+        f'<div class="phead__price">{b["price"]}</div>'
+        f'<a class="pill-btn" href="{b["action"]["href"]}">{b["action"]["label"]} {ARROW}</a>'
+        f"</div></div>"
+        f'<div class="specstrip">{specs}</div>'
+        f'<div class="propcols" style="margin-top:clamp(40px,5vw,66px)"><div>'
+        f'{eyebrow(b)}'
+        f'<h2 class="h3" style="margin:16px 0 22px">{b["heading"]}</h2>'
+        f'{paragraphs(b)}{note}'
+        f'<div style="margin-top:clamp(40px,5vw,64px)">'
+        f'<p class="eyebrow">Details</p><table class="dtable">{rows}</table></div>'
+        f"{hist_block}{map_block}</div>"
+        f'<aside class="agentcard" id="showing">'
+        f'<div class="agentcard__top">'
+        f'<div class="agentcard__photo"><img src="{a["photo"]}" alt="{a["name"]}" /></div><div>'
+        f'<span class="agentcard__k">Listed by</span>'
+        f'<a class="agentcard__name" href="{a["href"]}">{a["name"]}</a>'
+        f'<span class="agentcard__role">{a["role"]}</span></div></div>'
+        f'<p>{a["blurb"]}</p>'
+        f'<form class="form" onsubmit="return false">{fields}'
+        f'<div class="form__submit">'
+        f'<button class="pill-btn" type="submit">{a["submit"]} {ARROW}</button></div></form>'
+        f'<span class="agentcard__tel">{a["tel"]}</span>'
+        f"</aside></div>"
+    )
+
+
 @block("agent-intro", bg="cream")
 def b_agent_intro(b, site):
     rev = " aintro--rev" if b.get("reverse") else ""
@@ -656,6 +740,7 @@ WRAPPERS = {
     "agent-header": ("div", "pagehead"),
     "band": ("section", "band"),
     "form": ("section", "section inquire"),
+    "gallery": ("div", "bg-cream"),
 }
 
 # Blocks in WRAPPERS render their own inner wrapper, so render_block must not
@@ -684,6 +769,10 @@ def render_block(b, site, seen):
         inner = f'<div class="container">{inner}</div>'
     elif b.get("bg"):
         cls = f"{cls} {BG_CLASS[b['bg']]}"
+    if kind == "pagehead" and b.get("slim"):
+        cls = f"{cls} pagehead--slim"
+    if kind == "listing-detail":
+        cls = cls.replace("section ", "section section--pdetail ", 1)
     attrs = f' id="{bid}" data-review="{label}"'
     return f"  <{tag} class=\"{cls}\"{attrs}>\n{inner}\n  </{tag}>\n"
 

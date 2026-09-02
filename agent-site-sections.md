@@ -9,9 +9,9 @@ content as *data* about those blocks, and porting the next agent becomes a conte
 rather than a design job.
 
 - **Source sites analysed** — six, in two platform families (below).
-- **Blocks identified** — 23, plus nav/footer chrome.
+- **Blocks identified** — 25, plus nav/footer chrome.
 - **Ported** — three, one from each of the two families:
-  [`docs/lauren-bloom/`](docs/lauren-bloom/) (10 pages),
+  [`docs/lauren-bloom/`](docs/lauren-bloom/) (11 pages, incl. a property detail),
   [`docs/ashley-walcher/`](docs/ashley-walcher/) (10 pages),
   [`docs/matt-eidt/`](docs/matt-eidt/) (6 pages).
 - **Built by** — [`tools/build-agent-site.py`](tools/build-agent-site.py) from one
@@ -183,6 +183,31 @@ into tabs when there is more than one status set.
   grouping his solds into **listing side** and **buy side** — derivable from the
   "offered by" line, and more useful on a solds wall than bedroom counts. Roughly half
   his closings are buy-side, which no other agent site in the set surfaces.
+
+#### `gallery`
+A property's photography: one lead image with a stack beside it, and a count chip.
+- **Seen on** — every property detail page on all six sites.
+- **Data** — `count?`, `main {src, alt}`, `side[] {src, alt}`
+- **Renders as** — `.gallery` / `.gallery__main` / `.gallery__side` / `.g-item` / `.g-count`
+
+#### `listing-detail`
+One property, in full: price head, spec strip, marketing copy, the MLS field table,
+price history, a map placeholder, and the listing agent's card with a showing-request
+form.
+- **Seen on** — all six. Luxury Presence and Tribus both render this from the IDX feed.
+- **Data** — `status`, `title`, `city`, `price`, `action`, `specs[] {v, k}`,
+  `eyebrow`, `heading`, `paragraphs[]`, `note?`, `details[] [k, v]`, `history[]?`,
+  `map?`, `agent {photo, name, href, role, blurb, fields[], submit, tel}`
+- **Renders as** — `.section--pdetail` / `.phead` / `.specstrip` / `.propcols` /
+  `.dtable` / `.pricehist` / `.agentcard` (all existing, from the brokerage property
+  pages)
+- **Note** — Pair it with a `pagehead` carrying `slim: true`, a `gallery` above, and a
+  `band` + `listings` below for the "selling one of these?" and "keep looking" tails.
+  The MLS field table is where a listing earns trust, so prefer more rows to fewer:
+  well permit, access, zoning and topography matter more on land than bedroom counts.
+  Where the source listing's own photography cannot be reproduced, say so in the
+  `note` **and** choose stand-ins that do not contradict the listing — a photograph
+  with a house in it on an unimproved-land listing is worse than no photograph.
 
 #### `search`
 MLS search entry — a field, a few filter pills, a submit.
@@ -371,6 +396,7 @@ The honest test of a reuse model is the second and third use of it, so here is t
 | Pages | 10 | 10 | 6 |
 | Reviewable blocks | 66 | 71 | 34 |
 | New block types | 22 (the initial set) | **1** (`posts`) | **0** |
+| Later additions | `gallery`, `listing-detail` (property page) | — | — |
 | New CSS components | the initial set | 0 | 1 (`fit: contain`) |
 | Builder changes | — | `place` optional | `specs` optional, `fit` option |
 
@@ -380,8 +406,15 @@ for her blog, which no other agent in the set has — and it reused the existing
 his site is a different *selection* and a different *shape* (six pages, no
 neighbourhoods, no valuation page, no newsletter), which is what the model is for.
 
-The three changes to the builder were all the same kind of thing: a field that one
-agent has and another does not. `place` on a testimonial, `specs` on a listing, and a
+A fourth pass added a **property detail page** to Lauren's site (TBD Silverado Road,
+her $1,947,000 38-acre Oak Creek parcel). That needed two new block types — `gallery`
+and `listing-detail` — and again **no new CSS**: the brokerage property pages already
+had every component, so the blocks are a data-driven wrapper over `.phead`,
+`.specstrip`, `.propcols`, `.dtable` and `.agentcard`. A `slim: true` flag on
+`pagehead` covers the shallow header those pages use above a gallery.
+
+The three earlier changes to the builder were all the same kind of thing: a field that
+one agent has and another does not. `place` on a testimonial, `specs` on a listing, and a
 portrait that must letterbox rather than crop. Each was a two-line change and each
 made the model more general, not less.
 

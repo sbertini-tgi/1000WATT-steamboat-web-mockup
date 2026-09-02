@@ -215,7 +215,7 @@
           "more": { "label": "See the full portfolio", "href": "properties.html" },
           "note": "<b>Placeholder view.</b> Live MLS / IDX results (IRES &amp; Summit MLS) connect here in production, and photography comes with the feed &mdash; the images below are representative. Prices and specifications are {{agent.first}}'s real inventory as of August 2026.",
           "items": [
-            { "status": "Active", "price": "$1,947,000", "specs": "Land &middot; Oak Creek", "address": "TBD Silverado Road, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/canyon-court-3.jpg" },
+            { "status": "Active", "price": "$1,947,000", "specs": "Land &middot; Oak Creek", "address": "TBD Silverado Road, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-phippsburg-yampa.jpg", "href": "property-tbd-silverado-road.html" },
             { "status": "Active", "price": "$1,695,000", "specs": "4 Bd &middot; 3 Ba &middot; 3,742 SF", "address": "31575 Buckingham Lane, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/bear-drive-1.jpg" },
             { "status": "Pending", "price": "$1,875,000", "specs": "3 Bd &middot; 3 Ba &middot; 1,809 SF", "address": "27055 Whitewood Drive E, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/hinton-lane.jpg" }
           ]
@@ -274,6 +274,127 @@
       ]
     },
 
+    {
+      "file": "property-tbd-silverado-road.html",
+      "title": "TBD Silverado Road, Oak Creek &mdash; $1,947,000 | {{agent.name}}, The Group",
+      "desc": "TBD Silverado Road, Oak Creek, CO 80467. 38.08 acres atop Silverado Road with 360-degree views to Mt. Werner, Sleeping Giant and the Flat Tops. Offered at $1,947,000 by Lauren Bloom, The Group.",
+      "blocks": [
+        {
+          "type": "pagehead",
+          "label": "Page header",
+          "id": "s-page-header",
+          "slim": true,
+          "crumb": { "label": "{{agent.first}}'s portfolio", "href": "properties.html" }
+        },
+        {
+          "type": "gallery",
+          "label": "Gallery",
+          "id": "s-gallery",
+          "count": "Placeholder photography",
+          "main": { "src": "assets/nb-phippsburg-yampa.jpg",
+                    "alt": "Representative South Routt mountain country of the kind this parcel overlooks" },
+          "side": [
+            { "src": "assets/nb-stagecoach.jpg",
+              "alt": "Looking south-west toward the Flat Tops Wilderness" },
+            { "src": "assets/nb-clark.jpg",
+              "alt": "Open meadow and water, representative of the setting" }
+          ]
+        },
+        {
+          "type": "listing-detail",
+          "label": "Listing detail",
+          "id": "s-listing-detail",
+          "bg": "cream",
+          "status": "Active &middot; MLS #S1068318 &middot; Listed with The Group",
+          "title": "TBD Silverado Road",
+          "city": "Oak Creek, Colorado 80467 &middot; Routt County",
+          "price": "$1,947,000",
+          "action": { "label": "Request a showing", "href": "#showing" },
+          "specs": [
+            { "v": "38.08", "k": "Acres" },
+            { "v": "360&deg;", "k": "Views" },
+            { "v": "Ag", "k": "Current use" },
+            { "v": "None", "k": "HOA" },
+            { "v": "Land", "k": "Property type" },
+            { "v": "$22", "k": "2024 taxes" }
+          ],
+          "eyebrow": "The property",
+          "heading": "Thirty-eight acres on top of Silverado Road, with nothing in the way of the view.",
+          "paragraphs": [
+            "A rare and exceptional offering, this <strong>38.27-acre parcel</strong> atop Silverado Road presents a truly remarkable opportunity to own one of Routt County's most awe-inspiring settings. From its elevated perch, the property commands breathtaking 360-degree views stretching from Mt. Werner and Sleeping Giant to the distant Flat Tops Wilderness.",
+            "With agricultural zoning, no HOA, and a landscape defined by privacy, scale and natural beauty, this is an ideal canvas for a luxury mountain estate, legacy holding, or refined off-grid retreat. Offering the rare balance of seclusion and accessibility, with strong cell service and electricity nearby, this is Colorado landownership at its most elevated.",
+            "Site videos available upon request."
+          ],
+          "note": "<b>Placeholder view.</b> Live MLS / IDX results connect here in production and bring the listing's own photography &mdash; the twelve MLS photos are not reproduced here, so the images above are representative of the setting rather than of this parcel. Price, acreage, MLS number and every field in the table below are the real listing as of September 2026.",
+          "details": [
+            ["Property type", "Land &mdash; unimproved"],
+            ["Lot size", "38.08 acres &middot; 1,658,765 sq ft (public records)"],
+            ["Acreage in marketing copy", "38.27 acres &mdash; as written by the listing agent"],
+            ["Current use", "Agricultural &middot; hunting"],
+            ["Zoning", "Agricultural &mdash; confirm permitted uses with Routt County"],
+            ["HOA", "None"],
+            ["Lot features", "Meadow &middot; many trees &middot; secluded &middot; suitable for grazing &middot; near ski area"],
+            ["Topography", "Mountainous"],
+            ["Views", "Meadow &middot; mountains &middot; ski area &mdash; Mt. Werner, Sleeping Giant, Flat Tops"],
+            ["Utilities", "Electricity nearby &middot; strong cell service &mdash; no well or septic in place"],
+            ["Road surface", "Dirt"],
+            ["Schools", "South Routt Elementary &middot; Soroco Middle &middot; Soroco High"],
+            ["Parcel number", "R6507070"],
+            ["2024 taxes", "$22.40"],
+            ["County", "Routt"],
+            ["Listed", "April 19, 2026"],
+            ["Offered by", "{{agent.name}}, The Group Real Estate, LLC"],
+            ["Data source", "Summit MLS &mdash; #S1068318"]
+          ],
+          "history": [
+            { "price": "$1,947,000", "date": "Listed April 19, 2026" }
+          ],
+          "map": "Map placeholder &mdash; Silverado Road, Oak Creek",
+          "agent": {
+            "photo": "../assets/agents/lauren-bloom.jpg",
+            "name": "{{agent.name}}",
+            "href": "about.html",
+            "role": "{{agent.role}} &middot; The Group, Steamboat Springs",
+            "blurb": "Land is {{agent.first}}'s specialty. Before you write anything, she will walk you through access, well-permit class, septic feasibility and what the county will actually let you build up here &mdash; the questions that decide whether thirty-eight acres is a homesite or a very good view.",
+            "fields": [
+              { "id": "s-name",  "kind": "text",     "label": "Your name *", "placeholder": "Jane Buyer" },
+              { "id": "s-email", "kind": "email",    "label": "Email *",     "placeholder": "you@email.com" },
+              { "id": "s-phone", "kind": "tel",      "label": "Phone",       "placeholder": "Optional" },
+              { "id": "s-msg",   "kind": "textarea", "label": "Message",     "placeholder": "I'd like to walk TBD Silverado Road&hellip;" }
+            ],
+            "submit": "Request showing",
+            "tel": "Or call {{agent.first}} direct &mdash; <a href=\"tel:{{agent.tel}}\">{{agent.phone}}</a>"
+          }
+        },
+        {
+          "type": "band",
+          "label": "Selling Land Like This?",
+          "id": "s-selling-land",
+          "image": "assets/band-work-with-lauren.jpg",
+          "eyebrow": "Selling land like this?",
+          "title": "Parcels sell on answers, not photographs.",
+          "lede": "{{agent.first}} has closed more than 120 transactions in this county, a large share of them bare land. If you own acreage in South Routt and want to know what it is worth this year, start there.",
+          "actions": [
+            { "label": "Get a free valuation", "href": "home-valuation.html" },
+            { "label": "Call {{agent.phone}}", "href": "tel:{{agent.tel}}" }
+          ]
+        },
+        {
+          "type": "listings",
+          "label": "Keep Looking",
+          "id": "s-keep-looking",
+          "bg": "white",
+          "eyebrow": "Keep looking",
+          "title": "More of {{agent.first}}'s land.",
+          "more": { "label": "See the full portfolio", "href": "properties.html" },
+          "items": [
+            { "status": "Active", "price": "$547,000", "specs": "Land &middot; Oak Creek", "address": "24425 Lone Tooth Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-clark.jpg" },
+            { "status": "Active", "price": "$230,000", "specs": "Land &middot; Oak Creek", "address": "33653 Seneca Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-oak-creek.jpg" },
+            { "status": "Active", "price": "$204,950", "specs": "Land &middot; Oak Creek", "address": "31145 Broken Talon Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-stagecoach.jpg" }
+          ]
+        }
+      ]
+    },
     {
       "file": "about.html",
       "title": "About Lauren Bloom &mdash; The Group, Steamboat Springs",
@@ -436,12 +557,12 @@
             {
               "label": "For sale",
               "items": [
-                { "status": "Active", "price": "$1,947,000", "specs": "Land &middot; Oak Creek", "address": "TBD Silverado Road, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/canyon-court-3.jpg" },
+                { "status": "Active", "price": "$1,947,000", "specs": "Land &middot; Oak Creek", "address": "TBD Silverado Road, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-phippsburg-yampa.jpg", "href": "property-tbd-silverado-road.html" },
                 { "status": "Active", "price": "$1,695,000", "specs": "4 Bd &middot; 3 Ba &middot; 3,742 SF", "address": "31575 Buckingham Lane, Steamboat Springs", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/bear-drive-1.jpg" },
                 { "status": "Active", "price": "$619,000", "specs": "3 Bd &middot; 2 Ba &middot; 1,388 SF", "address": "30341 County Road 16, #402, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/cascades-drive.jpg" },
-                { "status": "Active", "price": "$547,000", "specs": "Land &middot; Oak Creek", "address": "24425 Lone Tooth Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/county-road-64.jpg" },
+                { "status": "Active", "price": "$547,000", "specs": "Land &middot; Oak Creek", "address": "24425 Lone Tooth Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-clark.jpg" },
                 { "status": "Active", "price": "$230,000", "specs": "Land &middot; Oak Creek", "address": "33653 Seneca Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-oak-creek.jpg" },
-                { "status": "Active", "price": "$204,950", "specs": "Land &middot; Oak Creek", "address": "31145 Broken Talon Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "../assets/listings/skyview-1382-2.jpg" }
+                { "status": "Active", "price": "$204,950", "specs": "Land &middot; Oak Creek", "address": "31145 Broken Talon Trail, Oak Creek", "rep": "Offered by {{agent.name}} &middot; The Group", "image": "assets/nb-stagecoach.jpg" }
               ]
             },
             {

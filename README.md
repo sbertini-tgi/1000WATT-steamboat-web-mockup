@@ -80,6 +80,20 @@ python3 tools/build-agents-page.py
 python3 tools/review-manifest.py
 ```
 
+## Stand-alone property sites
+
+Single-listing microsites, one per production `<prefix>.thegrouprealestatess.com`
+subdomain, saved as `docs/<prefix>.html` (e.g. `docs/1240hawksnestlanena.html`). Each keeps
+production's section order (hero, description and broker, details, 3D tour, photos, map,
+request info) in the 1000WATT style. The listing record comes from the MLS data each
+production site embeds, cleaned into [`tools/property-sites.json`](tools/property-sites.json);
+photos are in `docs/assets/listings/sites/<prefix>/`.
+
+```
+python3 tools/build-property-sites.py
+python3 tools/review-manifest.py
+```
+
 ## Keeping it out of search results
 
 Every page under `docs/` carries:

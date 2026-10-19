@@ -1,0 +1,590 @@
+{
+ "snapshot": "2026-10-19",
+ "note": "Extracted from each single-property site's embedded listing record (DEFAULT_PROPS.property). Tokens and internal ids left out.",
+ "sites": [
+  {
+   "slug": "1240hawksnestlanena",
+   "sourceUrl": "https://1240hawksnestlanena.thegrouprealestatess.com/",
+   "status": "Active",
+   "mls": "S1071674",
+   "board": "Summit MLS (Altitude MLS, Inc.)",
+   "type": "Residential",
+   "subtype": "Townhouse",
+   "street": "1240 Hawks Nest Lane",
+   "city": "Gypsum",
+   "state": "CO",
+   "zip": "81637",
+   "county": "Eagle",
+   "subdivision": "OUT OF AREA",
+   "area": "Other",
+   "lat": "39.629818",
+   "lng": "-106.89698",
+   "directions": "I-70 WB: Exit 147 Eagle, west on Hwy 6, left on Cooley Mesa Rd, left on Buckhorn Valley Blvd, continue into Hawks Nest to Hawks Nest Ln. I-70 EB: Exit 140 Gypsum, south to Hwy 6, east to Cooley Mesa Rd, right on Cooley Mesa, left on Buckhorn Valley Blvd, continue into Hawks Nest to Hawks Nest Ln.",
+   "schools": {},
+   "price": 749000,
+   "originalPrice": 749000,
+   "priceHistory": [
+    {
+     "date": "2026-09-22",
+     "price": 749000
+    },
+    {
+     "date": "2026-09-23",
+     "price": 749000
+    },
+    {
+     "date": "2026-09-26",
+     "price": 749000
+    },
+    {
+     "date": "2026-09-26",
+     "price": 749000
+    },
+    {
+     "date": "2026-09-26",
+     "price": 749000
+    },
+    {
+     "date": "2026-09-27",
+     "price": 749000
+    },
+    {
+     "date": "2026-10-03",
+     "price": 749000
+    },
+    {
+     "date": "2026-10-08",
+     "price": 749000
+    },
+    {
+     "date": "2026-10-11",
+     "price": 749000
+    }
+   ],
+   "onMarket": "2026-09-21",
+   "dom": 19,
+   "remarks": "Elevated mountain living begins at 1240 Hawks Nest Lane, where sweeping views, unforgettable sunsets and thoughtful design create an exceptional home in one of Gypsum's most convenient locations. Natural light fills the open-concept main level, connecting the kitchen, dining and living spaces with an effortless flow. A private first-floor bedroom with its own en-suite bathroom creates the perfect mother-in-law suite or refined guest retreat, while a separate half bath serves the main living area. Upstairs, the primary suite becomes a private mountain retreat with beautiful views, multiple closets and a luxurious Euro-style shower. The adjoining flex space offers room for a sophisticated home office, fitness studio, media lounge or second living area. Generous kitchen storage and additional crawl-space attic areas ensure everything has its place. Solar powers the home, while air conditioning and forced-air heating provide dependable comfort through every Eagle County season. The large two-car garage delivers the space local buyers want for vehicles, skis, bikes, snowmobiles, tools and all the gear that comes with mountain living. Outside, the fenced yard and established garden create a private setting for entertaining, relaxing and watching the Colorado sky come alive at sunset. Trails, parks, schools, the Gypsum Recreation Center, Eagle County Regional Airport, local dining and I-70 access are all just minutes away. Offered under $750,000, this is a rare combination of luxury, flexibility, efficiency, storage and location, designed for the way Eagle County is meant to be lived.",
+   "virtualTour": "https://www.zillow.com/view-3d-home/6f14e3c2-ae08-4b91-b961-e96ac5b09d6b/?utm_source=captureapp",
+   "openHouses": [
+    {
+     "start": "2026-10-11T19:00:00.000Z",
+     "end": "2026-10-11T22:00:00.000Z"
+    }
+   ],
+   "agent": {
+    "name": "Robert Acosta",
+    "slug": "robert-acosta",
+    "phone": "(760) 397-7719",
+    "email": "racosta@thegroupinc.com",
+    "office": "The Group Inc.",
+    "officePhone": "(970) 870-8800"
+   },
+   "photos": [
+    {
+     "n": 1,
+     "caption": ""
+    },
+    {
+     "n": 2,
+     "caption": ""
+    },
+    {
+     "n": 3,
+     "caption": ""
+    },
+    {
+     "n": 4,
+     "caption": ""
+    },
+    {
+     "n": 5,
+     "caption": ""
+    },
+    {
+     "n": 6,
+     "caption": ""
+    },
+    {
+     "n": 7,
+     "caption": ""
+    },
+    {
+     "n": 8,
+     "caption": ""
+    },
+    {
+     "n": 9,
+     "caption": "Solar-Powered Mountain Living\r\nAerial view showcas"
+    },
+    {
+     "n": 10,
+     "caption": ""
+    },
+    {
+     "n": 11,
+     "caption": ""
+    },
+    {
+     "n": 12,
+     "caption": ""
+    },
+    {
+     "n": 13,
+     "caption": ""
+    },
+    {
+     "n": 14,
+     "caption": ""
+    },
+    {
+     "n": 15,
+     "caption": ""
+    },
+    {
+     "n": 16,
+     "caption": ""
+    },
+    {
+     "n": 17,
+     "caption": "Open-Concept Kitchen\r\nA bright, functional kitchen"
+    },
+    {
+     "n": 18,
+     "caption": ""
+    },
+    {
+     "n": 19,
+     "caption": "Light-Filled Living and Dining\r\nExpansive windows,"
+    },
+    {
+     "n": 20,
+     "caption": ""
+    },
+    {
+     "n": 21,
+     "caption": ""
+    },
+    {
+     "n": 22,
+     "caption": ""
+    },
+    {
+     "n": 23,
+     "caption": ""
+    },
+    {
+     "n": 24,
+     "caption": ""
+    },
+    {
+     "n": 25,
+     "caption": ""
+    },
+    {
+     "n": 26,
+     "caption": "First-Floor Bedroom Suite\r\nPrivate first-floor bed"
+    },
+    {
+     "n": 27,
+     "caption": "First-Floor En-Suite Bathroom\r\nPrivate full bathro"
+    },
+    {
+     "n": 28,
+     "caption": ""
+    },
+    {
+     "n": 29,
+     "caption": ""
+    },
+    {
+     "n": 30,
+     "caption": "Second-Floor Flex Space\r\nThe entire second floor c"
+    },
+    {
+     "n": 31,
+     "caption": ""
+    },
+    {
+     "n": 32,
+     "caption": ""
+    },
+    {
+     "n": 33,
+     "caption": ""
+    },
+    {
+     "n": 34,
+     "caption": ""
+    },
+    {
+     "n": 35,
+     "caption": ""
+    },
+    {
+     "n": 36,
+     "caption": ""
+    },
+    {
+     "n": 37,
+     "caption": ""
+    }
+   ],
+   "facts": {
+    "structure": {
+     "attached_garage_y_n": true,
+     "bathrooms_full": 2,
+     "bathrooms_half": 1,
+     "bathrooms_three_quarter": 0,
+     "bathrooms_total_integer": 3,
+     "bedrooms_total": 2,
+     "building_area_source": "Builder",
+     "building_area_total": "1730.0",
+     "building_features": "SeeRemarks",
+     "construction_materials": "Cement Siding, Frame",
+     "cooling": "OneUnit",
+     "cooling_y_n": true,
+     "entry_level": 1,
+     "fireplace_features": "Gas",
+     "fireplaces_total": 1,
+     "fireplace_y_n": true,
+     "flooring": "Tile",
+     "garage_spaces": "2.0",
+     "garage_y_n": true,
+     "heating": "Forced Air",
+     "heating_y_n": true,
+     "interior_features": "Ceiling Fan(s), Fireplace, JettedTub, Vaulted Ceiling(s)",
+     "levels": "Two",
+     "living_area": "1730.0",
+     "living_area_source": "Builder",
+     "living_area_units": "Square Feet",
+     "parking_features": "Attached, Garage",
+     "patio_and_porch_features": "Patio",
+     "property_condition": "Resale",
+     "roof": "Asphalt",
+     "year_built": 2015,
+     "performance": {
+      "green_marketing": {
+       "green_energy_efficient": null,
+       "green_energy_generation": null,
+       "green_indoor_air_quality": null,
+       "green_location": null,
+       "green_sustainability": null,
+       "green_water_conservation": null,
+       "walk_score": null
+      }
+     }
+    },
+    "characteristics": {
+     "furnished": "Unfurnished",
+     "lot_features": "See Remarks",
+     "lot_size_acres": "0.092",
+     "lot_size_area": "0.092",
+     "lot_size_source": "Public Records",
+     "lot_size_square_feet": "4007.52",
+     "lot_size_units": "Acres",
+     "road_surface_type": "Paved",
+     "spa_features": "SteamRoom",
+     "spa_y_n": true
+    },
+    "equipment": {
+     "appliances": "Dishwasher, Gas Cooktop, Disposal, Microwave, Oven, Refrigerator, SomeElectricAppliances, Dryer, Washer"
+    },
+    "utility": {
+     "sewer": "Connected",
+     "utilities": "See Remarks, Sewer Connected",
+     "water_source": "Public"
+    },
+    "hoa": {
+     "association_fee": "2700.0",
+     "association_fee_frequency": "Annually",
+     "association_y_n": true,
+     "pets_allowed": "Yes"
+    },
+    "tax": {
+     "parcel_number": "R065729",
+     "tax_annual_amount": "5208.89",
+     "tax_legal_description": "SUBDIVISION: HAWKS NEST AT BUCKHORN VALLEY FILING 1 LOT: 16B",
+     "tax_lot": "16B",
+     "tax_year": 2025,
+     "zoning_description": "Planned Unit Development"
+    },
+    "business": {}
+   }
+  },
+  {
+   "slug": "13821384skyviewlane",
+   "sourceUrl": "https://13821384skyviewlane.thegrouprealestatess.com/",
+   "status": "Active",
+   "mls": "S1071203",
+   "board": "Summit MLS (Altitude MLS, Inc.)",
+   "type": "Land",
+   "subtype": "Residential",
+   "street": "1382/1384 Skyview Lane",
+   "city": "Steamboat Springs",
+   "state": "CO",
+   "zip": "80487",
+   "county": "Routt",
+   "subdivision": "OTHER",
+   "area": "Other",
+   "lat": "40.447802",
+   "lng": "-106.811015",
+   "directions": "From The Group, Inc. downtown office, head 2.6 miles to Walton Creek Road. Turn left onto Walton Creek Road. In 0.2 miles, turn right onto Chinook Lane.  In 0.4 miles turn left and in 150 feet the land will be on your right.",
+   "schools": {
+    "elementary_school": "Strawberry Park",
+    "high_school": "Steamboat Springs",
+    "middle_or_junior_school": "Steamboat Springs"
+   },
+   "price": 6995000,
+   "originalPrice": 6995000,
+   "priceHistory": [
+    {
+     "date": "2026-08-31",
+     "price": 6995000
+    }
+   ],
+   "onMarket": "2026-08-28",
+   "dom": 2,
+   "remarks": "Multifamily development opportunity on 1.49 acres in Steamboat Springs - one of the last available opportunities within Steamboat Springs city limits! Zoned MF-3 the property may offer significant potential for a larger multifamily project. With no HOA, access to the free Steamboat bus route, direct connection to the trail system, all utility infrastructure already in place, and ideally positioned near the ski area, this opportunity offers a prime location for a development. Established and successful apartment rental complex next door makes the location conforming and suitable. Existing duplex dwelling could be incorporated in future development and provides flexibility for a buyer who is not ready to develop immediately, including the option to use the property as a long-term rental while planning a future project all while taking advantage of the lower residential tax rate. 1382 Skyview Lane is fully finished with 3 bedrooms, 2 baths, approximately 1,500 square feet and a 2-car garage and 1384 Skyview Lane offers approximately 2,500 square feet with 3 bedrooms plus a mother-in-law suite, 3 baths, an oversized deck with excellent views and a 3-car garage. An adjacent approximately 0.34-acre parcel with an existing home is separately available for purchase, creating the potential for an approximately 1.83-acre assemblage. This opportunity offers a unique combination of acreage, existing improvements, location and multi-family zoning!",
+   "virtualTour": null,
+   "openHouses": [],
+   "agent": {
+    "name": "Martin Dragnev",
+    "slug": "martin-dragnev",
+    "phone": "(970) 291-9412",
+    "email": "mdragnev@thegroupinc.com",
+    "office": "The Group Inc.",
+    "officePhone": "(970) 870-8800"
+   },
+   "photos": [
+    {
+     "n": 1,
+     "caption": "Expansive land parcel with a paved access road and"
+    },
+    {
+     "n": 2,
+     "caption": "Additional content"
+    },
+    {
+     "n": 3,
+     "caption": "Aerial perspective of two distinct parcels: 1382/1"
+    },
+    {
+     "n": 4,
+     "caption": "Plat Map Potential Concept"
+    },
+    {
+     "n": 5,
+     "caption": "Survey Map - outlining the current subdivision of"
+    },
+    {
+     "n": 6,
+     "caption": ""
+    },
+    {
+     "n": 7,
+     "caption": "Additional content"
+    },
+    {
+     "n": 8,
+     "caption": "Wood siding exterior featuring multiple bay window"
+    },
+    {
+     "n": 9,
+     "caption": "Mountain terrain backdrop"
+    },
+    {
+     "n": 10,
+     "caption": "Additional content"
+    },
+    {
+     "n": 11,
+     "caption": "Additional content"
+    },
+    {
+     "n": 12,
+     "caption": "Additional content"
+    },
+    {
+     "n": 13,
+     "caption": "Additional content"
+    },
+    {
+     "n": 14,
+     "caption": "Expansive landscape featuring residential structur"
+    },
+    {
+     "n": 15,
+     "caption": "Additional content"
+    },
+    {
+     "n": 16,
+     "caption": "Bay window with multiple panes"
+    },
+    {
+     "n": 17,
+     "caption": "Kitchen featuring stainless steel appliances, wood"
+    }
+   ],
+   "facts": {
+    "structure": {
+     "bathrooms_total_integer": 0,
+     "living_area_units": "Square Feet",
+     "performance": {
+      "green_marketing": {
+       "green_energy_efficient": null,
+       "green_energy_generation": null,
+       "green_indoor_air_quality": null,
+       "green_location": null,
+       "green_sustainability": null,
+       "green_water_conservation": null,
+       "walk_score": null
+      }
+     }
+    },
+    "characteristics": {
+     "community_features": "SeeRemarks, TrailsPaths, PublicTransportation",
+     "current_use": "Multi-Family, Residential, Single Family, See Remarks, Vacant",
+     "land_lease_y_n": false,
+     "lot_features": "City Lot, Near Public Transit, See Remarks",
+     "lot_size_acres": "1.49",
+     "lot_size_area": "1.49",
+     "lot_size_source": "Public Records",
+     "lot_size_square_feet": "64904.4",
+     "lot_size_units": "Acres",
+     "road_surface_type": "Paved",
+     "view": "City, Mountain(s), Valley",
+     "view_y_n": true
+    },
+    "equipment": {},
+    "utility": {
+     "sewer": "Public Sewer",
+     "utilities": "Electricity Available, Sewer Available, Water Available",
+     "water_source": "Public"
+    },
+    "hoa": {
+     "association_fee": "0.0",
+     "association_y_n": false
+    },
+    "tax": {
+     "parcel_number": "r8182249",
+     "tax_annual_amount": "4507.0",
+     "tax_legal_description": "LOT 2 SKYVIEW LANE SUBDIVISION",
+     "tax_year": 2025,
+     "zoning_description": "Multi-Family"
+    },
+    "business": {}
+   }
+  },
+  {
+   "slug": "24agrizzlyct24a",
+   "sourceUrl": "https://24agrizzlyct24a.thegrouprealestatess.com/",
+   "status": "Active",
+   "mls": "S1067990",
+   "board": "Summit MLS (Altitude MLS, Inc.)",
+   "type": "Commercial Sale",
+   "subtype": null,
+   "street": "24A Grizzly Ct #24A",
+   "city": "Steamboat Springs",
+   "state": "CO",
+   "zip": "80487",
+   "county": "Routt",
+   "subdivision": "AIRPORT INDUSTRIAL PARK SUBD",
+   "area": "West Steamboat / US 40",
+   "lat": "40.515358",
+   "lng": "-106.86182",
+   "directions": "Go North 1.5 miles on Elk River Road Hwy 129 from HWY $) , at entrance of the Steamboat Airport",
+   "schools": {},
+   "price": 2600000,
+   "originalPrice": 3660000,
+   "priceHistory": [
+    {
+     "date": "2026-08-03",
+     "price": 2675000
+    },
+    {
+     "date": "2026-10-19",
+     "price": 2600000
+    }
+   ],
+   "onMarket": "2026-04-01",
+   "dom": 200,
+   "remarks": "Steamboat Airport Industrial Park is ideally located just one mile north of Highway 40 along Elk River Road (County Road 129) with multiple access points. This new subdivision features 27 lots ranging from 0.25 up to 3 acres. Whether you’re looking to expand an existing business, start a new one, or simply build a shop for all your equipment, we have the perfect space for you to build on. This is truly one of the last opportunities in Steamboat Springs to own industrial land. Permitted uses are extensive and flexible, including: live/work, workforce housing, automotive repair/sales/rentals, contractor shops, equipment storage yards, food & beverage processing, heavy equipment repairs/sales, manufacturing of all kinds, office/flex spaces, nurseries, mobile food trucks shops, restaurants & tasting/tap rooms, tech and utility centers, warehouse & storage for your business of toys and many more. This subdivision represents a rare chance to meet Steamboat’s growing demand for commercial and industrial services. See Supplemental Documents for the plat and site plan. Final Plat and construction Drawings have been approved and construction will commence asap spring of 2026 and estimated completion of fall of 2026. Zoning is Industrial.  This lot has been re-platted,  see additional supplements",
+   "virtualTour": null,
+   "openHouses": [],
+   "agent": {
+    "name": "Ron Wendler",
+    "slug": "ron-wendler",
+    "phone": "(970) 846-7500",
+    "email": "rwendler@thegroupinc.com",
+    "office": "The Group Inc.",
+    "officePhone": "(970) 870-8800"
+   },
+   "photos": [
+    {
+     "n": 1,
+     "caption": ""
+    },
+    {
+     "n": 2,
+     "caption": ""
+    },
+    {
+     "n": 3,
+     "caption": ""
+    }
+   ],
+   "facts": {
+    "structure": {
+     "bathrooms_total_integer": 0,
+     "building_area_total": "104979.0",
+     "cooling_y_n": false,
+     "heating_y_n": false,
+     "living_area_units": "Square Feet",
+     "roof": "See Remarks",
+     "year_built": 2026,
+     "performance": {
+      "green_marketing": {
+       "green_energy_efficient": null,
+       "green_energy_generation": null,
+       "green_indoor_air_quality": null,
+       "green_location": null,
+       "green_sustainability": null,
+       "green_water_conservation": null,
+       "walk_score": null
+      }
+     }
+    },
+    "characteristics": {
+     "lot_features": "Level, Meadow, Split Possible",
+     "lot_size_acres": "2.41",
+     "lot_size_area": "2.41",
+     "lot_size_source": "Public Records",
+     "lot_size_square_feet": "104979.6",
+     "lot_size_units": "Acres",
+     "road_responsibility": "Public Maintained Road",
+     "road_surface_type": "Paved"
+    },
+    "equipment": {},
+    "utility": {
+     "electric": "SeparateMeters",
+     "sewer": "Public Sewer",
+     "utilities": "Electricity Available, Natural Gas Available, Phone Available, Sewer Available, Water Available",
+     "water_source": "Public"
+    },
+    "hoa": {},
+    "tax": {
+     "parcel_number": "1",
+     "tax_annual_amount": "0.0",
+     "tax_block": "1",
+     "tax_legal_description": "LOT 24A, Steamboat Airport Industrial Park",
+     "tax_lot": "24A",
+     "zoning_description": "Commercial"
+    },
+    "business": {
+     "business_name": "Raider Development LLC",
+     "business_type": "Industrial"
+    }
+   }
+  }
+ ]
+}

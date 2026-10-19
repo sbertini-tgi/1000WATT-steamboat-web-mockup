@@ -72,8 +72,7 @@ def specs(s):
     if st.get("bedrooms_total"):
         out.append((st["bedrooms_total"], "Bedrooms"))
     if st.get("bathrooms_total_integer"):
-        full, half = st.get("bathrooms_full", 0), st.get("bathrooms_half", 0)
-        out.append((full + (0.5 if half else 0) if half else full, "Bathrooms"))
+        out.append((st["bathrooms_total_integer"], "Bathrooms"))
     if st.get("living_area") and s["type"] == "Residential":
         out.append(("{:,}".format(int(st["living_area"])), "Square feet"))
     if ch.get("lot_size_acres"):
@@ -105,6 +104,7 @@ def detail_groups(s):
         ("Square feet", "{:,}".format(int(st["living_area"])) if st.get("living_area") and s["type"] == "Residential" else None),
         ("Bedrooms", st.get("bedrooms_total")),
         ("Bathrooms (full)", st.get("bathrooms_full")),
+        ("Bathrooms (¾)", st.get("bathrooms_three_quarter")),
         ("Bathrooms (half)", st.get("bathrooms_half")),
         ("Lot size", "%s acres" % words(ch["lot_size_acres"]) if ch.get("lot_size_acres") else None),
         ("Business type", biz.get("business_type")),
@@ -112,11 +112,14 @@ def detail_groups(s):
     grp("Interior", [
         ("Interior features", st.get("interior_features") and words(st["interior_features"])),
         ("Flooring", st.get("flooring")),
-        ("Fireplace", st.get("fireplace_features") and "%s · %s" % (st.get("fireplaces_total", 1), st["fireplace_features"])),
+        ("Fireplace", st.get("fireplace_features") and ("%s · %s" % (st["fireplaces_total"], st["fireplace_features"]) if st.get("fireplaces_total") else st["fireplace_features"])),
         ("Appliances", eq.get("appliances") and words(eq["appliances"])),
         ("Spa", ch.get("spa_features") and words(ch["spa_features"])),
         ("Furnished", ch.get("furnished")),
         ("Levels", st.get("levels")),
+        ("Basement", st.get("basement")),
+        ("Accessibility", st.get("accessibility_features")),
+        ("Doors", st.get("door_features")),
     ])
     grp("Utilities", [
         ("Heating", st.get("heating")),
@@ -129,6 +132,7 @@ def detail_groups(s):
     grp("Construction", [
         ("Year built", st.get("year_built") if s["type"] == "Residential" else None),
         ("Condition", st.get("property_condition")),
+        ("Style", st.get("architectural_style")),
         ("Materials", st.get("construction_materials")),
         ("Roof", st.get("roof") if s["type"] == "Residential" else None),
     ])
@@ -140,6 +144,9 @@ def detail_groups(s):
         ("View", ch.get("view") and words(ch["view"])),
         ("Road", " · ".join(x for x in (ch.get("road_surface_type"), ch.get("road_responsibility")) if x)),
         ("Current use", ch.get("current_use")),
+        ("Fencing", ch.get("fencing")),
+        ("Horses", ch.get("horse_amenities")),
+        ("Road frontage", ch.get("road_frontage_type")),
         ("Community", ch.get("community_features") and words(ch["community_features"]).replace("Trails Paths", "Trails / paths")),
     ])
     grp("Location", [
@@ -176,7 +183,7 @@ def page(s):
     a = s["agent"]
     tel_txt, tel_href = phone(a["phone"])
     a_photo = "assets/agents/%s.jpg" % a["slug"] if a.get("slug") else ""
-    a_href = "agent-%s.html" % a["slug"] if a.get("slug") and os.path.exists(os.path.join(DOCS, "agent-%s.html" % a["slug"])) \
+    a_href = a.get("profile") or "agent-%s.html" % a["slug"] if a.get("profile") or (a.get("slug") and os.path.exists(os.path.join(DOCS, "agent-%s.html" % a["slug"]))) \
         else "https://thegrouprealestatess.com/agents/%s/" % a.get("slug", "")
     first = a["name"].split()[0]
     photos = s["photos"]
@@ -200,13 +207,41 @@ def page(s):
 
     # open houses still to come (relative to the snapshot date)
     snap = datetime.strptime(DATA["snapshot"], "%Y-%m-%d").replace(tzinfo=MT)
-    upcoming = []
+    upcoming, upcoming_bar = [], []
     for o in s.get("openHouses") or []:
         st_ = datetime.fromisoformat(o["start"].replace("Z", "+00:00")).astimezone(MT)
         en_ = datetime.fromisoformat(o["end"].replace("Z", "+00:00")).astimezone(MT)
         if st_ >= snap:
             upcoming.append("%s · %s–%s" % (st_.strftime("%a, %b %-d"), st_.strftime("%-I:%M"), en_.strftime("%-I:%M %p")))
+            upcoming_bar.append((st_, en_))
     open_html = ""
+    def hm(t):
+        return t.strftime("%-I %p") if t.minute == 0 else t.strftime("%-I:%M %p")
+    def span(a_, b_):
+        a_s, b_s = hm(a_), hm(b_)
+        return (a_s[:-3] if a_s[-2:] == b_s[-2:] else a_s) + "–" + b_s
+    def gcal(a_, b_):
+        z = lambda t: t.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        q = "action=TEMPLATE&text=" + ("Open house: %s" % street).replace(" ", "+") + "&dates=%s/%s" % (z(a_), z(b_)) + \
+            "&location=" + ("%s, %s" % (street, city_line)).replace(" ", "+").replace(",", "%2C")
+        return "https://calendar.google.com/calendar/render?" + q
+    ohbar = ""
+    if upcoming_bar:
+        items = []
+        for k, (a_, b_) in enumerate(upcoming_bar):
+            items.append('<li class="ohbar__date%s"><time datetime="%s">%s · %s</time><a class="ohbar__cal" href="%s" target="_blank" rel="noopener" aria-label="Add %s to calendar">+ Calendar</a></li>'
+                         % (" is-more" if k else "", a_.isoformat(), a_.strftime("%a, %b %-d"), span(a_, b_), e(gcal(a_, b_)), a_.strftime("%A, %B %-d")))
+        more = ('<button class="ohbar__more" type="button" aria-expanded="false" aria-controls="ohbar-list">+%d more <span aria-hidden="true">▾</span></button>' % (len(items) - 1)) if len(items) > 1 else ""
+        ohbar = """  <!-- ============================ OPEN HOUSE BAR ============================ -->
+  <aside class="ohbar" id="s-open-house" data-review="Open house" aria-label="Open house">
+    <div class="ohbar__inner">
+      <span class="ohbar__k"><span class="ohbar__dot" aria-hidden="true"></span>Open house</span>
+      <ul class="ohbar__list" id="ohbar-list">%s</ul>
+      %s
+      <a class="ohbar__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%s,%s" target="_blank" rel="noopener">Directions <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+""" % ("".join(items), more, s["lat"], s["lng"])
     if upcoming:
         open_html = '<div class="sps-open"><span class="mini-k">Open house</span>%s</div>' % "".join("<b>%s</b>" % e(u) for u in upcoming)
 
@@ -239,23 +274,28 @@ def page(s):
         </div>""" % "\n            ".join(items)
 
     tour = ""
+    is3d = "view-3d" in (s.get("virtualTour") or "") or "matterport" in (s.get("virtualTour") or "")
+    tour_label = "3D Tour" if is3d else "Video"
     if s.get("virtualTour"):
         tour = """
   <!-- ============================ VIDEO / 3D TOUR ============================ -->
-  <section class="band sps-tour" id="tour" data-review="3D tour">
+  <section class="band sps-tour" id="tour" data-review="{label}">
     <img class="band__bg" src="{img}" alt="" />
     <div class="band__scrim"></div>
     <div class="container">
-      <p class="eyebrow eyebrow--bright">3D Tour</p>
-      <h2 class="h2">Walk through it before you fly in.</h2>
-      <p class="lede">Every room of {street}, in a self-guided 3D tour.</p>
-      <div class="band__actions"><a class="pill-btn pill-btn--solid" href="{url}" target="_blank" rel="noopener">Open the 3D tour <span aria-hidden="true">&#8599;</span></a></div>
+      <p class="eyebrow eyebrow--bright">{label}</p>
+      <h2 class="h2">{title}</h2>
+      <p class="lede">{lede}</p>
+      <div class="band__actions"><a class="pill-btn pill-btn--solid" href="{url}" target="_blank" rel="noopener">{cta} <span aria-hidden="true">&#8599;</span></a></div>
     </div>
   </section>
-""".format(img=e(base + "%02d.jpg" % photos[min(2, len(photos) - 1)]["n"]), street=e(street), url=e(s["virtualTour"]))
+""".format(img=e(base + "%02d.jpg" % photos[min(2, len(photos) - 1)]["n"]), url=e(s["virtualTour"]), label=tour_label,
+           title="Walk through it before you fly in." if is3d else "See it the way it feels.",
+           lede=("Every room of %s, in a self-guided 3D tour." if is3d else "The video tour of %s, from the listing team.") % e(street),
+           cta="Open the 3D tour" if is3d else "Watch the video")
 
     maps_q = "%s,%s" % (s["lat"], s["lng"])
-    nav_links = [("overview", "Overview"), ("details", "Details")] + ([("tour", "3D Tour")] if tour else []) + \
+    nav_links = [("overview", "Overview"), ("details", "Details")] + ([("tour", tour_label)] if tour else []) + \
                 [("photos", "Photos"), ("location", "Location")]
     nav_html = "\n".join('        <a href="#%s">%s</a>' % (h, t) for h, t in nav_links)
     ptype = s["subtype"] if s["type"] == "Residential" and s["subtype"] else {"Land": "Land", "Commercial Sale": "Commercial"}.get(s["type"], s["type"])
@@ -277,7 +317,7 @@ def page(s):
   <link rel="stylesheet" href="css/review.css" />
 </head>
 <body class="sps">
-  <!-- Generated by tools/build-property-sites.py from tools/property-sites.json. Edit those, not this.
+{ohbar}  <!-- Generated by tools/build-property-sites.py from tools/property-sites.json. Edit those, not this.
        Stand-alone property site; production: {source} -->
 
   <!-- ============================ HERO ============================ -->
@@ -327,7 +367,7 @@ def page(s):
             <div>
               <span class="agentcard__k">Offered by</span>
               <a class="agentcard__name" href="{a_href}">{agent}</a>
-              <span class="agentcard__role">{office}, Steamboat Springs</span>
+              <span class="agentcard__role">{office_label}</span>
             </div>
           </div>
           <ul class="sps-agent__lines">
@@ -417,7 +457,7 @@ def page(s):
     <div class="footer__box">
       <hr class="footer__rule" />
       <div class="footer__inner">
-      <a href="index.html">The Group &middot; Steamboat Springs</a>
+      <a href="index.html">{brand}</a>
       <a href="property-search.html">More listings</a>
       <a href="contact.html">Contact</a>
       </div>
@@ -450,15 +490,16 @@ def page(s):
         spec_html=spec_html, lead=e(lead),
         paras="\n".join("            <p>%s</p>" % e(p) for p in paras),
         agent_img='<img src="%s" alt="%s" />' % (e(a_photo), e(a["name"])) if a_photo else "",
-        a_href=e(a_href), agent=e(a["name"]), office=e(a["office"] or "The Group"),
+        a_href=e(a_href), agent=e(a["name"]), office_label=e(a.get("officeLabel") or "The Group"), office=e(a["office"] or "The Group"),
         tel=e(tel_txt), tel_href=e(tel_href), email=e(a["email"]), first=e(first),
-        open_html=open_html, arrow=ARROW, board=e(s["board"] or "MLS"), mls=e(s["mls"]),
+        open_html=open_html, ohbar=ohbar, arrow=ARROW, board=e(s["board"] or "MLS"), mls=e(s["mls"]),
         groups=groups_html, hist=hist_html, tour=tour,
         nphotos_word="%d photographs." % len(photos) if len(photos) > 3 else "A closer look.",
         gal_mod=" sps-gallery--few" if len(photos) <= 3 else "",
         gallery="\n".join(gal), more_btn=more_btn, maps_q=maps_q,
         directions='<p class="sps-directions"><span class="mini-k">Directions</span>%s</p>' % e(s["directions"]) if s.get("directions") else "",
-        snap=e(DATA["snapshot"]))
+        snap=e(DATA["snapshot"]),
+        brand="The Group &middot; Steamboat Springs" if s["state"] == "CO" and "Steamboat" in (a.get("officeLabel") or "Steamboat") else "The Group Real Estate")
 
 
 if __name__ == "__main__":

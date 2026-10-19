@@ -77,7 +77,8 @@
     "phone": "(760) 397-7719",
     "email": "racosta@thegroupinc.com",
     "office": "The Group Inc.",
-    "officePhone": "(970) 870-8800"
+    "officePhone": "(970) 870-8800",
+    "officeLabel": "The Group, Steamboat Springs"
    },
    "photos": [
     {
@@ -353,7 +354,8 @@
     "phone": "(970) 291-9412",
     "email": "mdragnev@thegroupinc.com",
     "office": "The Group Inc.",
-    "officePhone": "(970) 870-8800"
+    "officePhone": "(970) 870-8800",
+    "officeLabel": "The Group, Steamboat Springs"
    },
    "photos": [
     {
@@ -517,7 +519,8 @@
     "phone": "(970) 846-7500",
     "email": "rwendler@thegroupinc.com",
     "office": "The Group Inc.",
-    "officePhone": "(970) 870-8800"
+    "officePhone": "(970) 870-8800",
+    "officeLabel": "The Group, Steamboat Springs"
    },
    "photos": [
     {
@@ -585,6 +588,291 @@
      "business_type": "Industrial"
     }
    }
+  },
+  {
+   "slug": "1530fishhatcheryrd",
+   "sourceUrl": "https://1530fishhatcheryrd.thegroupinc.com/",
+   "status": "Active",
+   "mls": "1070297",
+   "board": "IRES MLS — Information and Real Estate Services",
+   "type": "Residential",
+   "subtype": "Cabin",
+   "street": "1530 Fish Hatchery Road",
+   "city": "Estes Park",
+   "state": "CO",
+   "zip": "80517",
+   "county": "Larimer",
+   "subdivision": "NA",
+   "area": "Estes Park",
+   "lat": 40.396472,
+   "lng": -105.57186,
+   "directions": null,
+   "schools": {
+    "elementary_school": "Estes Park",
+    "middle_or_junior_school": "Estes Park",
+    "high_school": "Estes Park"
+   },
+   "price": 1750000,
+   "originalPrice": 1750000,
+   "priceHistory": [
+    {
+     "date": "2026-10-09",
+     "price": 1750000
+    }
+   ],
+   "onMarket": "2026-10-08",
+   "dom": 6,
+   "remarks": "Tucked in the trees and backing directly to Rocky Mountain National Park, 1530 Fish Hatchery Road is a true Estes Park homestead. The same family has stewarded these 29 forested acres for generations, and you can feel the care in every detail. The property holds three dwellings, each from a different chapter. The Pines is where the family's story began. The main house started as a two-room miner's cabin and grew into a charming retreat with a large moss rock fireplace, an antique Stewart wood-burning cook stove, two bedrooms, a study, and a partially finished basement. The Aspen was built from reclaimed lumber, joists and beams located nearby in the National Park. It offers a cozy guest cabin or rental. Whether you're dreaming of a mountain retreat, or a place to host friends, this is a property you won't find twice. An oversized three-car garage offers roughly 975 square feet of space for vehicles, gear, tools, and projects. With three dwellings and 29 acres to enjoy and maintain, it's the kind of space that makes mountain living work. The views and location are quiet and private, exactly as you'd hope from a retreat that borders Rocky Mountain National Park. It's a property that invites a slower pace and more time outside. Please note bedrooms, bathrooms, and square footage includes a combination of all 3 dwellings. Floor plans and square footage for each individual unit is available upon request.",
+   "virtualTour": "https://thebobsuttonteam.com/fish-hatchery/",
+   "openHouses": [
+    {
+     "start": "2026-10-23T19:00:00.000Z",
+     "end": "2026-10-23T22:00:00.000Z"
+    },
+    {
+     "start": "2026-10-24T17:00:00.000Z",
+     "end": "2026-10-24T19:00:00.000Z"
+    }
+   ],
+   "agent": {
+    "name": "Bob Sutton",
+    "slug": "bob-sutton",
+    "phone": "(970) 222-9722",
+    "email": "bsutton@thegroupinc.com",
+    "office": "The Group",
+    "officePhone": "(970) 229-0700",
+    "officeLabel": "The Group, Harmony office · Fort Collins",
+    "profile": "https://thegroupinc.com/agents/bob-sutton/"
+   },
+   "photos": [
+    {
+     "n": 1,
+     "caption": ""
+    },
+    {
+     "n": 2,
+     "caption": ""
+    },
+    {
+     "n": 3,
+     "caption": ""
+    },
+    {
+     "n": 4,
+     "caption": ""
+    },
+    {
+     "n": 5,
+     "caption": ""
+    },
+    {
+     "n": 6,
+     "caption": ""
+    },
+    {
+     "n": 7,
+     "caption": ""
+    },
+    {
+     "n": 8,
+     "caption": ""
+    },
+    {
+     "n": 9,
+     "caption": ""
+    },
+    {
+     "n": 10,
+     "caption": ""
+    },
+    {
+     "n": 11,
+     "caption": ""
+    },
+    {
+     "n": 12,
+     "caption": ""
+    },
+    {
+     "n": 13,
+     "caption": ""
+    },
+    {
+     "n": 14,
+     "caption": ""
+    },
+    {
+     "n": 15,
+     "caption": ""
+    },
+    {
+     "n": 16,
+     "caption": ""
+    },
+    {
+     "n": 17,
+     "caption": ""
+    },
+    {
+     "n": 18,
+     "caption": ""
+    },
+    {
+     "n": 19,
+     "caption": ""
+    },
+    {
+     "n": 20,
+     "caption": ""
+    },
+    {
+     "n": 21,
+     "caption": ""
+    },
+    {
+     "n": 22,
+     "caption": ""
+    },
+    {
+     "n": 23,
+     "caption": ""
+    },
+    {
+     "n": 24,
+     "caption": ""
+    },
+    {
+     "n": 25,
+     "caption": ""
+    },
+    {
+     "n": 26,
+     "caption": ""
+    },
+    {
+     "n": 27,
+     "caption": ""
+    },
+    {
+     "n": 28,
+     "caption": ""
+    },
+    {
+     "n": 29,
+     "caption": ""
+    },
+    {
+     "n": 30,
+     "caption": ""
+    },
+    {
+     "n": 31,
+     "caption": ""
+    },
+    {
+     "n": 32,
+     "caption": ""
+    },
+    {
+     "n": 33,
+     "caption": ""
+    },
+    {
+     "n": 34,
+     "caption": ""
+    },
+    {
+     "n": 35,
+     "caption": ""
+    },
+    {
+     "n": 36,
+     "caption": ""
+    },
+    {
+     "n": 37,
+     "caption": ""
+    },
+    {
+     "n": 38,
+     "caption": ""
+    },
+    {
+     "n": 39,
+     "caption": ""
+    },
+    {
+     "n": 40,
+     "caption": ""
+    },
+    {
+     "n": 41,
+     "caption": ""
+    },
+    {
+     "n": 42,
+     "caption": ""
+    },
+    {
+     "n": 43,
+     "caption": ""
+    }
+   ],
+   "facts": {
+    "structure": {
+     "bedrooms_total": 4,
+     "bathrooms_full": 2,
+     "bathrooms_half": 1,
+     "bathrooms_three_quarter": 1,
+     "bathrooms_total_integer": 4,
+     "living_area": 3831,
+     "above_grade_finished_area": 2623,
+     "architectural_style": "Cabin",
+     "basement": "Full, Partially Finished",
+     "accessibility_features": "Main Floor Bath, Main Level Bedroom",
+     "construction_materials": "Frame, Stone, Metal Siding, Wood Siding",
+     "door_features": "French Doors",
+     "fireplace_features": "Living Room, Basement",
+     "flooring": "Wood",
+     "garage_spaces": 3,
+     "heating": "Baseboard, 2 or more Heat Sources",
+     "interior_features": "Eat-in Kitchen, Cathedral Ceiling(s), Workshop, Pantry, Wood Windows, Washer/Dryer Hookup, High Ceilings",
+     "levels": "One",
+     "parking_features": "Detached",
+     "patio_and_porch_features": "Patio, Deck",
+     "roof": "Composition",
+     "year_built": 1973
+    },
+    "characteristics": {
+     "fencing": "Partial, Wood, Wire",
+     "horse_amenities": "Horse(s) Allowed",
+     "lot_features": "Wooded, Evergreen Trees, Native Grass, Sloping Lot, Steep Lot, Abuts National Forest, Meadow, Paved",
+     "lot_size_acres": 29.39,
+     "road_frontage_type": "Easement, Privately Maintained",
+     "road_surface_type": "Gravel, Asphalt",
+     "view": "Mountain(s), Hills"
+    },
+    "equipment": {
+     "appliances": "Electric Range, Double Oven, Dishwasher, Microwave"
+    },
+    "utility": {
+     "electric": "Estes Park Power and Communications",
+     "sewer": "Public Sewer",
+     "utilities": "Electricity Available, Propane",
+     "water_source": "Well"
+    },
+    "hoa": {
+     "association_y_n": false
+    },
+    "tax": {
+     "parcel_number": "R0567396",
+     "tax_annual_amount": 5152,
+     "tax_year": 2025,
+     "zoning_description": "A1"
+    },
+    "business": {}
+   },
+   "note": "Captured in the browser (production sits behind a Cloudflare check that blocks scripted requests); photos fetched the same way."
   }
  ]
 }

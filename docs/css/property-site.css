@@ -133,3 +133,33 @@ html { scroll-behavior: smooth; }
   .sps-lb__prev { left: calc(50% - 60px); }
   .sps-lb__next { right: calc(50% - 60px); }
 }
+
+/* ---------- Open-house bar (Claude Design option A) ----------
+   A charcoal strip above the hero, so the photo stays clear. The next
+   date always shows; further dates sit inline on desktop and fold
+   behind "+N more" on small screens. */
+.ohbar { background: var(--dark); color: var(--white); border-bottom: 1px solid var(--line-dark); }
+.ohbar__inner {
+  max-width: calc(var(--maxw) + var(--pad) * 2); margin-inline: auto;
+  padding: 13px var(--pad); display: flex; align-items: center; gap: 14px 28px; flex-wrap: wrap;
+}
+.ohbar__k { display: inline-flex; align-items: center; gap: 10px; font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold-bright); }
+.ohbar__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-bright); animation: ohpulse 2.4s ease-in-out infinite; }
+@keyframes ohpulse { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .ohbar__dot { animation: none; } }
+.ohbar__list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 10px 28px; flex-wrap: wrap; flex: 1; }
+.ohbar__date { display: inline-flex; align-items: baseline; gap: 14px; font-family: var(--serif); font-variation-settings: var(--serif-clean); font-size: 17px; }
+.ohbar__date + .ohbar__date { padding-left: 28px; border-left: 1px solid var(--line-dark); color: rgba(248,248,246,.78); }
+.ohbar__cal, .ohbar__link, .ohbar__more {
+  font-family: var(--sans); font-size: 10px; letter-spacing: var(--track); text-transform: uppercase;
+  color: var(--gold-bright); background: none; border: 0; padding: 6px 0; cursor: pointer; white-space: nowrap;
+}
+.ohbar__cal:hover, .ohbar__link:hover, .ohbar__more:hover { color: #fff; }
+.ohbar__more { display: none; }
+@media (max-width: 720px) {
+  .ohbar__inner { gap: 6px 18px; }
+  .ohbar__list { order: 3; flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ohbar__date + .ohbar__date { padding-left: 0; border-left: 0; }
+  .ohbar__more { display: inline; margin-left: auto; }
+  .ohbar:not(.is-open) .ohbar__date.is-more { display: none; }
+}

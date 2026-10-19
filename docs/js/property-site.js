@@ -48,3 +48,16 @@
     else if (e.key === 'ArrowRight') show(current + 1);
   });
 })();
+
+/* Open-house bar: "+N more" reveals the later dates on small screens. */
+(function () {
+  var bar = document.querySelector('.ohbar');
+  var btn = bar && bar.querySelector('.ohbar__more');
+  if (!btn) return;
+  var label = btn.innerHTML;
+  btn.addEventListener('click', function () {
+    var open = bar.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.innerHTML = open ? 'Fewer <span aria-hidden="true">▴</span>' : label;
+  });
+})();

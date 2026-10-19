@@ -7,3 +7,6 @@
 # Internal collateral — do NOT publish to a public GitHub Pages site.
 # Remove this line if you intend the brand guidelines to be public.
 specs/
+
+# Vendor deliverables from Tribus — internal, do NOT publish.
+from_tribus/

@@ -196,6 +196,17 @@ TITLES = {
     "property-2175-bear-drive.html": "2175 Bear Drive",
     "property-1382-skyview-lane.html": "1382/1384 Skyview Lane",
     "property-33855-canyon-court.html": "33855 Canyon Court",
+    "community-downtown.html": "Community — Downtown",
+    "community-elk-river-area.html": "Community — Elk River Area",
+    "community-fish-creek-falls-area.html": "Community — Fish Creek Falls Area",
+    "community-hayden.html": "Community — Hayden",
+    "community-mountain-area.html": "Community — Mountain Area",
+    "community-north-routt.html": "Community — North Routt",
+    "community-south-routt.html": "Community — South Routt",
+    "community-south-valley.html": "Community — South Valley",
+    "community-stagecoach.html": "Community — Stagecoach",
+    "community-strawberry-park.html": "Community — Strawberry Park",
+    "community-west-steamboat-and-us-40.html": "Community — West Steamboat & US 40",
 }
 
 def agent_dirs():
@@ -226,6 +237,18 @@ GROUP = {  # dashboard grouping
     "property-2175-bear-drive.html": "Listings", "property-1382-skyview-lane.html": "Listings",
     "property-33855-canyon-court.html": "Listings", "property-search.html": "Listings",
     "search/commercial.html": "Listings",
+    "communities.html": "Communities",
+    "community-downtown.html": "Communities",
+    "community-elk-river-area.html": "Communities",
+    "community-fish-creek-falls-area.html": "Communities",
+    "community-hayden.html": "Communities",
+    "community-mountain-area.html": "Communities",
+    "community-north-routt.html": "Communities",
+    "community-south-routt.html": "Communities",
+    "community-south-valley.html": "Communities",
+    "community-stagecoach.html": "Communities",
+    "community-strawberry-park.html": "Communities",
+    "community-west-steamboat-and-us-40.html": "Communities",
 }
 
 def attr(s):

@@ -54,6 +54,20 @@ row) are declared once and referenced as `{"type": "$band"}`, and copy can inter
 `{{agent.first}}` so one string works for any agent. The second port needed one new block
 type and the third needed none; §4 of the catalogue has the record.
 
+## Community pages
+
+The eleven drill-downs off [`docs/communities.html`](docs/communities.html)
+(`docs/community-<slug>.html`) are generated from
+[`tools/communities.json`](tools/communities.json). That file holds the copy, map pin and
+listing snapshot taken from the production `/communities/<slug>/` pages, plus a headline,
+pull quote and photo label written for the mockup. Hero photos live in
+`docs/assets/img/communities/`.
+
+```
+python3 tools/build-community-pages.py
+python3 tools/review-manifest.py
+```
+
 ## Keeping it out of search results
 
 Every page under `docs/` carries:

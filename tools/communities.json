@@ -1,0 +1,705 @@
+{
+ "snapshot": "2026-10-19",
+ "communities": [
+  {
+   "slug": "downtown",
+   "name": "Downtown",
+   "prodName": "Downtown",
+   "headline": "A modern mountain town, still a cow town at heart.",
+   "blurb": "Historic Lincoln Avenue and Old Town — walkable, warm, and steps from the Yampa River and the hot springs. In-town living at its most classic.",
+   "pull": "Lincoln Avenue remains wide enough to run a cattle drive through it.",
+   "photo": "Lincoln Avenue",
+   "hero": "assets/img/communities/downtown.jpg",
+   "card": "assets/img/communities/downtown-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Downtown-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/downtown/",
+   "lat": 40.4849769,
+   "lng": -106.8317158,
+   "zoom": 14,
+   "paras": [
+    "Nowhere symbolizes the essence of Steamboat Springs more than downtown. It’s a modern mountain town with a distinctly western feel, owing to its rich ranching heritage.",
+    "Founded in 1875 by James Harvey Crawford, Steamboat and the Yampa Valley became synonymous with agriculture earning the nickname ‘Cow Town USA.’ Despite the town’s evolution, Lincoln Avenue (the main street) remains wide enough to run a cattle drive through it.",
+    "The backdrop to the heart of town is Howelsen Hill, named after a Norwegian stonemason who put the townsfolk on skis in the early 1900’s. Over a century later, Howelsen remains the home of the Steamboat Springs Winter Sports Club and is the oldest operating ski area in the country.",
+    "Throughout the year, Steamboat folks love to celebrate the season and will use any excuse to close Lincoln Avenue down for a party. The 105 year-old Winter Carnival kicks off the year, followed by Fourth of July celebrations, and the Halloween Stroll. Summer brings the Saturday farmer’s market to Yampa Street, art shows and free music concerts.",
+    "Downtown offers a mix of shops, galleries, family-run boutiques and over 75 restaurants, bars, and cafes. Luxury residences have been added in recent years, which are proving popular.",
+    "Buyers can expect an eclectic mix of properties from traditional cabins and old-world cottages, to stunning new builds with a modern twist. Live in the hub of daily happenings in a riverside apartment off Yampa Street or opt for serenity and stay on the periphery by Butcherknife Canyon.",
+    "Walking and biking in and around town is encouraged. A multitude of pathways link neighborhoods to parks, trails and open space. Soda Creek Elementary, Steamboat Springs High School, and Yampa Valley High School are all situated in the center of town. The free City bus links downtown to the mountain, plus locations on the east and west sides of Steamboat.",
+    "Downtown living is suited to those who wish to embrace the spirit of Steamboat and enjoy a neighborhood vibe."
+   ],
+   "search": {
+    "area": "Downtown Area",
+    "city": "Steamboat Springs",
+    "min": 500000,
+    "type": null,
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=500000&mls_status=Active&mls_area_major=Downtown Area"
+   },
+   "listings": [
+    {
+     "address": "33 9th Street",
+     "city": "Steamboat Springs",
+     "price": 8250000,
+     "beds": 3,
+     "baths": 4,
+     "half": 1,
+     "sqft": 2942,
+     "agent": "Derek Hodson",
+     "firm": "The Steamboat Group",
+     "mls": "S1071830"
+    },
+    {
+     "address": "1882 Sunlight Drive",
+     "city": "Steamboat Springs",
+     "price": 3000000,
+     "beds": 4,
+     "baths": 4,
+     "half": 1,
+     "sqft": 3300,
+     "agent": "Chris Paoli",
+     "firm": "The Agency Steamboat Springs",
+     "mls": "S1071607"
+    },
+    {
+     "address": "220 Hill Street",
+     "city": "Steamboat Springs",
+     "price": 1585000,
+     "beds": 6,
+     "baths": 3,
+     "half": 0,
+     "sqft": 2022,
+     "agent": "Michelle Garner",
+     "firm": "Exp Realty, LLC",
+     "mls": "S1071597"
+    }
+   ]
+  },
+  {
+   "slug": "elk-river-area",
+   "name": "Elk River Area",
+   "prodName": "Elk River Area",
+   "headline": "Ranchland, river, and room to roam.",
+   "blurb": "North of town along the Elk River — ranch land, acreage, and valley-floor properties with room to breathe and big-sky views.",
+   "pull": "Filled with history and pioneering spirit, the Elk River valley offers a true taste of the Wild West.",
+   "photo": "The Clark Store",
+   "hero": "assets/img/communities/elk-river-area.jpg",
+   "card": "assets/img/communities/elk-river-area-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Elk-River-Area-Hero-scaled.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/elk-river-area/",
+   "lat": 40.628653350939,
+   "lng": -106.93217635185,
+   "zoom": 12,
+   "paras": [
+    "Scenic vistas abound in the Elk River Valley. Named after the abundant herds of elk that call this area home, the river itself once served as a logging route in the 1900s. A mix of historic ranchlands backs up against national forest, Sleeping Giant and the Mount Zirkel Wilderness.",
+    "Gravel roads filter off County Road 129 and weave their way deep into every corner of the valley. Working farms and guest ranches intersperse single-family homes set on acreage. Small subdivisions have been built in clusters, offering a neighborhood feel, while still ensuring privacy within their rural settings.",
+    "Families are served by the Steamboat Springs School District, which includes the easily accessible North Routt Charter School. The village of Clark in the heart of the valley is home to the Clark Store. It operates the local post office, a café and general store. The Glen Eden Resort and the Home Ranch offer dining and social events throughout the year."
+   ],
+   "search": {
+    "area": "Elk River Area",
+    "city": "Steamboat Springs",
+    "min": 50000,
+    "type": null,
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=50000&mls_status=Active&mls_area_major=Elk River Area"
+   },
+   "listings": [
+    {
+     "address": "29785 Elk View Drive",
+     "city": "Steamboat Springs",
+     "price": 1700000,
+     "beds": 3,
+     "baths": 2,
+     "half": 0,
+     "sqft": 2976,
+     "agent": "Loui Antonucci",
+     "firm": "Steamboat Mountain Real Estate",
+     "mls": "S1071895"
+    },
+    {
+     "address": "29465 Scrub Oak Path",
+     "city": "Steamboat Springs",
+     "price": 1900000,
+     "beds": 4,
+     "baths": 3,
+     "half": 1,
+     "sqft": 3552,
+     "agent": "Barb E. Hendricks",
+     "firm": "Seek Real Estate",
+     "mls": "S1071744"
+    },
+    {
+     "address": "2570 Copper Ridge Drive, #C",
+     "city": "Steamboat Springs",
+     "price": 1340000,
+     "beds": 2,
+     "baths": 3,
+     "half": 1,
+     "sqft": 2688,
+     "agent": "Annamarie Shunny",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071594"
+    }
+   ]
+  },
+  {
+   "slug": "fish-creek-falls-area",
+   "name": "Fish Creek Falls Area",
+   "prodName": "Fish Creek Falls Area",
+   "headline": "The trailhead out front, town just downhill.",
+   "blurb": "Established east-side neighborhoods near the falls trailhead — quick access to town on one side and the backcountry on the other.",
+   "pull": "If you walk downhill to town, you can hitch a ride home.",
+   "photo": "Fish Creek Falls",
+   "hero": "assets/img/communities/fish-creek-falls-area.jpg",
+   "card": "assets/img/communities/fish-creek-falls-area-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Fish-Creek-Falls-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/fish-creek-falls-area/",
+   "lat": 40.481064801801,
+   "lng": -106.8087958569,
+   "zoom": 14,
+   "paras": [
+    "Live within a stones throw of a Steamboat icon; Fish Creek Falls, where you’ll hear the crash of snowmelt-fueled waters in spring and the bugle of elk herds in fall. The Fish Creek neighborhood is ideal for residents who want it all; access to hikes straight out the front door, great views and close proximity to downtown.",
+    "The area straddles Fish Creek Falls Road, which ascends into Fish Creek Canyon, one of the most photographed sights in Steamboat. The neighborhood offers a variety of housing options from clusters of condominium complexes and townhomes to larger dwellings and acres of open space. Homes in the upper elevation are a draw for those seeking bigger lots and privacy.",
+    "An integrated trail system that weaves its way past secluded cul-de-sacs and aspen groves connects residents to downtown, the canyon or the mountain. Panoramic views of the Yampa Valley unfold as the road ascends steeply before leveling out at Boulder Ridge into Elkins Meadows – a magnet for wildlife.",
+    "The neighborhood is close to all five schools; Strawberry Park Elementary, Soda Creek Elementary, Steamboat Springs Middle School, Steamboat Springs High School and Yampa Valley High School. Fish Creek Falls Road is on the free city bus route, which means if you walk downhill to town, you can hitch a ride home."
+   ],
+   "search": {
+    "area": "Fish Creek Area",
+    "city": "Steamboat Springs",
+    "min": 10,
+    "type": null,
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=10&mls_status=Active&mls_area_major=Fish Creek Area"
+   },
+   "listings": [
+    {
+     "address": "633 Mountain Vista Circle",
+     "city": "Steamboat Springs",
+     "price": 995000,
+     "beds": 2,
+     "baths": 2,
+     "half": 0,
+     "sqft": 1384,
+     "agent": "Todd Siefken",
+     "firm": "The Steamboat Group",
+     "mls": "S1071822"
+    },
+    {
+     "address": "105 HILLSIDE Drive",
+     "city": "Steamboat Springs",
+     "price": 2500000,
+     "beds": 6,
+     "baths": 5,
+     "half": 1,
+     "sqft": 3824,
+     "agent": "Diane Emert",
+     "firm": "RE/MAX Partners",
+     "mls": "S1071755"
+    },
+    {
+     "address": "205 Hillside Drive",
+     "city": "Steamboat Springs",
+     "price": 995000,
+     "beds": 3,
+     "baths": 1,
+     "half": 0,
+     "sqft": 1120,
+     "agent": "Scott Eggleston",
+     "firm": "RE/MAX Partners",
+     "mls": "S1071724"
+    }
+   ]
+  },
+  {
+   "slug": "hayden",
+   "name": "Hayden",
+   "prodName": "Hayden, CO",
+   "headline": "Small town, mild climate, open valley.",
+   "blurb": "West down US 40 — small-town character, the county airport, wide valley views, and some of the area's more attainable prices.",
+   "pull": "Hayden has the mildest climate in Routt County.",
+   "photo": "Routt County Fair",
+   "hero": "assets/img/communities/hayden.jpg",
+   "card": "assets/img/communities/hayden-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Hayden-Hero-scaled.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/hayden/",
+   "lat": 40.4894302,
+   "lng": -107.2636842,
+   "zoom": 13,
+   "paras": [
+    "Located 25 miles west of Steamboat Springs on Highway 40 sits the town of Hayden. In the early 1900’s it was home to the largest cattle operation in the county and it was the railway shipment center for lamb until the late 1930’s.",
+    "Set at a lower elevation, between the Elkhead Range and the Williams Fork Mountains, Hayden has the mildest climate in Routt County. Its agricultural heritage remains the heartbeat of the community which is evident every August at the weeklong, century-old, Routt County Fair.",
+    "Housing is considerably more affordable than it is in Steamboat, which makes Hayden a popular commuter base. Property development continues to widen the town, bringing ongoing opportunities to purchase new-build homes. Small ranches and horse properties can be acquired on the fringes of this growing area.",
+    "Several miles east of Hayden is the 906-acre Carpenter Ranch run by the Nature Conservancy. The site is a bird-watchers paradise and brings a steady stream of visitors to the area. On the west side of town, the Yampa River State Park is another wildlife viewing mecca and scenic spot that is equipped for fishing, boating and camping.",
+    "The town of Hayden is minutes from the Yampa Valley Regional Airport. Hayden School District offers schooling from elementary through high school. Bus service connects Hayden to Steamboat Springs and Craig.",
+    "Hayden offers a small town feel with easy access to the amenities of its neighboring cities."
+   ],
+   "search": {
+    "area": "Hayden",
+    "city": "Hayden",
+    "min": 500000,
+    "type": null,
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Hayden&min_list_price=500000&mls_status=Active"
+   },
+   "listings": [
+    {
+     "address": "550 W Jefferson Avenue",
+     "city": "Hayden",
+     "price": 675000,
+     "beds": 4,
+     "baths": 3,
+     "half": 0,
+     "sqft": 2714,
+     "agent": "Alicia Doolin",
+     "firm": "Coldwell Banker Distinctive Properties",
+     "mls": "S1071907"
+    },
+    {
+     "address": "4255 Rock Springs Court",
+     "city": "Hayden",
+     "price": 1085000,
+     "beds": 4,
+     "baths": 3,
+     "half": 0,
+     "sqft": 3103,
+     "agent": "Michelle Garner",
+     "firm": "Exp Realty, LLC",
+     "mls": "S1071888"
+    },
+    {
+     "address": "404 High Meadow Court",
+     "city": "Hayden",
+     "price": 595000,
+     "beds": 4,
+     "baths": 2,
+     "half": 0,
+     "sqft": 2328,
+     "agent": "Martin Dragnev",
+     "firm": "The Group Inc.",
+     "mls": "S1071538"
+    }
+   ]
+  },
+  {
+   "slug": "mountain-area",
+   "name": "Mountain Area",
+   "prodName": "Mountain Area",
+   "headline": "Where it happens. Choose your pace.",
+   "blurb": "At the base of Steamboat Resort — slopeside homes and condos, ski-in access, and the center of gravity all winter long.",
+   "pull": "Living here is about being where it happens; you just have to choose your pace.",
+   "photo": "Gondola Square",
+   "hero": "assets/img/communities/mountain-area.jpg",
+   "card": "assets/img/communities/mountain-area-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Mountain-Area-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/mountain-area/",
+   "lat": 40.4589769,
+   "lng": -106.8069918,
+   "zoom": 14,
+   "paras": [
+    "Live right on the mountain at the heart of Ski Town U.S.A. ®. The vibe changes from winter to summer, but there is always something happening at the base of the Steamboat Ski Area. In winter, it’s World Cup competitions, the après ski scene, holiday happenings, night skiing, free concerts and Friday night fireworks. In summer, it’s mountain biking, laid back picnics by Burgess Creek beach, open-air movie nights and an eclectic mix of festivals that bring food and art to the base. The area is serviced by the free city bus, which makes getting to and from the ski area or downtown, very easy.",
+    "Accommodation options run the gamut with something to suit all price points. Locations range from the quintessential ski-in, ski-out settings to secluded mountain developments away from the action. Choices abound from upscale condominium complexes with first-class spa amenities to single-family homes with a neighborhood ambience. Clusters of condominium developments have proved popular within the rental and second home market.",
+    "Walk to dinner and be spoiled for choice with a selection of restaurants on the mountain. Choose from simple family fare to fine dining, that rivals many major city based, foodie’s favorites. Spend lazy mornings strolling around boutique stores or grab a coffee and treat from the artisan deli.",
+    "Out with the periphery of the ski area, life is a little more sedate. Burgess Creek Road winds its way up into more forested space and offers a little more seclusion with stunning mountain views.",
+    "At the east side of town, furthest from the mountain, you find quieter cul-de-sacs, walking paths, parks and open space. Popular with year round residents who still want to be in the mountain area, accommodation varies from condos, townhomes and single-family homes."
+   ],
+   "search": {
+    "area": "Mountain Area",
+    "city": "Steamboat Springs",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=500000&property_type=Residential&mls_status=Active&mls_area_major=Mountain Area"
+   },
+   "listings": [
+    {
+     "address": "2408 Cattle Kate Circle, #23",
+     "city": "Steamboat Springs",
+     "price": 2995000,
+     "beds": 4,
+     "baths": 4,
+     "half": 0,
+     "sqft": 2009,
+     "agent": "Lisa Cervantes",
+     "firm": "HomeSmart",
+     "mls": "S1071965"
+    },
+    {
+     "address": "2800 Village Drive, #1203",
+     "city": "Steamboat Springs",
+     "price": 924000,
+     "beds": 2,
+     "baths": 2,
+     "half": 0,
+     "sqft": 884,
+     "agent": "Meg Firestone",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071858"
+    },
+    {
+     "address": "1679 Thistlebrook Lane",
+     "city": "Steamboat Springs",
+     "price": 1625000,
+     "beds": 3,
+     "baths": 4,
+     "half": 1,
+     "sqft": 2001,
+     "agent": "Kim Kreissig",
+     "firm": "RE/MAX Partners",
+     "mls": "S1071795"
+    }
+   ]
+  },
+  {
+   "slug": "north-routt",
+   "name": "North Routt",
+   "prodName": "North Routt Area",
+   "headline": "Pioneer country, lake country.",
+   "blurb": "Clark, Hahn's Peak, and Steamboat Lake — forested, remote, and lakeside. True mountain seclusion within reach of town.",
+   "pull": "The place for those who want to live at the center of nature’s playground.",
+   "photo": "Steamboat Lake",
+   "hero": "assets/img/communities/north-routt.jpg",
+   "card": "assets/img/communities/north-routt-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/North-Routt-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/north-routt/",
+   "lat": 40.842997065363,
+   "lng": -106.93583059253,
+   "zoom": 11,
+   "paras": [
+    "Follow in the footsteps of the earliest pioneers and set up home in North Routt. The area was once home to gold miners, loggers and the first cattle ever to winter in Routt County. The setting is a scenic overload of historic ranchlands and their fields of gold; dense aspen forests and stunning mountain peaks.",
+    "Elk River Road (County Road 129) leads north from Steamboat following the Elk River – a popular playground for fishermen and kayakers. The first stop is Clark, a former stagecoach stop in the 1880’s, which now houses a post office, small grocery store and the best ice cream in town. The main road continues onto Hahns Peak a quaint mining base that served as the county seat from 1877-1912.  In recent years, many of the old cabins have been bought and restored bringing the sleepy village back to life.",
+    "In the 1950’s the area was revitalized with the creation of Steamboat Lake, making it a magnet for camping and day trips. The elevation is higher than Steamboat, making fall and winter last a little longer.",
+    "North Routt is a strong knit community with a mutual respect for privacy and those who want to get away from it all. Homesteads, holiday cabins and single-family homes are the mainstay of accommodation offerings. The North Routt Charter School has an excellent reputation and focuses heavily towards hands on learning.",
+    "Surrounded by Routt County National Forest and the iconic backdrop of the Hahns Peak and Mount Zirkel Wilderness, North Routt is the place for those who want to live at the center of nature’s playground."
+   ],
+   "search": {
+    "area": "Clark",
+    "city": "Clark",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Clark&min_list_price=500000&property_type=Residential&mls_status=Active"
+   },
+   "listings": [
+    {
+     "address": "57710 Saturn Court",
+     "city": "Clark",
+     "price": 925000,
+     "beds": 3,
+     "baths": 3,
+     "half": 1,
+     "sqft": 1925,
+     "agent": "Lynna Broyles",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071847"
+    },
+    {
+     "address": "57745 Saturn Court",
+     "city": "Clark",
+     "price": 799000,
+     "beds": 3,
+     "baths": 3,
+     "half": 1,
+     "sqft": 2228,
+     "agent": "Cheryl Foote",
+     "firm": "Compass",
+     "mls": "S1071659"
+    },
+    {
+     "address": "57640 Cr-129",
+     "city": "Clark",
+     "price": 1395000,
+     "beds": 4,
+     "baths": 4,
+     "half": 0,
+     "sqft": 4313,
+     "agent": "Ivy Baker",
+     "firm": "RE/MAX Partners",
+     "mls": "S1071487"
+    }
+   ]
+  },
+  {
+   "slug": "south-routt",
+   "name": "South Routt",
+   "prodName": "South Routt",
+   "headline": "Working towns with pioneer grit.",
+   "blurb": "Oak Creek, Yampa, and Phippsburg — ranching towns at the valley's south end, with quiet, character, and real value.",
+   "pull": "Oak Creek was built on coal mining and, as the locals like to say, ‘pioneer grit.’",
+   "photo": "Oak Creek",
+   "hero": "assets/img/communities/south-routt.jpg",
+   "card": "assets/img/communities/south-routt-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/South-Routt-Hero-scaled.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/south-routt/",
+   "lat": 40.246947390354,
+   "lng": -106.89246493125,
+   "zoom": 11,
+   "paras": [
+    "The South Routt area begins roughly 25 miles south of Steamboat and contains the historic towns of Oak Creek, Phippsburg, Yampa and Toponas.",
+    "A working town, Oak Creek was built on coal mining and as the local’s like to say, ‘pioneer grit’. It earned its name from dense clusters of scrub oak, which border the creek running through the canyon as you enter the town from the north.",
+    "Pioneers John and Henry Meyers led the way with wagon mining, just outside of town. At one time, school enrollment in Oak Creek was higher than Steamboat Springs.",
+    "In the early 1900s, this bustling town gained a reputation for putting on boxing events and several youngsters earned Golden Gloves in the 1940s. Today, sports remain a focal point within the community, with strong support for their wrestling, football and basketball teams.",
+    "Housing costs are lower and lot sizes tend to be smaller. In the surrounding areas, acreage and smallholdings border sizeable working ranches.",
+    "Phippsburg is a smaller community south of Oak Creek and currently home to around 300 residents. At one time, Phippsburg was the main shipping point for locally mined coal, vegetables and cattle.",
+    "Surrounded by ranchlands, Phippsburg is a rural neighborhood with affordable housing opportunities. The town still has a post office, which was opened in 1909.",
+    "Further south on Highway 131 is Yampa. Larger than Phippsburg, the town has several cafes and bars, a merchandise store, public library and South Routt Elementary School.",
+    "As a gateway into the Flat Tops Wilderness area, Yampa is a popular stopping point for cyclists and campers. The Yampa Ranger District is located downtown and Finger Rock Rearing Ponds, run by the Colorado Division of Wildlife, is several miles south.",
+    "Properties vary from small to medium size cabins, cottages and single-family homes. South Routt offers more affordable living costs and easy access to outdoor recreation."
+   ],
+   "search": null,
+   "listings": []
+  },
+  {
+   "slug": "south-valley",
+   "name": "South Valley",
+   "prodName": "South Valley",
+   "headline": "Wide-open vistas on the way into town.",
+   "blurb": "The river corridor south of town — a mix of subdivisions and acreage bridging Steamboat and Stagecoach.",
+   "pull": "It is here that the grandeur of the Yampa Valley shows its true colors, which in fall, is golden.",
+   "photo": "Lake Catamount",
+   "hero": "assets/img/communities/south-valley.jpg",
+   "card": "assets/img/communities/south-valley-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/South-Valley-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/south-valley/",
+   "lat": 40.413340004982,
+   "lng": -106.80067867672,
+   "zoom": 12,
+   "paras": [
+    "Rolling ranchlands and wide-open vistas characterize the South Valley. The drive south of town winds down Highway 131 or meanders in part alongside the Yampa River on County Road 14.",
+    "Scenic ribbons of road are a haven for cyclists who pedal out in force after the snow melts. The Chuck Lewis State Wildlife Area in the South Valley lures fishermen and women for its excellent cold-water stream fishing. The area permits hunting for waterfowl and is a rewarding setting for general wildlife viewing.",
+    "Luxury housing developments including Country Green, Steamboat Pines, Dakota Ridge, and Big Valley Ranch are set far from the main road and elevated to afford panoramic valley views. Catamount Ranch and Lake Catamount bring owners the opportunity to enjoy amenities including golf on a private 18-hole course, fishing, lake and swimming pool access in the summer and Nordic sports in the winter.",
+    "Alpine Mountain Ranch near the base of the iconic Rabbit Ears Pass offers a western feel. Owners can utilize a ski-in/ski-out club at the base of Steamboat Ski Area, a horse-riding arena and private fishing rights. The neighboring Priest Creek Ranch is a land preservation subdivision with 13 exclusive home sites and 300 acres of common area and a shared barn.",
+    "Stand-alone properties are dotted throughout the South Valley varying in style, acreage and proximity to town. It is the first area you drive by upon entering Steamboat from the south and the last spot you’ll pass as you leave. It is here that the grandeur of the Yampa Valley shows its true colors, which in fall, is golden."
+   ],
+   "search": {
+    "area": "South Valley",
+    "city": "Steamboat Springs",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=500000&property_type=Residential&mls_status=Active&mls_area_major=South Valley"
+   },
+   "listings": [
+    {
+     "address": "30677 Marshall Ridge",
+     "city": "Steamboat Springs",
+     "price": 6395000,
+     "beds": 5,
+     "baths": 5,
+     "half": 0,
+     "sqft": 4448,
+     "agent": "Christopher Wittemyer",
+     "firm": "The Group Inc.",
+     "mls": "S1071793"
+    },
+    {
+     "address": "30785 Highway 131",
+     "city": "Steamboat Springs",
+     "price": 4500000,
+     "beds": 5,
+     "baths": 6,
+     "half": 1,
+     "sqft": 5405,
+     "agent": "Cole Helberg",
+     "firm": "Real Broker, LLC DBA Real",
+     "mls": "S1071671"
+    },
+    {
+     "address": "34470 County Road 14",
+     "city": "Steamboat Springs",
+     "price": 14800000,
+     "beds": 6,
+     "baths": 8,
+     "half": 3,
+     "sqft": 5914,
+     "agent": "Pam Vanatta",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1070832"
+    }
+   ]
+  },
+  {
+   "slug": "stagecoach",
+   "name": "Stagecoach",
+   "prodName": "Stagecoach",
+   "headline": "Life around the lake.",
+   "blurb": "Around Stagecoach Reservoir — lake recreation, a growing community, and some of the best value in the county.",
+   "pull": "Famed for trophy catches, the park is a popular venue for fly-fishing and ice fishing.",
+   "photo": "Stagecoach Reservoir",
+   "hero": "assets/img/communities/stagecoach.jpg",
+   "card": "assets/img/communities/stagecoach-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Stagecoach-Hero-scaled.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/stagecoach/",
+   "lat": 40.218048725705,
+   "lng": -106.78539008682,
+   "zoom": 12,
+   "paras": [
+    "Twenty miles south of Steamboat Springs is Stagecoach, which coined its name from a former stagecoach road that went over Yellow Jacket Pass. The area once housed its own ski hill from 1972–1974. Plans are afoot with developers to restore the small ski area under new ownership as a private ski area with slopeside homes.",
+    "Stagecoach Lake State Park is the focal point of this neighborhood and a magnet for recreational use in summer and winter. Famed for trophy catches, the park is a popular venue for fly-fishing and ice fishing. The marina offers dock space plus boat, kayak and canoe rentals. A plethora of seasonal events staged at the park lure residents and visitors for anything from crawdad catching to triathlons.",
+    "Several housing developments skirt the park and offer a mix of condominiums, townhomes and single-family homes. The area attracts a large number of commuters who make the daily drive to work in Steamboat and beyond.",
+    "Buyers have the chance to own small ranges, homesteads and large parcels of undeveloped land in the outlying areas. The eclectic range of property in and around Stagecoach allows for all price points to be met.",
+    "Stagecoach is a short drive to the town of Oak Creek, which has a small number of shops, cafes and amenities. Public schools, which service the area, are offered in Steamboat Springs and Oak Creek."
+   ],
+   "search": {
+    "area": "Stagecoach",
+    "city": "Oak Creek",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Oak Creek&min_list_price=500000&property_type=Residential&mls_status=Active&mls_area_major=Stagecoach"
+   },
+   "listings": [
+    {
+     "address": "30230 Coyote Run Court",
+     "city": "Oak Creek",
+     "price": 1439000,
+     "beds": 5,
+     "baths": 4,
+     "half": 1,
+     "sqft": 3578,
+     "agent": "Heidi Flint",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071728"
+    },
+    {
+     "address": "30370 Hostler Drive",
+     "city": "Oak Creek",
+     "price": 1790000,
+     "beds": 4,
+     "baths": 4,
+     "half": 0,
+     "sqft": 3212,
+     "agent": "Josie Tolan",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071471"
+    },
+    {
+     "address": "30375 Hostler Drive",
+     "city": "Oak Creek",
+     "price": 1490000,
+     "beds": 4,
+     "baths": 4,
+     "half": 0,
+     "sqft": 2917,
+     "agent": "Josie Tolan",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1071451"
+    }
+   ]
+  },
+  {
+   "slug": "strawberry-park",
+   "name": "Strawberry Park",
+   "prodName": "Strawberry Park",
+   "headline": "Its own valley, minutes from town.",
+   "blurb": "Just northeast of downtown — wooded lots, the famous hot springs, and a tucked-away feel that stays close to town.",
+   "pull": "Residents are quick to share their endless tales of wildlife spotting, including everything from mighty-sized moose to the elusive pigmy shrew.",
+   "photo": "Strawberry Park Hot Springs",
+   "hero": "assets/img/communities/strawberry-park.jpg",
+   "card": "assets/img/communities/strawberry-park-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/Strawberry-Park-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/strawberry-park/",
+   "lat": 40.518047602631,
+   "lng": -106.81526998599,
+   "zoom": 13,
+   "paras": [
+    "Cocooned in its own valley, only minutes from downtown Steamboat Springs, Strawberry Park is an ideal setting for those who want space, privacy and convenience. The area was the site of many milestones in the evolution of the Yampa Valley. Strawberry fields once bloomed here giving this corner of Routt County its name.",
+    "It is here that two ladies, Charlotte Perry and Portia Mansfield, defied critics to open Perry-Mansfield Performing Arts School and Camp on a 76-acre campus in 1914. Today it is the oldest continuously running arts camp in the country and draws 250 students every summer. Steamboat Mountain School, a private boarding and day school, is also housed in Strawberry Park.",
+    "Carl Howelsen, the daredevil flying Norseman, essentially got the townsfolk on skis when he began jumping off a wooden platform in Strawberry Park, after he moved here from Norway in 1912.",
+    "Today Strawberry Park is synonymous with its thermal hot springs located on the edge of the Mount Zirkel Wilderness, in the most northern part of this neighborhood.",
+    "The main road into the area winds its way from town, past fields and open space, before slowly climbing up through dense aspen groves and pine forests. Satellite roads filter onto the incredibly scenic Buffalo Pass, or, on towards the hot springs.",
+    "The majority of homes are larger in size with spacious grounds or small to medium acreage. Expansive lots and easy access to National Forest land has made the area popular with horse owners.",
+    "Views abound from elevated properties and almost all of them offer seclusion. The more remote dwellings are off grid and suit those who can embrace a self-sustaining lifestyle."
+   ],
+   "search": {
+    "area": "Strawberry Park",
+    "city": "Steamboat Springs",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=500000&property_type=Residential&mls_status=Active&mls_area_major=Strawberry Park"
+   },
+   "listings": [
+    {
+     "address": "43370 County Road 36",
+     "city": "Steamboat Springs",
+     "price": 2500000,
+     "beds": 3,
+     "baths": 3,
+     "half": 0,
+     "sqft": 2717,
+     "agent": "Wayne Ranieri",
+     "firm": "RE/MAX Partners",
+     "mls": "S1070238"
+    },
+    {
+     "address": "32375 County Road 38",
+     "city": "Steamboat Springs",
+     "price": 9290000,
+     "beds": 6,
+     "baths": 6,
+     "half": 1,
+     "sqft": 9024,
+     "agent": "Taylor Ashby",
+     "firm": "Steamboat Sotheby's International Realty",
+     "mls": "S1067453"
+    }
+   ]
+  },
+  {
+   "slug": "west-steamboat-and-us-40",
+   "name": "West Steamboat & US 40",
+   "prodName": "West Steamboat and US 40",
+   "headline": "The gateway to the Elk River Valley.",
+   "blurb": "The western gateway — newer neighborhoods and the area's growth edge, minutes from downtown along the highway.",
+   "pull": "Outdoor amenities like the Bear River Skate Park, Yampa River Core Trail, parks and open spaces make west Steamboat a popular spot to call home.",
+   "photo": "Yampa River Core Trail",
+   "hero": "assets/img/communities/west-steamboat-and-us-40.jpg",
+   "card": "assets/img/communities/west-steamboat-and-us-40-card.jpg",
+   "prodHero": "https://thegrouprealestatess.com/wp-content/uploads/2023/10/West-Steamboat-and-US-40-Hero.jpeg",
+   "prodUrl": "https://thegrouprealestatess.com/communities/west-steamboat-and-us-40/",
+   "lat": 40.505786307517,
+   "lng": -106.88547134399,
+   "zoom": 13,
+   "paras": [
+    "As the name suggests, West Steamboat is on the outer edge of town, heading west on Highway 40. Coined ‘the gateway to the Elk River Valley’, it is popular with families and much of the working population. Local brew pubs, family-run eateries and an eclectic mix of shops are drawing more and more people out to the west side.",
+    "A plethora of developments offer individual characteristics and charm. Live on the banks of the Yampa River in Riverside or maximize views in the elevated neighborhood of West End Village. Families gravitate to Steamboat II, one of the earliest purpose-built subdivisions, for it’s down to earth feel. In recent years, it has been connected to neighboring Silver Spur by a popular trail system that brings walkers, joggers and cross country skiers out in all seasons. The New Sleeping Giant School is located at the entrance to the Silver Spur Neighborhood.",
+    "Heritage Park borders Steamboat Golf Club, dubbed the ‘little course’ by local players. The nine-hole course and adjacent playing fields draw an assortment of sporting events throughout the warmer months. Set at the entrance to Heritage Park is the Mountain Village Montessori Charter School, a tuition-free public charter school serving half-day kindergarten through 6th grade. There is also a preschool for children from age three to kindergarten.",
+    "Work/live complexes are dotted along the start of Twenty Mile Road and Elk River Road into Copper Ridge. Several affordable housing developments are currently in construction with future offerings in planning stages."
+   ],
+   "search": {
+    "area": "West Steamboat / US 40",
+    "city": "Steamboat Springs",
+    "min": 500000,
+    "type": "Residential",
+    "url": "https://thegrouprealestatess.com/properties/?sort_order=desc&sort_by=on_market_date&city=Steamboat Springs&min_list_price=500000&property_type=Residential&mls_status=Active&mls_area_major=West Steamboat / US 40"
+   },
+   "listings": [
+    {
+     "address": "37865 County Road 179",
+     "city": "Steamboat Springs",
+     "price": 895000,
+     "beds": 3,
+     "baths": 3,
+     "half": 0,
+     "sqft": 1968,
+     "agent": "Nick Metzler",
+     "firm": "The Group Inc.",
+     "mls": "S1071929"
+    },
+    {
+     "address": "27418 Brandon Circle",
+     "city": "Steamboat Springs",
+     "price": 1599000,
+     "beds": 4,
+     "baths": 3,
+     "half": 0,
+     "sqft": 2022,
+     "agent": "Chris Paoli",
+     "firm": "The Agency Steamboat Springs",
+     "mls": "S1071623"
+    },
+    {
+     "address": "2350 Abbey Court, #6",
+     "city": "Steamboat Springs",
+     "price": 595000,
+     "beds": 2,
+     "baths": 2,
+     "half": 0,
+     "sqft": 1152,
+     "agent": "Greg Breslau",
+     "firm": "The Group Inc.",
+     "mls": "S1071340"
+    }
+   ]
+  }
+ ]
+}

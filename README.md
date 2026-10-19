@@ -68,6 +68,18 @@ python3 tools/build-community-pages.py
 python3 tools/review-manifest.py
 ```
 
+## All agents
+
+[`docs/agents.html`](docs/agents.html) is the "Show all agents" roster linked from the
+home page's The People section: all 66 brokers and teams from the production agents page
+(`/agents/?role=agent&office_id=32810`), with name search and a broker/team filter. It is
+generated from [`tools/agents.json`](tools/agents.json); photos are in `docs/assets/agents/`.
+
+```
+python3 tools/build-agents-page.py
+python3 tools/review-manifest.py
+```
+
 ## Keeping it out of search results
 
 Every page under `docs/` carries:

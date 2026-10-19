@@ -175,18 +175,26 @@
   <section class="section agents" id="agents" data-review="The People">
     <div class="container">
       <p class="eyebrow eyebrow--bright">Us</p>
-      <h2 class="h2">The people who know <br class="brk" />this valley by heart.</h2>
-      <p class="lede">Every one of them lives here, and every one of them owns a piece of this company. Browse the way you'd browse listings, and discover a person you'd want to know.</p>
-
-      <div class="agents__controls">
-        <div class="name-search">
-          <span class="mini-label">Find by name</span>
-          <input type="text" id="agent-search" placeholder="Type a name…" autocomplete="off" />
-        </div>
+      <div class="agents__head">
         <div>
-          <span class="mini-label">Or filter by season</span>
+          <h2 class="h2">The people who know <br class="brk" />this valley by heart.</h2>
+          <p class="lede">Every one of them lives here, and every one of them owns a piece of this company. Browse the way you'd browse listings, and discover a person you'd want to know.</p>
+        </div>
+        <a class="pill-btn pill-btn--solid" href="agents.html">Show all agents <span>→</span></a>
+      </div>
+
+      <div class="pbar agents__controls">
+        <label class="pbar__seg pbar__seg--name name-search">
+          <span class="mini-label">Find by name</span>
+          <span class="pbar__input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="agent-search" placeholder="Type a name…" autocomplete="off" />
+          </span>
+        </label>
+        <div class="pbar__seg">
+          <span class="mini-label">Filter by favorite season</span>
           <div class="seasons" id="seasons">
-            <button class="season is-active" data-season="all">All Seasons</button>
+            <button class="season is-active" data-season="all">Any Season</button>
             <button class="season" data-season="deep-winter">Deep Winter</button>
             <button class="season" data-season="first-snow">First Snow</button>
             <button class="season" data-season="late-winter">Late Winter</button>
@@ -196,6 +204,7 @@
           </div>
         </div>
       </div>
+      <div class="pbar__gap"></div>
 
       <div class="agent-grid" id="agent-grid">
         <a class="agent" href="agent-dean-laird.html" data-name="Dean Laird" data-seasons="deep-winter late-winter">

@@ -646,3 +646,100 @@ a.awards__item:hover { color: var(--gold-bright); }
   .agent-grid { grid-template-columns: 1fr; }
   :root { --pad: 20px; }
 }
+
+/* =========================================================
+   PEOPLE FILTER BAR  (home "The People" + agents.html)
+   One hairline bar, one segment per filter. Show All is a
+   separate link beside the heading, never part of the filters.
+   ========================================================= */
+.agents__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 28px 48px; flex-wrap: wrap; }
+.agents__head .pill-btn { flex-shrink: 0; }
+.pbar {
+  display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  border: 1px solid var(--line-dark); margin: 54px 0 0;
+}
+.pbar__seg { padding: 22px 26px; min-width: 0; }
+.pbar__seg + .pbar__seg { border-left: 1px solid var(--line-dark); }
+.pbar__seg .mini-label { margin-bottom: 14px; font-size: 10.5px; }
+.pbar__input { display: flex; align-items: center; gap: 12px; }
+.pbar__input svg { width: 16px; height: 16px; flex: 0 0 16px; color: var(--gold-bright); }
+.pbar__input input {
+  flex: 1; min-width: 0; background: transparent; border: 0; border-bottom: 1px solid transparent;
+  color: var(--white); font-size: 15px; font-family: var(--sans); padding: 4px 0 6px;
+}
+.pbar__input input::placeholder { color: rgba(248,248,246,.45); }
+.pbar__input input:focus { outline: none; border-bottom-color: var(--gold-bright); }
+.pbar .seasons { gap: 10px; }
+.pbar__count { margin: 18px 0 44px; font-size: 12.5px; color: rgba(248,248,246,.5); }
+
+/* Roster tiles: role always visible, phone + link under the name */
+.agent-grid--roster { grid-template-columns: repeat(4, 1fr); gap: 40px 28px; }
+.agent--roster .agent__role { opacity: 1; }
+.agent--roster[hidden] { display: none; }
+.agent__foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.agent__tel { font-size: 12.5px; letter-spacing: .04em; color: rgba(248,248,246,.6); }
+.agent--roster .agent__go { margin-top: 0; }
+.roster__note { color: rgba(248,248,246,.42); margin-top: 56px; }
+
+@media (max-width: 1000px) {
+  .pbar { grid-template-columns: 1fr; }
+  .pbar__seg + .pbar__seg { border-left: 0; border-top: 1px solid var(--line-dark); }
+  .agent-grid--roster { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .agent-grid--roster { grid-template-columns: repeat(2, 1fr); gap: 30px 18px; }
+}
+/* home: the old two-column controls grid is superseded by .pbar */
+.agents__controls.pbar { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 0; align-items: stretch; margin: 54px 0 0; }
+.name-search.pbar__seg input { border-bottom-color: transparent; padding: 4px 0 6px; }
+.pbar__gap { height: 60px; }
+@media (max-width: 1000px) { .agents__controls.pbar { grid-template-columns: 1fr; } }
+.roster.section { padding-top: clamp(20px, 3vw, 40px); }
+.roster .pbar { margin-top: 0; }
+
+/* Roster bar: name + three dropdown segments */
+.pbar--roster { grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); }
+.pbar__select { position: relative; display: flex; align-items: center; }
+.pbar__select select {
+  appearance: none; -webkit-appearance: none; width: 100%;
+  background: transparent; border: 0; border-bottom: 1px solid transparent; border-radius: 0;
+  color: var(--white); font-family: var(--sans); font-size: 15px; padding: 4px 26px 6px 0; cursor: pointer;
+}
+.pbar__select select:focus { outline: none; border-bottom-color: var(--gold-bright); }
+.pbar__select select option { background: var(--dark); color: var(--white); }
+.pbar__select svg { position: absolute; right: 0; width: 14px; height: 14px; color: var(--gold-bright); pointer-events: none; }
+.pbar__seg:hover .pbar__select select { color: #fff; }
+@media (max-width: 1000px) {
+  .pbar--roster { grid-template-columns: 1fr 1fr; }
+  .pbar--roster .pbar__seg--name { grid-column: 1 / -1; }
+  .pbar--roster .pbar__seg + .pbar__seg { border-top: 1px solid var(--line-dark); }
+  .pbar--roster .pbar__seg:nth-child(3) { border-left: 1px solid var(--line-dark); }
+}
+@media (max-width: 600px) {
+  .pbar--roster { grid-template-columns: 1fr; }
+  .pbar--roster .pbar__seg:nth-child(3) { border-left: 0; }
+}
+
+/* Solid pill — the high-contrast primary action on dark grounds.
+   gold-bright fill with dark text (5.2:1); hover inverts to white. */
+.pill-btn--solid {
+  background: var(--gold-bright); border-color: var(--gold-bright); color: var(--dark);
+  padding: 15px 32px; font-weight: 500;
+}
+.pill-btn--solid:hover { background: var(--white); border-color: var(--white); color: var(--dark); }
+.pill-btn--solid:focus-visible { outline: 1px solid var(--gold-bright); outline-offset: 4px; }
+
+/* Roster status line + clear control; dropdowns dim while a name search overrides them */
+.pbar__status { display: flex; align-items: baseline; gap: 22px; flex-wrap: wrap; margin: 18px 0 44px; }
+.pbar__status .pbar__count { margin: 0; }
+.pbar__clear {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 0;
+  background: none; border: 0; cursor: pointer; font-family: var(--sans);
+  font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold-bright);
+  transition: color .2s;
+}
+.pbar__clear span { font-size: 14px; letter-spacing: 0; }
+.pbar__clear:hover { color: var(--white); }
+.pbar__clear:focus-visible { outline: 1px solid var(--gold-bright); outline-offset: 4px; }
+.pbar__clear[hidden] { display: none; }
+.pbar.is-name-search .pbar__seg:not(.pbar__seg--name) { opacity: .4; }

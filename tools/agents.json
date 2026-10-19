@@ -1,0 +1,802 @@
+{
+ "source": "https://thegrouprealestatess.com/agents/?role=agent&office_id=32810",
+ "snapshot": "2026-10-19",
+ "agents": [
+  {
+   "slug": "amy-williams",
+   "name": "Amy Williams",
+   "kind": "broker",
+   "phone": "9708468601",
+   "photo": "assets/agents/amy-williams.jpg",
+   "production": "https://thegrouprealestatess.com/agents/amy-williams/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "andrew-lautz",
+   "name": "Andrew Lautz",
+   "kind": "broker",
+   "phone": "8598029546",
+   "photo": "assets/agents/andrew-lautz.jpg",
+   "production": "https://thegrouprealestatess.com/agents/andrew-lautz/",
+   "lastInitial": "L",
+   "languages": [
+    "English",
+    "Japanese"
+   ]
+  },
+  {
+   "slug": "ashley-walcher",
+   "name": "Ashley Walcher",
+   "kind": "broker",
+   "phone": "3036684689",
+   "photo": "assets/agents/ashley-walcher.jpg",
+   "production": "https://thegrouprealestatess.com/agents/ashley-walcher/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "charlie-dresen",
+   "name": "Charlie Dresen",
+   "kind": "broker",
+   "phone": "9708466435",
+   "photo": "assets/agents/charlie-dresen.jpg",
+   "production": "https://thegrouprealestatess.com/agents/charlie-dresen/",
+   "lastInitial": "D",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "chris-wittemyer",
+   "name": "Chris Wittemyer",
+   "kind": "broker",
+   "phone": "9708461364",
+   "photo": "assets/agents/chris-wittemyer.jpg",
+   "production": "https://thegrouprealestatess.com/agents/chris-wittemyer/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "coleman-cook",
+   "name": "Coleman Cook",
+   "kind": "broker",
+   "phone": "9708465086",
+   "photo": "assets/agents/coleman-cook.jpg",
+   "production": "https://thegrouprealestatess.com/agents/coleman-cook/",
+   "lastInitial": "C",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "craig-keefe",
+   "name": "Craig Keefe",
+   "kind": "broker",
+   "phone": "9708467080",
+   "photo": "assets/agents/craig-keefe.jpg",
+   "production": "https://thegrouprealestatess.com/agents/craig-keefe/",
+   "lastInitial": "K",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "dave-barnes",
+   "name": "Dave Barnes",
+   "kind": "broker",
+   "phone": "9708195169",
+   "photo": "assets/agents/dave-barnes.jpg",
+   "production": "https://thegrouprealestatess.com/agents/dave-barnes/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "dave-moloney",
+   "name": "Dave Moloney",
+   "kind": "broker",
+   "phone": "9708465050",
+   "photo": "assets/agents/dave-moloney.jpg",
+   "production": "https://thegrouprealestatess.com/agents/dave-moloney/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "dean-laird",
+   "name": "Dean Laird",
+   "kind": "broker",
+   "phone": "9708468284",
+   "photo": "assets/agents/dean-laird.jpg",
+   "production": "https://thegrouprealestatess.com/agents/dean-laird/",
+   "lastInitial": "L",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "dianne-bertini",
+   "name": "Dianne Bertini",
+   "kind": "broker",
+   "phone": "9703676488",
+   "photo": "assets/agents/dianne-bertini.jpg",
+   "production": "https://thegrouprealestatess.com/agents/dianne-bertini/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "elise-hendricks",
+   "name": "Elise Hendricks",
+   "kind": "broker",
+   "phone": "9708465456",
+   "photo": "assets/agents/elise-hendricks.jpg",
+   "production": "https://thegrouprealestatess.com/agents/elise-hendricks/",
+   "lastInitial": "H",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "favia-giordano",
+   "name": "Favia Giordano",
+   "kind": "broker",
+   "phone": "9708465756",
+   "photo": "assets/agents/favia-giordano.jpg",
+   "production": "https://thegrouprealestatess.com/agents/favia-giordano/",
+   "lastInitial": "G",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "goodliving-steamboat-team",
+   "name": "Goodliving Steamboat Team",
+   "kind": "team",
+   "phone": "9708752932",
+   "photo": "assets/agents/goodliving-steamboat-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/goodliving-steamboat-team/",
+   "lastInitial": "G",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "greg-breslau",
+   "name": "Greg Breslau",
+   "kind": "broker",
+   "phone": "9708194366",
+   "photo": "assets/agents/greg-breslau.jpg",
+   "production": "https://thegrouprealestatess.com/agents/greg-breslau/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "holly-martin",
+   "name": "Holly Martin",
+   "kind": "broker",
+   "phone": "9708193589",
+   "photo": "assets/agents/holly-martin.jpg",
+   "production": "https://thegrouprealestatess.com/agents/holly-martin/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "hugh-jessiman",
+   "name": "Hugh Jessiman",
+   "kind": "broker",
+   "phone": "9708191522",
+   "photo": "assets/agents/hugh-jessiman.jpg",
+   "production": "https://thegrouprealestatess.com/agents/hugh-jessiman/",
+   "lastInitial": "J",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "jake-stanford",
+   "name": "Jake Stanford",
+   "kind": "broker",
+   "phone": "9708469266",
+   "photo": "assets/agents/jake-stanford.jpg",
+   "production": "https://thegrouprealestatess.com/agents/jake-stanford/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "joe-armstrong",
+   "name": "Joe Armstrong",
+   "kind": "broker",
+   "phone": "9708467441",
+   "photo": "assets/agents/joe-armstrong.jpg",
+   "production": "https://thegrouprealestatess.com/agents/joe-armstrong/",
+   "lastInitial": "A",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "john-madron",
+   "name": "John Madron",
+   "kind": "broker",
+   "phone": "9704702329",
+   "photo": "assets/agents/john-madron.jpg",
+   "production": "https://thegrouprealestatess.com/agents/john-madron/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "jon-kowalsky",
+   "name": "Jon Kowalsky",
+   "kind": "broker",
+   "phone": "9708463565",
+   "photo": "assets/agents/jon-kowalsky.jpg",
+   "production": "https://thegrouprealestatess.com/agents/jon-kowalsky/",
+   "lastInitial": "K",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "joy-rassmussen",
+   "name": "Joy Rassmussen",
+   "kind": "broker",
+   "phone": "9708468678",
+   "photo": "assets/agents/joy-rassmussen.jpg",
+   "production": "https://thegrouprealestatess.com/agents/joy-rassmussen/",
+   "lastInitial": "R",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "kaela-miller",
+   "name": "Kaela Miller",
+   "kind": "broker",
+   "phone": "9703676240",
+   "photo": "assets/agents/kaela-miller.jpg",
+   "production": "https://thegrouprealestatess.com/agents/kaela-miller/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "kara-mann",
+   "name": "Kara Mann",
+   "kind": "broker",
+   "phone": "9704398383",
+   "photo": "assets/agents/kara-mann.jpg",
+   "production": "https://thegrouprealestatess.com/agents/kara-mann/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "katie-weeks",
+   "name": "Katie Weeks",
+   "kind": "broker",
+   "phone": "9708469982",
+   "photo": "assets/agents/katie-weeks.jpg",
+   "production": "https://thegrouprealestatess.com/agents/katie-weeks/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "kelli-cronin",
+   "name": "Kelli Cronin",
+   "kind": "broker",
+   "phone": "6162838622",
+   "photo": "assets/agents/kelli-cronin.jpg",
+   "production": "https://thegrouprealestatess.com/agents/kelli-cronin/",
+   "lastInitial": "C",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "kelly-becker",
+   "name": "Kelly Becker",
+   "kind": "broker",
+   "phone": "9708462300",
+   "photo": "assets/agents/kelly-becker.jpg",
+   "production": "https://thegrouprealestatess.com/agents/kelly-becker/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "kevin-dietrich",
+   "name": "Kevin Dietrich",
+   "kind": "broker",
+   "phone": "9703896745",
+   "photo": "assets/agents/kevin-dietrich.jpg",
+   "production": "https://thegrouprealestatess.com/agents/kevin-dietrich/",
+   "lastInitial": "D",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "lauren-bloom",
+   "name": "Lauren Bloom",
+   "kind": "broker",
+   "phone": "9702917727",
+   "photo": "assets/agents/lauren-bloom.jpg",
+   "production": "https://thegrouprealestatess.com/agents/lauren-bloom/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "lee-findell",
+   "name": "Lee Findell",
+   "kind": "broker",
+   "phone": "9708460695",
+   "photo": "assets/agents/lee-findell.jpg",
+   "production": "https://thegrouprealestatess.com/agents/lee-findell/",
+   "lastInitial": "F",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "leslie-tullos",
+   "name": "Leslie Tullos",
+   "kind": "broker",
+   "phone": "7202735197",
+   "photo": "assets/agents/leslie-tullos.jpg",
+   "production": "https://thegrouprealestatess.com/agents/leslie-tullos/",
+   "lastInitial": "T",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "marci-valicenti",
+   "name": "Marci Valicenti",
+   "kind": "broker",
+   "phone": "9708469224",
+   "photo": "assets/agents/marci-valicenti.jpg",
+   "production": "https://thegrouprealestatess.com/agents/marci-valicenti/",
+   "lastInitial": "V",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "marne-roberts",
+   "name": "Marne Roberts",
+   "kind": "broker",
+   "phone": "9708461868",
+   "photo": "assets/agents/marne-roberts.jpg",
+   "production": "https://thegrouprealestatess.com/agents/marne-roberts/",
+   "lastInitial": "R",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "martin-dragnev",
+   "name": "Martin Dragnev",
+   "kind": "broker",
+   "phone": "9702919412",
+   "photo": "assets/agents/martin-dragnev.jpg",
+   "production": "https://thegrouprealestatess.com/agents/martin-dragnev/",
+   "lastInitial": "D",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "matt-eidt",
+   "name": "Matt Eidt",
+   "kind": "broker",
+   "phone": "9708190827",
+   "photo": "assets/agents/matt-eidt.jpg",
+   "production": "https://thegrouprealestatess.com/agents/matt-eidt/",
+   "lastInitial": "E",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "meghan-meg-wilson",
+   "name": "Meghan (Meg) Wilson",
+   "kind": "broker",
+   "phone": "8602814548",
+   "photo": "assets/agents/meghan-meg-wilson.jpg",
+   "production": "https://thegrouprealestatess.com/agents/meghan-meg-wilson/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "michelle-barnes",
+   "name": "Michelle Barnes",
+   "kind": "broker",
+   "phone": "9708464220",
+   "photo": "assets/agents/michelle-barnes.jpg",
+   "production": "https://thegrouprealestatess.com/agents/michelle-barnes/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "michelle-mcdougall",
+   "name": "Michelle McDougall",
+   "kind": "broker",
+   "phone": "9708463800",
+   "photo": "assets/agents/michelle-mcdougall.jpg",
+   "production": "https://thegrouprealestatess.com/agents/michelle-mcdougall/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "nick-metzler",
+   "name": "Nick Metzler",
+   "kind": "broker",
+   "phone": "9708468811",
+   "photo": "assets/agents/nick-metzler.jpg",
+   "production": "https://thegrouprealestatess.com/agents/nick-metzler/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "noah-townsend",
+   "name": "Noah Townsend",
+   "kind": "broker",
+   "phone": "9704570321",
+   "photo": "assets/agents/noah-townsend.jpg",
+   "production": "https://thegrouprealestatess.com/agents/noah-townsend/",
+   "lastInitial": "T",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "paige-brookstein",
+   "name": "Paige Brookstein",
+   "kind": "broker",
+   "phone": "9708469646",
+   "photo": "assets/agents/paige-brookstein.jpg",
+   "production": "https://thegrouprealestatess.com/agents/paige-brookstein/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "paul-weese",
+   "name": "Paul Weese",
+   "kind": "broker",
+   "phone": "4063605292",
+   "photo": "assets/agents/paul-weese.jpg",
+   "production": "https://thegrouprealestatess.com/agents/paul-weese/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "pete-wither",
+   "name": "Pete Wither",
+   "kind": "broker",
+   "phone": "9708461867",
+   "photo": "assets/agents/pete-wither.jpg",
+   "production": "https://thegrouprealestatess.com/agents/pete-wither/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "rafael-perez",
+   "name": "Rafael Perez",
+   "kind": "broker",
+   "phone": null,
+   "photo": "assets/agents/rafael-perez.jpg",
+   "production": "https://thegrouprealestatess.com/agents/rafael-perez/",
+   "lastInitial": "P",
+   "languages": [
+    "English",
+    "Spanish",
+    "French"
+   ]
+  },
+  {
+   "slug": "randall-hannaway",
+   "name": "Randall Hannaway",
+   "kind": "broker",
+   "phone": "9708462104",
+   "photo": "assets/agents/randall-hannaway.jpg",
+   "production": "https://thegrouprealestatess.com/agents/randall-hannaway/",
+   "lastInitial": "H",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "reall-regan",
+   "name": "Reall Regan",
+   "kind": "broker",
+   "phone": "9708467367",
+   "photo": "assets/agents/reall-regan.jpg",
+   "production": "https://thegrouprealestatess.com/agents/reall-regan/",
+   "lastInitial": "R",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "robert-acosta",
+   "name": "Robert Acosta",
+   "kind": "broker",
+   "phone": "7603977719",
+   "photo": "assets/agents/robert-acosta.jpg",
+   "production": "https://thegrouprealestatess.com/agents/robert-acosta/",
+   "lastInitial": "A",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "ron-wendler",
+   "name": "Ron Wendler",
+   "kind": "broker",
+   "phone": "9708467500",
+   "photo": "assets/agents/ron-wendler.jpg",
+   "production": "https://thegrouprealestatess.com/agents/ron-wendler/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "scott-wither",
+   "name": "Scott Wither",
+   "kind": "broker",
+   "phone": "9708465898",
+   "photo": "assets/agents/scott-wither.jpg",
+   "production": "https://thegrouprealestatess.com/agents/scott-wither/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "shelley-stanford",
+   "name": "Shelley Stanford",
+   "kind": "broker",
+   "phone": "9708462991",
+   "photo": "assets/agents/shelley-stanford.jpg",
+   "production": "https://thegrouprealestatess.com/agents/shelley-stanford/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "stephan-zittel",
+   "name": "Stephan Zittel",
+   "kind": "broker",
+   "phone": "9708464803",
+   "photo": "assets/agents/stephan-zittel.jpg",
+   "production": "https://thegrouprealestatess.com/agents/stephan-zittel/",
+   "lastInitial": "Z",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "sue-stempel",
+   "name": "Sue Stempel",
+   "kind": "broker",
+   "phone": "9708190981",
+   "photo": "assets/agents/sue-stempel.jpg",
+   "production": "https://thegrouprealestatess.com/agents/sue-stempel/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "taylor-barker",
+   "name": "Taylor Barker",
+   "kind": "broker",
+   "phone": "9708410122",
+   "photo": "assets/agents/taylor-barker.jpg",
+   "production": "https://thegrouprealestatess.com/agents/taylor-barker/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-breslau-team",
+   "name": "The Breslau Team",
+   "kind": "team",
+   "phone": null,
+   "photo": "assets/agents/the-breslau-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-breslau-team/",
+   "lastInitial": "B",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-dresen-crooke-team",
+   "name": "The Dresen Crooke Team",
+   "kind": "team",
+   "phone": null,
+   "photo": "assets/agents/the-dresen-crooke-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-dresen-crooke-team/",
+   "lastInitial": "D",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-metzler-team",
+   "name": "The Metzler Team",
+   "kind": "team",
+   "phone": "9708706425",
+   "photo": "assets/agents/the-metzler-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-metzler-team/",
+   "lastInitial": "M",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-stanford-team",
+   "name": "The Stanford Team",
+   "kind": "team",
+   "phone": "9708462991",
+   "photo": "assets/agents/the-stanford-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-stanford-team/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-stempel-group",
+   "name": "The Stempel Group",
+   "kind": "team",
+   "phone": "9708190981",
+   "photo": "assets/agents/the-stempel-group.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-stempel-group/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-valicenti-team",
+   "name": "The Valicenti Team",
+   "kind": "team",
+   "phone": "9708469224",
+   "photo": "assets/agents/the-valicenti-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-valicenti-team/",
+   "lastInitial": "V",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-wither-team",
+   "name": "The Wither Team",
+   "kind": "team",
+   "phone": "9708465898",
+   "photo": "assets/agents/the-wither-team.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-wither-team/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "the-wittemyer-group",
+   "name": "The Wittemyer Group",
+   "kind": "team",
+   "phone": "9708461364",
+   "photo": "assets/agents/the-wittemyer-group.jpg",
+   "production": "https://thegrouprealestatess.com/agents/the-wittemyer-group/",
+   "lastInitial": "W",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "tom-ptach",
+   "name": "Tom Ptach",
+   "kind": "broker",
+   "phone": "9708466964",
+   "photo": "assets/agents/tom-ptach.jpg",
+   "production": "https://thegrouprealestatess.com/agents/tom-ptach/",
+   "lastInitial": "P",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "travis-crooke",
+   "name": "Travis Crooke",
+   "kind": "broker",
+   "phone": "9708469393",
+   "photo": "assets/agents/travis-crooke.jpg",
+   "production": "https://thegrouprealestatess.com/agents/travis-crooke/",
+   "lastInitial": "C",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "will-kennish",
+   "name": "Will Kennish",
+   "kind": "broker",
+   "phone": "9708754115",
+   "photo": "assets/agents/will-kennish.jpg",
+   "production": "https://thegrouprealestatess.com/agents/will-kennish/",
+   "lastInitial": "K",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "zach-valicenti",
+   "name": "Zach Valicenti",
+   "kind": "broker",
+   "phone": "9708469034",
+   "photo": "assets/agents/zach-valicenti.jpg",
+   "production": "https://thegrouprealestatess.com/agents/zach-valicenti/",
+   "lastInitial": "V",
+   "languages": [
+    "English"
+   ]
+  },
+  {
+   "slug": "zack-seegmiller",
+   "name": "Zack Seegmiller",
+   "kind": "broker",
+   "phone": "9707570080",
+   "photo": "assets/agents/zack-seegmiller.jpg",
+   "production": "https://thegrouprealestatess.com/agents/zack-seegmiller/",
+   "lastInitial": "S",
+   "languages": [
+    "English"
+   ]
+  }
+ ],
+ "languagesNote": "Production tags languages on only a few profiles (English: Kelli Cronin, Lauren Bloom; Spanish + French: Rafael Perez; Japanese: Andrew Lautz). The mockup assumes English for everyone and adds the other tags."
+}
